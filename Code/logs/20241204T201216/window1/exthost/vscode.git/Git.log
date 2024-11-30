@@ -1,0 +1,51 @@
+2024-12-04 20:12:33.765 [info] [main] Nivel de registro: Info
+2024-12-04 20:12:33.765 [info] [main] Validando git encontrado en: "git"
+2024-12-04 20:12:33.765 [info] [main] Usando git "2.47.1" de "git"
+2024-12-04 20:12:33.765 [info] [Model][doInitialScan] Initial repository scan started
+2024-12-04 20:12:33.765 [info] > git rev-parse --show-toplevel [60ms]
+2024-12-04 20:12:33.765 [info] > git rev-parse --git-dir --git-common-dir [496ms]
+2024-12-04 20:12:33.765 [info] [Model][openRepository] Opened repository: /home/statick/workspaces/practicas/flutter/ejercicios
+2024-12-04 20:12:33.765 [info] [Model][doInitialScan] Initial repository scan completed - repositories (1), closed repositories (0), parent repositories (0), unsafe repositories (0)
+2024-12-04 20:12:33.859 [info] > git config --get commit.template [62ms]
+2024-12-04 20:12:33.967 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) refs/heads/main refs/remotes/main [38ms]
+2024-12-04 20:12:35.109 [info] > git check-ignore -v -z --stdin [749ms]
+2024-12-04 20:12:35.114 [info] > git status -z -uall [40ms]
+2024-12-04 20:12:35.329 [info] > git show --textconv :2_variables.dart [179ms]
+2024-12-04 20:12:35.332 [info] > git ls-files --stage -- /home/statick/workspaces/practicas/flutter/ejercicios/2_variables.dart [145ms]
+2024-12-04 20:12:35.361 [info] > git for-each-ref --sort -committerdate --format %(refname) %(objectname) %(*objectname) [257ms]
+2024-12-04 20:12:35.618 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) refs/heads/main refs/remotes/main [205ms]
+2024-12-04 20:12:35.648 [info] > git cat-file -s 4b0fd46cbf9c63c48b495e510e220222c3ded5f3 [291ms]
+2024-12-04 20:12:35.801 [info] > git config --local branch.main.vscode-merge-base [153ms]
+2024-12-04 20:12:35.802 [warning] [Git][config] git config failed: Failed to execute git
+2024-12-04 20:12:35.827 [info] > git config --get commit.template [233ms]
+2024-12-04 20:12:35.970 [info] > git reflog main --grep-reflog=branch: Created from *. [145ms]
+2024-12-04 20:12:36.032 [info] > git symbolic-ref --short refs/remotes/origin/HEAD [27ms]
+2024-12-04 20:12:36.032 [info] fatal: ref refs/remotes/origin/HEAD is not a symbolic ref
+2024-12-04 20:12:36.032 [warning] [Repository][getDefaultBranch] Failed to get default branch details: Failed to execute git.
+2024-12-04 20:12:36.097 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) refs/heads/main refs/remotes/main [175ms]
+2024-12-04 20:12:36.149 [info] > git merge-base refs/heads/main refs/remotes/origin/main [66ms]
+2024-12-04 20:12:36.338 [info] > git diff --name-status -z --diff-filter=ADMR f715ead1822291071f4571780886b5daf8f0847d...refs/remotes/origin/main [135ms]
+2024-12-04 20:12:36.408 [info] > git status -z -uall [30ms]
+2024-12-04 20:12:36.416 [info] > git for-each-ref --sort -committerdate --format %(refname) %(objectname) %(*objectname) [10ms]
+2024-12-04 20:13:50.864 [info] [main] Nivel de registro: Info
+2024-12-04 20:13:50.864 [info] [main] Validando git encontrado en: "git"
+2024-12-04 20:13:50.864 [info] [main] Usando git "2.47.1" de "git"
+2024-12-04 20:13:50.864 [info] [Model][doInitialScan] Initial repository scan started
+2024-12-04 20:13:50.864 [info] > git rev-parse --show-toplevel [11ms]
+2024-12-04 20:13:50.864 [info] fatal: not a git repository (or any parent up to mount point /)
+Stopping at filesystem boundary (GIT_DISCOVERY_ACROSS_FILESYSTEM not set).
+2024-12-04 20:13:50.864 [info] [Model][doInitialScan] Initial repository scan completed - repositories (0), closed repositories (0), parent repositories (0), unsafe repositories (0)
+2024-12-04 20:14:36.071 [info] > git rev-parse --show-toplevel [2ms]
+2024-12-04 20:14:36.071 [info] fatal: not a git repository (or any parent up to mount point /)
+Stopping at filesystem boundary (GIT_DISCOVERY_ACROSS_FILESYSTEM not set).
+2024-12-04 20:15:20.540 [info] [main] Nivel de registro: Info
+2024-12-04 20:15:20.540 [info] [main] Validando git encontrado en: "git"
+2024-12-04 20:15:20.540 [info] [main] Usando git "2.47.1" de "git"
+2024-12-04 20:15:20.540 [info] [Model][doInitialScan] Initial repository scan started
+2024-12-04 20:15:20.540 [info] > git rev-parse --show-toplevel [53ms]
+2024-12-04 20:15:20.540 [info] fatal: not a git repository (or any parent up to mount point /)
+Stopping at filesystem boundary (GIT_DISCOVERY_ACROSS_FILESYSTEM not set).
+2024-12-04 20:15:20.590 [info] > git rev-parse --show-toplevel [515ms]
+2024-12-04 20:15:20.590 [info] fatal: not a git repository (or any parent up to mount point /)
+Stopping at filesystem boundary (GIT_DISCOVERY_ACROSS_FILESYSTEM not set).
+2024-12-04 20:15:20.598 [info] [Model][doInitialScan] Initial repository scan completed - repositories (0), closed repositories (0), parent repositories (0), unsafe repositories (0)

@@ -1,0 +1,5 @@
+Facebook
+Windows
+distractor
+extención.py
+checksum_v1 = bf4ff0c5115094378be168fe0b407257

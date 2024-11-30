@@ -1,0 +1,257 @@
+{
+  "app_name": "Qoala",
+  "currency": "€",
+  "currency_amount": "{{amount}} {{currency}}",
+  "percentage_amount": "{{amount}}%",
+  "pending_currency": "Pendientes + {{amount}} {{currency}}",
+  "offer": {
+    "copy_code": "Copiar código",
+    "copied_code": "Copiado",
+    "go_to_offer": "Ir a oferta >",
+    "see_terms": "Ver condiciones"
+  },
+  "popup": {
+    "sign_up_prompt": {
+      "description": "Crea tu Cuenta con Qoala para recibir Cashback en tus compras.",
+      "button": "Iniciar sesión"
+    },
+    "login": {
+      "title": "Iniciar sesión",
+      "continue_as_guest": "Continuar como invitado >",
+      "first_time": "¿Primera vez en Qoala?",
+      "sign_up_link": "Registrate grátis",
+      "login_or_continue": "ó continua con",
+      "button_login": "Iniciar sesión con email",
+      "disclaimer": "Qoala nunca compartira tu email con terceros. Usamos herramientas de analytics para mejorar nuestra extension. \n Para leer más sobre nuestra Politica de Privacidad, haz clic aqui.",
+      "guest_mode_title": "Crea tu Cuenta con Qoala para recibir Cashback.",
+      "guest_mode_button": "Inicia sesión para continuar"
+    },
+    "store": {
+      "cashback_title": "Cashback hasta {{amount}}{{symbol}}",
+      "cashback_subtitle": "activando el Cashback",
+      "cashback_description": "Activa Cashback antes de cada compra y te devolvemos un % de lo que pagues.",
+      "cashback_button": "Activar Cashback hasta {{amount}}{{symbol}}",
+      "cashback_button_no_percentage": "Activar Cashback",
+      "cashback_button_active": "Cashback activo",
+      "button_follow_store": "Seguir",
+      "button_unfollow_store": "No seguir",
+      "offers_title": "Promociones",
+      "offers_tag_one": "{{count}} oferta",
+      "offers_tag_other": "{{count}} ofertas",
+      "coupons_tag_one": "{{count}} código descuento",
+      "coupons_tag_other": "{{count}} códigos descuento",
+      "empty_data": "Hemos buscado por toda la web y no hemos encontrado ofertas para esta tienda!"
+    },
+    "account": {
+      "hello": "Hola,",
+      "my_information": "Mi información",
+      "faq": "F.A.Q.",
+      "legal": "Legal",
+      "badges": "Badges",
+      "language_region": "Idioma y región",
+      "transaction_history": "Historial de Transacciones",
+      "button_logout": "Cerrar sesión",
+      "visit_web": "Visita nuestra web",
+      "select_locale": "Elegir idioma",
+      "select_geo": "Elegir región de ofertas:",
+      "referral_title": "Recibe {{amount}}{{currency}} por cada amigo que traigas con su primera compra elegible (mínimo {{saleAmount}}{{currency}} de valor).",
+      "button_referral_copy": "Copiar",
+      "button_referral_copied": "Copiado",
+      "delete_account": "Borrar cuenta",
+      "welcome": "bienvenido a Qoala",
+      "tab_widget_feature_toggle": "Desactivar la pestaña de Qoala",
+      "tab_widget_feature_toggle_helper_text": "La pestaña es el icono naranja de Qoala que sale en el lado de tu navegador cuando entras en una tienda partner."
+    },
+    "tabs": {
+      "deals": "Promociones",
+      "trending": "Tendencias",
+      "account": "Cuenta",
+      "qoins": "Cashback"
+    },
+    "qoins": {
+      "button_redeem_qoins": "Canjear mi cashback",
+      "choose_rewards": "¡Elige tu recompensa!",
+      "tooltip": "Puedes canjear tu cashback por {{euroAmount}}{{currency}}",
+      "transactions_title": "Últimas transacciones",
+      "transactions_description": "Tus transacciones pueden tardar hasta 7 días en aparecer y 60-90 días en ser aprobadas.",
+      "transactions_view_more": "+ Ver más",
+      "transactions_empty": "No hay más transacciones.",
+      "claim_tag": "Solicitada",
+      "first_purchase_placeholder": "Realiza tu primera compra y recibe cashback.",
+      "transaction_titles": {
+        "mobile_install": "Qoala app",
+        "extension_install": "Descargar extension",
+        "sign_up": "Crear cuenta",
+        "first_purchase": "Primera compra",
+        "invite": "Invitación",
+        "follow_store": "Seguir tienda"
+      },
+      "transaction_types": {
+        "purchase": "Compra",
+        "extension_install": "Premio",
+        "mobile_install": "Premio",
+        "first_purchase": "Premio",
+        "sign_up": "Sign up",
+        "invite": "Invitación",
+        "redeem": "Canjeo",
+        "survey": "Encuesta",
+        "reward": "Premio",
+        "donation": "Donación"
+      },
+      "transaction_status": {
+        "approved": "Aprobado",
+        "pending": "Pendiente",
+        "declined": "Rechazado"
+      },
+      "transactions_claim_link": "¿No ves tu última transacción?",
+      "qoala_trees_planted": "{{amount}} árboles en el bosque de Qoala",
+      "user_trees_planted_one": "Has plantado {{count}} árbol",
+      "user_trees_planted_other": "Has plantado {{count}} árboles"
+    },
+    "trending": {
+      "search_placeholder": "Busca tiendas, categorías...",
+      "up_to_cashback": "hasta {{amount}}%",
+      "empty_data": "No hay cupones activos ahora mismo, ¡pero no te preocupes! Sigues teniendo Cashback disponible y recuperarás parte de tu compra"
+    }
+  },
+  "cashback_popup": {
+    "non_transactor_title": "¿Aún no has comprado con Qoala?",
+    "non_transactor_subtitle": "¡Te regalamos {{amount}}{{currency}} en tu primera compra!",
+    "non_transactor_steps_title": "Es muy fácil:",
+    "non_transactor_steps_1": "Dale a activar cashback cuando te salte el pop-up",
+    "non_transactor_steps_2": "Realiza tu compra normalmente",
+    "non_transactor_steps_3": "¡Te devolvemos parte de lo que te gastes en cashback!",
+    "button_mute_store_24_hrs": "Silenciar durante 24 hrs",
+    "button_mute_store_30_days": "Silenciar para esta tienda",
+    "onboarding_title": "¡Bienvenid@ a Qoala!",
+    "onboarding_description": "Haz click en <1>Activar Cashback</1> antes de comprar y te devolvemos parte de tu compra."
+  },
+  "checkout_popup": {
+    "title": "Descuentos encontrados",
+    "button": "Aplicar descuentos"
+  },
+  "redirect_popup": {
+    "title": "Estamos activando el Cashback...",
+    "countdown": "Serás automáticamente redirigid@ a la tienda...",
+    "redirect_manually": "Si no te hemos devuelto a la tienda, haz click aquí"
+  },
+  "success_popup": {
+    "title": "Cashback Activo",
+    "button": "Cerrar"
+  },
+  "peer_popup": {
+    "cashback_title": "Ahorra hasta {{amount}}{{symbol}}",
+    "go_to_store": "Ir a la tienda"
+  },
+  "coupon_trial_popup": {
+    "title": "Qoala esta probando los cupones que hemos encontrado para ti...",
+    "subtitle": "Probando cupón {{count}} de {{total}}",
+    "finish_title": "Buscando el mejor cupón..."
+  },
+  "receipt_fail_popup": {
+    "title": "No encontramos cupones pero...",
+    "subtitle": "¡Ahora tienes cashback en tu compra!",
+    "button": "Aplicar"
+  },
+  "receipt_success_popup": {
+    "you_are_saving": "Estás ahorrando",
+    "cashback_tag": "hasta {{amount}}{{symbol}} de Cashback",
+    "total_estimate": "Total estimado a pagar.",
+    "cashback_title": "Cashback disponible",
+    "euro_amount": "{{amount}}€",
+    "button": "Aplicar"
+  },
+  "autofill_popup": {
+    "title": "Compra rápido con Qoala",
+    "subtitle": "Confirma que tus datos son correctos y compra con un solo clic. ¡Dejános hacer el trabajo por ti!",
+    "select_address": "Dirección para envío",
+    "select_payment": "Método de pago",
+    "button_confirm": "Realizar compra con Qoala",
+    "cashback_available": "Cashback disponible",
+    "cashback": "Hasta {{amount}}%",
+    "load_data": {
+      "title": "Carga tus datos",
+      "text": "Carga tus datos de envío y método de pago ahora y la próxima vez podrás comprar en un solo click.",
+      "form_address": {
+        "title": "Datos de envío",
+        "first_name": "Nombre",
+        "gender": "Género",
+        "nif": "N.I.F",
+        "last_name": "Apellidos",
+        "province": "Provincia",
+        "city": "Ciudad",
+        "street": "Calle",
+        "number": "Número",
+        "floor": "Piso",
+        "zipCode": "Código Postal",
+        "phone": "Teléfono de Contacto"
+      },
+      "form_payment": {
+        "title": "Datos de pago",
+        "card_holder": "Nombre del titular de la tarjeta",
+        "card_number": "Número de la tarjeta",
+        "shipping_address": "Mi dirección de envío y facturación es la misma"
+      },
+      "not_now": "Ahora no",
+      "button_load": "Cargar datos",
+      "required": "Requirido",
+      "invalid_phone": "Número inválido",
+      "invalid_phone_code": "Código inválido",
+      "invalid_month": "Mes inválido",
+      "invalid_year": "Año inválido",
+      "invalid_cvv": "CVV inválido",
+      "invalid_card_number": "Tarjeta inválida"
+    },
+    "purchase_process": {
+      "title": "Realizando compra",
+      "text": "Relájate, nosotros haremos el trabajo por ti",
+      "cancel": "Cancelar"
+    },
+    "purchase_confirmed": {
+      "title": "Compra realizada",
+      "text": "¡Enhorabuena! Compraste en un click y ahorraste un {{amount}}%",
+      "go_to_qoala": "Ir a Qoala",
+      "remember_text": "¡Recuerda que ahora puedes comprar en un click! Carga tus datos y la próxima vez nosotros completaremos el checkout por ti"
+    },
+    "completed_autofill": {
+      "title": "¡Checkout completo!",
+      "text": "Hemos rellenado tus datos por ti. Haz clic en el botón para confirmar tu compra y ¡listo!",
+      "confirm_button": "Confirmar compra"
+    },
+    "failed_section": {
+      "title": "¡Ups! Qoala no puede seguir ayudándote",
+      "text": "No te preocupes, puedes seguir el proceso de checkout normalmente o ponerte en contacto con nosotros.",
+      "confirm_button": "Entendido"
+    }
+  },
+  "act_popup": {
+    "confirm_act_section": {
+      "title": "¡Cupones encontrados!",
+      "button_confirm": "¡Probar cupones!",
+      "cancel": "No, gracias"
+    },
+    "coupon_tester": {
+      "title": "Probando cupones..."
+    },
+    "failed_section": {
+      "title": "¡Ya tienes el mejor precio!",
+      "text": "No hemos encontrado cupones para esta compra ¡puedes comprar tranquilo sabiendo que tienes el mejor precio!",
+      "text_cashback": "{{amount}}{{symbol}}",
+      "text_active_cashback": "¡Cashback Activo!",
+      "text_you_got_cashback": "Pero si, hay Cashback!",
+      "continue": "Continuar al Checkout",
+      "cancel": "Cancelar"
+    },
+    "success_section": {
+      "title": "Enhorabuena!",
+      "saved_discount": "Ahorraste €{{discount}}",
+      "code": "Código",
+      "original": "Original",
+      "with_qoala": "Con Qoala",
+      "continue_button": "Continuar"
+    }
+  },
+  "search_tag": {
+    "button": "Cashback hasta {{amount}}{{symbol}}"
+  }
+}

@@ -1,0 +1,6 @@
+2024/12/03-16:58:07.238 a13 Creating DB /home/statick/.config/google-chrome/Default/IndexedDB/https_medium.com_0.indexeddb.leveldb since it was missing.
+2024/12/03-16:58:07.248 a13 Reusing MANIFEST /home/statick/.config/google-chrome/Default/IndexedDB/https_medium.com_0.indexeddb.leveldb/MANIFEST-000001
+2024/12/03-16:58:41.426 a14 Level-0 table #5: started
+2024/12/03-16:58:41.432 a14 Level-0 table #5: 57998 bytes OK
+2024/12/03-16:58:41.439 a14 Delete type=0 #3
+2024/12/03-16:58:41.439 a14 Manual compaction at level-0 from (begin) .. (end); will stop at (end)

@@ -1,0 +1,6 @@
+2024-12-04 20:48:32.532 [info] Getting Manifest... batisteo.vscode-django
+2024-12-04 20:48:32.614 [info] Installing extension: batisteo.vscode-django {"isMachineScoped":false,"installPreReleaseVersion":false,"pinned":false,"profileLocation":{"$mid":1,"external":"vscode-userdata:/home/statick/.config/Code/User/profiles/-3a22a2f2/extensions.json","path":"/home/statick/.config/Code/User/profiles/-3a22a2f2/extensions.json","scheme":"vscode-userdata"},"installOnlyNewlyAddedFromExtensionPack":true,"isApplicationScoped":false,"productVersion":{"version":"1.95.3","date":"2024-11-13T14:50:04.152Z"}}
+2024-12-04 20:48:33.637 [info] Extension signature verification result for batisteo.vscode-django: UnknownError. Executed: true. Duration: 20ms.
+2024-12-04 20:48:33.744 [info] Extracted extension to file:///home/statick/.vscode/extensions/batisteo.vscode-django-1.15.0: batisteo.vscode-django
+2024-12-04 20:48:33.750 [info] Renamed to /home/statick/.vscode/extensions/batisteo.vscode-django-1.15.0
+2024-12-04 20:48:33.820 [info] Extension installed successfully: batisteo.vscode-django vscode-userdata:/home/statick/.config/Code/User/profiles/-3a22a2f2/extensions.json

@@ -1,0 +1,30 @@
+{
+   "action": {
+      "default_popup": "popup.html",
+      "default_title": "InVID WeVerify"
+   },
+   "background": {
+      "service_worker": "background.js"
+   },
+   "content_security_policy": {
+      "extension_pages": "script-src 'self' 'wasm-unsafe-eval'; object-src 'self';"
+   },
+   "description": "InVID WeVerify extension",
+   "host_permissions": [ "\u003Call_urls>" ],
+   "icons": {
+      "128": "img/icon-128.png",
+      "16": "img/icon-16.png",
+      "48": "img/icon-48.png"
+   },
+   "key": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAo8OrkCBgxeurevEIQjzjp6G9vFVC8pJVxM78delyGxn8A3cewjja0OaTvyUnUAaIqqhTvEBRCqROXqXoPBvLKkxgLotEqJeVYdlGW1x9OdUsZKvoXeYKd5VLLMM4MKGF/LoMtUz/JA9KXtu27V746Wc/7MOM1CUIJNFm2QUooHsPoZNbcHUCFhTAv0e5CIqxUlzyve8Qmeu1wPD7+2U1/yAGFDhmOXPx+Nqe2bIhL1/qaNJX0U4BGCeEY9+bL7PY8KvvyXL2R2J8tmuIe1AOZEYlmZ8gFCDDSb2Pk6xDG73zHLfceLDl1Mu4Lb+u6PCaGR4sE0e4cS5wl1gAZhhBEQIDAQAB",
+   "manifest_version": 3,
+   "name": "Fake news debunker by InVID & WeVerify",
+   "permissions": [ "contextMenus", "activeTab" ],
+   "short_name": "Verification Plugin",
+   "update_url": "https://clients2.google.com/service/update2/crx",
+   "version": "0.83",
+   "web_accessible_resources": [ {
+      "matches": [ "\u003Call_urls>" ],
+      "resources": [ "toolkit_bg.wasm" ]
+   } ]
+}

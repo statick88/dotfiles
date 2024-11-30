@@ -1,0 +1,118 @@
+[1733397881120] INFO  (ext): SQLTools is starting
+[1733397881121] INFO  (ext): initializing language client...
+[1733397881122] INFO  (ext): Registering client for languages [{"scheme":"sqltools"},{"language":"sql","scheme":"untitled"},{"language":"sql","scheme":"file"},{"language":"sql","scheme":"sqltools"}]
+    ns: "lc"
+[1733397881127] INFO  (ext): loading plugins...
+[1733397881127] INFO  (ext): registering Formatter Plugin.
+    plugin: {
+      "name": "Formatter Plugin"
+    }
+[1733397881127] INFO  (ext): registering Connection Manager Plugin.
+    plugin: {
+      "name": "Connection Manager Plugin"
+    }
+[1733397881127] INFO  (ext): registering CodeLens Plugin.
+    plugin: {
+      "name": "CodeLens Plugin",
+      "registeredLanguages": []
+    }
+[1733397881128] INFO  (ext): registering Dependency Manager Plugin.
+    plugin: {
+      "name": "Dependency Manager Plugin",
+      "installingDrivers": []
+    }
+[1733397881131] INFO  (ext): Connection explorer changed. Will be updated.
+    ns: "conn-man:explorer"
+[1733397881132] INFO  (ext): registering History Manager Plugin.
+    plugin: {
+      "name": "History Manager Plugin"
+    }
+[1733397881132] INFO  (ext): registering Bookmarks Manager Plugin.
+    plugin: {
+      "name": "Bookmarks Manager Plugin"
+    }
+[1733397881133] INFO  (ext): registering Authentication Provider Plugin.
+    plugin: {
+      "name": "Authentication Provider Plugin",
+      "isRegistered": false
+    }
+[1733397881133] INFO  (ext): registering Object Drop-in Provider (plugin).
+    plugin: {
+      "type": "plugin",
+      "name": "Object Drop-in Provider",
+      "isRegistered": false
+    }
+[1733397881134] INFO  (ext): SQLTools activation completed. 13.900988 ms
+[1733397881134] INFO  (ext): Formatter Plugin registered!
+[1733397881134] INFO  (ext): CodeLens Plugin registered!
+[1733397881134] INFO  (ext): Dependency Manager Plugin registered!
+[1733397881135] INFO  (ext): Connection Manager Plugin registered!
+[1733397881135] INFO  (ext): History Manager Plugin registered!
+[1733397881135] INFO  (ext): Bookmarks Manager Plugin registered!
+[1733397881135] INFO  (ext): Authentication Provider Plugin registered!
+[1733397881135] INFO  (ext): Object Drop-in Provider (plugin) registered!
+[1733397881196] INFO  (ext): registering PostgreSQL/Cockroach Plugin (driver).
+    plugin: {
+      "extensionId": "mtxr.sqltools-driver-pg",
+      "name": "PostgreSQL/Cockroach Plugin",
+      "type": "driver"
+    }
+[1733397881331] INFO  (ls): SQLTools Server started!
+===============================
+Using node runtime?: no
+ExecPath: /usr/share/code/code 
+===============================
+[1733397881469] INFO  (ext): LanguageClient ready
+    ns: "lc"
+[1733397881472] INFO  (ext): registering SQLite Plugin (driver).
+    plugin: {
+      "extensionId": "mtxr.sqltools-driver-sqlite",
+      "name": "SQLite Plugin",
+      "type": "driver"
+    }
+[1733397881467] INFO  (ls): Initialized with node version:v20.18.0
+[1733397881470] INFO  (ls): REQUEST RECEIVED => ls/RegisterPlugin
+[1733397881471] INFO  (ls): request to register plugin: "/home/statick/.vscode/extensions/mtxr.sqltools-driver-pg-0.5.4/out/ls/plugin.js"
+[1733397881515] INFO  (ls): Driver postgresql registered!
+    place: "driver-map"
+    ns: "ls-context"
+[1733397881515] INFO  (ls): Driver aws redshift registered!
+    place: "driver-map"
+    ns: "ls-context"
+[1733397881515] INFO  (ls): Driver cockroachdb registered!
+    place: "driver-map"
+    ns: "ls-context"
+[1733397881515] INFO  (ls): REQUEST RECEIVED => ls/RegisterPlugin
+[1733397881515] INFO  (ls): request to register plugin: "/home/statick/.vscode/extensions/mtxr.sqltools-driver-sqlite-0.5.1/out/ls/plugin.js"
+[1733397881542] INFO  (ext): PostgreSQL/Cockroach Plugin (driver) registered!
+[1733397881542] INFO  (ls): Driver sqlite registered!
+    place: "driver-map"
+    ns: "ls-context"
+[1733397881570] INFO  (ext): SQLite Plugin (driver) registered!
+[1733397882588] INFO  (ext): EXECUTING COMMAND => sqltools.refreshTree
+[1733397882588] INFO  (ext): Connection explorer changed. Will be updated.
+    ns: "conn-man:explorer"
+[1733397882596] INFO  (ext): Connection explorer changed. Will be updated.
+    ns: "conn-man:explorer"
+[1733397882673] INFO  (ext): Connection explorer changed. Will be updated.
+    ns: "conn-man:explorer"
+[1733397883011] INFO  (ext): Connection explorer changed. Will be updated.
+    ns: "conn-man:explorer"
+[1733397883011] INFO  (ext): Connection explorer changed. Will be updated.
+    ns: "conn-man:explorer"
+[1733397883012] INFO  (ext): Connection explorer changed. Will be updated.
+    ns: "conn-man:explorer"
+[1733397883173] INFO  (ext): Connection explorer changed. Will be updated.
+    ns: "conn-man:explorer"
+[1733397883174] INFO  (ext): Connection explorer changed. Will be updated.
+    ns: "conn-man:explorer"
+[1733397883332] INFO  (ext): Connection explorer changed. Will be updated.
+    ns: "conn-man:explorer"
+[1733397883409] INFO  (ext): Connection explorer changed. Will be updated.
+    ns: "conn-man:explorer"
+[1733397883488] INFO  (ext): Connection explorer changed. Will be updated.
+    ns: "conn-man:explorer"
+[1733397883570] INFO  (ext): Connection explorer changed. Will be updated.
+    ns: "conn-man:explorer"
+[1733397888183] INFO  (ext): Connection explorer changed. Will be updated.
+    ns: "conn-man:explorer"

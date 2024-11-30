@@ -1,0 +1,479 @@
+{
+   "appDesc": {
+      "message": "Une application simple qui vous aide à mesurer le temps passé sur vos travaux, études ou quoi que ce soit d'autre."
+   },
+   "appName": {
+      "message": "Minuteur de tâches"
+   },
+   "btnAddTask": {
+      "message": "Ajouter une Tâche"
+   },
+   "btnCancel": {
+      "message": "Annuler"
+   },
+   "btnClearHistory": {
+      "message": "Effacer l'historique"
+   },
+   "btnClose": {
+      "message": "Fermer"
+   },
+   "btnCloseNotice": {
+      "message": "Fermer l'info"
+   },
+   "btnDelete": {
+      "message": "Effacer"
+   },
+   "btnDeleteAll": {
+      "message": "Tout effacer"
+   },
+   "btnInfo": {
+      "message": "Information"
+   },
+   "btnNo": {
+      "message": "Non"
+   },
+   "btnOK": {
+      "message": "OK"
+   },
+   "btnReset": {
+      "message": "Réinitialiser"
+   },
+   "btnResetAll": {
+      "message": "Tout réinitialiser"
+   },
+   "btnSave": {
+      "message": "Sauvegarder"
+   },
+   "btnStart": {
+      "message": "Démarrer"
+   },
+   "btnStop": {
+      "message": "Arrêter"
+   },
+   "btnStopAlarm": {
+      "message": "Arrêter l'Alarme"
+   },
+   "btnYes": {
+      "message": "Oui"
+   },
+   "confClearAllHistory": {
+      "message": "Êtes-vous sûr de vouloir effacer l'historique de toutes vos tâches?"
+   },
+   "confClearHistory": {
+      "message": "Êtes-vous sûr de vouloir effacer l'historique de la tâche \"$taskName$\" ?",
+      "placeholders": {
+         "taskName": {
+            "content": "$1",
+            "example": "Chores"
+         }
+      }
+   },
+   "confDeleteAll": {
+      "message": "Êtes-vous sûr de vouloir effacer toutes vos tâches?"
+   },
+   "confDeleteTask": {
+      "message": "Etes-vous sûr de vouloir réinitialiser la tâche \"$taskName$?\nCeci réinitialisera également l'historique de la tâche.",
+      "placeholders": {
+         "taskName": {
+            "content": "$1",
+            "example": "Chores"
+         }
+      }
+   },
+   "confRating": {
+      "message": "Voudriez-vous noter et commenter cette application sur Chrome Web Store?\nCela nous aide énormément !"
+   },
+   "confResetAll": {
+      "message": "Êtes-vous sûr de vouloir réinitialiser le temps passé sur toutes vos tâches?"
+   },
+   "confResetData": {
+      "message": "Êtes-vous sûr de vouloir complètement effacer toutes les données de Task Timer?\nCeci supprimera vos tâches et vos options."
+   },
+   "confResetSettings": {
+      "message": "Êtes-vous sûr de vouloir réinitialiser toutes vos options à leurs valeurs par défault?"
+   },
+   "confResetTask": {
+      "message": "Êtes-vous sûr de vouloir réinitialiser la tâche \"$taskName$\" ?\nCeci ne réinitialisera pas l'historique de la tâche.",
+      "placeholders": {
+         "taskName": {
+            "content": "$1",
+            "example": "Chores"
+         }
+      }
+   },
+   "confSmallWindow": {
+      "message": "Vous semblez exécuter Task Timer dans une petite fenêtre, un petit écran, ou à une faible résolution. Aimeriez-vous passer à des icônes au lieu de boutons dans la liste des tâches? Cela permettra de s'assurer que les tâches ne prennent pas plus d'une ligne chacune.\n\nCe réglage peut également être modifié dans le menu outils."
+   },
+   "confUpdated": {
+      "message": "Task Timer a été mis à jour à la version $version$!\nVoulez-vous voir les changements apportés ?",
+      "placeholders": {
+         "version": {
+            "content": "$1",
+            "example": "1.7.2"
+         }
+      }
+   },
+   "confUpdatedRestartAddendum": {
+      "message": "Soyez conscient que vous aurez besoin de redémarrer vos tâches si une mise à jour de Chrome survient alors que les compteurs sont actifs."
+   },
+   "errAlreadyOpen": {
+      "message": "L'application est déjà ouverte.\nSi cela est incorrect, appuyez sur le bouton de rechargement ci-dessous. Task Timer sera rechargé comme si vous fermiez Chrome."
+   },
+   "errFinishEditing": {
+      "message": "Terminer d'abord l'édition de la tâche \"$taskName$\"!",
+      "placeholders": {
+         "taskName": {
+            "content": "$1",
+            "example": "Chores"
+         }
+      }
+   },
+   "errGeneric": {
+      "message": "Erreur!"
+   },
+   "errGoalTime": {
+      "message": "Objectif invalide."
+   },
+   "errSoundURL": {
+      "message": "URL du fichier son incorrecte."
+   },
+   "errTask": {
+      "message": "Nom de la tâche ou objectif invalide."
+   },
+   "errTaskName": {
+      "message": "Nom de la tâche invalide."
+   },
+   "errTaskTime": {
+      "message": "Durée invalide."
+   },
+   "infoData": {
+      "message": "Note : La sauvegarde n'est effective que localement, sur votre ordinateur, dans votre navigateur.\nNe vous inquiétez pas, vos tâches ne seront **pas** effacées si vous videz le cache de votre navigateur Chrome."
+   },
+   "infoPerformance": {
+      "message": "L'application semble tourner au ralenti ? Essayez d'augmenter la durée de mise à jour des graphiques dans les options, ou de désactiver complètement les graphiques.\nPas d'améliorations ? Augmentez la durée générale de mise à jour ou désactivez l'historique des tâches."
+   },
+   "infoSettings": {
+      "message": "Accédez aux options en cliquant sur le bouton situé en haut à droite de l'application !\nVous pourrez par exemple y configurer les notifications de bureau des tâches terminées."
+   },
+   "infoTotals": {
+      "message": "Ceci est la colonne Total. Elle apparaît seulement si vous avez plus d'une tâche.\n\nLa colonne \" Temps passé\" totalise le temps passé sur chacune de vos tâches.\nLa colonne \"Objectif\" comptabilise votre objectif de temps sur l'ensemble de vos tâches autres que celles à durée indéterminée.\nLa colonne \"Avancement\" vous donne l''avancement de l'ensemble de vos tâches. Cet avancement n'inclut pas le temps passé qui dépasse le but d'une tâche, ou le temps passé sur des tâches à des objectifs indéfinis."
+   },
+   "infoTranslate": {
+      "message": "Vous voulez aidez à traduire Task Timer dans d'autres langues ? Cliquez [ici]"
+   },
+   "lblDescription": {
+      "message": "Description"
+   },
+   "lblGoal": {
+      "message": "Objectif"
+   },
+   "lblGoalBoth": {
+      "message": "Objectif (heures : minutes)"
+   },
+   "lblGoalHours": {
+      "message": "Objectif en Heures"
+   },
+   "lblGoalMinutes": {
+      "message": "Objectif en Minutes"
+   },
+   "lblHour": {
+      "message": "Heure"
+   },
+   "lblIndefinite": {
+      "message": "Indéfini"
+   },
+   "lblName": {
+      "message": "Nom"
+   },
+   "lblOptions": {
+      "message": "Options"
+   },
+   "lblProgress": {
+      "message": "Durée"
+   },
+   "lblStart": {
+      "message": "Démarrer"
+   },
+   "lblStartNow": {
+      "message": "Démarrer la tâche immédiatement"
+   },
+   "lblTask": {
+      "message": "Tâche"
+   },
+   "lblTaskName": {
+      "message": "Nom de tâche"
+   },
+   "lblTimeSpent": {
+      "message": "Temps passé"
+   },
+   "lblTotals": {
+      "message": "Totaux"
+   },
+   "noteErrorOccurred": {
+      "message": "Une Erreur s'est produite !"
+   },
+   "noteNoLocalFiles": {
+      "message": "Il semble que vous vous servez d'un chemin vers un fichier local sur votre machine pour le lien sonore personnalisé.\nMalheureusement, les fichiers locaux ne peuvent pas être utilisés, car Chrome ne permet pas l'accès à votre système de fichiers local, même pour un son.\nSeul un lien Internet (en commençant par http, https ou ftp) peut être utilisé. Cela signifie que vous avez besoin de trouver un son en ligne, ou mettre en ligne quelque part le son que vous voulez."
+   },
+   "noteNotifsWork": {
+      "message": "Notifications de Bureau activées!"
+   },
+   "noteNotifsWorkBody": {
+      "message": "Si vous voyez ceci, cela veut dire que les notifications de bureau sont activées et fonctionnent correctement! Waouh!"
+   },
+   "noteTaskFinished": {
+      "message": "Tâche Terminée!"
+   },
+   "noteTaskFinishedLong": {
+      "message": "La tâche \"$taskName$\" a atteint son objectif !",
+      "placeholders": {
+         "taskName": {
+            "content": "$1",
+            "example": "Chores"
+         }
+      }
+   },
+   "opt12Hour": {
+      "message": "Utiliser le format 12-Heures lorsque cela est possible"
+   },
+   "optBackgroundRunning": {
+      "message": "Garder les tâches actives à la fermeture de l'application"
+   },
+   "optBtnPreview": {
+      "message": "Tester le fichier son"
+   },
+   "optChartUpdateTime1": {
+      "message": "Fréquence de mise à jour des graphiques"
+   },
+   "optCombineSmallSlices": {
+      "message": "Combiner les petites fractions d'un graphique dans \"Autre\""
+   },
+   "optConfirmDelete": {
+      "message": "Demander confirmation lors de la suppression d'une tâche"
+   },
+   "optConfirmReset": {
+      "message": "Demander confirmation lors de la réinitialisation d'une tâche"
+   },
+   "optCustomDialogs": {
+      "message": "Utilisez des boîtes de dialogue personnalisées plutôt que celles de Chrome"
+   },
+   "optEnableCharts": {
+      "message": "Activer les Graphiques"
+   },
+   "optEnableSync": {
+      "message": "Activer la synchronisation (en test, peut désorganiser vos tâches)"
+   },
+   "optHideNotice": {
+      "message": "Cacher l'en-tête des notifications"
+   },
+   "optLoopSound": {
+      "message": "Faire tourner l'alerte en boucle jusqu'à ce que vous l'arrêtiez"
+   },
+   "optNoOvertime": {
+      "message": "Ne pas permettre aux tâches d'aller au-delà de l'objectif"
+   },
+   "optOnlyOne": {
+      "message": "Ne permettre qu'à une seule tâche de tourner en même temps"
+   },
+   "optPlaySound": {
+      "message": "Produire une alerte sonore quand une tâche a atteint son objectif"
+   },
+   "optSaveFields": {
+      "message": "Sauvegarder le contenu du champ \"Nouvelle Tâche\" lorsque vous relancez l'application"
+   },
+   "optShowChartPercent": {
+      "message": "Afficher les légendes des pourcentages"
+   },
+   "optShowNotification": {
+      "message": "Afficher une notification de bureau quand une tâche a atteint son objectif"
+   },
+   "optShowPopup": {
+      "message": "Afficher un pop-up sur la page quand une tâche a atteint son objectif"
+   },
+   "optSoundURL": {
+      "message": "Adresse URL du fichier son"
+   },
+   "optStartDefault": {
+      "message": "Par défaut, cocher la case \"Commencer\""
+   },
+   "optStopTimer": {
+      "message": "Arrêter la tâche quand elle a atteint son objectif"
+   },
+   "optTrackHistory": {
+      "message": "Garder un historique de la tâche (afin de pouvoir consulter les statistiques pour chaque tâche)"
+   },
+   "optUpdateAlert": {
+      "message": "Lancer l'application après une mise à jour"
+   },
+   "optUpdateTime1": {
+      "message": "Fréquence de mise à jour des tâches"
+   },
+   "optUpdateTime2": {
+      "message": "seconde(s)"
+   },
+   "optUseCustom": {
+      "message": "Utiliser une alerte sonore personnalisée"
+   },
+   "optUseDefault": {
+      "message": "Utiliser l'alerte sonore par défaut"
+   },
+   "optUseIcons": {
+      "message": "Utiliser des icônes à la place des boutons dans les options de tâches (recommandé pour les petits écrans)"
+   },
+   "sucSavedDesc": {
+      "message": "Description sauvegardée"
+   },
+   "sucSavedSettings": {
+      "message": "Options sauvegardées"
+   },
+   "sucSyncReceived": {
+      "message": "Données de synchronisation bien reçues"
+   },
+   "sucSyncSent": {
+      "message": "Envoi des données de synchronisation"
+   },
+   "toolClearAllHistory": {
+      "message": "Effacer tout l'historique des tâches"
+   },
+   "toolClearData": {
+      "message": "Effacer toutes les données de l'application"
+   },
+   "toolExportCSV": {
+      "message": "Exporter les tâches dans un fichier CSV"
+   },
+   "toolReloadApp": {
+      "message": "Redémarrer l'application"
+   },
+   "toolResetSettings": {
+      "message": "Réinitialiser par défaut"
+   },
+   "tskExcludeCharts": {
+      "message": "Ne pas inclure cette tâche dans les graphiques"
+   },
+   "tskExcludeTotals": {
+      "message": "Ne pas inclure cette tâche dans le total"
+   },
+   "txtAbout": {
+      "message": "À propos"
+   },
+   "txtBugInfo": {
+      "message": "Pour rapporter un bug, cliquer [ici].\nSi personne n'a encore reporté ce bug, cliquer sur \"Nouveau problème\". Faites en sorte de donner un titre qui décrive précisément le bug!\nSi vous trouvez plusieurs bugs, merci de créer un sujet différent pour chaque bug.\nAssurez-vous d'inclure les données suivantes dans votre rapport :"
+   },
+   "txtBugTitle": {
+      "message": "Mentionner un problème"
+   },
+   "txtChartSettings": {
+      "message": "Paramètres du graphique"
+   },
+   "txtComingSoon": {
+      "message": "Bientôt disponible !"
+   },
+   "txtCreatedBy": {
+      "message": "Développé par [Schuyler Cebulskie]"
+   },
+   "txtCurrentPieTitle": {
+      "message": "Temps passé sur les tâches"
+   },
+   "txtDescription": {
+      "message": "Utilisez cette application pour mesurer le temps que vous passez à travailler, à étudier, ou à réaliser tout type de tâche."
+   },
+   "txtDonate": {
+      "message": "Faire un Don"
+   },
+   "txtEditTasks": {
+      "message": "Double cliquez sur le nom d'une tâche, une durée, ou un objectif, pour l'éditer."
+   },
+   "txtGeneralSettings": {
+      "message": "Options Générales"
+   },
+   "txtHistory": {
+      "message": "Historique"
+   },
+   "txtHistoryDisabled": {
+      "message": "L'historique du suivi des tâches est désactivé. Vous pouvez l'activer via le menu outils"
+   },
+   "txtHours": {
+      "message": "Heures"
+   },
+   "txtIndefinite": {
+      "message": "Durée indéfinie"
+   },
+   "txtJSError": {
+      "message": "Une erreur s'est produite quelque part avec le script. Veuillez signaler un bug avec les informations suivantes, ainsi que ce que vous avez fait / ce qui s'est passé:"
+   },
+   "txtLoading": {
+      "message": "Chargement..."
+   },
+   "txtMinutes": {
+      "message": "Minutes"
+   },
+   "txtNoDescription": {
+      "message": "Ajouter des Informations/Commentaires sur la Tâche"
+   },
+   "txtNoHistory": {
+      "message": "Il n'y a aucun historique sauvegardé pour ce jour"
+   },
+   "txtNoTasks": {
+      "message": "Vous n'avez encore créé aucune tâche !"
+   },
+   "txtNotifSettings": {
+      "message": "Options de Notifications"
+   },
+   "txtOther": {
+      "message": "Autre"
+   },
+   "txtPerfSettings": {
+      "message": "Options de Performances"
+   },
+   "txtReportBug": {
+      "message": "Signaler un problème"
+   },
+   "txtSaveSettings": {
+      "message": "Sauvegarder"
+   },
+   "txtSeconds": {
+      "message": "Secondes"
+   },
+   "txtSelectDate": {
+      "message": "Choisissez une Date"
+   },
+   "txtSettings": {
+      "message": "Options"
+   },
+   "txtSuggest": {
+      "message": "Une idée ? [Contactez moi ¡]"
+   },
+   "txtSuggestionInfo": {
+      "message": "Pour faire une suggestion, s'il vous plaît cliquez [ici].\nSi personne n'a déjà suggéré la même idée, cliquez sur \"Nouvelle publication\". Prenez soin de sélectionner \"Demande d'amélioration» comme modèle, et donnez un titre descriptif!\nSi vous avez d'autres suggestions, s'il vous plaît, veuillez poser une question distincte pour chacune d'elle."
+   },
+   "txtSuggestionTitle": {
+      "message": "Faire une suggestion"
+   },
+   "txtTaskInfo": {
+      "message": "Information sur la Tâche"
+   },
+   "txtTaskOptions": {
+      "message": "Options de la Tâche"
+   },
+   "txtTaskSettings": {
+      "message": "Options de tâche"
+   },
+   "txtTitle": {
+      "message": "Task Timer"
+   },
+   "txtTools": {
+      "message": "Outils"
+   },
+   "txtTotalPieTitle": {
+      "message": "Temps Total Passé (Historique)"
+   },
+   "txtTranslationsAccuracy": {
+      "message": "La traduction peut parfois ne pas être précise."
+   },
+   "txtTriedRefresh": {
+      "message": "Avez-vous essayé de rafraîchir l'application ?"
+   },
+   "txtUsualFix": {
+      "message": "Ceci répare généralement les erreurs, mais efface toutes vos tâches et vos options."
+   }
+}

@@ -1,0 +1,35 @@
+[
+    {
+        "_id": "7bdd6716-c850-49fe-88cb-ac01ef458b9e",
+        "colId": "history",
+        "containerId": "",
+        "name": "http://127.0.0.1/api/token/",
+        "url": "http://127.0.0.1:8000/api/protected",
+        "method": "POST",
+        "sortNum": 0,
+        "created": "2024-12-01T16:44:42.754Z",
+        "modified": "2024-12-01T16:51:27.132Z",
+        "headers": [
+            {
+                "name": "User-Agent",
+                "value": "Thunder Client (https://www.thunderclient.com)",
+                "isDisabled": true
+            }
+        ],
+        "body": {
+            "type": "json",
+            "raw": "{\n  \"username\":\"statick\",\n  \"password\":\"666\"\n}",
+            "form": []
+        },
+        "auth": {
+            "type": "oauth2",
+            "oauth2": {
+                "grantType": "authorization_code",
+                "tokenUrl": "",
+                "clientId": "",
+                "clientSecret": "",
+                "clientAuth": "in-header"
+            }
+        }
+    }
+]

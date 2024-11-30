@@ -1,0 +1,84 @@
+2024-12-04 12:05:37.256 [info] Started local extension host with pid 107333.
+2024-12-04 12:05:37.830 [info] [telesoho.excalidraw-editor-cj]: El comando "excalidraw.updateTheme" ya está registrado por Excalidraw (pomdtr.excalidraw-editor)
+2024-12-04 12:05:37.831 [info] [telesoho.excalidraw-editor-cj]: El comando "excalidraw.preventDefault" ya está registrado por Excalidraw (pomdtr.excalidraw-editor)
+2024-12-04 12:05:37.831 [info] [telesoho.excalidraw-editor-cj]: El comando "excalidraw.showSource" ya está registrado por Excalidraw (pomdtr.excalidraw-editor)
+2024-12-04 12:05:37.831 [info] [telesoho.excalidraw-editor-cj]: El comando "excalidraw.showEditor" ya está registrado por Excalidraw (pomdtr.excalidraw-editor)
+2024-12-04 12:05:37.831 [info] [telesoho.excalidraw-editor-cj]: El comando "excalidraw.showImage" ya está registrado por Excalidraw (pomdtr.excalidraw-editor)
+2024-12-04 12:05:37.831 [info] [telesoho.excalidraw-editor-cj]: El comando "excalidraw.showSourceToSide" ya está registrado por Excalidraw (pomdtr.excalidraw-editor)
+2024-12-04 12:05:37.831 [info] [telesoho.excalidraw-editor-cj]: El comando "excalidraw.showEditorToSide" ya está registrado por Excalidraw (pomdtr.excalidraw-editor)
+2024-12-04 12:05:37.832 [info] [telesoho.excalidraw-editor-cj]: El comando "excalidraw.showImageToSide" ya está registrado por Excalidraw (pomdtr.excalidraw-editor)
+2024-12-04 12:05:37.859 [warning] [telesoho.excalidraw-editor-cj]: No se puede registrar "excalidraw.theme". Esta propiedad ya está registrada.
+2024-12-04 12:05:37.859 [warning] [telesoho.excalidraw-editor-cj]: No se puede registrar "excalidraw.language". Esta propiedad ya está registrada.
+2024-12-04 12:05:37.859 [warning] [telesoho.excalidraw-editor-cj]: No se puede registrar "excalidraw.workspaceLibraryPath". Esta propiedad ya está registrada.
+2024-12-04 12:05:37.859 [warning] [telesoho.excalidraw-editor-cj]: No se puede registrar "excalidraw.image". Esta propiedad ya está registrada.
+2024-12-04 12:05:37.942 [info] Creating lazy extension host (LocalWebWorker). Reason: contains 2 extension(s): pomdtr.excalidraw-editor,telesoho.excalidraw-editor-cj.
+2024-12-04 12:05:38.893 [info] Settings Sync: Updating due to initialize
+2024-12-04 12:05:38.893 [info] Settings Sync: Updating authentication providers. Authentication Providers from store: [{"id":"github","scopes":["user:email"]},{"id":"microsoft","scopes":["openid","profile","email","offline_access"]}]
+2024-12-04 12:05:38.893 [info] Settings Sync: Authentication providers updated []
+2024-12-04 12:05:38.912 [info] Settings Sync: Updating authentication providers. Authentication Providers from store: [{"id":"github","scopes":["user:email"]},{"id":"microsoft","scopes":["openid","profile","email","offline_access"]}]
+2024-12-04 12:05:38.913 [info] Settings Sync: Authentication providers updated ["github"]
+2024-12-04 12:05:38.913 [info] Settings Sync: Updating authentication providers. Authentication Providers from store: [{"id":"github","scopes":["user:email"]},{"id":"microsoft","scopes":["openid","profile","email","offline_access"]}]
+2024-12-04 12:05:38.913 [info] Settings Sync: Authentication providers updated ["github"]
+2024-12-04 12:05:38.913 [info] Settings Sync: Updating authentication providers. Authentication Providers from store: [{"id":"github","scopes":["user:email"]},{"id":"microsoft","scopes":["openid","profile","email","offline_access"]}]
+2024-12-04 12:05:38.913 [info] Settings Sync: Authentication providers updated ["github","microsoft"]
+2024-12-04 12:05:38.913 [info] Settings Sync: Updating authentication providers. Authentication Providers from store: [{"id":"github","scopes":["user:email"]},{"id":"microsoft","scopes":["openid","profile","email","offline_access"]}]
+2024-12-04 12:05:38.913 [info] Settings Sync: Authentication providers updated ["github","microsoft"]
+2024-12-04 12:05:38.930 [info] Settings Sync: Updating due to declared authentication providers changed
+2024-12-04 12:05:38.930 [info] Settings Sync: Updating authentication providers. Authentication Providers from store: [{"id":"github","scopes":["user:email"]},{"id":"microsoft","scopes":["openid","profile","email","offline_access"]}]
+2024-12-04 12:05:38.930 [info] Settings Sync: Authentication providers updated ["github","microsoft"]
+2024-12-04 12:05:38.931 [info] Settings Sync: Updating due to declared authentication providers changed
+2024-12-04 12:05:38.931 [info] Settings Sync: Updating authentication providers. Authentication Providers from store: [{"id":"github","scopes":["user:email"]},{"id":"microsoft","scopes":["openid","profile","email","offline_access"]}]
+2024-12-04 12:05:38.931 [info] Settings Sync: Authentication providers updated ["github","microsoft"]
+2024-12-04 12:05:39.041 [info] Settings Sync: Updating authentication providers. Authentication Providers from store: [{"id":"github","scopes":["user:email"]},{"id":"microsoft","scopes":["openid","profile","email","offline_access"]}]
+2024-12-04 12:05:39.041 [info] Settings Sync: Authentication providers updated ["github","microsoft"]
+2024-12-04 12:05:39.856 [info] [perf] Render performance baseline is 23ms
+2024-12-04 13:25:12.669 [info] [telesoho.excalidraw-editor-cj]: El comando "excalidraw.updateTheme" ya está registrado por Excalidraw (pomdtr.excalidraw-editor)
+2024-12-04 13:25:12.670 [info] [telesoho.excalidraw-editor-cj]: El comando "excalidraw.preventDefault" ya está registrado por Excalidraw (pomdtr.excalidraw-editor)
+2024-12-04 13:25:12.670 [info] [telesoho.excalidraw-editor-cj]: El comando "excalidraw.showSource" ya está registrado por Excalidraw (pomdtr.excalidraw-editor)
+2024-12-04 13:25:12.670 [info] [telesoho.excalidraw-editor-cj]: El comando "excalidraw.showEditor" ya está registrado por Excalidraw (pomdtr.excalidraw-editor)
+2024-12-04 13:25:12.670 [info] [telesoho.excalidraw-editor-cj]: El comando "excalidraw.showImage" ya está registrado por Excalidraw (pomdtr.excalidraw-editor)
+2024-12-04 13:25:12.670 [info] [telesoho.excalidraw-editor-cj]: El comando "excalidraw.showSourceToSide" ya está registrado por Excalidraw (pomdtr.excalidraw-editor)
+2024-12-04 13:25:12.670 [info] [telesoho.excalidraw-editor-cj]: El comando "excalidraw.showEditorToSide" ya está registrado por Excalidraw (pomdtr.excalidraw-editor)
+2024-12-04 13:25:12.670 [info] [telesoho.excalidraw-editor-cj]: El comando "excalidraw.showImageToSide" ya está registrado por Excalidraw (pomdtr.excalidraw-editor)
+2024-12-04 13:25:12.937 [info] Started local extension host with pid 168360.
+2024-12-04 13:25:13.109 [warning] No search provider registered for scheme: file, waiting
+2024-12-04 13:25:13.554 [info] Settings Sync: Updating authentication providers. Authentication Providers from store: [{"id":"github","scopes":["user:email"]},{"id":"microsoft","scopes":["openid","profile","email","offline_access"]}]
+2024-12-04 13:25:13.554 [info] Settings Sync: Authentication providers updated ["github","microsoft"]
+2024-12-04 13:47:40.201 [info] [telesoho.excalidraw-editor-cj]: El comando "excalidraw.updateTheme" ya está registrado por Excalidraw (pomdtr.excalidraw-editor)
+2024-12-04 13:47:40.201 [info] [telesoho.excalidraw-editor-cj]: El comando "excalidraw.preventDefault" ya está registrado por Excalidraw (pomdtr.excalidraw-editor)
+2024-12-04 13:47:40.201 [info] [telesoho.excalidraw-editor-cj]: El comando "excalidraw.showSource" ya está registrado por Excalidraw (pomdtr.excalidraw-editor)
+2024-12-04 13:47:40.202 [info] [telesoho.excalidraw-editor-cj]: El comando "excalidraw.showEditor" ya está registrado por Excalidraw (pomdtr.excalidraw-editor)
+2024-12-04 13:47:40.202 [info] [telesoho.excalidraw-editor-cj]: El comando "excalidraw.showImage" ya está registrado por Excalidraw (pomdtr.excalidraw-editor)
+2024-12-04 13:47:40.202 [info] [telesoho.excalidraw-editor-cj]: El comando "excalidraw.showSourceToSide" ya está registrado por Excalidraw (pomdtr.excalidraw-editor)
+2024-12-04 13:47:40.202 [info] [telesoho.excalidraw-editor-cj]: El comando "excalidraw.showEditorToSide" ya está registrado por Excalidraw (pomdtr.excalidraw-editor)
+2024-12-04 13:47:40.202 [info] [telesoho.excalidraw-editor-cj]: El comando "excalidraw.showImageToSide" ya está registrado por Excalidraw (pomdtr.excalidraw-editor)
+2024-12-04 13:47:41.557 [info] Started local extension host with pid 176074.
+2024-12-04 13:47:42.133 [info] Settings Sync: Updating authentication providers. Authentication Providers from store: [{"id":"github","scopes":["user:email"]},{"id":"microsoft","scopes":["openid","profile","email","offline_access"]}]
+2024-12-04 13:47:42.133 [info] Settings Sync: Authentication providers updated ["github","microsoft"]
+2024-12-04 13:47:42.495 [error] No registered selector for ID: ms-vscode.npm-command
+2024-12-04 18:55:42.430 [error] [network] #100: https://az764295.vo.msecnd.net/extensions/chat.json - error GET Failed to fetch
+2024-12-04 18:55:42.430 [warning] Failed to fetch chat participant registry Failed to fetch
+2024-12-04 19:00:42.437 [error] [network] #101: https://az764295.vo.msecnd.net/extensions/chat.json - error GET Failed to fetch
+2024-12-04 19:00:42.468 [warning] Failed to fetch chat participant registry Failed to fetch
+2024-12-04 19:05:42.474 [error] [network] #102: https://az764295.vo.msecnd.net/extensions/chat.json - error GET Failed to fetch
+2024-12-04 19:05:42.505 [warning] Failed to fetch chat participant registry Failed to fetch
+2024-12-04 19:10:42.511 [error] [network] #103: https://az764295.vo.msecnd.net/extensions/chat.json - error GET Failed to fetch
+2024-12-04 19:10:42.543 [warning] Failed to fetch chat participant registry Failed to fetch
+2024-12-04 19:15:42.547 [error] [network] #104: https://az764295.vo.msecnd.net/extensions/chat.json - error GET Failed to fetch
+2024-12-04 19:15:42.571 [warning] Failed to fetch chat participant registry Failed to fetch
+2024-12-04 19:20:42.577 [error] [network] #105: https://az764295.vo.msecnd.net/extensions/chat.json - error GET Failed to fetch
+2024-12-04 19:20:42.608 [warning] Failed to fetch chat participant registry Failed to fetch
+2024-12-04 19:25:42.614 [error] [network] #106: https://az764295.vo.msecnd.net/extensions/chat.json - error GET Failed to fetch
+2024-12-04 19:25:42.645 [warning] Failed to fetch chat participant registry Failed to fetch
+2024-12-04 19:30:42.651 [error] [network] #107: https://az764295.vo.msecnd.net/extensions/chat.json - error GET Failed to fetch
+2024-12-04 19:30:42.682 [warning] Failed to fetch chat participant registry Failed to fetch
+2024-12-04 19:35:42.688 [error] [network] #108: https://az764295.vo.msecnd.net/extensions/chat.json - error GET Failed to fetch
+2024-12-04 19:35:42.720 [warning] Failed to fetch chat participant registry Failed to fetch
+2024-12-04 19:40:42.727 [error] [network] #109: https://az764295.vo.msecnd.net/extensions/chat.json - error GET Failed to fetch
+2024-12-04 19:40:42.759 [warning] Failed to fetch chat participant registry Failed to fetch
+2024-12-04 19:45:42.765 [error] [network] #110: https://az764295.vo.msecnd.net/extensions/chat.json - error GET Failed to fetch
+2024-12-04 19:45:42.797 [warning] Failed to fetch chat participant registry Failed to fetch
+2024-12-04 19:50:42.803 [error] [network] #111: https://az764295.vo.msecnd.net/extensions/chat.json - error GET Failed to fetch
+2024-12-04 19:50:42.834 [warning] Failed to fetch chat participant registry Failed to fetch
+2024-12-04 19:55:42.840 [error] [network] #112: https://az764295.vo.msecnd.net/extensions/chat.json - error GET Failed to fetch
+2024-12-04 19:55:42.871 [warning] Failed to fetch chat participant registry Failed to fetch

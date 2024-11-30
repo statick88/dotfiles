@@ -1,0 +1,95 @@
+2024-12-04 20:20:41.771 [info] (Client) Pylance async client (2024.11.3) started with python extension (2024.21.2024112901)
+2024-12-04 20:20:45.000 [info] [Info  - 8:20:45 p. m.] (17399) Server root directory: file:///home/statick/.vscode/extensions/ms-python.vscode-pylance-2024.11.3/dist
+2024-12-04 20:20:45.011 [info] [Info  - 8:20:45 p. m.] (17399) Pylance language server 2024.11.3 (pyright version 1.1.386, commit 4180fa21) starting
+2024-12-04 20:20:45.023 [info] [Info  - 8:20:45 p. m.] (17399) Starting service instance "farmacia2"
+2024-12-04 20:20:45.676 [info] [Info  - 8:20:45 p. m.] (17399) Setting environmentName for service "farmacia2": "3.13.0 (env venv)"
+2024-12-04 20:20:45.679 [info] [Info  - 8:20:45 p. m.] (17399) Setting pythonPath for service "farmacia2": "/home/statick/workspaces/practicas/python/farmacia2/env/bin/python"
+2024-12-04 20:20:45.681 [info] [Info  - 8:20:45 p. m.] (17399) No include entries specified; assuming /home/statick/workspaces/practicas/python/farmacia2
+2024-12-04 20:20:45.685 [info] [Info  - 8:20:45 p. m.] (17399) Auto-excluding **/node_modules
+2024-12-04 20:20:45.687 [info] [Info  - 8:20:45 p. m.] (17399) Auto-excluding **/__pycache__
+2024-12-04 20:20:45.689 [info] [Info  - 8:20:45 p. m.] (17399) Auto-excluding **/.*
+2024-12-04 20:20:45.822 [info] [Info  - 8:20:45 p. m.] (17399) Assuming Python version 3.13.0.final.0
+2024-12-04 20:20:46.202 [info] [Info  - 8:20:46 p. m.] (17399) Auto-excluding /home/statick/workspaces/practicas/python/farmacia2/env
+2024-12-04 20:20:46.257 [info] [Info  - 8:20:46 p. m.] (17399) Found 13 source files
+2024-12-04 20:20:50.480 [info] [Info  - 8:20:50 p. m.] (17399) Background analysis(1) root directory: file:///home/statick/.vscode/extensions/ms-python.vscode-pylance-2024.11.3/dist
+2024-12-04 20:20:50.518 [info] [Info  - 8:20:50 p. m.] (17399) Background analysis(1) started
+2024-12-04 20:20:51.222 [info] [Info  - 8:20:51 p. m.] (17399) Indexer background runner(2) root directory: file:///home/statick/.vscode/extensions/ms-python.vscode-pylance-2024.11.3/dist (index)
+2024-12-04 20:20:51.222 [info] [Info  - 8:20:51 p. m.] (17399) Indexing(2) started
+2024-12-04 20:20:52.535 [info] [Info  - 8:20:52 p. m.] (17399) scanned(2) 28 files over 1 exec env
+2024-12-04 20:20:53.304 [info] [Info  - 8:20:53 p. m.] (17399) indexed(2) 28 files over 1 exec env
+2024-12-04 20:20:53.368 [info] [Info  - 8:20:53 p. m.] (17399) Indexing finished(2).
+2024-12-04 20:22:19.746 [info] [Info  - 8:22:19 p. m.] (17399) Starting service instance "<default>"
+2024-12-04 20:22:19.785 [info] [Info  - 8:22:19 p. m.] (17399) Setting environmentName for service "<default>": "3.13.0 (env venv)"
+2024-12-04 20:22:19.787 [info] [Info  - 8:22:19 p. m.] (17399) Setting pythonPath for service "<default>": "/home/statick/workspaces/practicas/python/farmacia2/env/bin/python"
+2024-12-04 20:22:19.787 [info] [Info  - 8:22:19 p. m.] (17399) No include entries specified; assuming /<default workspace root>
+2024-12-04 20:22:19.787 [info] [Info  - 8:22:19 p. m.] (17399) Auto-excluding **/node_modules
+2024-12-04 20:22:19.787 [info] [Info  - 8:22:19 p. m.] (17399) Auto-excluding **/__pycache__
+2024-12-04 20:22:19.787 [info] [Info  - 8:22:19 p. m.] (17399) Auto-excluding **/.*
+2024-12-04 20:22:19.826 [info] [Info  - 8:22:19 p. m.] (17399) Assuming Python version 3.13.0.final.0
+2024-12-04 20:22:19.891 [info] [Error - 8:22:19 p. m.] (17399) File or directory "/<default workspace root>" does not exist.
+2024-12-04 20:22:19.891 [info] [Info  - 8:22:19 p. m.] (17399) No source files found.
+2024-12-04 20:22:20.880 [info] [Info  - 8:22:20 p. m.] (17399) Background analysis(3) root directory: file:///home/statick/.vscode/extensions/ms-python.vscode-pylance-2024.11.3/dist
+2024-12-04 20:22:20.885 [info] [Info  - 8:22:20 p. m.] (17399) Background analysis(3) started
+2024-12-04 20:26:29.995 [info] [Info  - 8:26:29 p. m.] (17399) Auto-excluding /home/statick/workspaces/practicas/python/farmacia2/env
+2024-12-04 20:26:30.007 [info] [Info  - 8:26:30 p. m.] (17399) Found 14 source files
+2024-12-04 20:32:00.123 [info] [Info  - 8:32:00 p. m.] (17399) Auto-excluding /home/statick/workspaces/practicas/python/farmacia2/env
+2024-12-04 20:32:00.146 [info] [Info  - 8:32:00 p. m.] (17399) Found 15 source files
+2024-12-04 20:46:15.264 [info] [Info  - 8:46:15 p. m.] (17399) Auto-excluding /home/statick/workspaces/practicas/python/farmacia2/env
+2024-12-04 20:46:15.286 [info] [Info  - 8:46:15 p. m.] (17399) Found 15 source files
+2024-12-04 20:48:34.087 [info] [Info  - 8:48:34 p. m.] Server process exited successfully
+2024-12-04 20:48:35.122 [info] (Client) Pylance async client (2024.11.3) started with python extension (2024.21.2024112901)
+2024-12-04 20:48:36.485 [info] [Info  - 8:48:36 p. m.] (29986) Server root directory: file:///home/statick/.vscode/extensions/ms-python.vscode-pylance-2024.11.3/dist
+2024-12-04 20:48:36.487 [info] [Info  - 8:48:36 p. m.] (29986) Pylance language server 2024.11.3 (pyright version 1.1.386, commit 4180fa21) starting
+2024-12-04 20:48:36.500 [info] [Info  - 8:48:36 p. m.] (29986) Starting service instance "farmacia2"
+2024-12-04 20:48:36.601 [info] [Info  - 8:48:36 p. m.] (29986) Setting environmentName for service "farmacia2": "3.13.0 (env venv)"
+2024-12-04 20:48:36.601 [info] [Info  - 8:48:36 p. m.] (29986) Setting pythonPath for service "farmacia2": "/home/statick/workspaces/practicas/python/farmacia2/env/bin/python"
+2024-12-04 20:48:36.602 [info] [Info  - 8:48:36 p. m.] (29986) No include entries specified; assuming /home/statick/workspaces/practicas/python/farmacia2
+2024-12-04 20:48:36.605 [info] [Info  - 8:48:36 p. m.] (29986) Auto-excluding **/node_modules
+2024-12-04 20:48:36.605 [info] [Info  - 8:48:36 p. m.] (29986) Auto-excluding **/__pycache__
+2024-12-04 20:48:36.606 [info] [Info  - 8:48:36 p. m.] (29986) Auto-excluding **/.*
+2024-12-04 20:48:36.680 [info] [Info  - 8:48:36 p. m.] (29986) Assuming Python version 3.13.0.final.0
+2024-12-04 20:48:36.824 [info] [Info  - 8:48:36 p. m.] (29986) Auto-excluding /home/statick/workspaces/practicas/python/farmacia2/env
+2024-12-04 20:48:36.841 [info] [Info  - 8:48:36 p. m.] (29986) Found 15 source files
+2024-12-04 20:48:39.145 [info] [Info  - 8:48:39 p. m.] (29986) Background analysis(1) root directory: file:///home/statick/.vscode/extensions/ms-python.vscode-pylance-2024.11.3/dist
+2024-12-04 20:48:39.169 [info] [Info  - 8:48:39 p. m.] (29986) Background analysis(1) started
+2024-12-04 20:48:39.574 [info] [Info  - 8:48:39 p. m.] (29986) Indexer background runner(2) root directory: file:///home/statick/.vscode/extensions/ms-python.vscode-pylance-2024.11.3/dist (index)
+2024-12-04 20:48:39.574 [info] [Info  - 8:48:39 p. m.] (29986) Indexing(2) started
+2024-12-04 20:48:41.439 [info] [Info  - 8:48:41 p. m.] (29986) scanned(2) 28 files over 1 exec env
+2024-12-04 20:48:42.097 [info] [Info  - 8:48:42 p. m.] (29986) indexed(2) 28 files over 1 exec env
+2024-12-04 20:48:42.158 [info] [Info  - 8:48:42 p. m.] (29986) Indexing finished(2).
+2024-12-04 20:51:54.507 [info] [Info  - 8:51:54 p. m.] (29986) Auto-excluding /home/statick/workspaces/practicas/python/farmacia2/env
+2024-12-04 20:51:54.513 [info] [Info  - 8:51:54 p. m.] (29986) Found 16 source files
+2024-12-04 20:52:09.827 [info] [Info  - 8:52:09 p. m.] (29986) Starting service instance "<default>"
+2024-12-04 20:52:09.865 [info] [Info  - 8:52:09 p. m.] (29986) Setting environmentName for service "<default>": "3.13.0 (env venv)"
+2024-12-04 20:52:09.865 [info] [Info  - 8:52:09 p. m.] (29986) Setting pythonPath for service "<default>": "/home/statick/workspaces/practicas/python/farmacia2/env/bin/python"
+2024-12-04 20:52:09.865 [info] [Info  - 8:52:09 p. m.] (29986) No include entries specified; assuming /<default workspace root>
+2024-12-04 20:52:09.866 [info] [Info  - 8:52:09 p. m.] (29986) Auto-excluding **/node_modules
+2024-12-04 20:52:09.866 [info] [Info  - 8:52:09 p. m.] (29986) Auto-excluding **/__pycache__
+2024-12-04 20:52:09.866 [info] [Info  - 8:52:09 p. m.] (29986) Auto-excluding **/.*
+2024-12-04 20:52:09.900 [info] [Info  - 8:52:09 p. m.] (29986) Assuming Python version 3.13.0.final.0
+2024-12-04 20:52:09.957 [info] [Error - 8:52:09 p. m.] (29986) File or directory "/<default workspace root>" does not exist.
+2024-12-04 20:52:09.957 [info] [Info  - 8:52:09 p. m.] (29986) No source files found.
+2024-12-04 20:52:10.994 [info] [Info  - 8:52:10 p. m.] (29986) Background analysis(3) root directory: file:///home/statick/.vscode/extensions/ms-python.vscode-pylance-2024.11.3/dist
+2024-12-04 20:52:11.002 [info] [Info  - 8:52:11 p. m.] (29986) Background analysis(3) started
+2024-12-04 21:17:01.441 [info] [Info  - 9:17:01 p. m.] (29986) Auto-excluding /home/statick/workspaces/practicas/python/farmacia2/env
+2024-12-04 21:17:01.454 [info] [Info  - 9:17:01 p. m.] (29986) Found 15 source files
+2024-12-04 21:17:05.511 [info] [Info  - 9:17:05 p. m.] (29986) Auto-excluding /home/statick/workspaces/practicas/python/farmacia2/env
+2024-12-04 21:17:05.520 [info] [Info  - 9:17:05 p. m.] (29986) Found 16 source files
+2024-12-04 21:26:09.832 [info] [Info  - 9:26:09 p. m.] (29986) Auto-excluding /home/statick/workspaces/practicas/python/farmacia2/env
+2024-12-04 21:26:09.847 [info] [Info  - 9:26:09 p. m.] (29986) Found 17 source files
+2024-12-04 21:26:21.167 [info] [Info  - 9:26:21 p. m.] (29986) Auto-excluding /home/statick/workspaces/practicas/python/farmacia2/env
+2024-12-04 21:26:21.173 [info] [Info  - 9:26:21 p. m.] (29986) Found 15 source files
+2024-12-04 21:26:27.968 [info] [Info  - 9:26:27 p. m.] (29986) Auto-excluding /home/statick/workspaces/practicas/python/farmacia2/env
+2024-12-04 21:26:27.984 [info] [Info  - 9:26:27 p. m.] (29986) Found 16 source files
+2024-12-04 21:29:53.327 [info] [Info  - 9:29:53 p. m.] (29986) Auto-excluding /home/statick/workspaces/practicas/python/farmacia2/env
+2024-12-04 21:29:53.340 [info] [Info  - 9:29:53 p. m.] (29986) Found 15 source files
+2024-12-04 21:30:08.836 [info] [Info  - 9:30:08 p. m.] (29986) Auto-excluding /home/statick/workspaces/practicas/python/farmacia2/env
+2024-12-04 21:30:08.848 [info] [Info  - 9:30:08 p. m.] (29986) Found 16 source files
+2024-12-04 21:43:43.390 [info] [Info  - 9:43:43 p. m.] (29986) Auto-excluding /home/statick/workspaces/practicas/python/farmacia2/env
+2024-12-04 21:43:43.396 [info] [Info  - 9:43:43 p. m.] (29986) Found 15 source files
+2024-12-04 21:43:48.900 [info] [Info  - 9:43:48 p. m.] (29986) Auto-excluding /home/statick/workspaces/practicas/python/farmacia2/env
+2024-12-04 21:43:48.905 [info] [Info  - 9:43:48 p. m.] (29986) Found 16 source files
+2024-12-04 23:10:55.941 [info] [Info  - 11:10:55 p. m.] (29986) Auto-excluding /home/statick/workspaces/practicas/python/farmacia2/env
+2024-12-04 23:10:55.954 [info] [Info  - 11:10:55 p. m.] (29986) Found 15 source files
+2024-12-04 23:11:09.720 [info] [Info  - 11:11:09 p. m.] (29986) Auto-excluding /home/statick/workspaces/practicas/python/farmacia2/env
+2024-12-04 23:11:09.735 [info] [Info  - 11:11:09 p. m.] (29986) Found 16 source files

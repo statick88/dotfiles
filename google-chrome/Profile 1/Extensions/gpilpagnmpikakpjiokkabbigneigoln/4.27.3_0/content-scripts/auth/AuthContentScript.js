@@ -1,0 +1,1 @@
+(()=>{"use strict";class e{static get(){return chrome}}window.addEventListener("message",(t=>{if(t.source!==window)return;const s=t.data;(function(e){return!(!e.id||!e.payload)})(s)&&e.get().runtime.sendMessage(s)}))})();

@@ -1,0 +1,17 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Lista de Medicamentos</title>
+  </head>
+  <body>
+    <h1>Lista de Medicamentos</h1>
+    <ul>
+      {% for medicamento in medicamentos %}
+      <li>
+        {{ medicamento.nombre }} - ${{ medicamento.precio|floatformat:2 }}
+      </li>
+      {% endfor %}
+    </ul>
+  </body>
+</html>
+

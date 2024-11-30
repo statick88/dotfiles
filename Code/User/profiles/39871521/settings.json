@@ -1,0 +1,9 @@
+{
+    "workbench.iconTheme": "material-icon-theme",
+    "files.autoSave": "afterDelay",
+    "quarto.render.previewType": "external",
+    "github.copilot.enable": {
+        "quarto": false,
+        "*": false
+    }
+}

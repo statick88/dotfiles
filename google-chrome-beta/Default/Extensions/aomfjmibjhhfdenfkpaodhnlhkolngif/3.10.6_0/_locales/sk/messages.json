@@ -1,0 +1,479 @@
+{
+   "appDesc": {
+      "message": "Jednoduchá aplikácia na sledovanie trávenia času úlohami ako sú práca, štúdium a iné."
+   },
+   "appName": {
+      "message": "Task Timer"
+   },
+   "btnAddTask": {
+      "message": "Pridať úlohu"
+   },
+   "btnCancel": {
+      "message": "Zrušiť"
+   },
+   "btnClearHistory": {
+      "message": "Vyčistiť históriu"
+   },
+   "btnClose": {
+      "message": "Zatvoriť"
+   },
+   "btnCloseNotice": {
+      "message": "Zatvoriť oznam"
+   },
+   "btnDelete": {
+      "message": "Zmazať"
+   },
+   "btnDeleteAll": {
+      "message": "Zmazať všetko"
+   },
+   "btnInfo": {
+      "message": "Informácie"
+   },
+   "btnNo": {
+      "message": "Nie"
+   },
+   "btnOK": {
+      "message": "OK"
+   },
+   "btnReset": {
+      "message": "Resetovať"
+   },
+   "btnResetAll": {
+      "message": "Vynulovať všetko"
+   },
+   "btnSave": {
+      "message": "Uložiť"
+   },
+   "btnStart": {
+      "message": "Štart"
+   },
+   "btnStop": {
+      "message": "Stop"
+   },
+   "btnStopAlarm": {
+      "message": "Zastaviť alarm"
+   },
+   "btnYes": {
+      "message": "Áno"
+   },
+   "confClearAllHistory": {
+      "message": "Naozaj chcete vymazať históriu všetkých vašich úloh?"
+   },
+   "confClearHistory": {
+      "message": "Ste si istý že chcete zmazať históriu úlohy \"$taskName$\" ?",
+      "placeholders": {
+         "taskName": {
+            "content": "$1",
+            "example": "Chores"
+         }
+      }
+   },
+   "confDeleteAll": {
+      "message": "Naozaj chcete vymazať všetky vaše úlohy?"
+   },
+   "confDeleteTask": {
+      "message": "Ste si istý že chcete zmazať úlohu \"$taskName$\" ?\nToto zmaže tiež históriu úlohy.",
+      "placeholders": {
+         "taskName": {
+            "content": "$1",
+            "example": "Chores"
+         }
+      }
+   },
+   "confRating": {
+      "message": "Radi by ste dali hodnotenie tejto aplikácii na Chrome Web Store ?\nSkutočne to pomože!"
+   },
+   "confResetAll": {
+      "message": "Ste si istý že chcete vynulovať čas strávený na všetkých úlohách ?"
+   },
+   "confResetData": {
+      "message": "Ste si istý že chcete vyčistiť kompletne všetky údaje aplikácie TaskTimer ?\nVymažete tým všetky úlohy a nastavenia."
+   },
+   "confResetSettings": {
+      "message": "Naozaj chcete vrátiť všetky nastavenia na základné hodnoty?"
+   },
+   "confResetTask": {
+      "message": "Ste si istý že chcete vynulovať úlohu \"$taskName$\" ?\nToto nevynuluje históriu úlohy.",
+      "placeholders": {
+         "taskName": {
+            "content": "$1",
+            "example": "Chores"
+         }
+      }
+   },
+   "confSmallWindow": {
+      "message": "Zdá sa, že TaskTimer je spustený v malom okne, na malom monitore, alebo na nízkom rozlíšení. Chcete prepnúť na ikony namiesto tlačidiel v zozname úloh ? Toto zabezpečí, aby úlohy neboli rozložené na viacerých riadkoch.\n\nToto nastavenie môže byť zmenené v menu Nástroje."
+   },
+   "confUpdated": {
+      "message": "Task Timer bol aktualizovaný na verziu $version$!\nChcete vidieť zoznam zmien ?",
+      "placeholders": {
+         "version": {
+            "content": "$1",
+            "example": "1.7.2"
+         }
+      }
+   },
+   "confUpdatedRestartAddendum": {
+      "message": "Buď si vedomý, že ak bežia úlohy, a prebehne aktualizácia Chrome, budete musieť úlohy znovu spustiť."
+   },
+   "errAlreadyOpen": {
+      "message": "Aplikácia je už otvorená.\nAk je toto hlásenie nesprávne, prosím klikni na tlačidlo Znovunačítanie. Task Timer sa znovu načíta tak, ako bol keď si zatvoril Chrome."
+   },
+   "errFinishEditing": {
+      "message": "Ukončite najskor úpravu úlohy \"$taskName$\"!",
+      "placeholders": {
+         "taskName": {
+            "content": "$1",
+            "example": "Chores"
+         }
+      }
+   },
+   "errGeneric": {
+      "message": "Chyba!"
+   },
+   "errGoalTime": {
+      "message": "Nesprávny cieľový čas."
+   },
+   "errSoundURL": {
+      "message": "Nesprávny užívateľský zvuk URL."
+   },
+   "errTask": {
+      "message": "Nesprávny názov úlohy alebo cieľ."
+   },
+   "errTaskName": {
+      "message": "Nesprávny názov úlohy."
+   },
+   "errTaskTime": {
+      "message": "Nesprávny čas."
+   },
+   "infoData": {
+      "message": "Poznámka: Dáta sa ukladajú lokálne, na vašom počítači, vo vašom prehliadači.\nNeobávajte sa, vaše úlohy **nebudú** zmazané ak vymažete vyrovnávaciu pamäť cache a ukladací priestor v prehliadači Chrome."
+   },
+   "infoPerformance": {
+      "message": "Je pre Vás aplikácia pomalá ? Skúste zvýšiť interval aktualizácie grafu v nastaveniach, alebo úplne vypnite graf.\nStále beží pomaly ? Zvýšte všeobecný interval aktualizácie časov, alebo vypnite sledovanie histórie úloh"
+   },
+   "infoSettings": {
+      "message": "Skontrolujte nastavenia kliknutím na tlačidlo s ozubeným kolieskom v pravom hornom rohu aplikácie!\nNachádzajú sa tam nastavenia ako upozornenia na pracovnej ploche v prípade ukončenia úlohy."
+   },
+   "infoTotals": {
+      "message": "Toto je riadok sumarizácie. Zobrazuje sa iba v prípade, ak máte viac než jednu úlohu.\n\nStĺpec \"Strávený čas\" tohto riadku sumarizuje čas strávený na každej jednej z Vašich úloh\nStĺpec \"Cieľ\" tohto riadku sumarizuje cieľový čas všetkých Vašich úloh, okrem úloh bez limitu.\nStĺpec \"Postup\" tohto riadku zobrazuje celkový postup k dosiahnutiu cieľov všetkých úloh. Tento postup nezahŕňa časy úloh, kde čas prekročil ciel, taktiež nezahŕňa časy úloh bez limitu."
+   },
+   "infoTranslate": {
+      "message": "Chcete pomôcť pri preklade aplikácie Task Timer do iných jazykov? Stlačte [tu]."
+   },
+   "lblDescription": {
+      "message": "Popis"
+   },
+   "lblGoal": {
+      "message": "Cieľ"
+   },
+   "lblGoalBoth": {
+      "message": "Trvanie (hodiny : minúty)"
+   },
+   "lblGoalHours": {
+      "message": "Cieľové hodiny"
+   },
+   "lblGoalMinutes": {
+      "message": "Cieľové minúty"
+   },
+   "lblHour": {
+      "message": "Hodina"
+   },
+   "lblIndefinite": {
+      "message": "bez limitu"
+   },
+   "lblName": {
+      "message": "Názov"
+   },
+   "lblOptions": {
+      "message": "Možnosti"
+   },
+   "lblProgress": {
+      "message": "Priebeh"
+   },
+   "lblStart": {
+      "message": "Štart"
+   },
+   "lblStartNow": {
+      "message": "Štart úlohy hneď"
+   },
+   "lblTask": {
+      "message": "Úloha"
+   },
+   "lblTaskName": {
+      "message": "Názov úlohy"
+   },
+   "lblTimeSpent": {
+      "message": "Uplynutý čas"
+   },
+   "lblTotals": {
+      "message": "Čas celkovo"
+   },
+   "noteErrorOccurred": {
+      "message": "Vyskytla sa chyba!"
+   },
+   "noteNoLocalFiles": {
+      "message": "Zdá sa že používate cestu k lokálnemu súboru na vašom PC pre užívateľský zvuk URL.\nNaneštastie, lokálne súbory nemožu byť použité, pretože prehliadač Chrome nepovoľuje prístup k vášmu súborovému systému, a to ani pre zvuk. Jedine internetové adresy URL (začínajúce http, https alebo ftp) možu byť použité. To znamená, že musíte nájsť nejaký zvuk online na internete, alebo nahrať zvuk na nejakú webovú stránku/server."
+   },
+   "noteNotifsWork": {
+      "message": "Notifikácie na ploche fungujú!"
+   },
+   "noteNotifsWorkBody": {
+      "message": "Vidíte, toto znamená, že upozornennia na pracovnej ploche sú zapnuté a pracujú správne! Fúú!"
+   },
+   "noteTaskFinished": {
+      "message": "Úloha dokončená!"
+   },
+   "noteTaskFinishedLong": {
+      "message": "Úloha \"$taskName$\" dosiahla svoj cieľ\"",
+      "placeholders": {
+         "taskName": {
+            "content": "$1",
+            "example": "Chores"
+         }
+      }
+   },
+   "opt12Hour": {
+      "message": "Použiť 12 hodinový formát pre časy, ak je to možné"
+   },
+   "optBackgroundRunning": {
+      "message": "sleduj časy úloh kým je aplikácia zatvorená"
+   },
+   "optBtnPreview": {
+      "message": "Prehrať zvuk"
+   },
+   "optChartUpdateTime1": {
+      "message": "Aktualizovať graf každých"
+   },
+   "optCombineSmallSlices": {
+      "message": "Spoj malé kúsky grafu do jedného pod názvom \"Ostatné\""
+   },
+   "optConfirmDelete": {
+      "message": "Pýtať potvrdenie zmazania úlohy"
+   },
+   "optConfirmReset": {
+      "message": "Pýtať potvrdenie vynulovania úlohy"
+   },
+   "optCustomDialogs": {
+      "message": "Použiť vlastné dialógy namiesto zabudovaných v Chrome."
+   },
+   "optEnableCharts": {
+      "message": "Povoliť koláčové grafy"
+   },
+   "optEnableSync": {
+      "message": "Zapnúť synchronizáciu (pokusná funkcia, môže rozhádzať Vaše úlohy)"
+   },
+   "optHideNotice": {
+      "message": "Skryť oblasť poznámok"
+   },
+   "optLoopSound": {
+      "message": "Opakovať zvuk až do zastavenia užívateľa"
+   },
+   "optNoOvertime": {
+      "message": "Nepovoliť úlohám prejsť za ich cieľový čas."
+   },
+   "optOnlyOne": {
+      "message": "Povoliť naraz iba jednu prebiehajúcu úlohu"
+   },
+   "optPlaySound": {
+      "message": "Prehrať zvuk keď úloha dosiahne cieľ"
+   },
+   "optSaveFields": {
+      "message": "Zapamätať si čo je v poliach novej úlohy, keď reštartuješ aplikáciu"
+   },
+   "optShowChartPercent": {
+      "message": "Zobraziť menovky grafu v percentách"
+   },
+   "optShowNotification": {
+      "message": "Zobraziť upozornenie na ploche, keď úloha dosiahne cieľ"
+   },
+   "optShowPopup": {
+      "message": "Zobraziť vyskakovacie okno, keď úloha dosiahne cieľ"
+   },
+   "optSoundURL": {
+      "message": "Užívateľský zvuk URL"
+   },
+   "optStartDefault": {
+      "message": "Zaškrtnúť políčko ŠTART ako predvolené"
+   },
+   "optStopTimer": {
+      "message": "Zastaviť úlohu keď dosiahne cieľový čas."
+   },
+   "optTrackHistory": {
+      "message": "Sledovať históriu úloh (potom je možné pozerať štatistiky pre každú úlohu)"
+   },
+   "optUpdateAlert": {
+      "message": "Otvoriť aplikáciu po aktualizácii"
+   },
+   "optUpdateTime1": {
+      "message": "Aktualizovať čas úlohy každých"
+   },
+   "optUpdateTime2": {
+      "message": "sekúnd(a)"
+   },
+   "optUseCustom": {
+      "message": "Použiť užívateľský zvuk"
+   },
+   "optUseDefault": {
+      "message": "Použiť predvolený zvuk"
+   },
+   "optUseIcons": {
+      "message": "Použiť ikony namiesto tlačidiel pre možnosti úlohy (vhodné pre malé obrazovky)"
+   },
+   "sucSavedDesc": {
+      "message": "Popis bol uložený!"
+   },
+   "sucSavedSettings": {
+      "message": "Nastavenia boli uložené!"
+   },
+   "sucSyncReceived": {
+      "message": "Prijaté údaje úlohy pre synchronizáciu!"
+   },
+   "sucSyncSent": {
+      "message": "Údaje úlohy pre synchronizáciu odoslané!"
+   },
+   "toolClearAllHistory": {
+      "message": "Vymazať celú historiu úloh"
+   },
+   "toolClearData": {
+      "message": "Vyčistiť všetky údaje aplikácie"
+   },
+   "toolExportCSV": {
+      "message": "Exportovať úlohy ako CSV súbor"
+   },
+   "toolReloadApp": {
+      "message": "Znovunačítať aplikáciu"
+   },
+   "toolResetSettings": {
+      "message": "Pôvodné nastavenie"
+   },
+   "tskExcludeCharts": {
+      "message": "Vynechať túto úlohu z grafu"
+   },
+   "tskExcludeTotals": {
+      "message": "Vynechať túto úlohu z celkového súčtu času."
+   },
+   "txtAbout": {
+      "message": "O aplikácii"
+   },
+   "txtBugInfo": {
+      "message": "Pre nahlásenie chyby, prosím kliknite [here].\nAk nikto neoznámil rovnakú chybu, kliknite \"New issue\" (nová požiadavka). Uistite sa že pomenujete problém dostatočne podrobne!\nAk máte viacej chýb, prosím vytvorte viacej požiadaviek pre každý z nich.\nUistite sa, že do svojho hlásenia priložíte aj nižšie uvedené údaje."
+   },
+   "txtBugTitle": {
+      "message": "Nahlásiť chybu"
+   },
+   "txtChartSettings": {
+      "message": "Nastavenia grafu"
+   },
+   "txtComingSoon": {
+      "message": "Už čoskoro"
+   },
+   "txtCreatedBy": {
+      "message": "Vytvoril [Schuyler Cebulskie]"
+   },
+   "txtCurrentPieTitle": {
+      "message": "Čas strávený na úlohách"
+   },
+   "txtDescription": {
+      "message": "Použite tento nástroj na sledovanie trávenia času, ktorý ste venovali práci, štúdiu alebo akejkoľvek inej činnosti."
+   },
+   "txtDonate": {
+      "message": "Prispieť"
+   },
+   "txtEditTasks": {
+      "message": "Dvoj-klikom zmeníte názov úlohy, čas alebo trvanie úlohy"
+   },
+   "txtGeneralSettings": {
+      "message": "Všeobecné nastavenia"
+   },
+   "txtHistory": {
+      "message": "História"
+   },
+   "txtHistoryDisabled": {
+      "message": "Sledovanie histórie úlohy je vypnuté. Môžete ho zapnúť v menu Nástroje."
+   },
+   "txtHours": {
+      "message": "Hodín"
+   },
+   "txtIndefinite": {
+      "message": "Neobmedzene"
+   },
+   "txtJSError": {
+      "message": "Stala sa chyba niekde v skripte. Prosíme nahláste chybu s nasledujúcou informáciou, spolu s tým, čo ste práve robili/čo sa stalo :"
+   },
+   "txtLoading": {
+      "message": "Načítavam..."
+   },
+   "txtMinutes": {
+      "message": "Minút"
+   },
+   "txtNoDescription": {
+      "message": "Zadajte informácie/poznámky o úlohe"
+   },
+   "txtNoHistory": {
+      "message": "Pre tento deň nie je uložená história."
+   },
+   "txtNoTasks": {
+      "message": "Nevytvorili ste zatiaľ žiadnu úlohu!"
+   },
+   "txtNotifSettings": {
+      "message": "Nastavenie upozornenia"
+   },
+   "txtOther": {
+      "message": "Ostatné"
+   },
+   "txtPerfSettings": {
+      "message": "Nastavenia výkonu"
+   },
+   "txtReportBug": {
+      "message": "Nahlásiť chybu"
+   },
+   "txtSaveSettings": {
+      "message": "Uložiť nastavenia"
+   },
+   "txtSeconds": {
+      "message": "Sekúnd"
+   },
+   "txtSelectDate": {
+      "message": "Prosím zvoľte dátum."
+   },
+   "txtSettings": {
+      "message": "Nastavenia"
+   },
+   "txtSuggest": {
+      "message": "Máte nápad? [Povedzte mi]"
+   },
+   "txtSuggestionInfo": {
+      "message": "Na podanie nápadu kliknite tu [here].\nAk nikto nepodal rovnaký nápad, kliknite \"New issue\" (nová požiadavka). Uistite sa že vyberiete \"Enhancement Request\" (žiadost o vylepšenie) a podrobne ho opíšte!\nAk máte viacej nápadov, prosím vytvorte viacej požiadaviek pre každý z nich."
+   },
+   "txtSuggestionTitle": {
+      "message": "Dajte nápad"
+   },
+   "txtTaskInfo": {
+      "message": "Informácia o úlohe"
+   },
+   "txtTaskOptions": {
+      "message": "Možnosti úlohy"
+   },
+   "txtTaskSettings": {
+      "message": "Nastavenia úlohy"
+   },
+   "txtTitle": {
+      "message": "Task Timer"
+   },
+   "txtTools": {
+      "message": "Nástroje"
+   },
+   "txtTotalPieTitle": {
+      "message": "Celkový strávený čas (počas celej histórie)"
+   },
+   "txtTranslationsAccuracy": {
+      "message": "Preklady nemusia byť vždy presné."
+   },
+   "txtTriedRefresh": {
+      "message": "Skúsili ste obnoviť aplikáciu ?"
+   },
+   "txtUsualFix": {
+      "message": "Toto obyčajne opraví akékoľvek chyby, ale vymaže všetky vaše úlohy a nastavenia."
+   }
+}

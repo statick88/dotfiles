@@ -1,0 +1,28 @@
+00:00:00.156568 VirtualBox GUI VM Selector Window 7.1.4 r165100 linux.amd64 (Oct 10 2024 18:39:09) release log
+00:00:00.156569 Log opened 2024-12-04T15:53:54.086476000Z
+00:00:00.156569 Build Type: release
+00:00:00.156573 OS Product: Linux
+00:00:00.156573 OS Release: 6.11.10-300.fc41.x86_64
+00:00:00.156574 OS Version: #1 SMP PREEMPT_DYNAMIC Sat Nov 23 00:51:20 UTC 2024
+00:00:00.156595 DMI Product Name: 20X2S1L200
+00:00:00.156600 DMI Product Version: ThinkPad L14 Gen 2
+00:00:00.156605 Firmware type: UEFI
+00:00:00.156965 Secure Boot: Disabled
+00:00:00.156999 Host RAM: 47825MB (46.7GB) total, 42085MB (41.0GB) available
+00:00:00.157002 Executable: /usr/lib/virtualbox/VirtualBox
+00:00:00.157002 Process ID: 85202
+00:00:00.157002 Package type: LINUX_64BITS_FEDORA_40
+00:00:00.157031 Qt version: 6.5.3
+00:00:00.157439 GUI: UIMediumEnumerator: Initial medium-enumeration finished!
+00:00:00.190727 GUI: UIMediumEnumerator: Medium-enumeration started...
+00:00:00.562967 GUI: UIMediumEnumerator: Medium-enumeration finished!
+00:00:00.601483 GUI: UIDesktopWidgetWatchdog::sltHandleHostScreenAvailableGeometryCalculated: Screen 0 work area is actually resized to: 283x-16 x 800x800
+00:00:00.601526 GUI: UIDesktopWidgetWatchdog::sltHandleHostScreenAvailableGeometryCalculated: Screen 1 work area is actually resized to: 283x-16 x 800x800
+00:00:00.604885 GUI: UIDesktopWidgetWatchdog::sltHandleHostScreenAvailableGeometryCalculated: Screen 2 work area is actually resized to: 283x-15 x 800x800
+00:01:06.923131 GUI: UIMediumEnumerator: Medium with key={{bcbea427-c223-4317-a690-3f91bf480837}} created
+00:01:07.044760 GUI: UIMediumEnumerator: Medium-enumeration finished!
+00:01:15.502153 GUI: UIMediumEnumerator: Medium-enumeration finished!
+00:01:18.012534 GUI: UIMediumEnumerator: Medium-enumeration finished!
+00:01:28.037168 GUI: UIMediumEnumerator: Medium-enumeration finished!
+00:02:00.520031 GUI: UICommon: Handling aboutToQuit request..
+00:02:01.482842 GUI: UICommon: aboutToQuit request handled!

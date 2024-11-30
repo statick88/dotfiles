@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en" dir="auto">
+  <head>
+    <title>__MSG_pageTitleRecipes__</title>
+    <meta charset="utf-8" />
+
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, viewport-fit=cover, maximum-scale=1.0, user-scalable=no"
+    />
+
+    <link rel="stylesheet" href="src/styles/style-recipes.css" />
+    <style type="text/css" id="styles"></style>
+    <style type="text/css" id="fontface"></style>
+
+    <script type="text/javascript" src="src/app/recipes.js" defer></script>
+  </head>
+
+  <body>
+    <header class="text-bg-light">
+  <div class="container">
+    <div
+      class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start"
+    >
+      <a
+        id="nav-logo-wrapper"
+        href="options.html"
+        class="align-items-center mb-2 mb-lg-0 text-dark text-decoration-none"
+      >
+        <img src="/src/assets/icon.png" />
+        <span class="fs-5">Table Capture</span>
+      </a>
+
+      <ul class="nav col-12 col-lg-auto me-lg-auto px-3 justify-content-center">
+        <li class="logo-wrapper">
+          <img src="/src/assets/icon.png" />
+        </li>
+        <li id="account">
+          <a href="account.html" class="nav-link px-2">Account</a>
+        </li>
+        <li id="options">
+          <a href="options.html" class="nav-link px-2">Options</a>
+        </li>
+        <li id="activity">
+          <a href="activity.html" class="nav-link px-2">Activity</a>
+        </li>
+        <li id="recipes">
+          <a href="recipes.html" class="nav-link px-2">Recipes</a>
+        </li>
+        <li id="support">
+          <a href="support.html" class="nav-link px-2">Support</a>
+        </li>
+        <li id="debug" class="hidden">
+          <a href="debug.html" class="nav-link px-2">Debug</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</header>
+
+
+    <div class="container page-content">
+      <section class="flashes">
+        <noscript>
+          <div class="alert alert-danger">
+            JavaScript is disabled. That's a problem.
+          </div>
+        </noscript>
+        <div class="error-wrapper global-errors"></div>
+      </section>
+      <section class="recipe-wrapper">
+        <h3 class="header-with-actions">
+          <span>Recipes</span>
+          <div class="right-actions">
+            <input
+              type="button"
+              value="New"
+              class="btn btn-light btn-new-recipe"
+            />
+            <a class="btn btn-light btn-view-clips" href="/clips.html"
+              >View Clips</a
+            >
+            <input
+              type="button"
+              value="Delete All Recipes"
+              class="btn btn-danger btn-clear-all"
+            />
+            <div class="dropdown">
+              <button
+                class="btn btn-light dropdown-toggle"
+                type="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                Advanced
+                <span class="caret"></span>
+              </button>
+              <ul class="dropdown-menu">
+                <li class="dropdown-header">Debug</li>
+                <li>
+                  <a href="#" class="dropdown-item btn-unregister-all"
+                    >Unregister All</a
+                  >
+                </li>
+              </ul>
+            </div>
+          </div>
+        </h3>
+        <hr />
+        <div class="recipes"></div>
+        <div class="dropzone-mask">
+          <span class="message"
+            >You can drop in exported recipe files here.</span
+          >
+        </div>
+        <hr />
+        <p class="documentation">
+          <strong>FYI:</strong> You can learn about how Recipes work
+          <a class="link-recipes-doc" target="_blank">here</a>. If you think you
+          want to cook one up, you should email George (or contact a web
+          developer).
+        </p>
+      </section>
+    </div>
+
+    <iframe src="./js-evaluator.html" class="hidden"></iframe>
+    <footer class="footer">
+  <div class="container">
+    <a class="footer-link link-review" target="_blank">Leave a Review</a>
+    <span>&middot;</span>
+    <a class="footer-link link-roadmap" target="_blank">Development Roadmap</a>
+    <span>&middot;</span>
+    <a class="footer-link link-email" target="_blank">Email Support</a>
+    <span>&middot;</span>
+    <a class="footer-link link-discord" target="_blank">Discord</a>
+    <span>&middot;</span>
+    <a class="footer-link link-newsletter" target="_blank"
+      >Join the Newsletter</a
+    >
+    <span>&middot;</span>
+    <a class="footer-link" href="thanks.html">Thanks</a>
+    <p class="text-muted">
+      <span class="text-tc-version"></span>
+      <span>&middot;</span>
+      <span>Copyright 2024, GeorgeMike.com</span>
+    </p>
+  </div>
+</footer>
+
+  </body>
+</html>

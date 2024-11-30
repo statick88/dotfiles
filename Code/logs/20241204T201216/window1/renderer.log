@@ -1,0 +1,34 @@
+2024-12-04 20:12:19.469 [warning] Creation of workbench contribution 'workbench.contrib.preferencesActions' took 26ms.
+2024-12-04 20:12:19.516 [warning] Creation of workbench contribution 'workbench.contrib.explorerViewletViews' took 22ms.
+2024-12-04 20:12:19.607 [warning] Creation of workbench contribution 'workbench.contrib.updateExperimentalSettingsDefaults' took 21ms.
+2024-12-04 20:12:21.957 [info] Started local extension host with pid 8841.
+2024-12-04 20:12:29.457 [info] Settings Sync: Updating due to initialize
+2024-12-04 20:12:29.458 [info] Settings Sync: Updating authentication providers. Authentication Providers from store: [{"id":"github","scopes":["user:email"]},{"id":"microsoft","scopes":["openid","profile","email","offline_access"]}]
+2024-12-04 20:12:29.463 [info] Settings Sync: Authentication providers updated []
+2024-12-04 20:12:29.757 [info] Settings Sync: Updating authentication providers. Authentication Providers from store: [{"id":"github","scopes":["user:email"]},{"id":"microsoft","scopes":["openid","profile","email","offline_access"]}]
+2024-12-04 20:12:29.760 [info] Settings Sync: Authentication providers updated ["github"]
+2024-12-04 20:12:29.761 [info] Settings Sync: Updating authentication providers. Authentication Providers from store: [{"id":"github","scopes":["user:email"]},{"id":"microsoft","scopes":["openid","profile","email","offline_access"]}]
+2024-12-04 20:12:29.767 [info] Settings Sync: Authentication providers updated ["github"]
+2024-12-04 20:12:29.769 [info] Settings Sync: Updating authentication providers. Authentication Providers from store: [{"id":"github","scopes":["user:email"]},{"id":"microsoft","scopes":["openid","profile","email","offline_access"]}]
+2024-12-04 20:12:29.769 [info] Settings Sync: Authentication providers updated ["github","microsoft"]
+2024-12-04 20:12:29.770 [info] Settings Sync: Updating authentication providers. Authentication Providers from store: [{"id":"github","scopes":["user:email"]},{"id":"microsoft","scopes":["openid","profile","email","offline_access"]}]
+2024-12-04 20:12:29.770 [info] Settings Sync: Authentication providers updated ["github","microsoft"]
+2024-12-04 20:12:29.827 [info] Settings Sync: Updating due to declared authentication providers changed
+2024-12-04 20:12:29.832 [info] Settings Sync: Updating authentication providers. Authentication Providers from store: [{"id":"github","scopes":["user:email"]},{"id":"microsoft","scopes":["openid","profile","email","offline_access"]}]
+2024-12-04 20:12:29.833 [info] Settings Sync: Authentication providers updated ["github","microsoft"]
+2024-12-04 20:12:29.834 [info] Settings Sync: Updating due to declared authentication providers changed
+2024-12-04 20:12:29.843 [info] Settings Sync: Updating authentication providers. Authentication Providers from store: [{"id":"github","scopes":["user:email"]},{"id":"microsoft","scopes":["openid","profile","email","offline_access"]}]
+2024-12-04 20:12:29.845 [info] Settings Sync: Authentication providers updated ["github","microsoft"]
+2024-12-04 20:12:31.431 [info] [perf] Render performance baseline is 237ms
+2024-12-04 20:12:33.196 [info] Settings Sync: Updating authentication providers. Authentication Providers from store: [{"id":"github","scopes":["user:email"]},{"id":"microsoft","scopes":["openid","profile","email","offline_access"]}]
+2024-12-04 20:12:33.197 [info] Settings Sync: Authentication providers updated ["github","microsoft"]
+2024-12-04 20:13:45.590 [info] Started local extension host with pid 10878.
+2024-12-04 20:13:48.475 [info] Settings Sync: Updating due to initialize
+2024-12-04 20:13:48.477 [info] Settings Sync: Updating authentication providers. Authentication Providers from store: [{"id":"github","scopes":["user:email"]},{"id":"microsoft","scopes":["openid","profile","email","offline_access"]}]
+2024-12-04 20:13:48.477 [info] Settings Sync: Authentication providers updated ["github","microsoft"]
+2024-12-04 20:13:51.238 [info] [perf] Render performance baseline is 163ms
+2024-12-04 20:15:12.663 [warning] [ms-toolsai.vscode-jupyter-cell-tags]: Contenedor de vistas ' jupyter-variables ' no existe y todas las vistas registradas se agregarán al 'Explorer'.
+2024-12-04 20:15:13.857 [warning] No search provider registered for scheme: file, waiting
+2024-12-04 20:15:14.262 [info] Started local extension host with pid 12557.
+2024-12-04 20:15:16.504 [info] Settings Sync: Updating authentication providers. Authentication Providers from store: [{"id":"github","scopes":["user:email"]},{"id":"microsoft","scopes":["openid","profile","email","offline_access"]}]
+2024-12-04 20:15:16.505 [info] Settings Sync: Authentication providers updated ["github","microsoft"]

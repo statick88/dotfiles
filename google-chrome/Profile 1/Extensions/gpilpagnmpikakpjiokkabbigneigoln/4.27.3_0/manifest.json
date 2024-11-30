@@ -1,0 +1,43 @@
+{
+   "action": {
+      "default_icon": {
+         "1024": "assets/images/icon1024.png",
+         "128": "assets/images/icon128.png",
+         "32": "assets/images/icon32.png"
+      },
+      "default_popup": "/popup/Popup.html",
+      "default_title": "Abre Qoala"
+   },
+   "background": {
+      "service_worker": "/BackgroundWorker.js"
+   },
+   "content_scripts": [ {
+      "js": [ "/content-scripts/googleSearch/googleSearch.js" ],
+      "matches": [ "https://*.google.com/*", "https://*.google.es/*", "https://*.google.co.uk/*" ]
+   }, {
+      "js": [ "/content-scripts/store/StoreContentScript.js" ],
+      "matches": [ "https://*/*" ]
+   }, {
+      "js": [ "/content-scripts/auth/AuthContentScript.js" ],
+      "matches": [ "https://*.joinqoala.com/*", "http://localhost:3000/*" ]
+   } ],
+   "description": "Cupones descuento automáticos y cashback - Te devolvemos dinero por tus compras",
+   "externally_connectable": {
+      "matches": [ "https://*.joinqoala.com/*" ]
+   },
+   "homepage_url": "https://joinqoala.com",
+   "host_permissions": [ "\u003Call_urls>" ],
+   "icons": {
+      "128": "assets/images/icon128.png"
+   },
+   "key": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAghFVaQ+NVoyby8RZPeVqR2BCd83RWgZgDemPE1kP0t0wbCcEXrNequ76NxvSNISiQSXbDvMviSHwdH01K7ROGDhaopz3PEHDl3d9QxteTP6ULbdN/dAz1hVAEzpQKrK2xBX0lpTVKvByO0X3SJhot7gvMieWNPbNHC5/ciU6w6tmH/lLy2IetCsE3U4e6E6HXr6PG77dlMdIiEoGjB9g6jwtvQnrkRIcFZUaVDi6HbMtXfwEeBT+9SuetSbAbOo4guKt8EHApuE0jdUFMFv8iajYGd3bZCQc2EAs/dOtfip4u/BJRtXXwSIu4jLTX8KMGj9aXUqs+Bhg15QeoZO/nwIDAQAB",
+   "manifest_version": 3,
+   "name": "Qoala: Cashback y Cupones Automaticos",
+   "permissions": [ "activeTab", "alarms", "storage" ],
+   "update_url": "https://clients2.google.com/service/update2/crx",
+   "version": "4.27.3",
+   "web_accessible_resources": [ {
+      "matches": [ "https://*/*" ],
+      "resources": [ "/assets/images/icon128.png", "/assets/images/iconwhite128.png", "/assets/images/drag_icon.svg", "/content-scripts/store/cashbackPopup/CashbackPopup.html", "/content-scripts/store/bigPoppa/BigPoppa.html", "/content-scripts/store/cashbackExpirationPopup/CashbackExpirationPopup.html", "/content-scripts/store/activateCashbackPopup/ActivateCashbackPopup.html", "/content-scripts/store/nonTransactorCashbackPopup/NonTransactorCashbackPopup.html", "/content-scripts/store/mobileCashbackPopup/MobileCashbackPopup.html", "/content-scripts/store/redirectPopup/RedirectPopup.html", "/content-scripts/store/successPopup/SuccessPopup.html", "/content-scripts/store/peerPopup/PeerPopup.html", "/content-scripts/store/autofillPopup/AutofillPopup.html", "/content-scripts/store/actPopup/ACTPopup.html", "/content-scripts/googleSearch/SearchTag.html" ]
+   } ]
+}

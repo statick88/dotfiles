@@ -1,0 +1,24 @@
+2024-12-04 20:15:42.190 [info] (Client) Pylance async client (2024.11.3) started with python extension (2024.21.2024112901)
+2024-12-04 20:15:44.536 [info] [Info  - 8:15:44 p. m.] (13056) Server root directory: file:///home/statick/.vscode/extensions/ms-python.vscode-pylance-2024.11.3/dist
+2024-12-04 20:15:44.539 [info] [Info  - 8:15:44 p. m.] (13056) Pylance language server 2024.11.3 (pyright version 1.1.386, commit 4180fa21) starting
+2024-12-04 20:15:44.557 [info] [Info  - 8:15:44 p. m.] (13056) Starting service instance "farmacia2"
+2024-12-04 20:15:44.718 [info] [Info  - 8:15:44 p. m.] (13056) Setting environmentName for service "farmacia2": "3.13.0 (env venv)"
+2024-12-04 20:15:44.719 [info] [Info  - 8:15:44 p. m.] (13056) Setting pythonPath for service "farmacia2": "/home/statick/workspaces/practicas/python/farmacia2/env/bin/python"
+2024-12-04 20:15:44.721 [info] [Info  - 8:15:44 p. m.] (13056) No include entries specified; assuming /home/statick/workspaces/practicas/python/farmacia2
+2024-12-04 20:15:44.724 [info] [Info  - 8:15:44 p. m.] (13056) Auto-excluding **/node_modules
+2024-12-04 20:15:44.724 [info] [Info  - 8:15:44 p. m.] (13056) Auto-excluding **/__pycache__
+2024-12-04 20:15:44.725 [info] [Info  - 8:15:44 p. m.] (13056) Auto-excluding **/.*
+2024-12-04 20:15:44.802 [info] [Info  - 8:15:44 p. m.] (13056) Assuming Python version 3.13.0.final.0
+2024-12-04 20:15:45.059 [info] [Info  - 8:15:45 p. m.] (13056) Auto-excluding /home/statick/workspaces/practicas/python/farmacia2/env
+2024-12-04 20:15:45.062 [info] [Info  - 8:15:45 p. m.] (13056) No source files found.
+2024-12-04 20:15:46.841 [info] [Info  - 8:15:46 p. m.] (13056) Background analysis(1) root directory: file:///home/statick/.vscode/extensions/ms-python.vscode-pylance-2024.11.3/dist
+2024-12-04 20:15:46.848 [info] [Info  - 8:15:46 p. m.] (13056) Background analysis(1) started
+2024-12-04 20:15:47.331 [info] [Info  - 8:15:47 p. m.] (13056) Setting environmentName for service "farmacia2": "3.13.0 (env venv)"
+2024-12-04 20:15:47.331 [info] [Info  - 8:15:47 p. m.] (13056) Setting pythonPath for service "farmacia2": "/home/statick/workspaces/practicas/python/farmacia2/env/bin/python"
+2024-12-04 20:15:47.331 [info] [Info  - 8:15:47 p. m.] (13056) No include entries specified; assuming /home/statick/workspaces/practicas/python/farmacia2
+2024-12-04 20:15:47.331 [info] [Info  - 8:15:47 p. m.] (13056) Auto-excluding **/node_modules
+2024-12-04 20:15:47.332 [info] [Info  - 8:15:47 p. m.] (13056) Auto-excluding **/__pycache__
+2024-12-04 20:15:47.332 [info] [Info  - 8:15:47 p. m.] (13056) Auto-excluding **/.*
+2024-12-04 20:15:47.402 [info] [Info  - 8:15:47 p. m.] (13056) Assuming Python version 3.13.0.final.0
+2024-12-04 20:15:47.542 [info] [Info  - 8:15:47 p. m.] (13056) Auto-excluding /home/statick/workspaces/practicas/python/farmacia2/env
+2024-12-04 20:15:47.543 [info] [Info  - 8:15:47 p. m.] (13056) No source files found.

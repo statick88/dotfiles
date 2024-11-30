@@ -1,0 +1,14 @@
+# Ignorar todo en el directorio .config
+.config/*
+
+# Exceptuar los directorios específicos que quieres agregar
+!.config/nvim/
+!.config/kitty/
+!.config/hyprl/
+
+# Ignorar archivos temporales y de respaldo
+*.bak
+*.swp
+*.swx
+*~
+

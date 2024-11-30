@@ -1,0 +1,15 @@
+2024/12/04-14:31:04.433 a89 Reusing MANIFEST /home/statick/.config/google-chrome/Profile 1/IndexedDB/chrome-extension_hdokiejnpimakedhajhdlcegeplioahd_0.indexeddb.leveldb/MANIFEST-000001
+2024/12/04-14:31:04.433 a89 Recovering log #4
+2024/12/04-14:31:04.446 a89 Reusing old log /home/statick/.config/google-chrome/Profile 1/IndexedDB/chrome-extension_hdokiejnpimakedhajhdlcegeplioahd_0.indexeddb.leveldb/000004.log 
+2024/12/04-14:32:00.970 a89 Level-0 table #8: started
+2024/12/04-14:32:00.995 a89 Level-0 table #8: 2517854 bytes OK
+2024/12/04-14:32:01.002 a89 Delete type=0 #4
+2024/12/04-14:32:01.003 a89 Manual compaction at level-0 from (begin) .. (end); will stop at (end)
+2024/12/04-14:32:01.003 a89 Manual compaction at level-1 from (begin) .. (end); will stop at '\x00\x01\x01\x02\x01\x05\x00s\x00t\x00a\x00t\x00e' @ 513 : 1
+2024/12/04-14:32:01.003 a89 Compacting 1@1 + 1@2 files
+2024/12/04-14:32:01.011 a89 Generated table #9@1: 30 keys, 5003 bytes
+2024/12/04-14:32:01.011 a89 Compacted 1@1 + 1@2 files => 5003 bytes
+2024/12/04-14:32:01.017 a89 compacted to: files[ 0 0 1 0 0 0 0 ]
+2024/12/04-14:32:01.017 a89 Delete type=2 #5
+2024/12/04-14:32:01.017 a89 Delete type=2 #8
+2024/12/04-14:32:01.018 a89 Manual compaction at level-1 from '\x00\x01\x01\x02\x01\x05\x00s\x00t\x00a\x00t\x00e' @ 513 : 1 .. (end); will stop at (end)

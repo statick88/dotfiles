@@ -1,0 +1,264 @@
+{
+   "checksum": "770ccfbdd0bb87be06fe2c07beb8549e",
+   "roots": {
+      "bookmark_bar": {
+         "children": [ {
+            "date_added": "13349575553475369",
+            "date_last_used": "13374605694744671",
+            "guid": "791d4071-7f9a-4c4e-b7a5-3be5aff1ad23",
+            "id": "26",
+            "meta_info": {
+               "power_bookmark_meta": ""
+            },
+            "name": "Diego Saavedra portfolio",
+            "type": "url",
+            "url": "https://statick88.github.io/#home"
+         } ],
+         "date_added": "13377554092248429",
+         "date_last_used": "0",
+         "date_modified": "13349575553475369",
+         "guid": "0bc5d13f-2cba-5d74-951f-3f233fe6c908",
+         "id": "1",
+         "name": "Barra de favoritos",
+         "type": "folder"
+      },
+      "other": {
+         "children": [ {
+            "date_added": "13373044408256010",
+            "date_last_used": "0",
+            "guid": "3e8c7348-548c-4a8f-9caf-233c828807e8",
+            "id": "11",
+            "meta_info": {
+               "power_bookmark_meta": ""
+            },
+            "name": "(31) Diego Saavedra | LinkedIn",
+            "type": "url",
+            "url": "https://www.linkedin.com/in/diego-saavedra-developer/"
+         }, {
+            "date_added": "13373424894488277",
+            "date_last_used": "0",
+            "guid": "69375613-5c09-487e-b7bc-053d5fa2bca7",
+            "id": "12",
+            "meta_info": {
+               "power_bookmark_meta": ""
+            },
+            "name": "Google - Site Reliability Engineering",
+            "type": "url",
+            "url": "https://sre.google/sre-book/table-of-contents/"
+         }, {
+            "date_added": "13374260353314897",
+            "date_last_used": "0",
+            "guid": "99bb3569-bcff-4894-a907-04763ae7743f",
+            "id": "13",
+            "meta_info": {
+               "power_bookmark_meta": ""
+            },
+            "name": "Mongodb SVG Download Free & Edit Vector by teenyicons (Teenyicons Outlined Icons) - SVG Viewer",
+            "type": "url",
+            "url": "https://www.svgviewer.dev/s/481323/mongodb"
+         }, {
+            "date_added": "13374781320847530",
+            "date_last_used": "0",
+            "guid": "44e3e02f-034e-43f0-a9bb-34c05c8d4dc0",
+            "id": "14",
+            "meta_info": {
+               "power_bookmark_meta": ""
+            },
+            "name": "feat: CLASE 4 - Componente · Gentleman-Programming/React-Desde-0-a-Avanzado@f431e82 · GitHub",
+            "type": "url",
+            "url": "https://github.com/Gentleman-Programming/React-Desde-0-a-Avanzado/commit/f431e82bfa08c69bcd0142abea18da53041daf2c"
+         }, {
+            "date_added": "13375388068810295",
+            "date_last_used": "0",
+            "guid": "dc8822b1-3a26-42be-a0e7-a2ddc4e60151",
+            "id": "15",
+            "meta_info": {
+               "power_bookmark_meta": ""
+            },
+            "name": "IDE CoderPad Screen",
+            "type": "url",
+            "url": "https://screen-ide.coderpad.io/?id=94228843bbc5c34fef6a33333caf4675ba291d3"
+         }, {
+            "date_added": "13375521981683753",
+            "date_last_used": "0",
+            "guid": "cfd97547-d780-4ba2-b7af-cbc7f555ed9f",
+            "id": "16",
+            "meta_info": {
+               "power_bookmark_meta": ""
+            },
+            "name": "Colecciones | Microsoft Learn",
+            "type": "url",
+            "url": "https://learn.microsoft.com/es-mx/collections/zk1zc11pr3kxqj?ref=collection&listId=zk1zc18qo4e0ey&sharingId=505773E7609CA556"
+         }, {
+            "date_added": "13375781187483109",
+            "date_last_used": "0",
+            "guid": "dd3c0f40-0c46-45f6-8e89-fe1f0edb20be",
+            "id": "17",
+            "meta_info": {
+               "power_bookmark_meta": ""
+            },
+            "name": "xxdutyxx : Free Download, Borrow, and Streaming : Internet Archive",
+            "type": "url",
+            "url": "https://archive.org/details/xxdutyxx_20170609"
+         }, {
+            "date_added": "13376084183835730",
+            "date_last_used": "0",
+            "guid": "06281c81-a9ed-436a-9926-b08f2da9b26f",
+            "id": "18",
+            "meta_info": {
+               "power_bookmark_meta": ""
+            },
+            "name": "HTML6 (HTML5 y CSS3)",
+            "type": "url",
+            "url": "https://www.html6.es/#"
+         }, {
+            "date_added": "13376171631270341",
+            "date_last_used": "0",
+            "guid": "7ce5734d-6b00-4aa8-8e21-5ba48a97b07d",
+            "id": "19",
+            "meta_info": {
+               "power_bookmark_meta": ""
+            },
+            "name": "Curso de introducción al desarrollo web: HTML y CSS (1/2) : Google",
+            "type": "url",
+            "url": "https://skillshop.exceedlms.com/student/collection/799479-web-development-i?sid=67a245b9-fb59-4163-90ac-8d7202b4fe0b&sid_i=7"
+         }, {
+            "date_added": "13376206654500848",
+            "date_last_used": "0",
+            "guid": "dec41bb8-4704-4ae3-8793-0956232baefd",
+            "id": "20",
+            "meta_info": {
+               "power_bookmark_meta": ""
+            },
+            "name": "prasanthrangan/hyprdots: // Aesthetic, dynamic and minimal dots for Arch hyprland",
+            "type": "url",
+            "url": "https://github.com/prasanthrangan/hyprdots"
+         }, {
+            "date_added": "13376346217253407",
+            "date_last_used": "0",
+            "guid": "e4457cda-8ed1-4c18-8464-4ebce38beb68",
+            "id": "21",
+            "meta_info": {
+               "power_bookmark_meta": ""
+            },
+            "name": "Project List",
+            "type": "url",
+            "url": "https://copr.fedorainfracloud.org/coprs/"
+         }, {
+            "date_added": "13376439021297425",
+            "date_last_used": "0",
+            "guid": "a025f6a5-d34e-4645-80b1-d13ff496a734",
+            "id": "22",
+            "meta_info": {
+               "power_bookmark_meta": ""
+            },
+            "name": "nunodias/whatsapp-for-linux Copr",
+            "type": "url",
+            "url": "https://copr.fedorainfracloud.org/coprs/nunodias/whatsapp-for-linux/"
+         }, {
+            "date_added": "13376871581773936",
+            "date_last_used": "0",
+            "guid": "0834d25b-7222-4bd0-8437-ee59031d0ff3",
+            "id": "23",
+            "meta_info": {
+               "power_bookmark_meta": ""
+            },
+            "name": "Create a CRUD Web API in minutes with Data API Builder and EF Core Power Tools | ErikEJ's blog",
+            "type": "url",
+            "url": "https://erikej.github.io/dotnet/sqlserver/powertools/2024/08/13/powertools-dab.html"
+         }, {
+            "date_added": "13377222131790761",
+            "date_last_used": "0",
+            "guid": "43be2f9c-bfae-4f6b-97b3-74711dd0a4cd",
+            "id": "24",
+            "meta_info": {
+               "power_bookmark_meta": ""
+            },
+            "name": "ChatGPT",
+            "type": "url",
+            "url": "https://chatgpt.com/c/67479fd4-8364-8013-bcee-e4bb96c8ad66"
+         }, {
+            "date_added": "13377438016950985",
+            "date_last_used": "0",
+            "guid": "b36fb035-0017-4041-8776-a2476e5c6db5",
+            "id": "25",
+            "meta_info": {
+               "power_bookmark_meta": ""
+            },
+            "name": "Vim as a Flutter IDE - DEV Community",
+            "type": "url",
+            "url": "https://dev.to/tavanarad/vim-as-a-flutter-ide-4p16"
+         } ],
+         "date_added": "13377554092248431",
+         "date_last_used": "0",
+         "date_modified": "13377438016950985",
+         "guid": "82b081ec-3dd3-529c-8475-ab6c344590dd",
+         "id": "2",
+         "name": "Otros favoritos",
+         "type": "folder"
+      },
+      "synced": {
+         "children": [ {
+            "date_added": "13249788640449319",
+            "date_last_used": "0",
+            "guid": "73e9b6ca-66ec-42a2-a28a-84e3ee8fc638",
+            "id": "5",
+            "name": "Tutorial: Programar un sencillo reproductor de música en Python – FACIALIX blog",
+            "type": "url",
+            "url": "http://blog.facialix.com/tutorial-programar-un-sencillo-reproductor-de-musica-en-python/#.X68kOBD8hKs.facebook"
+         }, {
+            "date_added": "13249972139603879",
+            "date_last_used": "0",
+            "guid": "ae151679-46ef-4512-b459-3307b517aaad",
+            "id": "6",
+            "name": "SQLite y Python: Como hacer CRUD con SQLite > JL TUTORIALES",
+            "type": "url",
+            "url": "https://jltutoriales.com/python-como-hacer-crud-con-sqlite/"
+         }, {
+            "date_added": "13251788013439953",
+            "date_last_used": "0",
+            "guid": "51ac1722-812c-4ae7-9cd1-e9961b1e38c2",
+            "id": "7",
+            "name": "Instalación Arch Linux",
+            "type": "url",
+            "url": "https://blog.pleets.org/article/instalaci%C3%B3n-arch-linux"
+         }, {
+            "date_added": "13289582767412274",
+            "date_last_used": "0",
+            "guid": "8e76c98d-3e77-4521-84c7-9d1d4721f12a",
+            "id": "8",
+            "name": "Video Tutorials | Agenty",
+            "type": "url",
+            "url": "https://agenty.com/docs/videos"
+         }, {
+            "date_added": "13317450643565813",
+            "date_last_used": "0",
+            "guid": "e09105d4-a5d4-4295-8ce9-60795cb8e8c2",
+            "id": "9",
+            "name": "FastAPI",
+            "type": "url",
+            "url": "https://fastapi.tiangolo.com/es/"
+         }, {
+            "date_added": "13350735646848803",
+            "date_last_used": "0",
+            "guid": "4780b1cf-6a82-44eb-ae4f-deffac935968",
+            "id": "10",
+            "meta_info": {
+               "power_bookmark_meta": ""
+            },
+            "name": "Gestión del Sílabo",
+            "type": "url",
+            "url": "https://evaluacion.espe.edu.ec/SeguimientoAcademicoB-war/"
+         } ],
+         "date_added": "13377554092248432",
+         "date_last_used": "0",
+         "date_modified": "13350735646848803",
+         "guid": "4cf2e351-0e85-532b-bb37-df045d8f8d0f",
+         "id": "3",
+         "name": "Favoritos del celular",
+         "type": "folder"
+      }
+   },
+   "sync_metadata": "Cr0CCpwCCIiBAhKVAiAAkgGPAgqMAgoOY2hyb21lX3N5bmNfYm0SBTUxIWJtGhIJzA2+QTooBgARzA2+QTooBgAiNAlvk6lBOigGABADGS+ONOUfzFrIIAEqHDUxIWJtL2ZkOjkxNjM3MjM1NTk0Njg4OTMxNjEiNAlvk6lBOigGABADGS+ONOUfzFrIIAEqHDUxIWJtL2ZkOjkxNjM3MjM1NTk0Njg4OTMxNjEiNAlvk6lBOigGABADGS+ONOUfzFrIIAEqHDUxIWJtL2ZkOjkxNjM3MjM1NTk0Njg4OTMxNjEiNAlvk6lBOigGABADGS+ONOUfzFrIIAEqHDUxIWJtL2ZkOjkxNjM3MjM1NTk0Njg4OTMxNjEppiy+QTooBgASACoYd2JpZ2l4bnBadUlpTEtpQkE0WVpNdz09SAMSqwEIARKmAQoceXhKLzZmdmtlY3I3a3A1RVF6QjR0V0xwZGJFPRJOWjpBRHF0QVp3UnZ3cVZ2ZnN5YjRTRTQ0Z212U0dEbVNVV0YzUXNhcUFydjVZVW0xSWtnL1JQcGJzajZodSt3VFN5Rk1FS0p2STNSUGM0GAAgACgAMO+mpo2kh4oDOABAAEocYVJDV0xnaEY5YjVJbnFLSUR2dUovanZRa0ZjPVoAZQAAAAAS7QEIGBLoAQocakZFN2RKalYzazJ1cnhQSkFKWjVqczBzQ0xrPRJmWjpBRHF0QVp5UmZEWVdGNkpyWmpsWFJlTnhGRysyaW1oY1RCQU1xalJydi9HcFhXK2x2WHgyNGp2bzlwZno1UUVrMjFlSmN1elRPZnBtcGxlWWpjNFJralhlNllVQk44KzMxQT09GAAgACgAMLqk56bP/YkDOM+w8f62MkDPsPH+tjJKHGU1SXBLL0lucjRaMEJnNERMUkUrSFZOUEkzYz1aICIe/9xFUEgxTEh3WXNQRU52WWNNVk1MeGhvQTVLaEk9ZXwtVIAS6wEIDBLmAQocTFdwSlppRlBsWm16c0pEay9scHF4WWU5V0EwPRJmWjpBRHF0QVp5UmZEWVdGNkpyWmpsWFJlTnhGRysyUkVSUzdLZjU4eWEyTlhsSGZZS25KTnRwSit1NzZOdjI5V25VUDhOM3RGL240TU1kNkdPS25jditQWFJQa09KM2ZCZzlFZz09GAAgACgAMLGl9r6Nj4kDOJi0nOyoMkCYtJzsqDJKHFY4M1I1bGhNalBwb3dNc0ZxODZ4a3hvVTNrRT1aHiIcVXpwRFE4dzN4TnZUcFJKNnRDZmgzRGlHTkRZPWU5Gh+nEu0BCBcS6AEKHEVGaG1ZNEdvMldyNHFsNGRwKzJkclR6L09rbz0SZlo6QURxdEFaeVJmRFlXRjZKclpqbFhSZU54RkcrMmx6YUxHRW1ycnd6ZFExSHgwWTM5bk9WdGRTTGxJWlpTQ3dmb0NrWWM5UU94dkRNcVdNVGZjQzFrUE4rUVh3K3RsbkV6MXc9PRgAIAAoADC9jr6ztfOJAzjOwN3XtTJAzsDd17UyShwwUkUyeU1HT0xaSkpnUWpQa2lXU3JxUE56ckU9WiAiHv+4WHdVYWpQbVR4cnRUd3hjYisyalRVM3VGSnJNPWUAAAAAEuwBCBYS5wEKHEtCeFZudzlYZmp2dHo2c282YnAwOFlKWkgvZz0SZlo6QURxdEFaeVJmRFlXRjZKclpqbFhSZU54RkcrMmZ1M0VEd25HcnpCMTAzbXliSitVanZBYjlDMVhZN3F1S3d5UEtneG53b0lWdXUyc1NkR0d3cW1RencwZURmZFhVWFQ1TEE9PRgAIAAoADCu3buImeeJAzjxjbyJtDJA8Y28ibQyShxMM2JERkdIQTJKM1F6RWxYQjZaMWVYWlFMMUE9Wh8iHf9xTG04UlR6Um05OGV0Zm9DV2ljU3ZPMnhhT009ZZhJU+US7AEIFRLnAQocdm80bGZWUlkrUzBLWHpmVnE5Q0w1UmV3UHlFPRJmWjpBRHF0QVp5UmZEWVdGNkpyWmpsWFJlTnhGRysyUE4vRlFWRzEvNnRuQ2lRZXl1ZVdCMGlnS01pTEJLOHYwNElvenFPWVNPb2p0YkwrR0wyVGFjUmdsMzI3TzhkTlhkRTUzUT09GAAgACgAMK++mKKQ5IkDOKXmm92zMkCl5pvdszJKHHFQRDNxS3gxdFVrM09Bb2xZL2FGeVI3SXNaYz1aHyId/3E5anRwMnlDYkdWVjJwcFM2a1l1Y0F5UFMxND1lmElT5RLsAQgTEucBChxHT1l4QlFmYWM4bllyUXJvU3pXWlcrdnZERE09EmZaOkFEcXRBWnlSZkRZV0Y2SnJaamxYUmVOeEZHKzJqWlgzY0MveTZDQVoyQXFoZG52OEZodFlyWWY5UHIyaU5nZzQyUW91RkhvSlQ2bFFsMFdUNGZDMmJKQTV0VFpMa3h3eG1nPT0YACAAKAAws7nM8IXfiQM4pvX7ibMyQKb1+4mzMkocU3MwMHdEZmViOGlHL1dqTGx6T1Z0cGZuUkZVPVofIh3+SWtBKytMZElRZVZoRUxicnc2TldhaVVtdmdNPWXA8WJ9EuwBCBES5wEKHDBLdkNPd0p0OEZQR1UzZTliVHRPaFZseFdiQT0SZlo6QURxdEFaeVJmRFlXRjZKclpqbFhSZU54RkcrMnJ4S3o3Z3p0TXpuNVNjejRmYyt5ZE9uYWFxUmZ6QzZkY3dUUnZNVVE3UlhkVzlUOEJlRzd0WERiMkxtZVBmeHJmTjNUOFE9PRgAIAAoADC3oPuu19OJAzibj+XPsTJAm4/lz7EyShxaVVlvU3F0ZE1lYit6N2ZRMWsxWG5zblM4U2s9Wh8iHfpOREtsbzlQMU5xQ3ptTUMvU0pCQUUza1F2TlE9ZSV60hoS7AEICRLnAQoccXZCTTAwVmw3Yno3K0p4S0l2L091SkkzYU9zPRJmWjpBRHF0QVp5UmZEWVdGNkpyWmpsWFJlTnhGRysycjZLaFdCdW9DMGxQdnBTR1dBcDNGREFpZ2F6VUVOMnh2ZUhydW5mOUxUM09WYm42b0R3bXE0WUNKR3hnNzErOFNtdE9Pdz09GAAgACgAML+Rr4SgsvwCOKLZh63YMECi2Yet2DBKHDFueUs4MVF2SHRFM09tbjRrMGxPb3BUYkU1Yz1aHyIdvUdUelIrWnBHdFQ5SXkrWmg3c2xFM3dLZGtTbz1lY7mOlBLsAQgQEucBChxyR09GYzdncTFFb29pb3dKS3Ftc2ZGcTdFTWM9EmZaOkFEcXRBWnlSZkRZV0Y2SnJaamxYUmVOeEZHKzJBbC9DaFZ2T3hlWGpPZ2wyQTFVOFlMY2ZZZS9ENkpZQU84ZjM0S0l0V0IvZTFIUnZBOHJLNmZuc2JFdDBCRjJQWTMrbEdBPT0YACAAKAAw/LKs35HMiQM49LmY1LAyQPS5mNSwMkocQ0lvWWVRTFducTFoM1BvcjdSVy9vdGNPUFlnPVofIh31Zm9ydzhqZUVJeGROT3ZxUDRKYUhkb0IxK2owPWWnHNIZEuwBCA4S5wEKHFRmc2MzQmx1a3Vma0Nhd0hyY2tlU1M4T0JZMD0SZlo6QURxdEFaeVJmRFlXRjZKclpqbFhSZU54RkcrMlAwbm85QXZpY1RTK3k3V0VkaHJOMW1MMjlTWjdEMlExUk8vd29HMzNXakl0SVJOZlB4Q2pCVnJQMGNZR1plQldnMzZ4NFE9PRgAIAAoADCk5rnJyraJAziPjYLzrTJAj42C860yShxXMHI1N1JNUFoxS0J4Ui9TNjhpcURPaG0rMEk9Wh8iHdVLYW1CN240dGFLSkQ5bHVZTXE2YjNLZlpubzg9ZcjzP7sS6wEIGhLmAQocVHVxVEhScSsvK2hGN3ZRNjFXMWxxQVVhaW04PRJmWjpBRHF0QVp5UmZEWVdGNkpyWmpsWFJlTnhGRysyZzZkUEJYa010dWgybmx5QnRnTkQ4N2JyYXBBVVFPNlVnN3EzU1JXSUFkY0UzN3hTTjFXKzNMVjlOTmFUTlZydkticEFwdz09GAAgACgAMIWr56e8sYkDOMOT/P/PMUDDk/z/zzFKHCsrQkxHMFdlT1RIbnNkY3VQNDFsQ2dTZHJuMD1aHiIcc0ViYXBUQ2xKNk9ZalNTMjBTaWVMbUlPK1c4PWV7K7ZcEuwBCA0S5wEKHGx0VEV1dHduN2sxek9EREVIaFgwYStxNUxkYz0SZlo6QURxdEFaeVJmRFlXRjZKclpqbFhSZU54RkcrMkVjWFNhdi9Ud3kxMW1TNGtDeHlCbDFaQmtoN3hXWHhQSlJjYktBVEc2akkydUhBc0JGcXIvbTJQaHNNSis3ZlloQkY0Z0E9PRgAIAAoADD05N3otaeJAzij4sz6qzJAo+LM+qsyShxRS1JFT1Vka0dNMjgxYXhYTW5ibllQME1VUHc9Wh8iHapRMS8wZ1RIdExXOHkrZEI1MTZiUUNHcWRVSWM9Zc19ZlIS7QEIGRLoAQocNE50emVzcGNHYjVYL1Ywdm5uc0syTWd2RzdzPRJmWjpBRHF0QVp5UmZEWVdGNkpyWmpsWFJlTnhGRysybEZuRjBDdGNQVkhlOStZRmNPbStQRXFaZVk1NGF6QmZLdSt0S2Rxays5NlZuTzlqcXRaVXFOd3ZwSjBvaEFDRnJ4Ymo5Zz09GAAgACgAMI2c6cTzg4oDOLf76eW3MkC3++nltzJKHE9DS2hjYVJIdTRlZHoxVE12V2xIOFNRa0xOdz1aICIe/+5tZnU3a3g3YzRHT20weFZIdFhFZFR3RU5NWFU9ZQ4Mo0AS7AEIEhLnAQocS01iQmFNQ0E3cHBxU0c4WitYYmNLdlgrR1ZFPRJmWjpBRHF0QVp5UmZEWVdGNkpyWmpsWFJlTnhGRysyYXVZK1FBNWtNbHlQOW0vRTdTQXFHb09PZUsvZ0x2bFZOSERPMHY2QnZERHAwanNpWUxHWFQvRk9lV0dEK04vRmJ2WEgxZz09GAAgACgAMKmC8o7A3IkDOJvGouCyMkCbxqLgsjJKHGg5WmlqUUZWM0dIT1JOUkZ1cTNqSVdSd296UT1aHyId/WZ6V1F5Nyt2K3E1aEYwb0I4c0VoNkkrMkd3cz1lDz98TxLsAQgKEucBChxQU3NiZFU2a2F5TzJBTFNFQUR5UElZK0VXWE09EmZaOkFEcXRBWnlSZkRZV0Y2SnJaamxYUmVOeEZHKzJ5aktRNHNXMWtIYmJ3RFBMSUp3S05zL1FKYXBVUUhVZEM4bGJKRFRvRk1vZE1LRGs0SHFyRjZrd0hEMWtVSENJQXJSRGFRPT0YACAAKAAwisXGuuH6gwM4g9GSqdQxQIPRkqnUMUocZVptdHFhSFcwczlVdnFESjhaNityL3IrWU5ZPVofIh3eWGNPS2dJUGJwYm9kUWwwcHdsaytubkh6Z2I0PWXvLMSxEqwCCAYSpwIKHGhhYUsvWkxwbVBDWTZkWmNtUmRZSEVFb29vZz0SpgFaOkFEcXRBWnpQbTM5S0xCR0hVZGNmbDQ1SWprLzc5Tk5jZXF5Y2RwRDArT0xGam1GeXRNejM5dVlkVXo5Ym10dzhFRWxyeURhekFkQnJyNFR5Wm1zWWRFWjNjaFlSL3EyWHpsVkNEVHBMMlVOclJTWTVuU2d5RmJrRzloM3VPODl5S1VJa3hSYU1SRU8rZVBGaEVhbDgrSnBVUzVKTndoSm9MZz09GAAgACgAMKGqrOP8wvUCONacrvncLkDWnK753C5KHG15VmFFMU8xeDAwV3B2TEV5MXNXUVRTaUZlYz1aHiIcWVlDZnRqTUFGODZyaGVRSmFrZ3FobmF4Y3BZPWU74fXaEusBCAsS5gEKHDhPdHF0WWVnWDV0V3JhZHpKS2JUSE9VaVdPQT0SZlo6QURxdEFaeVJmRFlXRjZKclpqbFhSZU54RkcrMnlzNzNDWGJSa3psU0Vwc1M1by9nOHNTem9KYWh2MWQzdU4rWWY5MU9uRFYrMzQ3aEw5VTVCVmNkUXlkUEY3YVNraHQ3K3c9PRgAIAAoADD278e2jKeJAzjAr+W2pzJAwK/ltqcyShxyU0pYdHhza1JRYWt3UG0vb0xLUzdaMGx0YTQ9Wh4iHE5zbVBQN3FHSFdQUzA5eFBxT0JRUDkwZU1FQT1lRU1K0RLsAQgUEucBChxHZTR6MVlRbTNua0prMWVEVURsWWsrZVJ2aWs9EmZaOkFEcXRBWnlSZkRZV0Y2SnJaamxYUmVOeEZHKzJOSEpiZUc3WFNOeDhRS0t3ck8vZXFGdURpclhlSCtpd3RMTld0RlZEYkFmMnNiVkNWczIxVm5pcnhjeFVCcUNWbk5vajFRPT0YACAAKAAws92/rYjgiQM4pcjVmrMyQKXI1ZqzMkocYVhtNy9HSFpVWUg2QnZhWGoyZDJHckRqRzJRPVofIh3/SVZGZGJTYVBoZDhLVkdGc1NlK1Zkamora1BFPWXI8z+7EsMBCAISvgEKHFljU1RvbnZFU1B3cUNzNEwyY3JWaHY2OEw5OD0SZlo6QURxdEFaekFRbExacFpwVEJid3pkMjUvV0tVZ1l2SmlkT2VBVTZyMUduK2NqdmQrajhwYmRVZWVoU1BkOWVWS0Z4cXhzejJjdkg2ODN4OUJuRDZEenR5ZWZmaU9wTEtjd0E9PRgAIAAoADDvpqaNpIeKAzgAQABKHG9QVmtod0JSYlY2NUtDV1IyK0lPTkhXb091OD1aAGUAAAAAEuwBCA8S5wEKHFhLWDB1blgxZTg4RmIyYVdvZng4SG9WVFl4OD0SZlo6QURxdEFaeVJmRFlXRjZKclpqbFhSZU54RkcrMllObmN1ODNpNHR2Zi92aDgxN2ZiQnpxUDRGdGNCYTFmcFh3cGJIVXExNzFKUGtOMTV2b1NpNGczUmg1NndqbkwvYTU2Smc9PRgAIAAoADDw17fxnsiJAzjKh6uUsDJAyoerlLAyShxDckk5dTRkSSthZENTRVFUQWlzWU5MOE5pUUk9Wh8iHepTajBnQW54V25tQ2I5OGhSZnBidWlWclpwdFE9ZbTWht4SrAIIBRKnAgocb0w4K0JhbzBWTHl0aTZ1a1hQNGRFSkY3clVrPRKmAVo6QURxdEFaelBtMzlLTEJHSFVkY2ZsNDVJamsvNzlOTmNlcXljZHBEMCtPTEZqbUZ5dFBCaC83UmlNNGpFQ3pSeGFGbTZBekJ0WFVIOXR2RmdZcVBDVGppUGpSZkpuSkk4RXVWN1M5RVZJak9DVGh3VjdmbFYwRndwbWZCRnU4RW9CYnlEM2hld3hxU2RzOUwwQmw4Qnk5RFZUZUJwMmJFNTJBPT0YACAAKAAwoaqs4/zC9QI4xanuodwuQMWp7qHcLkocVzkxLzFtRkxOSGJhTlg1YnFwZ09ML1dRU0p3PVoeIhxJZDByanlZVXBudVRGUExzRjlJNXQ5bzNReUE9ZaCHYh4S6wEICBLmAQocYWNzUWRZV0p3dmhubzVMOVE2ZVZYODd4emNRPRJmWjpBRHF0QVp5UmZEWVdGNkpyWmpsWFJlTnhGRysyV0tqbmVNQUJkY21waDk2cTdUblpkOWZkLzNxQVJMam9sRk9IcDBLYlRaVVZjNjhnazBYOGZEOW1ydnp3UEl4WW80SE1NZz09GAAgACgAMK+0vZ39hvYCOLSKl8HwL0C0ipfB8C9KHHJqaDhKc1VUZ2hteTQwd0liNk8zdFJzZDNOWT1aHiIcekVHWVhmbmVUNXJlTkozNzlOMTludklTNVlJPWW4mT3cEsMBCAMSvgEKHG5qZ0R1ODhlQ3J2WHA4NnBEN2ZIR2NxRnA4OD0SZlo6QURxdEFaemwzK1Y0VzgwMVZEcGR5MUhaSUowblhHbnZKTlk0K1RrbGU0Z0FxLzh4eXYyM1RHSGoxMjVjdWYva0VTSmJadXVZTWN1V1Urbmk3VUlLcGFDbW9OUG1DaXFRY0E9PRgAIAAoADDvpqaNpIeKAzgAQABKHHl6TkIwMWNuNTRBN2NSVTB1VCsvUGdtVHRVbz1aAGUAAAAAEqwCCAcSpwIKHFV4KzNMekM5Nkd0MmFwMmYxK3ZBYmhhR01Ccz0SpgFaOkFEcXRBWnpQbTM5S0xCR0hVZGNmbDQ1SWprLzc5Tk5jZXF5Y2RwRDArT0xGam1GeXRQczh0MEI1aDdNL0M0SnB5K2VDUkRoSEQ4TEErUDhaNktPQktmSkpuNTkvZlpGNVJIUjFEOWFhSVFYdzIyOVJ3b2hmTHlnVVUwKy84ODIrTGNKTGZWK2hhSTlvUHBHczFHeDI0VEp4N1htVE1xcmRXQT09GAAgACgAMKGqrOP8wvUCOIGvntvjLkCBr57b4y5KHDh3U2NwK05JclFmVU5CSkVUZjB4Kzd5a01HZz1aHiIca3ZPazVwMEMxR1R4bkxWMURUU2Z5TEd1K1I4PWVM1ZupMAE4AA==",
+   "version": 1
+}

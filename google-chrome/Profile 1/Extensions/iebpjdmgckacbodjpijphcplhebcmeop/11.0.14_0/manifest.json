@@ -1,0 +1,69 @@
+{
+   "action": {
+      "default_icon": {
+         "128": "src/assets/favicon-128x128.png"
+      },
+      "default_popup": "popup.html",
+      "default_title": "__MSG_extensionName__",
+      "title": "__MSG_extensionName__"
+   },
+   "author": "George Mike",
+   "background": {
+      "service_worker": "src/app/background.js",
+      "type": "module"
+   },
+   "commands": {
+      "launch-inline-actions": {
+         "description": "__MSG_keyboardShortcutInlineActions__",
+         "suggested_key": {
+            "default": "Ctrl+Shift+D",
+            "mac": "Alt+Shift+D",
+            "windows": "Alt+Shift+D"
+         }
+      },
+      "launch-table-capture-workshop": {
+         "description": "Launch Workshop",
+         "suggested_key": {
+            "default": "Ctrl+Shift+E",
+            "mac": "Alt+Shift+E",
+            "windows": "Alt+Shift+E"
+         }
+      }
+   },
+   "content_scripts": [ {
+      "all_frames": true,
+      "css": [ "src/styles/lib/hint.min.css", "src/styles/style-content.css" ],
+      "exclude_matches": [  ],
+      "js": [ "src/app/content.js" ],
+      "match_about_blank": true,
+      "matches": [ "\u003Call_urls>" ],
+      "run_at": "document_start"
+   } ],
+   "default_locale": "en",
+   "description": "__MSG_extensionDesc__",
+   "homepage_url": "https://georgemike.com/tablecapture/",
+   "host_permissions": [ "\u003Call_urls>" ],
+   "icons": {
+      "128": "src/assets/favicon-128x128.png"
+   },
+   "key": "MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQDi6Dw5DobK26uihLg0LSQyWag4yYjQXemyTIZVjnunraQ9t5d8L+5DKW791Wwqxv4M4AyQG0JOraRAHEZsHgBQTRBDkBOOWgPBW2yr1lwg3v9E5eKXqeh4ieA1zIvNmomR/n9vNRqjIJ5VLt032T4R2XtyRx4gcbUVi+GqFdFhjQIDAQAB",
+   "manifest_version": 3,
+   "name": "__MSG_extensionName__",
+   "oauth2": {
+      "client_id": "134705207172-cjqlrudj323jpldsf98sjmfaf2045b05.apps.googleusercontent.com",
+      "scopes": [ "https://www.googleapis.com/auth/spreadsheets", "https://www.googleapis.com/auth/userinfo.email" ]
+   },
+   "optional_permissions": [ "identity", "userScripts" ],
+   "options_page": "options.html",
+   "permissions": [ "contextMenus", "storage", "tabs", "webNavigation" ],
+   "sandbox": {
+      "pages": [ "js-evaluator.html" ]
+   },
+   "short_name": "__MSG_extensionShortName__",
+   "update_url": "https://clients2.google.com/service/update2/crx",
+   "version": "11.0.14",
+   "web_accessible_resources": [ {
+      "matches": [ "https://*/*", "http://*/*", "file://*/*" ],
+      "resources": [ "src/assets/loader.gif", "src/assets/icon.png", "src/assets/icon.csv.b.png", "src/assets/icon.clipboard.add.png", "src/assets/icon.clipboard.edit.png", "src/assets/icon.excel.svg", "src/assets/icon.html.png", "src/assets/icon.markdown.png", "src/assets/icon.menu.png", "src/assets/icon.o365.png", "src/assets/icon.sheets.png", "src/assets/icon.screenshot.big.png", "src/assets/icon.cloud.128.png", "activate.html", "activity.html", "clips.html", "cloud.html", "debug.html", "manage-sheets.html", "options.html", "pdf-extract.html", "recipes.html", "support.html", "table-edit.html", "upgrade.html", "onboard/onboard.html" ]
+   } ]
+}

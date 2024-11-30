@@ -1,0 +1,5 @@
+GitLens (pre-release) v2024.12.304 activating in Visual Studio Code (1.95.3) on the desktop; language='es', logLevel='warn', defaultDateLocale='null' (a1e9b19ad578162eda2249fd8667617f7f0df56d9cc2de6f7d4389bdf40247af|5bd87646-54e0-453f-8ba4-4aa5d2caa5951733331936784)
+To enable debug logging, set `"gitlens.outputLevel: "debug"` or run "GitLens: Enable Debug Logging" from the Command Palette
+[2024-12-04 17:05:42.122] [GIT   *1051ms] [/home/statick/workspaces/practicas/flutter/ejercicios] git config --get-regex ^user\. [*1051ms] (slow)
+[2024-12-04 17:05:42.330] loadLocalRepoDataMap
+EntryNotFound (FileSystemError): Error: ENOENT: no such file or directory, open '/home/statick/.gk/repoMapping.json'

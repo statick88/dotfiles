@@ -1,0 +1,28 @@
+{
+   "background": {
+      "page": "html/main.html"
+   },
+   "content_security_policy": "default-src 'self'; connect-src ws://127.0.0.1:8008/",
+   "default_locale": "en",
+   "description": "__MSG__pluginDescription__",
+   "devtools_page": "html/devtools.html",
+   "homepage_url": "https://chrome.google.com/webstore/detail/netbeans-connector/hafdlehgocfcodbgjnpecfajgkeejnaa",
+   "icons": {
+      "128": "img/netbeans128.png",
+      "16": "img/netbeans16.png",
+      "48": "img/netbeans48.png"
+   },
+   "key": "MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQDgo89CrO8f/2srD2BGUP9+dG4IkTC2D3gzEjXITaMaQgy8B4ObVpkA3bc27qc7HB9jhVj8P51aAETr89u+AvFgCeFtvtva0h0oodKRC3dCkQLnEWPGi7mEKB98cRhZmQ1Wa9A9tg3plKsujwwWskaFEL/hO7uu7myF0qLIeuiG6wIDAQAB",
+   "manifest_version": 2,
+   "minimum_chrome_version": "21",
+   "name": "__MSG__pluginName__",
+   "options_page": "html/options.html",
+   "page_action": {
+      "default_icon": "img/netbeans16.png",
+      "default_popup": "html/popup.html",
+      "default_title": "Open NetBeans actions"
+   },
+   "permissions": [ "contextMenus", "tabs", "debugger", "storage" ],
+   "update_url": "https://clients2.google.com/service/update2/crx",
+   "version": "1.1.5"
+}

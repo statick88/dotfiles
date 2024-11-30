@@ -1,0 +1,70 @@
+2024-12-04 08:35:08.952 [info] Using the Electron fetcher.
+2024-12-04 08:35:08.952 [info] Initializing Git extension service.
+2024-12-04 08:35:08.952 [info] Successfully activated the vscode.git extension.
+2024-12-04 08:35:08.952 [info] Enablement state of the vscode.git extension: true.
+2024-12-04 08:35:08.952 [info] Successfully registered Git commit message provider.
+2024-12-04 08:35:10.518 [info] Logged in as statick88
+2024-12-04 08:35:11.269 [info] Got Copilot token for statick88
+2024-12-04 08:35:11.322 [info] copilot token chat_enabled: true, sku: free_faculty
+2024-12-04 08:35:11.322 [info] GitHub.vscode-pull-request-github extension is not yet activated.
+2024-12-04 08:35:11.331 [info] Registering default platform agent...
+2024-12-04 08:35:11.807 [info] Fetched model metadata in 533ms cfe38fc3-073b-4def-8f5a-db6f8e3dc053
+2024-12-04 08:35:12.049 [info] activationBlocker from 'languageModelAccess' took for 1639ms
+2024-12-04 08:35:22.933 [info] Using the Electron fetcher.
+2024-12-04 08:35:22.933 [info] Initializing Git extension service.
+2024-12-04 08:35:22.933 [info] Successfully activated the vscode.git extension.
+2024-12-04 08:35:22.933 [info] Enablement state of the vscode.git extension: true.
+2024-12-04 08:35:22.933 [info] Successfully registered Git commit message provider.
+2024-12-04 08:35:24.097 [info] Logged in as statick88
+2024-12-04 08:35:24.661 [info] Got Copilot token for statick88
+2024-12-04 08:35:24.720 [info] copilot token chat_enabled: true, sku: free_faculty
+2024-12-04 08:35:24.720 [info] GitHub.vscode-pull-request-github extension is not yet activated.
+2024-12-04 08:35:24.727 [info] Registering default platform agent...
+2024-12-04 08:35:24.936 [info] Fetched model metadata in 264ms 9f5eaeb4-0482-4d1c-a051-691c63094e24
+2024-12-04 08:35:25.175 [info] activationBlocker from 'languageModelAccess' took for 1093ms
+2024-12-04 08:35:36.815 [info] Using the Electron fetcher.
+2024-12-04 08:35:36.815 [info] Initializing Git extension service.
+2024-12-04 08:35:36.815 [info] Successfully activated the vscode.git extension.
+2024-12-04 08:35:36.815 [info] Enablement state of the vscode.git extension: true.
+2024-12-04 08:35:36.815 [info] Successfully registered Git commit message provider.
+2024-12-04 08:35:38.481 [info] Logged in as statick88
+2024-12-04 08:35:39.098 [info] Got Copilot token for statick88
+2024-12-04 08:35:39.157 [info] copilot token chat_enabled: true, sku: free_faculty
+2024-12-04 08:35:39.157 [info] GitHub.vscode-pull-request-github extension is not yet activated.
+2024-12-04 08:35:39.164 [info] Registering default platform agent...
+2024-12-04 08:35:39.338 [info] Fetched model metadata in 228ms 519e069c-5501-495a-b0da-7e53e77bd8a9
+2024-12-04 08:35:39.598 [info] activationBlocker from 'languageModelAccess' took for 2508ms
+2024-12-04 08:40:42.755 [info] Using the Electron fetcher.
+2024-12-04 08:40:42.755 [info] Initializing Git extension service.
+2024-12-04 08:40:42.755 [info] Successfully activated the vscode.git extension.
+2024-12-04 08:40:42.755 [info] Enablement state of the vscode.git extension: true.
+2024-12-04 08:40:42.755 [info] Successfully registered Git commit message provider.
+2024-12-04 08:40:42.779 [info] Logged in as statick88
+2024-12-04 08:40:43.557 [info] Got Copilot token for statick88
+2024-12-04 08:40:43.617 [info] copilot token chat_enabled: true, sku: free_faculty
+2024-12-04 08:40:43.617 [info] GitHub.vscode-pull-request-github extension is not yet activated.
+2024-12-04 08:40:43.622 [info] Registering default platform agent...
+2024-12-04 08:40:44.146 [info] Fetched model metadata in 576ms e76fd7e3-3e81-4e8b-9175-225e43f8f3dc
+2024-12-04 08:40:44.387 [info] activationBlocker from 'languageModelAccess' took for 1674ms
+2024-12-04 08:41:09.642 [info] Logged in as statick88
+2024-12-04 08:41:10.550 [info] Got Copilot token for statick88
+2024-12-04 08:41:10.575 [info] copilot token chat_enabled: true, sku: free_faculty
+2024-12-04 08:55:44.919 [info] Fetched model metadata in 526ms 96939606-3c33-42a0-bf32-9e649d16cf92
+2024-12-04 09:06:10.553 [info] Logged in as statick88
+2024-12-04 09:06:11.587 [info] Got Copilot token for statick88
+2024-12-04 09:06:11.605 [info] copilot token chat_enabled: true, sku: free_faculty
+2024-12-04 09:06:12.184 [info] Fetched model metadata in 543ms 906339f7-8164-4a18-93f5-e91ed3e37946
+2024-12-04 09:21:12.721 [info] Fetched model metadata in 533ms 00bf2515-d706-44d3-bd82-622962b1d856
+2024-12-04 09:31:11.594 [info] Logged in as statick88
+2024-12-04 09:31:12.612 [info] Got Copilot token for statick88
+2024-12-04 09:31:12.617 [info] copilot token chat_enabled: true, sku: free_faculty
+2024-12-04 09:36:13.284 [info] Fetched model metadata in 554ms 5525965b-ddf1-4ac2-a47e-45783743675e
+2024-12-04 09:51:19.000 [info] Fetched model metadata in 5712ms 3cd8be86-550c-4e0b-9054-0eaef77abe08
+2024-12-04 09:56:12.617 [info] Logged in as statick88
+2024-12-04 09:56:17.559 [info] Got Copilot token for statick88
+2024-12-04 09:56:17.572 [info] copilot token chat_enabled: true, sku: free_faculty
+2024-12-04 10:06:21.723 [info] Fetched model metadata in 552ms da7d17d0-2d5f-4db5-934c-721e629090f6
+2024-12-04 10:21:17.566 [info] Logged in as statick88
+2024-12-04 10:21:18.476 [info] Got Copilot token for statick88
+2024-12-04 10:21:18.487 [info] copilot token chat_enabled: true, sku: free_faculty
+2024-12-04 10:21:19.038 [info] Fetched model metadata in 522ms ca7b4efa-cd2d-4ef2-89b0-458eaccf6e35

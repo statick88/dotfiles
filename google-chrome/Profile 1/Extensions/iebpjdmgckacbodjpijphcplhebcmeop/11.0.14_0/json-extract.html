@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en" dir="auto">
+  <head>
+    <title>__MSG_pageTitleJSONExtractor__</title>
+    <meta charset="utf-8" />
+
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, viewport-fit=cover, maximum-scale=1.0, user-scalable=no"
+    />
+
+    <link rel="stylesheet" href="src/styles/style-json-extract.css" />
+    <style type="text/css" id="styles"></style>
+    <style type="text/css" id="fontface"></style>
+
+    <script type="text/javascript" src="src/app/json-extract.js" defer></script>
+  </head>
+
+  <body class="init loading">
+    <header class="text-bg-light">
+  <div class="container">
+    <div
+      class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start"
+    >
+      <a
+        id="nav-logo-wrapper"
+        href="options.html"
+        class="align-items-center mb-2 mb-lg-0 text-dark text-decoration-none"
+      >
+        <img src="/src/assets/icon.png" />
+        <span class="fs-5">Table Capture</span>
+      </a>
+
+      <ul class="nav col-12 col-lg-auto me-lg-auto px-3 justify-content-center">
+        <li class="logo-wrapper">
+          <img src="/src/assets/icon.png" />
+        </li>
+        <li id="account">
+          <a href="account.html" class="nav-link px-2">Account</a>
+        </li>
+        <li id="options">
+          <a href="options.html" class="nav-link px-2">Options</a>
+        </li>
+        <li id="activity">
+          <a href="activity.html" class="nav-link px-2">Activity</a>
+        </li>
+        <li id="recipes">
+          <a href="recipes.html" class="nav-link px-2">Recipes</a>
+        </li>
+        <li id="support">
+          <a href="support.html" class="nav-link px-2">Support</a>
+        </li>
+        <li id="debug" class="hidden">
+          <a href="debug.html" class="nav-link px-2">Debug</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</header>
+
+
+    <div class="container page-content">
+      <section class="flashes">
+        <noscript>
+          <div class="alert alert-danger">
+            JavaScript is disabled. That's a problem.
+          </div>
+        </noscript>
+        <div class="error-wrapper global-errors"></div>
+      </section>
+
+      <section>
+        <h3 class="header-with-actions">
+          <div>
+            <span>JSON Extractor</span>
+            <span class="beta-flag">BETA</span>
+          </div>
+        </h3>
+        <hr />
+        <div class="main-app-content">
+          <div class="form-group json-url-form-group">
+            <label for="json-url">JSON URL</label>
+            <input
+              id="json-url"
+              type="text"
+              class="form-control form-control-lg json-url"
+              placeholder="Paste in the URL to your JSON"
+            />
+            <a class="example url"
+              >For example:
+              https://investor.vanguard.com/investment-products/etfs/profile/api/VTI/portfolio-holding/stock</a
+            >
+          </div>
+          <div class="json-preview-wrapper">
+            <label for="json-preview">JSON Response</label>
+            <textarea
+              id="json-preview"
+              class="form-control"
+              readonly
+            ></textarea>
+          </div>
+          <div class="form-group array-form-group">
+            <label for="array-base">Array OGNL Path</label>
+            <input
+              id="array-base"
+              type="text"
+              class="form-control form-control-lg array-base"
+              placeholder="OGNL Path to the Array"
+            />
+            <a class="example array-ognl">For example: fund.entity</a>
+          </div>
+          <div class="sheet-preview no-cols hidden">
+            <hr />
+            <h3>Table Builder</h3>
+            <div class="metadata"></div>
+            <div class="entry-preview-wrapper">
+              <label for="entry-preview">Entry Preview</label>
+              <textarea
+                id="entry-preview"
+                class="form-control"
+                readonly
+              ></textarea>
+              <p class="instructions">
+                Select the columns you want to include in your table. For
+                example, you can double click a key to quickly highlight and
+                include it.
+              </p>
+            </div>
+            <hr />
+            <h3 class="title-with-actions">
+              <span>Data Mapped from JSON &rarr; Table</span>
+              <div class="actions">
+                <input
+                  type="button"
+                  class="btn btn-primary btn-export"
+                  value="Export"
+                  disabled
+                />
+              </div>
+            </h3>
+            <div class="alert alert-warning alert-no-cols">
+              Please select some keys to add as table columns.
+            </div>
+            <div class="table-responsive">
+              <table class="table">
+                <thead></thead>
+                <tbody></tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <footer class="footer">
+  <div class="container">
+    <a class="footer-link link-review" target="_blank">Leave a Review</a>
+    <span>&middot;</span>
+    <a class="footer-link link-roadmap" target="_blank">Development Roadmap</a>
+    <span>&middot;</span>
+    <a class="footer-link link-email" target="_blank">Email Support</a>
+    <span>&middot;</span>
+    <a class="footer-link link-discord" target="_blank">Discord</a>
+    <span>&middot;</span>
+    <a class="footer-link link-newsletter" target="_blank"
+      >Join the Newsletter</a
+    >
+    <span>&middot;</span>
+    <a class="footer-link" href="thanks.html">Thanks</a>
+    <p class="text-muted">
+      <span class="text-tc-version"></span>
+      <span>&middot;</span>
+      <span>Copyright 2024, GeorgeMike.com</span>
+    </p>
+  </div>
+</footer>
+
+  </body>
+</html>

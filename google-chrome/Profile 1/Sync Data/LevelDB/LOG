@@ -1,0 +1,6 @@
+2024/12/04-14:31:04.081 a89 Reusing MANIFEST /home/statick/.config/google-chrome/Profile 1/Sync Data/LevelDB/MANIFEST-000001
+2024/12/04-14:31:04.083 a89 Recovering log #16
+2024/12/04-14:31:04.086 a89 Reusing old log /home/statick/.config/google-chrome/Profile 1/Sync Data/LevelDB/000016.log 
+2024/12/04-14:31:04.266 a96 Level-0 table #21: started
+2024/12/04-14:31:04.278 a96 Level-0 table #21: 107300 bytes OK
+2024/12/04-14:31:04.286 a96 Delete type=0 #16

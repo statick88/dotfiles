@@ -1,0 +1,14 @@
+{
+    "sqltools.connections": [
+        {
+            "previewLimit": 50,
+            "server": "localhost",
+            "port": 5432,
+            "driver": "PostgreSQL",
+            "name": "Tienda Virtual",
+            "database": "ecommerce",
+            "username": "admin",
+            "password": "securepassword"
+        }
+    ]
+}

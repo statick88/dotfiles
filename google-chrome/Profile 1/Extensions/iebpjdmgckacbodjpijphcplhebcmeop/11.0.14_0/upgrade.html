@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <title>__MSG_pageTitleUpgrade__</title>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, viewport-fit=cover, maximum-scale=1.0, user-scalable=no"
+    />
+    <style type="text/css" id="styles"></style>
+    <style type="text/css" id="fontface"></style>
+
+    <link rel="stylesheet" href="src/styles/style-upgrade.css" />
+    <script type="text/javascript" src="src/app/upgrade.js" defer></script>
+  </head>
+  <body>
+    <header class="text-bg-light">
+  <div class="container">
+    <div
+      class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start"
+    >
+      <a
+        id="nav-logo-wrapper"
+        href="options.html"
+        class="align-items-center mb-2 mb-lg-0 text-dark text-decoration-none"
+      >
+        <img src="/src/assets/icon.png" />
+        <span class="fs-5">Table Capture</span>
+      </a>
+
+      <ul class="nav col-12 col-lg-auto me-lg-auto px-3 justify-content-center">
+        <li class="logo-wrapper">
+          <img src="/src/assets/icon.png" />
+        </li>
+        <li id="account">
+          <a href="account.html" class="nav-link px-2">Account</a>
+        </li>
+        <li id="options">
+          <a href="options.html" class="nav-link px-2">Options</a>
+        </li>
+        <li id="activity">
+          <a href="activity.html" class="nav-link px-2">Activity</a>
+        </li>
+        <li id="recipes">
+          <a href="recipes.html" class="nav-link px-2">Recipes</a>
+        </li>
+        <li id="support">
+          <a href="support.html" class="nav-link px-2">Support</a>
+        </li>
+        <li id="debug" class="hidden">
+          <a href="debug.html" class="nav-link px-2">Debug</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</header>
+
+
+    <div class="container page-content">
+      <section class="upgrade-wrapper">
+        <div class="error-wrapper global-errors"></div>
+        <div class="title _tc-ext _tc18n">__MSG_tableCapturePro__</div>
+        <div class="row">
+          <div class="col-lg-6">
+            <p class="documentation">
+              Upgrading to <span class="pro">Pro</span> gives you all the
+              features below and everything we add going forward. Additionally,
+              you'll be helping to support the continued maintenance of software
+              that's trustworthy and dependable.
+            </p>
+            <div class="features">
+              <div class="subheading">Features</div>
+              <div class="feature">
+                Download tables as Excel (.xlsx) files directly
+              </div>
+              <div class="feature">
+                Download tables as CSV (.csv) files directly
+              </div>
+              <div class="feature">Capture dynamic and multi-page tables</div>
+              <div class="feature">
+                Export tables from PDF files (locally and from the web)
+              </div>
+              <div class="feature">Copy tables as Markdown text</div>
+              <div class="feature">
+                Starred favorite tables &amp; action replay
+              </div>
+              <div class="feature">
+                Screenshot tables with a click; download as PNGs or copy the
+                image to your clipboard
+              </div>
+              <div class="feature">Recipes for hard-to-capture tables</div>
+              <div class="feature">Customize the CSV file delimiter</div>
+              <div class="feature">Remove George's Self-Promotional Ads</div>
+              <div class="feature">
+                Priority support (via email and screenshare)
+              </div>
+            </div>
+            <div class="purchase-info has-trial">
+              <p>
+                <span class="pro">Pro</span> is free for your first 14 days.
+              </p>
+              <p>
+                Afterwards, it's just
+                <span class="pro _tc18n">__MSG_displayablePrice__</span> to save
+                yourself hours every week.
+              </p>
+              <p>
+                Licenses auto-renew. Cancel within your 14-day trial and you
+                won't be charged anything.
+              </p>
+            </div>
+            <div class="purchase-info no-trial _tc18nHTML">
+              __MSG_proPurchaseInfoNoTrial__
+            </div>
+            <div class="actions">
+              <input
+                type="button"
+                class="btn btn-primary btn-lg btn-buy btn-show-activation tc18nValue"
+                value="__MSG_getStarted__"
+              />
+              <a class="btn-show-activation"
+                >I already have a Table Capture Pro license.</a
+              >
+              <a class="support-cloud-only hidden" href="/cloud.html"
+                >I already have a Table Capture Cloud license.</a
+              >
+            </div>
+            <div class="activation-wrapper hidden">
+              <form class="activation-form">
+                <div class="form-group form-group-lg mb-3">
+                  <input
+                    type="text"
+                    id="activation"
+                    name="activation"
+                    class="form-control form-control-lg text-activation"
+                    placeholder="Paste in your Table Capture Pro license code here."
+                  />
+                </div>
+                <input
+                  type="button"
+                  class="btn btn-success btn-lg btn-text-activation"
+                  value="Activate"
+                />
+              </form>
+              <div class="scroll-anchor">Love you guys.</div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <footer class="footer">
+  <div class="container">
+    <a class="footer-link link-review" target="_blank">Leave a Review</a>
+    <span>&middot;</span>
+    <a class="footer-link link-roadmap" target="_blank">Development Roadmap</a>
+    <span>&middot;</span>
+    <a class="footer-link link-email" target="_blank">Email Support</a>
+    <span>&middot;</span>
+    <a class="footer-link link-discord" target="_blank">Discord</a>
+    <span>&middot;</span>
+    <a class="footer-link link-newsletter" target="_blank"
+      >Join the Newsletter</a
+    >
+    <span>&middot;</span>
+    <a class="footer-link" href="thanks.html">Thanks</a>
+    <p class="text-muted">
+      <span class="text-tc-version"></span>
+      <span>&middot;</span>
+      <span>Copyright 2024, GeorgeMike.com</span>
+    </p>
+  </div>
+</footer>
+
+  </body>
+</html>

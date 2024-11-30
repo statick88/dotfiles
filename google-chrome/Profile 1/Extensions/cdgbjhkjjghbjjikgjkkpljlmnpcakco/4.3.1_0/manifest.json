@@ -1,0 +1,47 @@
+{
+   "action": {
+      "default_icon": {
+         "128": "icons/128.png",
+         "16": "icons/16.png",
+         "256": "icons/256.png",
+         "32": "icons/32.png",
+         "48": "icons/48.png",
+         "64": "icons/64.png"
+      }
+   },
+   "author": "Andreas Bielawski",
+   "background": {
+      "scripts": [ "build/service-worker/service-worker.js" ],
+      "service_worker": "build/service-worker/service-worker.js",
+      "type": "module"
+   },
+   "browser_specific_settings": {
+      "gecko": {
+         "id": "{0da2e603-21ba-4422-8049-b6d9e013ed84}",
+         "strict_min_version": "120.0"
+      }
+   },
+   "content_security_policy": {
+      "extension_pages": "default-src 'none'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob:"
+   },
+   "default_locale": "en",
+   "description": "__MSG_extensionDescription__",
+   "icons": {
+      "128": "icons/128.png",
+      "16": "icons/16.png",
+      "256": "icons/256.png",
+      "32": "icons/32.png",
+      "48": "icons/48.png",
+      "64": "icons/64.png"
+   },
+   "key": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAm8nQ0h3CbBoRRiKOufJV14VRawDMn4UyJCcgkjRz1kaFM90rQfrgEQoi16H72a103ZChBMhfFrKjBZqjlKrsmBl9c7412dYiEX9whE9ZKjjn+tEL9PGqW/UdX5/AZqwmKkNfekXoFURBSYHbaUTZY5odZE32zdF7cxDVmDS0MoYSLXGxUCS69rKx0sLZT75x7rHslRnQ/0xTg/c+GKyJuIQY19PI3cYju4E3TvACidCMTbcScHYmalE9OSn/OpFMvsiRzo5ct7ohnx4Ze2N7U9s9tKB6Ua6IMb43WsvOgwYwtqYgDz7yWnIpIHEKM1t6pfE1Q69ZT+Y1qKMtMGvcnwIDAQAB",
+   "manifest_version": 3,
+   "name": "__MSG_extensionName__",
+   "options_ui": {
+      "open_in_tab": true,
+      "page": "options/options.html"
+   },
+   "permissions": [ "contextMenus", "storage" ],
+   "update_url": "https://clients2.google.com/service/update2/crx",
+   "version": "4.3.1"
+}

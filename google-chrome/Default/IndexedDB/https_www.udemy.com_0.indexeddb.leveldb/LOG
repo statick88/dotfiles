@@ -1,0 +1,6 @@
+2024/12/03-10:31:38.161 1ac8 Creating DB /home/statick/.config/google-chrome/Default/IndexedDB/https_www.udemy.com_0.indexeddb.leveldb since it was missing.
+2024/12/03-10:31:38.172 1ac8 Reusing MANIFEST /home/statick/.config/google-chrome/Default/IndexedDB/https_www.udemy.com_0.indexeddb.leveldb/MANIFEST-000001
+2024/12/03-10:38:16.150 1ac8 Level-0 table #5: started
+2024/12/03-10:38:16.155 1ac8 Level-0 table #5: 3862 bytes OK
+2024/12/03-10:38:16.164 1ac8 Delete type=0 #3
+2024/12/03-10:38:16.164 1ac8 Manual compaction at level-0 from (begin) .. (end); will stop at (end)

@@ -1,0 +1,846 @@
+{
+   "activateAction": {
+      "description": "Enlace a la página de activación.",
+      "message": "Activar \u003Ci>Table Capture\u003C/i>"
+   },
+   "activateExistingLicense": {
+      "description": "...",
+      "message": "¿Ya tienes un código de licencia? \u003Ca href=\"/activate-existing-license.html\">Actívalo aquí\u003C/a>."
+   },
+   "activateProRecipeLink": {
+      "description": "...",
+      "message": "\u003Ca class=\"alert-link\" href=\"/activate.html\">Active Table Capture\u003C/a> para crear algunos."
+   },
+   "airtableExplainer": {
+      "description": "Auto translated from the source language",
+      "message": "\u003Cp class=\"explainer-heading\">La página actual es una aplicación web de Airtable.\u003C/p>\u003Cp> Si desea exportar los datos de esta página, deberá utilizar una extensión especialmente diseñada:\u003Cbr /> \u003Ca target=\"_blank\">Extractor de mesa de aire de Table Capture\u003C/a>\u003C/p>"
+   },
+   "arbNavInstructionHtml": {
+      "description": "Instructions for the arb nav.",
+      "message": "Utilice el botón \u003Cspan class=\"_tc-strong\">Expandir selección\u003C/span> para aumentar \u003Cspan class=\"_tc-sel-orange\">el área seleccionada\u003C/span> hasta que incluya todos los datos que necesita. Si ha ido demasiado lejos, utilice el botón \u003Cspan class=\"_tc-strong\">Deshacer\u003C/span> para regresar."
+   },
+   "arbNavSelectionExpand": {
+      "description": "Button to expand the selection.",
+      "message": "Ampliar selección"
+   },
+   "arbNavSelectionReduce": {
+      "description": "Button to reduce the selection.",
+      "message": "↺ Deshacer"
+   },
+   "autoPageActionTooltip": {
+      "description": "Texto para explicar una acción de paginación automática.",
+      "message": "Intentar paginar automáticamente la tabla"
+   },
+   "autoScrollActionTooltip": {
+      "description": "Texto para explicar una acción de desplazamiento automático.",
+      "message": "Intentar desplazar automáticamente la tabla"
+   },
+   "beta": {
+      "description": "Auto translated from the source language",
+      "message": "Beta"
+   },
+   "clear": {
+      "description": "Auto translated from the source language",
+      "message": "Claro"
+   },
+   "clipActionTooltip": {
+      "description": "Texto para explicar una acción de recorte de datos.",
+      "message": "Recortar los datos para luego exportar todos los recortes juntos."
+   },
+   "cloudActionDisabledTooltip": {
+      "description": "Texto para explicar una acción de añadir una tabla a Table Capture Cloud.",
+      "message": "Añadir a Table Capture Cloud está desactivado."
+   },
+   "cloudActionTooltip": {
+      "description": "Texto para explicar una acción de añadir una tabla a Table Capture Cloud.",
+      "message": "Añadir a Table Capture Cloud"
+   },
+   "columnifyActionTooltip": {
+      "description": "Texto para explicar una acción de separar columnas.",
+      "message": "Separar columnas: Útil cuando tus datos son tipo lista"
+   },
+   "contextMenuActivity": {
+      "description": "Un mensaje de menú contextual que invoca una receta con el nombre dado.",
+      "message": "☆ $1: $2"
+   },
+   "contextMenuDisplayInline": {
+      "description": "A context menu message that invokes the inline display.",
+      "message": "Table Capture - Mostrar acciones en línea"
+   },
+   "contextMenuLaunchWorkshop": {
+      "description": "Un menú contextual ...",
+      "message": "Table Capture - Iniciar taller"
+   },
+   "contextMenuLaunchWorkshopForElement": {
+      "description": "Un menú contextual ...",
+      "message": "Table Capture - Iniciar taller para el elemento"
+   },
+   "contextMenuLaunchWorkshopForSelection": {
+      "description": "Un menú contextual ...",
+      "message": "Table Capture - Iniciar taller para la selección"
+   },
+   "contextMenuRecipe": {
+      "description": "Un mensaje de menú contextual que invoca una receta con el nombre dado.",
+      "message": "Table Capture - Receta: $1"
+   },
+   "contextMenuRecipeClipStart": {
+      "description": "Un mensaje de menú contextual que inicia el recorte automático de una receta con el nombre dado.",
+      "message": "Table Capture - Iniciar Recorte de Receta: $1"
+   },
+   "contextMenuRecipeClipStop": {
+      "description": "Un mensaje de menú contextual que detiene el recorte automático de una receta con el nombre dado.",
+      "message": "Table Capture - Detener Recorte de Receta: $1"
+   },
+   "contextMenuRefreshNeeded": {
+      "description": "Un mensaje de menú contextual que indica al usuario que se necesita una actualización.",
+      "message": "Table Capture: Actualiza esta página antes de usar"
+   },
+   "continueDynamicPaging": {
+      "description": "Message to ask the user if they want to continue capturing a dataset.",
+      "message": "Anteriormente estaba capturando un conjunto de datos con Table Capture. ¿Quieres guardar estos datos?"
+   },
+   "convertMoneyValues": {
+      "description": "Auto translated from the source language",
+      "message": "Convertir valores monetarios"
+   },
+   "copied": {
+      "description": "Auto translated from the source language",
+      "message": "Copiado"
+   },
+   "copyClipboardAction": {
+      "description": "Enlace para copiar una tabla al portapapeles del sistema.",
+      "message": "Copiar al Portapapeles"
+   },
+   "copyClipboardActionTooltip": {
+      "description": "Texto para explicar una acción de exportar una tabla al portapapeles.",
+      "message": "Copiar datos de la tabla al portapapeles"
+   },
+   "copyComplete": {
+      "description": "Un mensaje que indica que la copia ha finalizado.",
+      "message": "Copia completa"
+   },
+   "copySelectedAction": {
+      "description": "Enlace para copiar todas las tablas seleccionadas.",
+      "message": "Copiar Seleccionados"
+   },
+   "copySelectedDescription": {
+      "description": "Descripción emergente para copySelectedAction arriba.",
+      "message": "Copiar todas las tablas seleccionadas en la página"
+   },
+   "copying": {
+      "description": "Un mensaje que indica que la copia está en progreso.",
+      "message": "Copiando..."
+   },
+   "csvAction": {
+      "description": "Enlace para descargar una tabla como un archivo CSV.",
+      "message": "A CSV"
+   },
+   "csvActionTooltip": {
+      "description": "Texto para explicar una acción de exportar una tabla a un archivo CSV.",
+      "message": "Descargar tabla como archivo CSV"
+   },
+   "debugAction": {
+      "description": "Link to debug the extension.",
+      "message": "depurar"
+   },
+   "deleteEmptyRows": {
+      "description": "Auto translated from the source language",
+      "message": "Eliminar filas vacías"
+   },
+   "detachPaneAction": {
+      "description": "Enlace para desprender la ventana para que sea una caja móvil en la página. Útil en casos donde la ventana bloquea tablas objetivo.",
+      "message": "desprender panel"
+   },
+   "detachPaneDescription": {
+      "description": "Descripción emergente para detachPaneAction arriba.",
+      "message": "Desprender el panel de listado de tablas para mostrar dentro de la página"
+   },
+   "displayableCloudPrice": {
+      "description": "Precio a mostrar",
+      "message": "25$/mes"
+   },
+   "displayablePrice": {
+      "description": "Precio a mostrar",
+      "message": "12$/año"
+   },
+   "dockBottom": {
+      "description": "Auto translated from the source language",
+      "message": "Parte inferior del muelle"
+   },
+   "dockTop": {
+      "description": "Auto translated from the source language",
+      "message": "Parte superior del muelle"
+   },
+   "downloadingTablesAsACsvFile": {
+      "description": "Auto translated from the source language",
+      "message": "La descarga de tablas como un archivo CSV solo está disponible con Table Capture Pro."
+   },
+   "downloadingTablesInExcelXl": {
+      "description": "Auto translated from the source language",
+      "message": "La descarga de tablas en Excel (.xlsx) solo está disponible con Table Capture Pro."
+   },
+   "duneExplainer": {
+      "description": "Auto translated from the source language",
+      "message": "\u003Cp class=\"explainer-heading\">Estos resultados de consultas de Dune se pueden exportar \u003Ci>instantáneamente\u003C/i> .\u003C/p>\u003Cp> George recomienda la extensión especialmente diseñada: \u003Ca target=\"_blank\">Dune Data Exporter de Table Capture\u003C/a>\u003C/p>\u003Cp> Si Table Capture hace un trabajo suficientemente bueno, genial; Puedes usarlo debajo de lo habitual.\u003C/p>"
+   },
+   "dynamicCaptureConfigTooltip": {
+      "description": "Descripción emergente para las opciones de captura de tabla dinámica.",
+      "message": "Configurar opciones de captura de tabla dinámica"
+   },
+   "editActionTooltip": {
+      "description": "Texto para explicar una acción de editar datos antes de exportarlos.",
+      "message": "Editar datos de la tabla antes de exportar"
+   },
+   "editSettingsTooltip": {
+      "description": "Texto para explicar una acción de editar opciones.",
+      "message": "Configurar opciones de extracción"
+   },
+   "errorAutoClipRecipeData": {
+      "description": "Auto translated from the source language",
+      "message": "No se pueden recortar automáticamente los datos de la receta: $1"
+   },
+   "errorNextPageButtonLikelyNotFound": {
+      "description": "Un mensaje de que la extensión probablemente no pudo encontrar el botón de siguiente página.",
+      "message": "Probablemente no se encontró el botón 'siguiente página'."
+   },
+   "errorUsingNextPageButtonSelector": {
+      "description": "Un mensaje de que la extensión probablemente no pudo encontrar el botón de siguiente página.",
+      "message": "No se encontró el botón 'siguiente página'."
+   },
+   "errorUsingNextPageButtonSelectorTooFew": {
+      "description": "Un mensaje de que la extensión probablemente no pudo encontrar el botón de siguiente página.",
+      "message": "No se encontró el botón 'siguiente página' para el selector proporcionado."
+   },
+   "errorUsingNextPageButtonSelectorTooMany": {
+      "description": "Un mensaje de que la extensión encontró demasiados elementos para un selector.",
+      "message": "El selector de botón 'siguiente página' proporcionado encontró más de un botón."
+   },
+   "excelAction": {
+      "description": "Enlace para convertir una tabla a una hoja de cálculo Excel.",
+      "message": "A Excel"
+   },
+   "excelActionTooltip": {
+      "description": "Texto para explicar una acción de exportar una tabla a un archivo Excel.",
+      "message": "Descargar tabla como archivo Excel (.xlsx)"
+   },
+   "expected1DatasetsReceived": {
+      "description": "Auto translated from the source language",
+      "message": "Conjuntos de datos esperados de $1, recibidos $2"
+   },
+   "extensionDesc": {
+      "description": "descripción de la extensión",
+      "message": "Copia tablas HTML al portapapeles o las exporta a Microsoft Excel, CSV, Google Sheets, Office 365, etc."
+   },
+   "extensionName": {
+      "description": "nombre de la extensión",
+      "message": "Table Capture"
+   },
+   "extensionShortName": {
+      "description": "nombre corto de la extensión",
+      "message": "Table Capture"
+   },
+   "extractImageIconAttributes": {
+      "description": "Auto translated from the source language",
+      "message": "Extraer atributos de imagen + icono"
+   },
+   "extractWebAddressesUrls": {
+      "description": "Auto translated from the source language",
+      "message": "Extraer direcciones web (URL)"
+   },
+   "favoritesAction": {
+      "description": "Enlace a la página de actividad.",
+      "message": "actividad"
+   },
+   "feedbackAction": {
+      "description": "Enlace para proporcionar comentarios sobre la extensión.",
+      "message": "comentarios"
+   },
+   "feedbackDescription": {
+      "description": "Descripción emergente para el enlace feedbackAction arriba.",
+      "message": "Haz clic para proporcionar comentarios sobre la extensión"
+   },
+   "firstAndOnlyRow": {
+      "description": "Auto translated from the source language",
+      "message": "Primera y única fila:"
+   },
+   "firstRow": {
+      "description": "Auto translated from the source language",
+      "message": "Primera fila:"
+   },
+   "flutterGlassPaneError": {
+      "description": "Error message when the selected element is within a Flutter canvas.",
+      "message": "The selected element is within a Flutter canvas. Unfortunately, Table Capture cannot capture Flutter content."
+   },
+   "folkExplainer": {
+      "description": "Auto translated from the source language",
+      "message": "\u003Cp class=\"explainer-heading\">La página actual es una aplicación web Folk.\u003C/p>\u003Cp> Si desea exportar los datos de esta página, deberá utilizar una extensión especialmente diseñada:\u003Cbr /> \u003Ca target=\"_blank\" >Extractor de folk de Table Capture\u003C/a>\u003C/p>"
+   },
+   "fyiSelectionBanner": {
+      "description": "Auto translated from the source language",
+      "message": "\u003Cstrong>Nuevo en \u003Cspan class=\"_tc-ext\">Table Capture\u003C/span> :\u003C/strong> resalte cualquier cosa en la página antes de iniciar la extensión para capturar cualquier cosa en la página.\u003Cbr />\u003Cbr /> ¡Pruébalo para descartar este consejo!"
+   },
+   "getStarted": {
+      "description": "...",
+      "message": "Comenzar"
+   },
+   "googleDocAction": {
+      "description": "Enlace para convertir una tabla a una hoja de Google.",
+      "message": "A Google Sheets"
+   },
+   "googleDocActionTooltip": {
+      "description": "Texto para explicar una acción de exportar una tabla a una hoja de Google.",
+      "message": "Exportar tabla a Google Sheets"
+   },
+   "googleSheetsExplainer": {
+      "description": "Auto translated from the source language",
+      "message": "\u003Cp class=\"explainer-heading\">La página actual es una aplicación web de Google Sheets.\u003C/p>\u003Cp> Si desea exportar los datos de esta página con \u003Cspan class=\"_tc-ext\">Table Capture\u003C/span>, cambie a la versión HTML-View de esta página aquí:\u003Ca target=\"_blank\">\u003C/a>\u003C/p>"
+   },
+   "headers": {
+      "description": "Auto translated from the source language",
+      "message": "Encabezados:"
+   },
+   "helpAction": {
+      "description": "Enlace para obtener ayuda sobre la extensión.",
+      "message": "obtener ayuda ahora"
+   },
+   "ifYouDonTSeeYourSheetInT": {
+      "description": "Auto translated from the source language",
+      "message": "Si no ve su hoja en esta lista, búsquela y ábrala en Google Drive y aparecerá en la lista la próxima vez que realice esta acción. También puedes \u003Ca target=\"_blank\" class=\"_tc-link\" id=\"tc-manage-gsheets\">administrar tu lista de Google Sheets\u003C/a> ."
+   },
+   "iframeHint": {
+      "description": "Auto translated from the source language",
+      "message": "\u003Cdiv>\u003Cspan>Table Capture funciona dentro de un iFrame. Es posible que tengas que desplazarte hasta la parte inferior para ver el taller. También puedes intentar \u003Ca target=\"_blank\">abrir el marco\u003C/a> en su propia pestaña e intentarlo de nuevo.\u003C/span>\u003C/div>"
+   },
+   "ignoreHiddenElements": {
+      "description": "Auto translated from the source language",
+      "message": "Ignorar elementos ocultos"
+   },
+   "ignoreImageIconAttributes": {
+      "description": "Auto translated from the source language",
+      "message": "Ignorar atributos de imagen + icono"
+   },
+   "ignoreImages": {
+      "description": "Auto translated from the source language",
+      "message": "Ignorar imágenes"
+   },
+   "keyboardShortcutInlineActions": {
+      "description": "Keyboard shortcuts for inline actions.",
+      "message": "Mostrar acciones en línea"
+   },
+   "loading": {
+      "description": "Un menú contextual ...",
+      "message": "Cargando..."
+   },
+   "markdownActionTooltip": {
+      "description": "Texto para explicar una acción de exportar una tabla como Markdown.",
+      "message": "Copiar al portapapeles como Markdown"
+   },
+   "maximize": {
+      "description": "Auto translated from the source language",
+      "message": "Maximizar"
+   },
+   "minimize": {
+      "description": "Auto translated from the source language",
+      "message": "Minimizar"
+   },
+   "narratePowerpointsInYourBrow": {
+      "description": "Auto translated from the source language",
+      "message": "Narrar PowerPoints en tu navegador"
+   },
+   "navLinkAccount": {
+      "description": "...",
+      "message": "Cuenta"
+   },
+   "navLinkActivity": {
+      "description": "...",
+      "message": "Actividad"
+   },
+   "navLinkOptions": {
+      "description": "...",
+      "message": "Opciones"
+   },
+   "navLinkRecipes": {
+      "description": "...",
+      "message": "Recetas"
+   },
+   "navLinkSupport": {
+      "description": "...",
+      "message": "Soporte"
+   },
+   "noDataMessageDefault": {
+      "description": "Auto translated from the source language",
+      "message": "No se encontraron datos para esta vista."
+   },
+   "noDataMessageRecipe": {
+      "description": "Auto translated from the source language",
+      "message": "No se encontraron datos para esta receta. Es posible que deba modificar sus selectores/código."
+   },
+   "noDataMessageSelection": {
+      "description": "Auto translated from the source language",
+      "message": "No se encontraron datos para esta selección. Por favor modifique su selección."
+   },
+   "noDatasetsPresent": {
+      "description": "Auto translated from the source language",
+      "message": "No hay conjuntos de datos presentes"
+   },
+   "noPreviewableData": {
+      "description": "Auto translated from the source language",
+      "message": "No hay datos previsualizables"
+   },
+   "noTabIdFound": {
+      "description": "Auto translated from the source language",
+      "message": "No se encontró ningún ID de pestaña."
+   },
+   "noTablesExplainer": {
+      "description": "Auto translated from the source language",
+      "message": "\u003Cp>Esto puede suceder si no hay elementos \u003Cspan class=\"mono\">&lt;table&gt;\u003C/span> en la página.\u003C/p>\u003Cp> La mejor manera de solucionar este problema es utilizar \u003Cspan class=\"_tc-ext\">Table Capture Workshop\u003C/span> . Puedes hacerlo mediante:\u003C/p>\u003Col>\u003Cli> Resaltando algún texto de una celda de una tabla que le interesa\u003C/li>\u003Cli> Haga clic derecho en el texto resaltado\u003C/li>\u003Cli> Seleccione &quot;Table Capture - Iniciar taller&quot; en el menú contextual\u003C/li>\u003C/ol>\u003Chr /> \u003Ca class=\"btn btn-primary btn-report-page\">Probé lo anterior y todavía tengo problemas; \u003Cstrong>este es un error de Table Capture.\u003C/strong>\u003C/a>\u003Cdiv class=\"disclaimer\"> Al hacer clic en lo anterior, se informará \u003Cspan>de esta página\u003C/span> para que podamos mejorar \u003Cspan class=\"_tc-ext\">Table Capture\u003C/span> .\u003C/div>"
+   },
+   "noTablesFound": {
+      "description": "Un mensaje de que no se han encontrado tablas.",
+      "message": "No se encontraron tablas en la página."
+   },
+   "noWindowNameFoundForTable": {
+      "description": "Auto translated from the source language",
+      "message": "No se encontró ningún nombre de ventana para la tabla."
+   },
+   "notionExplainer": {
+      "description": "Auto translated from the source language",
+      "message": "\u003Cp class=\"explainer-heading\">La página actual es una aplicación web de Notion.\u003C/p>\u003Cp> Si desea exportar los datos de esta página, deberá utilizar una extensión especialmente diseñada:\u003Cbr /> \u003Ca target=\"_blank\" >Extractor de datos de Notion mediante captura de tablas\u003C/a>\u003C/p>"
+   },
+   "o365ActionTooltip": {
+      "description": "Texto para explicar una acción de exportar una tabla a Office 365.",
+      "message": "Exportar tabla a Office 365"
+   },
+   "openWorkshopAction": {
+      "description": "Enlace para abrir el taller.",
+      "message": "Más opciones"
+   },
+   "openingPurchasePage": {
+      "description": "Un mensaje de que la extensión está abriendo la página de compra.",
+      "message": "Abriendo página de compra de licencia..."
+   },
+   "optionsAction": {
+      "description": "Enlace a la página de opciones.",
+      "message": "opciones"
+   },
+   "optionsText": {
+      "description": "El texto opciones",
+      "message": "Opciones"
+   },
+   "otherAppsFromGeorge": {
+      "description": "Auto translated from the source language",
+      "message": "Otras aplicaciones de George:"
+   },
+   "pageTitleAccount": {
+      "description": "Título de la página para la página de cuenta",
+      "message": "Cuenta | Table Capture"
+   },
+   "pageTitleActivateExisting": {
+      "description": "Título de la página para la página de activar licencia existente",
+      "message": "Activar Licencia Existente | Table Capture"
+   },
+   "pageTitleActivity": {
+      "description": "Título de la página para la página de actividad",
+      "message": "Actividad | Table Capture"
+   },
+   "pageTitleClips": {
+      "description": "Título de la página para la página de opciones",
+      "message": "Recortes | Table Capture"
+   },
+   "pageTitleCloud": {
+      "description": "Page title for the cloud page",
+      "message": "Nube | Table Capture"
+   },
+   "pageTitleJSONExtractor": {
+      "description": "Page title for the JSON extractor page",
+      "message": "Extractor JSON | Table Capture"
+   },
+   "pageTitleManageGoogleSheets": {
+      "description": "Page title for the manage google sheets page",
+      "message": "Administrar Hojas de cálculo de Google | Table Capture"
+   },
+   "pageTitleOptions": {
+      "description": "Título de la página para la página de opciones",
+      "message": "Opciones | Table Capture"
+   },
+   "pageTitlePdfExtractor": {
+      "description": "Título de la página para la página del extractor PDF",
+      "message": "Extractor PDF | Table Capture"
+   },
+   "pageTitleRecipes": {
+      "description": "Título de la página para la página de agradecimiento",
+      "message": "Recetas | Table Capture"
+   },
+   "pageTitleSupport": {
+      "description": "Título de la página para la página de opciones",
+      "message": "Soporte | Table Capture"
+   },
+   "pageTitleTableEdit": {
+      "description": "Título de la página para la página de agradecimiento",
+      "message": "Editar | Table Capture"
+   },
+   "pageTitleThanks": {
+      "description": "Título de la página para la página de agradecimiento",
+      "message": "Gracias | Table Capture"
+   },
+   "pageTitleUpgrade": {
+      "description": "Título de la página para la página de actualización",
+      "message": "Actualizar | Table Capture"
+   },
+   "pageTitleWelcome": {
+      "description": "Título de la página para la página de opciones cuando se instala por primera vez",
+      "message": "Bienvenido | Table Capture"
+   },
+   "pagedAmpDynamicTables": {
+      "description": "Auto translated from the source language",
+      "message": "Buscapersonas y amp; Tablas dinámicas"
+   },
+   "pagingButtonMissingError": {
+      "description": "Message about the missing next page button.",
+      "message": "Table Capture couldn't find the 'next page' button. You can try again by clicking the ⟳ button above."
+   },
+   "pagingPagedElementDomSelectorActionTooltip": {
+      "description": "Error de paginación del taller: Proporciona tu propio selector/xpath",
+      "message": "Proporciona un selector/xpath para el elemento de tabla paginada."
+   },
+   "pagingResetActionTooltip": {
+      "description": "Error de paginación del taller: Reiniciar el taller",
+      "message": "Reiniciar el taller completamente."
+   },
+   "pagingRetryActionTooltip": {
+      "description": "Mensaje para mostrar cuando no se puede localizar una tabla paginada, pero el usuario reintenta.",
+      "message": "Intenta una vez más localizar tu tabla paginada."
+   },
+   "pagingRetrySalvageAction": {
+      "description": "Acción del botón para recuperar datos de una tabla paginada.",
+      "message": "Recuperar Datos (Filas: $1)"
+   },
+   "pagingRetrySalvageActionTooltip": {
+      "description": "Mensaje para mostrar cuando una tabla paginada no se puede localizar, pero el usuario reintenta/recupera.",
+      "message": "Exportar datos capturados previamente incluso si la página actual no se puede capturar."
+   },
+   "pasteToCaptureMessage": {
+      "description": "Mensaje en ventana emergente indicando al usuario que pegue para obtener la tabla capturada en su hoja de Google.",
+      "message": "Table Capture: Simplemente pega desde tu portapapeles para importar tus datos."
+   },
+   "pdfExplainer": {
+      "description": "Auto translated from the source language",
+      "message": "\u003Cp class=\"explainer-heading\">La página actual es un documento PDF.\u003C/p>\u003Cp> Pruebe el extractor de PDF experimental \u003Cspan class=\"_tc-ext\">de Table Capture\u003C/span> en esta página: \u003Cdiv style=\"margin-top: 8px;\">\u003Cinput type=\"button\" class=\"btn btn-warning btn-launch-pdf\" value=\"Launch PDF Extractor\" />\u003C/div>\u003C/p>"
+   },
+   "pleaseActivateSpanClassTc": {
+      "description": "Auto translated from the source language",
+      "message": "Active \u003Cspan class=_tc-ext>Table Capture\u003C/span> para usar la extensión."
+   },
+   "powerBiExplainer": {
+      "description": "Auto translated from the source language",
+      "message": "\u003Cp class=\"explainer-heading\">La página actual es una aplicación web PowerBI.\u003C/p>\u003Cp> Si desea exportar los datos de esta página, deberá utilizar una extensión especialmente diseñada:\u003Cbr /> \u003Ca target=\"_blank\">Extractor PowerBI por Table Capture\u003C/a>\u003C/p>"
+   },
+   "preview": {
+      "description": "Auto translated from the source language",
+      "message": "Avance"
+   },
+   "previewData": {
+      "description": "Auto translated from the source language",
+      "message": "Vista previa de datos"
+   },
+   "previewDataCounts": {
+      "description": "Auto translated from the source language",
+      "message": "Filas: $1, Columnas: $2"
+   },
+   "previewPagedDataCounts": {
+      "description": "Auto translated from the source language",
+      "message": "Filas: $1, Columnas: $2, Páginas: $3"
+   },
+   "proPurchaseInfoNoTrial": {
+      "description": "...",
+      "message": "\u003Cp>\u003Cspan class='pro'>Pro\u003C/span> cuesta solo \u003Cspan class='pro'>12$\u003C/span> para ahorrarte horas cada semana.\u003C/p>\u003Cp>Tu licencia es válida por un año.\u003C/p>"
+   },
+   "promptCssSelector": {
+      "description": "The prompt for the user to select a CSS selector.",
+      "message": "Ingrese un selector de CSS para la tabla que desea seleccionar."
+   },
+   "provideCustomSelectorOrXpath": {
+      "description": "Mensaje ...",
+      "message": "Proporciona un selector o xpath personalizado"
+   },
+   "refetchDataTooltip": {
+      "description": "Acción para reintentar la extracción de datos.",
+      "message": "Reintentar extracción de datos"
+   },
+   "refreshAction": {
+      "description": "Enlace para actualizar la lista actual de tablas encontradas en la página.",
+      "message": "actualizar"
+   },
+   "refreshDescription": {
+      "description": "Descripción emergente para el enlace refreshAction arriba.",
+      "message": "Haz clic para actualizar (para tablas creadas después de cargar la página)"
+   },
+   "remove": {
+      "description": "Auto translated from the source language",
+      "message": "Eliminar"
+   },
+   "removeAction": {
+      "description": "Enlace para eliminar un menú en línea o panel de la página.",
+      "message": "eliminar"
+   },
+   "salvageMessage": {
+      "description": "Auto translated from the source language",
+      "message": "\u003Cdiv class=\"_tc-heading\">Datos recuperados\u003C/div>\u003Cp class=\"readable\"> Los datos que estás viendo se recuperaron después de encontrar un error. Le recomendamos que exporte estos datos como pueda y luego actualice la página para continuar donde lo dejó (si es posible).\u003C/p>\u003Cp class=\"readable\"> Si actualizar la página no es conveniente, sería mejor que al menos cerrara este taller y lo reiniciara para continuar capturando sus datos.\u003C/p>"
+   },
+   "screenshotAction": {
+      "description": "Enlace para capturar una tabla y descargarla como imagen.",
+      "message": "Capturar tabla"
+   },
+   "screenshotActionTooltip": {
+      "description": "Texto para explicar una acción de captura de pantalla de una tabla",
+      "message": "Capturar tabla (guarda como imagen .png)"
+   },
+   "screenshottingTablesIsOnlyAv": {
+      "description": "Auto translated from the source language",
+      "message": "La captura de pantalla de tablas solo está disponible con Table Capture Pro."
+   },
+   "scrollToBottomActionTooltip": {
+      "description": "Texto para explicar la acción de desplazarse hasta el final.",
+      "message": "Desplazarse hasta el final de la página."
+   },
+   "selectAllAction": {
+      "description": "Enlace para seleccionar todas las tablas.",
+      "message": "Seleccionar todo"
+   },
+   "selectAllDescription": {
+      "description": "Descripción emergente para selectAllAction arriba.",
+      "message": "Seleccionar todas las tablas en la página"
+   },
+   "selectChildActionTooltip": {
+      "description": "Text to explain an action to select the parent element.",
+      "message": "Volver a una parte más pequeña del área seleccionada"
+   },
+   "selectInPageBanner": {
+      "description": "Auto translated from the source language",
+      "message": "\u003Cspan class=\"cta\">¿No ves tu mesa?\u003C/span>\u003Cinput type=\"button\" class=\"btn btn-outline-dark btn-sm\" value=\"Seleccionar en la página\"/>"
+   },
+   "selectNoneAction": {
+      "description": "Enlace para no seleccionar ninguna de las tablas.",
+      "message": "Limpiar selección"
+   },
+   "selectNoneDescription": {
+      "description": "Descripción emergente para selectNoneAction arriba.",
+      "message": "No seleccionar ninguna de las tablas en la página"
+   },
+   "selectParentActionTooltip": {
+      "description": "Text to explain an action to select the parent element.",
+      "message": "Incluir más contenido circundante."
+   },
+   "selectedTablesCopied": {
+      "description": "Auto translated from the source language",
+      "message": "Tablas seleccionadas copiadas"
+   },
+   "selectedToExcelAction": {
+      "description": "Enlace para convertir las tablas seleccionadas a una hoja de cálculo de Excel.",
+      "message": "A Excel"
+   },
+   "selectedToExcelDescription": {
+      "description": "Descripción emergente para selectedToExcelAction arriba.",
+      "message": "Crear una hoja de cálculo de Excel con todas las tablas seleccionadas en la página. Cada tabla estará en una hoja separada en tu libro de Excel."
+   },
+   "selectedToExcelDescriptionSingleSheet": {
+      "description": "Descripción emergente para selectedToExcelAction arriba.",
+      "message": "Crear una hoja de cálculo de Excel con todas las tablas seleccionadas en la página. Las tablas estarán en una sola hoja en tu libro de Excel separadas por una fila en blanco."
+   },
+   "selectedToGoogleAction": {
+      "description": "Enlace para convertir las tablas seleccionadas a un documento de Google.",
+      "message": "A Google Sheets"
+   },
+   "selectedToGoogleDescription": {
+      "description": "Descripción emergente para selectedToGoogleAction arriba.",
+      "message": "Crear un documento de Google con todas las tablas seleccionadas en la página"
+   },
+   "selectionHighlightTooltip": {
+      "description": "Text to explain an action to highlight the selected area.",
+      "message": "El área naranja resaltada en la página."
+   },
+   "sheetSyncActionTooltip": {
+      "description": "Texto para explicar una acción para sincronizar datos en vivo con Google Sheets.",
+      "message": "Sincronizar datos en vivo con Google Sheets"
+   },
+   "spanUpgradeToSpanClassTc": {
+      "description": "Auto translated from the source language",
+      "message": "\u003Cspan>Actualízate a \u003Cspan class=_tc-strong>Pro\u003C/span>\u003C/span>"
+   },
+   "strongNextClickWhateverLin": {
+      "description": "Auto translated from the source language",
+      "message": "\u003Cstrong>Siguiente: haga clic en cualquier enlace o botón que le llevará a la página siguiente.\u003C/strong> Luego, la extensión intentará hacer clic en ese botón continuamente hasta que desactive la paginación automática."
+   },
+   "supportAction": {
+      "description": "Enlace a la página de opciones.",
+      "message": "soporte"
+   },
+   "tableCapturePro": {
+      "description": "...",
+      "message": "Table Capture Pro"
+   },
+   "tablesFoundAndSelectedTitle": {
+      "description": "Número de tablas encontradas, seleccionadas.",
+      "message": "Tablas ($1), Seleccionadas ($2)"
+   },
+   "tablesFoundTitle": {
+      "description": "Número de tablas encontradas.",
+      "message": "Tablas ($1)"
+   },
+   "teachersFlipYourClassroomW": {
+      "description": "Auto translated from the source language",
+      "message": "Profesores: ¡cambia tu aula con Presentious!"
+   },
+   "tellUsWhatYouWantUsToAdd": {
+      "description": "Auto translated from the source language",
+      "message": "Díganos qué desea que agreguemos a la extensión; ¡Impulse mejoras en Table Capture!"
+   },
+   "thereWasAnErrorCommunicating": {
+      "description": "Auto translated from the source language",
+      "message": "Hubo un error al comunicarse con la página. ¿Intentar otra vez?"
+   },
+   "thisFeatureIsOnlyAvailableW": {
+      "description": "Auto translated from the source language",
+      "message": "Esta función solo está disponible con Table Capture Pro."
+   },
+   "tooSmallFrameMessage": {
+      "description": "Message shown when the frame is too small for Table Capture",
+      "message": "Este marco es demasiado pequeño. \u003Ca>Haga clic aquí\u003C/a> para maximizarlo y continuar usando Table Capture."
+   },
+   "tooSmallWindowMessage": {
+      "description": "Message shown when the window is too small for Table Capture",
+      "message": "Esta ventana es demasiado pequeña. Intente hacerlo más grande para usar Table Capture."
+   },
+   "trialPeriodInfo": {
+      "description": "...",
+      "message": "Prueba gratis durante 14 días."
+   },
+   "tryPresentious": {
+      "description": "Auto translated from the source language",
+      "message": "Prueba Presentious"
+   },
+   "unableToGetAnyWindowByName": {
+      "description": "Auto translated from the source language",
+      "message": "No se puede obtener ninguna ventana por nombre."
+   },
+   "unknownError": {
+      "description": "Default message for unknown errors",
+      "message": "Error desconocido"
+   },
+   "updatePagerDomSelectorActionTooltip": {
+      "description": "Descripción emergente de la acción de proporcionar selector/xpath del paginador.",
+      "message": "Actualizar el selector/xpath para el botón que se hace clic para ir a la siguiente página."
+   },
+   "upgradeAction": {
+      "description": "Enlace a la página de actualización.",
+      "message": "Actualizar a \u003Ci>Pro\u003C/i>"
+   },
+   "upgradeActionTitle": {
+      "description": "Enlace a la página de actualización.",
+      "message": "Actualizar a Pro"
+   },
+   "upgradeCloudForFeature_SheetsSync": {
+      "description": "Solicitud de actualización para función",
+      "message": "Actualiza a Table Capture Cloud para habilitar la sincronización con Google Sheets."
+   },
+   "upgradeForFeature": {
+      "description": "Solicitud de actualización para función",
+      "message": "Actualiza a Table Capture Pro para habilitar esta función."
+   },
+   "upgradeToProButtonText": {
+      "description": "...",
+      "message": "Actualizar a \u003Cspan class='_tc-ext'>Table Capture Pro\u003C/span>"
+   },
+   "upgradeToProCTA": {
+      "description": "...",
+      "message": "Más, Más, Más"
+   },
+   "upgradeToProRecipeLink": {
+      "description": "...",
+      "message": "\u003Ca class=\"alert-link\" href=\"/upgrade.html\">Actualice a Pro\u003C/a> para crear algunos."
+   },
+   "upgradeToProSubtitle": {
+      "description": "...",
+      "message": "¿Quieres poder descargar tablas directamente como \u003Cstrong>archivos Excel y CSV\u003C/strong>? ¿Quieres capturar \u003Cstrong>tablas dinámicas y de varias páginas\u003C/strong>?"
+   },
+   "useLastSelectionActionText": {
+      "description": "Text to explain an action to use the last selection.",
+      "message": "Aplicar selección anterior"
+   },
+   "useLastSelectionActionTooltip": {
+      "description": "Text to explain an action to use the last selection.",
+      "message": "Utilice la selección de su última acción de exportación"
+   },
+   "visitPage": {
+      "description": "Auto translated from the source language",
+      "message": "Visita la página"
+   },
+   "weReDyingForFeedback": {
+      "description": "Auto translated from the source language",
+      "message": "Nos morimos por recibir comentarios"
+   },
+   "workshopAction": {
+      "description": "Acción para abrir el taller",
+      "message": "abrir el taller"
+   },
+   "workshopDescription": {
+      "description": "Descripción emergente para workshopAction.",
+      "message": "Haz clic para iniciar el Taller de Table Capture"
+   },
+   "workshopFrameBetaTooltip": {
+      "description": "Descripción emergente para invocar funciones beta.",
+      "message": "Prueba las funciones experimentales de Table Capture."
+   },
+   "workshopFrameBottomDockTooltip": {
+      "description": "",
+      "message": "Anclar en la parte inferior de la página"
+   },
+   "workshopFrameClearTooltip": {
+      "description": "Descripción emergente que explica lo que hace la acción de limpiar del marco del taller.",
+      "message": "Limpiar el elemento activo actual"
+   },
+   "workshopFrameFullScreenExitTooltip": {
+      "description": "Descripción emergente que explica lo que hace la acción de salir de pantalla completa del marco del taller.",
+      "message": "Salir de pantalla completa"
+   },
+   "workshopFrameFullScreenTooltip": {
+      "description": "Descripción emergente que explica lo que hace la acción de pantalla completa del marco del taller.",
+      "message": "Ir a pantalla completa"
+   },
+   "workshopFrameMaximizeTooltip": {
+      "description": "Descripción emergente que explica lo que hace la acción de maximizar del marco del taller.",
+      "message": "Expandir el taller"
+   },
+   "workshopFrameMinimizeTooltip": {
+      "description": "Descripción emergente que explica lo que hace la acción de minimizar del marco del taller.",
+      "message": "Minimizar el taller"
+   },
+   "workshopFrameRemoveTooltip": {
+      "description": "Descripción emergente que explica lo que hace la acción de eliminar del marco del taller.",
+      "message": "Eliminar el taller"
+   },
+   "workshopFrameSupportTooltip": {
+      "description": "Descripción emergente para reportar un error u obtener ayuda",
+      "message": "Obtén ayuda o reporta un error"
+   },
+   "workshopFrameTopDockTooltip": {
+      "description": "",
+      "message": "Anclar en la parte superior de la página"
+   },
+   "workshopProAndCloudCTA": {
+      "description": "Auto translated from the source language",
+      "message": "\u003Ca class=\"pro-cta loud-cta\">Pruebe Table Capture Pro\u003C/a> para poder capturar tablas de varias páginas \u003Ca href=\"https://photos.app.goo.gl/EjjKPnNRStfZZj8TA\" target=\"_blank\">(demostración)\u003C/a> y tablas cuyo contenido cambia dinámicamente \u003Ca href=\"https://photos.app.goo.gl/hYLsamqXR8ZQjBvj8\" target=\"_blank\">(demostración)\u003C/a> . \u003Cspan class=\"cloud-cta-wrapper support-cloud-only\">Además, \u003Ca class=\"cloud-cta loud-cta\">pruebe Table Capture Cloud (Beta)\u003C/a> para obtener un montón de funciones de nivel superior.\u003C/span>"
+   },
+   "workshopSettingsSummary": {
+      "description": "Auto translated from the source language",
+      "message": "\u003Cdiv class=\"_tc-heading\">Opciones \u003Cspan class=\"inline-action edit-settings\">✲\u003C/span>\u003C/div>\u003Cdiv class=\"settings-summary\">\u003C/div>\u003Cp class=\"disclaimer settings-refresh tc-hidden\"> Actualice la página y reinicie el taller para reflejar cualquier cambio en las opciones.\u003C/p>"
+   },
+   "youCurrentlyHaveNoRecipes": {
+      "description": "Auto translated from the source language",
+      "message": "Actualmente no tienes recetas."
+   },
+   "zillowExplainer": {
+      "description": "Auto translated from the source language",
+      "message": "\u003Cp class=\"explainer-heading\">La página actual de Zillow se puede exportar mejor.\u003C/p>\u003Cp> Si desea exportar los datos de esta página, George recomienda una extensión especialmente diseñada por un desarrollador independiente: \u003Ca target=\"_blank\">Zillow Data Exporter.\u003C/a>\u003C/p>\u003Cp> Si Table Capture hace un trabajo suficientemente bueno, genial; Puedes usarlo debajo de lo habitual.\u003C/p>"
+   }
+}

@@ -1,0 +1,7 @@
+2024/12/04-20:03:48.086 d50 Reusing MANIFEST /home/statick/.config/google-chrome/Default/IndexedDB/https_app.zoom.us_0.indexeddb.leveldb/MANIFEST-000001
+2024/12/04-20:03:48.086 d50 Recovering log #3
+2024/12/04-20:03:48.094 d50 Reusing old log /home/statick/.config/google-chrome/Default/IndexedDB/https_app.zoom.us_0.indexeddb.leveldb/000003.log 
+2024/12/04-23:20:12.750 d51 Level-0 table #5: started
+2024/12/04-23:20:12.759 d51 Level-0 table #5: 380695 bytes OK
+2024/12/04-23:20:12.764 d51 Delete type=0 #3
+2024/12/04-23:20:12.765 d51 Manual compaction at level-0 from (begin) .. (end); will stop at (end)

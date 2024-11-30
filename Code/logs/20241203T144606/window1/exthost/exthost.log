@@ -1,0 +1,106 @@
+2024-12-03 14:46:07.526 [info] Extension host with pid 3649 started
+2024-12-03 14:46:07.526 [info] Skipping acquiring lock for /home/statick/.config/Code/User/workspaceStorage/881dd0cfb46c2774de953b5cdf3815bd.
+2024-12-03 14:46:07.579 [info] ExtensionService#_doActivateExtension vscode.emmet, startup: false, activationEvent: 'onLanguage'
+2024-12-03 14:46:07.594 [info] ExtensionService#_doActivateExtension vscode.github-authentication, startup: false, activationEvent: 'onAuthenticationRequest:github'
+2024-12-03 14:46:07.701 [info] ExtensionService#_doActivateExtension vscode.git-base, startup: true, activationEvent: '*', root cause: vscode.git
+2024-12-03 14:46:07.773 [info] ExtensionService#_doActivateExtension vscode.git, startup: true, activationEvent: '*'
+2024-12-03 14:46:07.773 [info] ExtensionService#_doActivateExtension vscode.github, startup: true, activationEvent: '*'
+2024-12-03 14:46:07.938 [info] Eager extensions activated
+2024-12-03 14:46:07.973 [info] ExtensionService#_doActivateExtension vscode.debug-auto-launch, startup: false, activationEvent: 'onStartupFinished'
+2024-12-03 14:46:07.974 [info] ExtensionService#_doActivateExtension vscode.merge-conflict, startup: false, activationEvent: 'onStartupFinished'
+2024-12-03 14:46:07.974 [info] ExtensionService#_doActivateExtension esbenp.prettier-vscode, startup: false, activationEvent: 'onStartupFinished'
+2024-12-03 14:46:08.037 [info] ExtensionService#_doActivateExtension PKief.material-icon-theme, startup: false, activationEvent: 'onStartupFinished'
+2024-12-03 14:46:08.465 [info] ExtensionService#_doActivateExtension vscode.configuration-editing, startup: false, activationEvent: 'onLanguage:jsonc'
+2024-12-03 14:46:08.465 [info] ExtensionService#_doActivateExtension vscode.json-language-features, startup: false, activationEvent: 'onLanguage:jsonc'
+2024-12-03 14:46:08.465 [info] ExtensionService#_doActivateExtension vscode.typescript-language-features, startup: false, activationEvent: 'onLanguage:jsonc'
+2024-12-03 14:47:44.581 [info] Extension host terminating: renderer closed the MessagePort
+2024-12-03 14:47:44.603 [info] Extension host with pid 3649 exiting with code 0
+2024-12-03 14:47:45.477 [info] Extension host with pid 4503 started
+2024-12-03 14:47:45.477 [info] Skipping acquiring lock for /home/statick/.config/Code/User/workspaceStorage/881dd0cfb46c2774de953b5cdf3815bd.
+2024-12-03 14:47:45.517 [info] ExtensionService#_doActivateExtension vscode.emmet, startup: false, activationEvent: 'onLanguage'
+2024-12-03 14:47:45.634 [info] ExtensionService#_doActivateExtension vscode.git-base, startup: true, activationEvent: '*', root cause: vscode.git
+2024-12-03 14:47:45.665 [info] ExtensionService#_doActivateExtension vscode.git, startup: true, activationEvent: '*'
+2024-12-03 14:47:45.666 [info] ExtensionService#_doActivateExtension vscode.github, startup: true, activationEvent: '*'
+2024-12-03 14:47:45.752 [info] ExtensionService#_doActivateExtension vscode.github-authentication, startup: false, activationEvent: 'onAuthenticationRequest:github'
+2024-12-03 14:47:45.935 [info] Eager extensions activated
+2024-12-03 14:47:46.000 [info] ExtensionService#_doActivateExtension vscode.debug-auto-launch, startup: false, activationEvent: 'onStartupFinished'
+2024-12-03 14:47:46.001 [info] ExtensionService#_doActivateExtension vscode.merge-conflict, startup: false, activationEvent: 'onStartupFinished'
+2024-12-03 14:57:55.660 [info] ExtensionService#_doActivateExtension Gruntfuggly.activitusbar, startup: false, activationEvent: 'onStartupFinished'
+2024-12-03 15:01:36.552 [info] ExtensionService#_doActivateExtension usernamehw.errorlens, startup: false, activationEvent: 'onStartupFinished'
+2024-12-03 15:02:23.110 [info] ExtensionService#_doActivateExtension aaron-bond.better-comments, startup: false, activationEvent: 'onStartupFinished'
+2024-12-03 15:08:44.529 [info] ExtensionService#_doActivateExtension formulahendry.terminal, startup: false, activationEvent: '*'
+2024-12-03 15:10:02.503 [info] ExtensionService#_doActivateExtension jeroen-meijer.pubspec-assist, startup: false, activationEvent: '*'
+2024-12-03 15:10:46.488 [info] ExtensionService#_doActivateExtension vscode.configuration-editing, startup: false, activationEvent: 'onLanguage:jsonc'
+2024-12-03 15:10:46.489 [info] ExtensionService#_doActivateExtension vscode.json-language-features, startup: false, activationEvent: 'onLanguage:jsonc'
+2024-12-03 15:10:46.489 [info] ExtensionService#_doActivateExtension vscode.typescript-language-features, startup: false, activationEvent: 'onLanguage:jsonc'
+2024-12-03 15:17:36.460 [info] ExtensionService#_doActivateExtension Postman.postman-for-vscode, startup: false, activationEvent: 'onStartupFinished'
+2024-12-03 15:17:55.398 [error] Error: Webview is disposed
+	at VB.c (file:///usr/share/code/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:156:20667)
+	at get webview (file:///usr/share/code/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:156:19834)
+	at ap.sendMessageToWebview (/home/statick/.vscode/extensions/postman.postman-for-vscode-1.5.0/dist/extension.js:2:6888579)
+	at /home/statick/.vscode/extensions/postman.postman-for-vscode-1.5.0/dist/extension.js:2:7122647
+	at Map.forEach (<anonymous>)
+	at $_.broadcast (/home/statick/.vscode/extensions/postman.postman-for-vscode-1.5.0/dist/extension.js:2:7122632)
+	at /home/statick/.vscode/extensions/postman.postman-for-vscode-1.5.0/dist/extension.js:2:7163545
+	at Y0.h (file:///usr/share/code/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:114:32833)
+	at Y0.g (file:///usr/share/code/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:114:31910)
+	at Y0.executeCommand (file:///usr/share/code/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:114:31817)
+	at Object.executeCommand (file:///usr/share/code/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:156:37246)
+	at h.<anonymous> (/home/statick/.vscode/extensions/postman.postman-for-vscode-1.5.0/dist/extension.js:2:6592914)
+	at Generator.next (<anonymous>)
+	at /home/statick/.vscode/extensions/postman.postman-for-vscode-1.5.0/dist/extension.js:2:6586903
+	at new Promise (<anonymous>)
+	at r (/home/statick/.vscode/extensions/postman.postman-for-vscode-1.5.0/dist/extension.js:2:6586637)
+	at h.executeVSCodeCommand (/home/statick/.vscode/extensions/postman.postman-for-vscode-1.5.0/dist/extension.js:2:6592798)
+	at Object.onDidTabClose (/home/statick/.vscode/extensions/postman.postman-for-vscode-1.5.0/dist/extension.js:2:7128374)
+	at mh.value (/home/statick/.vscode/extensions/postman.postman-for-vscode-1.5.0/dist/extension.js:2:6887195)
+	at D.B (file:///usr/share/code/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:29:746)
+	at D.fire (file:///usr/share/code/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:29:964)
+	at VB.dispose (file:///usr/share/code/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:156:19733)
+	at ap.dispose (/home/statick/.vscode/extensions/postman.postman-for-vscode-1.5.0/dist/extension.js:2:6887646)
+	at $_._untrackTab (/home/statick/.vscode/extensions/postman.postman-for-vscode-1.5.0/dist/extension.js:2:7122393)
+	at /home/statick/.vscode/extensions/postman.postman-for-vscode-1.5.0/dist/extension.js:2:7122568
+	at Map.forEach (<anonymous>)
+	at $_.dispose (/home/statick/.vscode/extensions/postman.postman-for-vscode-1.5.0/dist/extension.js:2:7122550)
+	at $_.closeAllTabs (/home/statick/.vscode/extensions/postman.postman-for-vscode-1.5.0/dist/extension.js:2:7122519)
+	at /home/statick/.vscode/extensions/postman.postman-for-vscode-1.5.0/dist/extension.js:2:7165053
+	at Generator.next (<anonymous>)
+	at o (/home/statick/.vscode/extensions/postman.postman-for-vscode-1.5.0/dist/extension.js:2:6586694) postman-for-vscode.auth.cancel {"value":"Postman.postman-for-vscode","_lower":"postman.postman-for-vscode"}
+2024-12-03 15:17:56.409 [error] Error: Webview is disposed
+	at VB.c (file:///usr/share/code/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:156:20667)
+	at get webview (file:///usr/share/code/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:156:19834)
+	at ap.sendMessageToWebview (/home/statick/.vscode/extensions/postman.postman-for-vscode-1.5.0/dist/extension.js:2:6888579)
+	at /home/statick/.vscode/extensions/postman.postman-for-vscode-1.5.0/dist/extension.js:2:7122647
+	at Map.forEach (<anonymous>)
+	at $_.broadcast (/home/statick/.vscode/extensions/postman.postman-for-vscode-1.5.0/dist/extension.js:2:7122632)
+	at /home/statick/.vscode/extensions/postman.postman-for-vscode-1.5.0/dist/extension.js:2:7163545
+	at Y0.h (file:///usr/share/code/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:114:32833)
+	at Y0.g (file:///usr/share/code/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:114:31910)
+	at Y0.executeCommand (file:///usr/share/code/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:114:31817)
+	at Object.executeCommand (file:///usr/share/code/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:156:37246)
+	at h.<anonymous> (/home/statick/.vscode/extensions/postman.postman-for-vscode-1.5.0/dist/extension.js:2:6592914)
+	at Generator.next (<anonymous>)
+	at /home/statick/.vscode/extensions/postman.postman-for-vscode-1.5.0/dist/extension.js:2:6586903
+	at new Promise (<anonymous>)
+	at r (/home/statick/.vscode/extensions/postman.postman-for-vscode-1.5.0/dist/extension.js:2:6586637)
+	at h.executeVSCodeCommand (/home/statick/.vscode/extensions/postman.postman-for-vscode-1.5.0/dist/extension.js:2:6592798)
+	at Object.onDidTabClose (/home/statick/.vscode/extensions/postman.postman-for-vscode-1.5.0/dist/extension.js:2:7128374)
+	at mh.value (/home/statick/.vscode/extensions/postman.postman-for-vscode-1.5.0/dist/extension.js:2:6887195)
+	at D.B (file:///usr/share/code/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:29:746)
+	at D.fire (file:///usr/share/code/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:29:964)
+	at VB.dispose (file:///usr/share/code/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:156:19733)
+	at ap.dispose (/home/statick/.vscode/extensions/postman.postman-for-vscode-1.5.0/dist/extension.js:2:6887646)
+	at $_._untrackTab (/home/statick/.vscode/extensions/postman.postman-for-vscode-1.5.0/dist/extension.js:2:7122393)
+	at /home/statick/.vscode/extensions/postman.postman-for-vscode-1.5.0/dist/extension.js:2:7122568
+	at Map.forEach (<anonymous>)
+	at $_.dispose (/home/statick/.vscode/extensions/postman.postman-for-vscode-1.5.0/dist/extension.js:2:7122550)
+	at $_.closeAllTabs (/home/statick/.vscode/extensions/postman.postman-for-vscode-1.5.0/dist/extension.js:2:7122519)
+	at /home/statick/.vscode/extensions/postman.postman-for-vscode-1.5.0/dist/extension.js:2:7165053
+	at Generator.next (<anonymous>)
+	at o (/home/statick/.vscode/extensions/postman.postman-for-vscode-1.5.0/dist/extension.js:2:6586694)
+2024-12-03 15:27:59.883 [warning] vscode.json-language-features - Code actions of kind 'quickfix' requested but returned code action is of kind 'source.sort.json'. Code action will be dropped. Please check 'CodeActionContext.only' to only return requested code actions.
+2024-12-03 15:28:18.530 [warning] vscode.json-language-features - Code actions of kind 'quickfix' requested but returned code action is of kind 'source.sort.json'. Code action will be dropped. Please check 'CodeActionContext.only' to only return requested code actions.
+2024-12-03 15:29:07.368 [warning] vscode.json-language-features - Code actions of kind 'quickfix' requested but returned code action is of kind 'source.sort.json'. Code action will be dropped. Please check 'CodeActionContext.only' to only return requested code actions.
+2024-12-03 15:55:21.300 [info] ExtensionService#_doActivateExtension vscode.npm, startup: false, activationEvent: 'onTerminalQuickFixRequest:ms-vscode.npm-command'
+2024-12-03 16:41:23.441 [info] Extension host terminating: renderer closed the MessagePort
+2024-12-03 16:41:23.480 [info] Extension host with pid 4503 exiting with code 0

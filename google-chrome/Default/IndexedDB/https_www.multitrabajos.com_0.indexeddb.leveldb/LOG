@@ -1,0 +1,25 @@
+2024/12/04-12:15:58.005 a88 Reusing MANIFEST /home/statick/.config/google-chrome/Default/IndexedDB/https_www.multitrabajos.com_0.indexeddb.leveldb/MANIFEST-000001
+2024/12/04-12:15:58.005 a88 Recovering log #58
+2024/12/04-12:15:58.005 a88 Reusing old log /home/statick/.config/google-chrome/Default/IndexedDB/https_www.multitrabajos.com_0.indexeddb.leveldb/000058.log 
+2024/12/04-12:15:58.005 a88 Delete type=2 #57
+2024/12/04-12:15:58.018 a88 Level-0 table #63: started
+2024/12/04-12:15:58.022 a88 Level-0 table #63: 662 bytes OK
+2024/12/04-12:15:58.030 a88 Delete type=0 #58
+2024/12/04-12:15:58.030 a88 Manual compaction at level-0 from '\x00\x17\x00\x00\x00' @ 72057594037927935 : 1 .. '\x00\x18\x00\x00\x00' @ 0 : 0; will stop at '\x00\x17\x00\x00\x05' @ 798 : 1
+2024/12/04-12:15:58.030 a88 Compacting 1@0 + 1@1 files
+2024/12/04-12:15:58.037 a88 Generated table #64@0: 120 keys, 6381 bytes
+2024/12/04-12:15:58.038 a88 Compacted 1@0 + 1@1 files => 6381 bytes
+2024/12/04-12:15:58.045 a88 compacted to: files[ 0 1 1 0 0 0 0 ]
+2024/12/04-12:15:58.045 a88 Delete type=2 #63
+2024/12/04-12:15:58.045 a88 Manual compaction at level-0 from '\x00\x17\x00\x00\x05' @ 798 : 1 .. '\x00\x18\x00\x00\x00' @ 0 : 0; will stop at (end)
+2024/12/04-12:16:05.202 a96 Level-0 table #66: started
+2024/12/04-12:16:05.205 a96 Level-0 table #66: 3007 bytes OK
+2024/12/04-12:16:05.211 a96 Delete type=2 #60
+2024/12/04-12:16:05.211 a96 Delete type=0 #62
+2024/12/04-12:16:05.211 a88 Manual compaction at level-0 from '\x00\x18\x00\x00\x00' @ 72057594037927935 : 1 .. '\x00\x19\x00\x00\x00' @ 0 : 0; will stop at '\x00\x18\x00\x00\x05' @ 853 : 1
+2024/12/04-12:16:05.211 a88 Compacting 1@0 + 1@1 files
+2024/12/04-12:16:05.215 a88 Generated table #67@0: 124 keys, 6437 bytes
+2024/12/04-12:16:05.215 a88 Compacted 1@0 + 1@1 files => 6437 bytes
+2024/12/04-12:16:05.224 a88 compacted to: files[ 0 1 1 0 0 0 0 ]
+2024/12/04-12:16:05.224 a88 Delete type=2 #66
+2024/12/04-12:16:05.225 a88 Manual compaction at level-0 from '\x00\x18\x00\x00\x05' @ 853 : 1 .. '\x00\x19\x00\x00\x00' @ 0 : 0; will stop at (end)

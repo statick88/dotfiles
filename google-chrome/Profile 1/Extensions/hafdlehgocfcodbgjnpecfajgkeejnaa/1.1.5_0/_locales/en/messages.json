@@ -1,0 +1,201 @@
+{
+   "_ActualWindowSize": {
+      "message": "Actual Window Size"
+   },
+   "_AddSize": {
+      "message": "Add Size"
+   },
+   "_Cancel": {
+      "message": "Cancel"
+   },
+   "_CloseWithoutSaving": {
+      "message": "Close without Saving"
+   },
+   "_ConfigureSizesInfo": {
+      "message": "Configure window size options and control which appear in the NetBeans Actions menu."
+   },
+   "_CustomizeWindowSettings": {
+      "message": "Customize Window Settings"
+   },
+   "_CustomizeWindowSettings_hellip": {
+      "message": "Customize Window Settings..."
+   },
+   "_Customize_hellip": {
+      "message": "Customize..."
+   },
+   "_DebugInNetBeans": {
+      "message": "Debug in NetBeans"
+   },
+   "_Desktop": {
+      "message": "Desktop"
+   },
+   "_DevTools_PropagateChangesToNetBeans": {
+      "message": "Propagate changes done in the CDT back to the NetBeans IDE and save them"
+   },
+   "_DisplaySizes": {
+      "message": "Display Sizes:"
+   },
+   "_Done": {
+      "message": "Done"
+   },
+   "_Height": {
+      "message": "Height"
+   },
+   "_Help_FinalStep": {
+      "message": "Click OK to save your changes and close this tab."
+   },
+   "_Help_Step1": {
+      "message": "Modify the type, name and dimensions of a display size by editing the fields in the table."
+   },
+   "_Help_Step2": {
+      "message": "Create a display size by clicking New and editing the fields in the new row."
+   },
+   "_Help_Step3": {
+      "message": "Change the order that a display size is listed in the menu by clicking in a row to select the row and using the Move Up and Move Down buttons."
+   },
+   "_Help_Step4": {
+      "message": "Remove a display size from the menu by click in a row to select the row and clicking Remove."
+   },
+   "_Less_hellip": {
+      "message": "Less..."
+   },
+   "_More_hellip": {
+      "message": "More..."
+   },
+   "_MoveDown": {
+      "message": "Move Down"
+   },
+   "_MoveSizeDown": {
+      "message": "Move Size Down"
+   },
+   "_MoveSizeUp": {
+      "message": "Move Size Up"
+   },
+   "_MoveUp": {
+      "message": "Move Up"
+   },
+   "_Name": {
+      "message": "Name"
+   },
+   "_Netbook": {
+      "message": "Netbook"
+   },
+   "_New": {
+      "message": "New"
+   },
+   "_New_hellip": {
+      "message": "New..."
+   },
+   "_OK": {
+      "message": "OK"
+   },
+   "_PresetTitle": {
+      "message": "$PRESET$ ($WIDTH$ x $HEIGHT$)",
+      "placeholders": {
+         "HEIGHT": {
+            "content": "$3"
+         },
+         "PRESET": {
+            "content": "$1"
+         },
+         "WIDTH": {
+            "content": "$2"
+         }
+      }
+   },
+   "_PresetWidthHeight": {
+      "message": "$WIDTH$ x $HEIGHT$",
+      "placeholders": {
+         "HEIGHT": {
+            "content": "$2"
+         },
+         "WIDTH": {
+            "content": "$1"
+         }
+      }
+   },
+   "_Remove": {
+      "message": "Remove"
+   },
+   "_RemoveSize": {
+      "message": "Remove Size"
+   },
+   "_Reset": {
+      "message": "Reset"
+   },
+   "_ResetAllWarningDialogs": {
+      "message": "Reset all warning dialogs"
+   },
+   "_SaveAndClose": {
+      "message": "Save and Close"
+   },
+   "_SelectMode": {
+      "message": "Inspect in NetBeans Mode"
+   },
+   "_SizeToFit": {
+      "message": "Size to Fit"
+   },
+   "_SmartphoneLandscape": {
+      "message": "Smartphone Landscape"
+   },
+   "_SmartphonePortrait": {
+      "message": "Smartphone Portrait"
+   },
+   "_StartSelectMode": {
+      "message": "Start Inspect in NetBeans Mode (Ctrl+Shift+S)"
+   },
+   "_StopSelectMode": {
+      "message": "Stop Inspect in NetBeans Mode (Ctrl+Shift+S)"
+   },
+   "_SwitchSelectionMode": {
+      "message": "Switch NetBeans Mode"
+   },
+   "_TabletLandscape": {
+      "message": "Tablet Landscape"
+   },
+   "_TabletPortrait": {
+      "message": "Tablet Portrait"
+   },
+   "_Toolbar": {
+      "message": "Toolbar"
+   },
+   "_Type": {
+      "message": "Type"
+   },
+   "_Warning_DisconnectedDebuggerBody": {
+      "message": "It looks like you closed the debugging infobar by clicking its Cancel button or Close icon.  Unless you enable silent debugging, Chrome requires that this remain open while working with the NetBeans extension. Note: although the NetBeans Connector has closed, changes in Chrome and NetBeans are still synchronized."
+   },
+   "_Warning_DisconnectedDebuggerPerex": {
+      "message": "To run the NetBeans Connector without the debugging infobar, select the Enable Silent Debugging flag in Chrome."
+   },
+   "_Warning_DisconnectedDebuggerTitle": {
+      "message": "NetBeans Connector has Closed"
+   },
+   "_Warning_DoNotShowMeThisAgain": {
+      "message": "Do not show this message again"
+   },
+   "_Warning_WindowTooSmallPerex": {
+      "message": "Unfortunately, on OS X, the minimal width of the Chrome window is 400 pixels."
+   },
+   "_Warning_WindowTooSmallTitle": {
+      "message": "Window cannot be resized properly"
+   },
+   "_Warnings": {
+      "message": "Warnings"
+   },
+   "_Widescreen": {
+      "message": "Widescreen"
+   },
+   "_Width": {
+      "message": "Width"
+   },
+   "_WindowSettingsNotAvailable": {
+      "message": "Window settings not available (is any project running from NetBeans IDE?)."
+   },
+   "_pluginDescription": {
+      "message": "The NetBeans Connector provides deep integration between the award winning NetBeans IDE and the Google Chrome browser."
+   },
+   "_pluginName": {
+      "message": "NetBeans Connector"
+   }
+}

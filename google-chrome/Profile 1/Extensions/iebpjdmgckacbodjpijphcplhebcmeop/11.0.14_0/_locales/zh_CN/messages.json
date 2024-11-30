@@ -1,0 +1,846 @@
+{
+   "activateAction": {
+      "description": "链接到激活页面。",
+      "message": "激活 \u003Ci>Table Capture\u003C/i>"
+   },
+   "activateExistingLicense": {
+      "description": "...",
+      "message": "已有许可证代码？\u003Ca href=\"/activate-existing-license.html\">在此激活\u003C/a>。"
+   },
+   "activateProRecipeLink": {
+      "description": "...",
+      "message": "\u003Ca class=\"alert-link\" href=\"/activate.html\">激活表格捕获\u003C/a>来创建一些。"
+   },
+   "airtableExplainer": {
+      "description": "Auto translated from the source language",
+      "message": "\u003Cp class=\"explainer-heading\">当前页面是 Airtable 网络应用程序。\u003C/p>\u003Cp>如果您想从此页面导出数据，则需要使用专用扩展：\u003Cbr /> \u003Ca target=\"_blank\">Table Capture 的 Airtable Extractor\u003C/a>\u003C/p>"
+   },
+   "arbNavInstructionHtml": {
+      "description": "Instructions for the arb nav.",
+      "message": "使用\u003Cspan class=\"_tc-strong\">“扩展选择”\u003C/span>按钮来扩大\u003Cspan class=\"_tc-sel-orange\">选定区域\u003C/span>，直到包含您需要的所有数据。如果您选择的范围太大，请使用\u003Cspan class=\"_tc-strong\">“撤消”\u003C/span>按钮返回。"
+   },
+   "arbNavSelectionExpand": {
+      "description": "Button to expand the selection.",
+      "message": "扩大选择范围"
+   },
+   "arbNavSelectionReduce": {
+      "description": "Button to reduce the selection.",
+      "message": "↺ 撤消"
+   },
+   "autoPageActionTooltip": {
+      "description": "解释自动翻页操作的文本。",
+      "message": "尝试自动翻页表格"
+   },
+   "autoScrollActionTooltip": {
+      "description": "解释自动滚动操作的文本。",
+      "message": "尝试自动滚动表格"
+   },
+   "beta": {
+      "description": "Auto translated from the source language",
+      "message": "测试版"
+   },
+   "clear": {
+      "description": "Auto translated from the source language",
+      "message": "清除"
+   },
+   "clipActionTooltip": {
+      "description": "解释剪辑数据操作的文本。",
+      "message": "剪辑数据以便稍后一起导出所有数据剪辑。"
+   },
+   "cloudActionDisabledTooltip": {
+      "description": "解释将表格添加到 Table Capture Cloud 的操作的文本。",
+      "message": "添加到 Table Capture Cloud 已禁用。"
+   },
+   "cloudActionTooltip": {
+      "description": "解释将表格添加到 Table Capture Cloud 的操作的文本。",
+      "message": "添加到 Table Capture Cloud"
+   },
+   "columnifyActionTooltip": {
+      "description": "解释拆分列操作的文本。",
+      "message": "拆分列：当您的数据类似列表时很有用"
+   },
+   "contextMenuActivity": {
+      "description": "调用给定名称配方的上下文菜单消息。",
+      "message": "☆ $1：$2"
+   },
+   "contextMenuDisplayInline": {
+      "description": "A context menu message that invokes the inline display.",
+      "message": "表格捕获 - 以内联方式显示操作"
+   },
+   "contextMenuLaunchWorkshop": {
+      "description": "上下文菜单 ...",
+      "message": "Table Capture - 启动工作坊"
+   },
+   "contextMenuLaunchWorkshopForElement": {
+      "description": "上下文菜单 ...",
+      "message": "Table Capture - 为元素启动工作坊"
+   },
+   "contextMenuLaunchWorkshopForSelection": {
+      "description": "上下文菜单 ...",
+      "message": "Table Capture - 为所选内容启动工作坊"
+   },
+   "contextMenuRecipe": {
+      "description": "调用给定名称配方的上下文菜单消息。",
+      "message": "Table Capture - 配方：$1"
+   },
+   "contextMenuRecipeClipStart": {
+      "description": "开始自动剪辑给定名称配方的上下文菜单消息。",
+      "message": "Table Capture - 开始剪辑配方：$1"
+   },
+   "contextMenuRecipeClipStop": {
+      "description": "停止自动剪辑给定名称配方的上下文菜单消息。",
+      "message": "Table Capture - 停止剪辑配方：$1"
+   },
+   "contextMenuRefreshNeeded": {
+      "description": "告诉用户需要刷新的上下文菜单消息。",
+      "message": "Table Capture：使用前请刷新此页面"
+   },
+   "continueDynamicPaging": {
+      "description": "Message to ask the user if they want to continue capturing a dataset.",
+      "message": "您之前曾使用表格捕获功能捕获数据集。要保存此数据吗？"
+   },
+   "convertMoneyValues": {
+      "description": "Auto translated from the source language",
+      "message": "转换货币价值"
+   },
+   "copied": {
+      "description": "Auto translated from the source language",
+      "message": "已复制"
+   },
+   "copyClipboardAction": {
+      "description": "链接到将表格复制到系统剪贴板。",
+      "message": "复制到剪贴板"
+   },
+   "copyClipboardActionTooltip": {
+      "description": "解释将表格导出到剪贴板的操作的文本。",
+      "message": "将表格数据复制到剪贴板"
+   },
+   "copyComplete": {
+      "description": "表示复制已完成的消息。",
+      "message": "复制完成"
+   },
+   "copySelectedAction": {
+      "description": "链接到复制所有选定的表格。",
+      "message": "复制所选"
+   },
+   "copySelectedDescription": {
+      "description": "上面 copySelectedAction 的工具提示。",
+      "message": "复制页面中所有选定的表格"
+   },
+   "copying": {
+      "description": "表示复制正在进行的消息。",
+      "message": "复制中..."
+   },
+   "csvAction": {
+      "description": "链接到将表格下载为 CSV 文件。",
+      "message": "导出为 CSV"
+   },
+   "csvActionTooltip": {
+      "description": "解释将表格导出为 CSV 文件的操作的文本。",
+      "message": "将表格下载为 CSV 文件"
+   },
+   "debugAction": {
+      "description": "Link to debug the extension.",
+      "message": "调试"
+   },
+   "deleteEmptyRows": {
+      "description": "Auto translated from the source language",
+      "message": "删除空行"
+   },
+   "detachPaneAction": {
+      "description": "链接到分离窗口，使其成为页面上的可移动框。适用于窗口阻挡目标表格的情况。",
+      "message": "分离面板"
+   },
+   "detachPaneDescription": {
+      "description": "上面 detachPaneAction 的工具提示。",
+      "message": "分离表格列表面板以在页面内显示"
+   },
+   "displayableCloudPrice": {
+      "description": "显示的价格",
+      "message": "每月 25 美元"
+   },
+   "displayablePrice": {
+      "description": "显示的价格",
+      "message": "每年 12 美元"
+   },
+   "dockBottom": {
+      "description": "Auto translated from the source language",
+      "message": "码头底部"
+   },
+   "dockTop": {
+      "description": "Auto translated from the source language",
+      "message": "码头顶部"
+   },
+   "downloadingTablesAsACsvFile": {
+      "description": "Auto translated from the source language",
+      "message": "只有使用 Table Capture Pro 才能将表格下载为 CSV 文件。"
+   },
+   "downloadingTablesInExcelXl": {
+      "description": "Auto translated from the source language",
+      "message": "仅使用 Table Capture Pro 才可以下载 Excel (.xlsx) 中的表格。"
+   },
+   "duneExplainer": {
+      "description": "Auto translated from the source language",
+      "message": "\u003Cp class=\"explainer-heading\">这些 Dune 查询结果可以\u003Ci>立即\u003C/i>导出。\u003C/p>\u003Cp> George 推荐专门构建的扩展： \u003Ca target=\"_blank\">Table Capture 的 Dune Data Exporter\u003C/a>\u003C/p>\u003Cp>如果表格捕获做得足够好，那就太好了；您可以像往常一样使用它。\u003C/p>"
+   },
+   "dynamicCaptureConfigTooltip": {
+      "description": "动态表格捕获选项的工具提示。",
+      "message": "配置动态表格捕获选项"
+   },
+   "editActionTooltip": {
+      "description": "解释在导出数据前编辑数据的操作的文本。",
+      "message": "在导出前编辑表格数据"
+   },
+   "editSettingsTooltip": {
+      "description": "解释编辑选项操作的文本。",
+      "message": "配置提取选项"
+   },
+   "errorAutoClipRecipeData": {
+      "description": "Auto translated from the source language",
+      "message": "无法自动剪辑配方数据： $1"
+   },
+   "errorNextPageButtonLikelyNotFound": {
+      "description": "表示扩展可能无法找到下一页按钮的消息。",
+      "message": "可能未找到'下一页'按钮。"
+   },
+   "errorUsingNextPageButtonSelector": {
+      "description": "表示扩展可能无法找到下一页按钮的消息。",
+      "message": "未找到'下一页'按钮。"
+   },
+   "errorUsingNextPageButtonSelectorTooFew": {
+      "description": "表示扩展可能无法找到下一页按钮的消息。",
+      "message": "未找到提供的选择器对应的'下一页'按钮。"
+   },
+   "errorUsingNextPageButtonSelectorTooMany": {
+      "description": "表示扩展为选择器找到了太多元素的消息。",
+      "message": "提供的'下一页'按钮选择器找到了多个按钮。"
+   },
+   "excelAction": {
+      "description": "链接到将表格转换为 Excel 电子表格。",
+      "message": "导出为 Excel"
+   },
+   "excelActionTooltip": {
+      "description": "解释将表格导出为 Excel 文件的操作的文本。",
+      "message": "将表格下载为 Excel (.xlsx) 文件"
+   },
+   "expected1DatasetsReceived": {
+      "description": "Auto translated from the source language",
+      "message": "预期 $1 个数据集，收到 $2 个"
+   },
+   "extensionDesc": {
+      "description": "扩展描述",
+      "message": "将 HTML 表格复制到剪贴板或导出到 Microsoft Excel、CSV、Google Sheets、Office 365 等。"
+   },
+   "extensionName": {
+      "description": "扩展名称",
+      "message": "Table Capture"
+   },
+   "extensionShortName": {
+      "description": "扩展简称",
+      "message": "Table Capture"
+   },
+   "extractImageIconAttributes": {
+      "description": "Auto translated from the source language",
+      "message": "提取图像+图标属性"
+   },
+   "extractWebAddressesUrls": {
+      "description": "Auto translated from the source language",
+      "message": "提取网址 (URL)"
+   },
+   "favoritesAction": {
+      "description": "链接到活动页面。",
+      "message": "活动"
+   },
+   "feedbackAction": {
+      "description": "链接到提供扩展反馈。",
+      "message": "反馈"
+   },
+   "feedbackDescription": {
+      "description": "上面 feedbackAction 链接的工具提示。",
+      "message": "点击提供扩展反馈"
+   },
+   "firstAndOnlyRow": {
+      "description": "Auto translated from the source language",
+      "message": "第一行也是唯一一行："
+   },
+   "firstRow": {
+      "description": "Auto translated from the source language",
+      "message": "第一排："
+   },
+   "flutterGlassPaneError": {
+      "description": "Error message when the selected element is within a Flutter canvas.",
+      "message": "The selected element is within a Flutter canvas. Unfortunately, Table Capture cannot capture Flutter content."
+   },
+   "folkExplainer": {
+      "description": "Auto translated from the source language",
+      "message": "\u003Cp class=\"explainer-heading\">当前页面是一个民间网络应用程序。\u003C/p>\u003Cp>如果您想从此页面导出数据，则需要使用专用扩展：\u003Cbr /> \u003Ca target=\"_blank\" >Table Capture 的 Folk Extractor\u003C/a>\u003C/p>"
+   },
+   "fyiSelectionBanner": {
+      "description": "Auto translated from the source language",
+      "message": "\u003Cstrong>\u003Cspan class=\"_tc-ext\">表格捕获\u003C/span>中的新功能：\u003C/strong>在启动扩展之前突出显示页面上的任何内容以捕获页面上的任何内容。\u003Cbr />\u003Cbr />尝试忽略这个提示吧！"
+   },
+   "getStarted": {
+      "description": "...",
+      "message": "开始使用"
+   },
+   "googleDocAction": {
+      "description": "链接到将表格转换为 Google 表格。",
+      "message": "导出到 Google Sheets"
+   },
+   "googleDocActionTooltip": {
+      "description": "解释将表格导出到 Google 表格的操作的文本。",
+      "message": "将表格导出到 Google Sheets"
+   },
+   "googleSheetsExplainer": {
+      "description": "Auto translated from the source language",
+      "message": "\u003Cp class=\"explainer-heading\">当前页面是 Google Sheets 网络应用程序。\u003C/p>\u003Cp>如果您想使用\u003Cspan class=\"_tc-ext\">表格捕获功能\u003C/span>导出此页面的数据，请在此处切换到此页面的 HTML 视图版本：\u003Ca target=\"_blank\">\u003C/a>\u003C/p>"
+   },
+   "headers": {
+      "description": "Auto translated from the source language",
+      "message": "标头："
+   },
+   "helpAction": {
+      "description": "链接到获取扩展帮助。",
+      "message": "立即获取帮助"
+   },
+   "ifYouDonTSeeYourSheetInT": {
+      "description": "Auto translated from the source language",
+      "message": "如果您没有在此列表中看到您的工作表，请在 Google Drive 中找到并打开它，下次执行此操作时它将被列出。您还可以\u003Ca target=\"_blank\" class=\"_tc-link\" id=\"tc-manage-gsheets\">管理您的 Google 工作表列表\u003C/a>。"
+   },
+   "iframeHint": {
+      "description": "Auto translated from the source language",
+      "message": "\u003Cdiv>\u003Cspan>表格捕获正在 iFrame 中运行。您可能需要滚动到底部才能看到研讨会。您也可以尝试在其自己的选项卡中\u003Ca target=\"_blank\">打开框架\u003C/a>并重试。\u003C/span>\u003C/div>"
+   },
+   "ignoreHiddenElements": {
+      "description": "Auto translated from the source language",
+      "message": "忽略隐藏元素"
+   },
+   "ignoreImageIconAttributes": {
+      "description": "Auto translated from the source language",
+      "message": "忽略图像+图标属性"
+   },
+   "ignoreImages": {
+      "description": "Auto translated from the source language",
+      "message": "忽略图像"
+   },
+   "keyboardShortcutInlineActions": {
+      "description": "Keyboard shortcuts for inline actions.",
+      "message": "显示内联操作"
+   },
+   "loading": {
+      "description": "上下文菜单 ...",
+      "message": "加载中..."
+   },
+   "markdownActionTooltip": {
+      "description": "解释将表格导出为 Markdown 的操作的文本。",
+      "message": "复制到剪贴板为 Markdown 格式"
+   },
+   "maximize": {
+      "description": "Auto translated from the source language",
+      "message": "最大化"
+   },
+   "minimize": {
+      "description": "Auto translated from the source language",
+      "message": "最小化"
+   },
+   "narratePowerpointsInYourBrow": {
+      "description": "Auto translated from the source language",
+      "message": "在浏览器中讲述 PowerPoint"
+   },
+   "navLinkAccount": {
+      "description": "...",
+      "message": "账户"
+   },
+   "navLinkActivity": {
+      "description": "...",
+      "message": "活动"
+   },
+   "navLinkOptions": {
+      "description": "...",
+      "message": "选项"
+   },
+   "navLinkRecipes": {
+      "description": "...",
+      "message": "配方"
+   },
+   "navLinkSupport": {
+      "description": "...",
+      "message": "支持"
+   },
+   "noDataMessageDefault": {
+      "description": "Auto translated from the source language",
+      "message": "未找到该视图的数据。"
+   },
+   "noDataMessageRecipe": {
+      "description": "Auto translated from the source language",
+      "message": "未找到此食谱的数据。您可能需要修改选择器/代码。"
+   },
+   "noDataMessageSelection": {
+      "description": "Auto translated from the source language",
+      "message": "未找到与此选项相符的数据。请修改您的选择。"
+   },
+   "noDatasetsPresent": {
+      "description": "Auto translated from the source language",
+      "message": "暂无数据集"
+   },
+   "noPreviewableData": {
+      "description": "Auto translated from the source language",
+      "message": "没有可预览的数据"
+   },
+   "noTabIdFound": {
+      "description": "Auto translated from the source language",
+      "message": "未找到标签 ID。"
+   },
+   "noTablesExplainer": {
+      "description": "Auto translated from the source language",
+      "message": "\u003Cp>如果页面中没有 \u003Cspan class=\"mono\">&lt;table&gt;\u003C/span>元素，则可能会发生这种情况。\u003C/p>\u003Cp>解决此问题的最佳方法是使用\u003Cspan class=\"_tc-ext\">Table Capture Workshop\u003C/span> 。您可以通过以下方式实现：\u003C/p>\u003Col>\u003Cli>突出显示您感兴趣的表格单元格中的一些文本\u003C/li>\u003Cli>右键单击突出显示的文本\u003C/li>\u003Cli>从上下文菜单中选择“表格捕获 - 启动研讨会”\u003C/li>\u003C/ol>\u003Chr />\u003Ca class=\"btn btn-primary btn-report-page\">我已尝试上述方法但仍然遇到问题；\u003Cstrong>这是一个表捕获错误。\u003C/strong>\u003C/a>\u003Cdiv class=\"disclaimer\">单击以上内容将报告\u003Cspan>此页面\u003C/span>，以便我们改进 \u003Cspan class=\"_tc-ext\">表格捕获\u003C/span>。\u003C/div>"
+   },
+   "noTablesFound": {
+      "description": "表示未找到表格的消息。",
+      "message": "页面上未找到表格。"
+   },
+   "noWindowNameFoundForTable": {
+      "description": "Auto translated from the source language",
+      "message": "未找到表的窗口名称。"
+   },
+   "notionExplainer": {
+      "description": "Auto translated from the source language",
+      "message": "\u003Cp class=\"explainer-heading\">当前页面是 Notion 网络应用程序。\u003C/p>\u003Cp>如果您想从此页面导出数据，则需要使用专用扩展：\u003Cbr />\u003Ca target=\"_blank\" >通过 Table Capture 进行 Notion 数据提取\u003C/a>\u003C/p>"
+   },
+   "o365ActionTooltip": {
+      "description": "解释将表格导出到 Office 365 的操作的文本。",
+      "message": "将表格导出到 Office 365"
+   },
+   "openWorkshopAction": {
+      "description": "链接到打开工作坊。",
+      "message": "更多选项"
+   },
+   "openingPurchasePage": {
+      "description": "表示扩展正在打开购买页面的消息。",
+      "message": "正在打开许可证购买页面..."
+   },
+   "optionsAction": {
+      "description": "链接到选项页面。",
+      "message": "选项"
+   },
+   "optionsText": {
+      "description": "选项文本",
+      "message": "选项"
+   },
+   "otherAppsFromGeorge": {
+      "description": "Auto translated from the source language",
+      "message": "George 的其他应用："
+   },
+   "pageTitleAccount": {
+      "description": "账户页面的页面标题",
+      "message": "账户 | Table Capture"
+   },
+   "pageTitleActivateExisting": {
+      "description": "激活现有许可证页面的页面标题",
+      "message": "激活现有许可证 | Table Capture"
+   },
+   "pageTitleActivity": {
+      "description": "活动页面的页面标题",
+      "message": "活动 | Table Capture"
+   },
+   "pageTitleClips": {
+      "description": "选项页面的页面标题",
+      "message": "剪辑 | Table Capture"
+   },
+   "pageTitleCloud": {
+      "description": "Page title for the cloud page",
+      "message": "云 | 表格捕获"
+   },
+   "pageTitleJSONExtractor": {
+      "description": "Page title for the JSON extractor page",
+      "message": "JSON 提取器 | 表格捕获"
+   },
+   "pageTitleManageGoogleSheets": {
+      "description": "Page title for the manage google sheets page",
+      "message": "管理 Google 表格 | 表格捕获"
+   },
+   "pageTitleOptions": {
+      "description": "选项页面的页面标题",
+      "message": "选项 | Table Capture"
+   },
+   "pageTitlePdfExtractor": {
+      "description": "PDF 提取器页面的页面标题",
+      "message": "PDF 提取器 | Table Capture"
+   },
+   "pageTitleRecipes": {
+      "description": "感谢页面的页面标题",
+      "message": "方案 | Table Capture"
+   },
+   "pageTitleSupport": {
+      "description": "选项页面的页面标题",
+      "message": "支持 | Table Capture"
+   },
+   "pageTitleTableEdit": {
+      "description": "感谢页面的页面标题",
+      "message": "编辑 | Table Capture"
+   },
+   "pageTitleThanks": {
+      "description": "感谢页面的页面标题",
+      "message": "感谢 | Table Capture"
+   },
+   "pageTitleUpgrade": {
+      "description": "升级页面的页面标题",
+      "message": "升级 | Table Capture"
+   },
+   "pageTitleWelcome": {
+      "description": "首次安装时选项页面的页面标题",
+      "message": "欢迎 | Table Capture"
+   },
+   "pagedAmpDynamicTables": {
+      "description": "Auto translated from the source language",
+      "message": "分页和动态表格"
+   },
+   "pagingButtonMissingError": {
+      "description": "Message about the missing next page button.",
+      "message": "Table Capture couldn't find the 'next page' button. You can try again by clicking the ⟳ button above."
+   },
+   "pagingPagedElementDomSelectorActionTooltip": {
+      "description": "工作坊分页错误：提供您自己的选择器/xpath",
+      "message": "为分页表格元素提供选择器/xpath。"
+   },
+   "pagingResetActionTooltip": {
+      "description": "工作坊分页错误：重置工作坊",
+      "message": "完全重置工作坊。"
+   },
+   "pagingRetryActionTooltip": {
+      "description": "当无法定位分页表格但用户重试时显示的消息。",
+      "message": "再次尝试定位您的分页表格。"
+   },
+   "pagingRetrySalvageAction": {
+      "description": "从分页表格挽救数据的按钮操作。",
+      "message": "挽救数据（行数：$1）"
+   },
+   "pagingRetrySalvageActionTooltip": {
+      "description": "当无法定位分页表格但用户重试/挽救时显示的消息。",
+      "message": "即使当前页面无法捕获，也导出先前捕获的数据。"
+   },
+   "pasteToCaptureMessage": {
+      "description": "弹出窗口中告诉用户粘贴以获取捕获的表格到Google表格中的消息。",
+      "message": "Table Capture：只需从剪贴板粘贴即可导入您的数据。"
+   },
+   "pdfExplainer": {
+      "description": "Auto translated from the source language",
+      "message": "\u003Cp class=\"explainer-heading\">当前页面是PDF文档。\u003C/p>\u003Cp>在此页面尝试\u003Cspan class=\"_tc-ext\">Table Capture 的\u003C/span>实验性 PDF 提取器： \u003Cdiv style=\"margin-top: 8px;\">\u003Cinput type=\"button\" class=\"btn btn-warning btn-launch-pdf\" value=\"Launch PDF Extractor\" />\u003C/div>\u003C/p>"
+   },
+   "pleaseActivateSpanClassTc": {
+      "description": "Auto translated from the source language",
+      "message": "请激活\u003Cspan class=_tc-ext>Table Capture\u003C/span>以使用该扩展。"
+   },
+   "powerBiExplainer": {
+      "description": "Auto translated from the source language",
+      "message": "\u003Cp class=\"explainer-heading\">当前页面是 PowerBI Web 应用程序。\u003C/p>\u003Cp>如果您想从此页面导出数据，则需要使用专用扩展：\u003Cbr />\u003Ca target=\"_blank\">通过表格捕获获取 PowerBI 提取器\u003C/a>\u003C/p>"
+   },
+   "preview": {
+      "description": "Auto translated from the source language",
+      "message": "预览"
+   },
+   "previewData": {
+      "description": "Auto translated from the source language",
+      "message": "预览数据"
+   },
+   "previewDataCounts": {
+      "description": "Auto translated from the source language",
+      "message": "行：$1，列：$2"
+   },
+   "previewPagedDataCounts": {
+      "description": "Auto translated from the source language",
+      "message": "行：$1，列：$2，页数：$3"
+   },
+   "proPurchaseInfoNoTrial": {
+      "description": "...",
+      "message": "\u003Cp>\u003Cspan class='pro'>专业版\u003C/span>只需\u003Cspan class='pro'>$12\u003C/span>，每周可为您节省数小时。\u003C/p>\u003Cp>您的许可证有效期为一年。\u003C/p>"
+   },
+   "promptCssSelector": {
+      "description": "The prompt for the user to select a CSS selector.",
+      "message": "请输入您想要选择的表格的 CSS 选择器。"
+   },
+   "provideCustomSelectorOrXpath": {
+      "description": "消息 ...",
+      "message": "提供自定义选择器/xpath"
+   },
+   "refetchDataTooltip": {
+      "description": "重试提取数据的操作。",
+      "message": "重试数据提取"
+   },
+   "refreshAction": {
+      "description": "刷新页面上找到的当前表格列表的链接。",
+      "message": "刷新"
+   },
+   "refreshDescription": {
+      "description": "上面refreshAction链接的工具提示。",
+      "message": "点击刷新（用于页面加载后创建的表格）"
+   },
+   "remove": {
+      "description": "Auto translated from the source language",
+      "message": "消除"
+   },
+   "removeAction": {
+      "description": "从页面移除内联菜单或面板的链接。",
+      "message": "移除"
+   },
+   "salvageMessage": {
+      "description": "Auto translated from the source language",
+      "message": "\u003Cdiv class=\"_tc-heading\">挽救数据\u003C/div>\u003Cp class=\"readable\">您看到的数据是在遇到错误后被挽救的。我们建议您尽可能地导出这些数据，然后刷新页面并从上次中断的地方继续（如果可能）。\u003C/p>\u003Cp class=\"readable\">如果刷新页面不方便，最好至少关闭此研讨会并重新启动它以继续捕获数据。\u003C/p>"
+   },
+   "screenshotAction": {
+      "description": "截取表格并下载为图像的链接。",
+      "message": "表格截图"
+   },
+   "screenshotActionTooltip": {
+      "description": "解释表格截图操作的文本",
+      "message": "表格截图（保存为.png图像）"
+   },
+   "screenshottingTablesIsOnlyAv": {
+      "description": "Auto translated from the source language",
+      "message": "只有使用 Table Capture Pro 才能对表格进行截图。"
+   },
+   "scrollToBottomActionTooltip": {
+      "description": "解释滚动到底部操作的文本。",
+      "message": "滚动到页面底部。"
+   },
+   "selectAllAction": {
+      "description": "选择所有表格的链接。",
+      "message": "全选"
+   },
+   "selectAllDescription": {
+      "description": "上面selectAllAction的工具提示。",
+      "message": "选择页面中的所有表格"
+   },
+   "selectChildActionTooltip": {
+      "description": "Text to explain an action to select the parent element.",
+      "message": "返回选定区域的较小部分"
+   },
+   "selectInPageBanner": {
+      "description": "Auto translated from the source language",
+      "message": "\u003Cspan class=\"cta\">没有看到您的桌子吗？\u003C/span>\u003Cinput type=\"button\" class=\"btn btn-outline-dark btn-sm\" value=\"在页面中选择\"/>"
+   },
+   "selectNoneAction": {
+      "description": "不选择任何表格的链接。",
+      "message": "清除选择"
+   },
+   "selectNoneDescription": {
+      "description": "上面selectNoneAction的工具提示。",
+      "message": "不选择页面中的任何表格"
+   },
+   "selectParentActionTooltip": {
+      "description": "Text to explain an action to select the parent element.",
+      "message": "包含更多周边内容"
+   },
+   "selectedTablesCopied": {
+      "description": "Auto translated from the source language",
+      "message": "选定的表格已复制"
+   },
+   "selectedToExcelAction": {
+      "description": "将选定的表格转换为Excel电子表格的链接。",
+      "message": "导出到Excel"
+   },
+   "selectedToExcelDescription": {
+      "description": "上面selectedToExcelAction的工具提示。",
+      "message": "从页面中选定的所有表格创建Excel电子表格。每个表格将在您的Excel工作簿中占据一个单独的工作表。"
+   },
+   "selectedToExcelDescriptionSingleSheet": {
+      "description": "上面selectedToExcelAction的工具提示。",
+      "message": "从页面中选定的所有表格创建Excel电子表格。表格将在您的Excel工作簿的一个工作表中，用空行分隔。"
+   },
+   "selectedToGoogleAction": {
+      "description": "将选定的表格转换为Google文档的链接。",
+      "message": "导出到Google表格"
+   },
+   "selectedToGoogleDescription": {
+      "description": "上面selectedToGoogleAction的工具提示。",
+      "message": "从页面中选定的所有表格创建Google文档"
+   },
+   "selectionHighlightTooltip": {
+      "description": "Text to explain an action to highlight the selected area.",
+      "message": "页面中突出显示的橙色区域"
+   },
+   "sheetSyncActionTooltip": {
+      "description": "解释将实时数据同步到Google表格操作的文本。",
+      "message": "将实时数据同步到Google表格"
+   },
+   "spanUpgradeToSpanClassTc": {
+      "description": "Auto translated from the source language",
+      "message": "\u003Cspan>升级至\u003Cspan class=_tc-strong>专业版\u003C/span>\u003C/span>"
+   },
+   "strongNextClickWhateverLin": {
+      "description": "Auto translated from the source language",
+      "message": "\u003Cstrong>下一页：单击任何链接或按钮都会转到下一页。\u003C/strong>然后，扩展程序会尝试连续单击该按钮，直到您关闭自动分页。"
+   },
+   "supportAction": {
+      "description": "选项页面的链接。",
+      "message": "支持"
+   },
+   "tableCapturePro": {
+      "description": "...",
+      "message": "Table Capture Pro"
+   },
+   "tablesFoundAndSelectedTitle": {
+      "description": "找到的表格数量，已选择的数量。",
+      "message": "表格 ($1)，已选择 ($2)"
+   },
+   "tablesFoundTitle": {
+      "description": "找到的表格数量。",
+      "message": "表格 ($1)"
+   },
+   "teachersFlipYourClassroomW": {
+      "description": "Auto translated from the source language",
+      "message": "教师们——用 Presentious 翻转您的课堂！"
+   },
+   "tellUsWhatYouWantUsToAdd": {
+      "description": "Auto translated from the source language",
+      "message": "告诉我们您希望我们添加到扩展中的内容；推动表格捕获的改进！"
+   },
+   "thereWasAnErrorCommunicating": {
+      "description": "Auto translated from the source language",
+      "message": "与页面通信时出错。请重试？"
+   },
+   "thisFeatureIsOnlyAvailableW": {
+      "description": "Auto translated from the source language",
+      "message": "此功能仅适用于 Table Capture Pro。"
+   },
+   "tooSmallFrameMessage": {
+      "description": "Message shown when the frame is too small for Table Capture",
+      "message": "此框架太小。\u003Ca>单击此处\u003C/a>将其最大化以继续使用表格捕获。"
+   },
+   "tooSmallWindowMessage": {
+      "description": "Message shown when the window is too small for Table Capture",
+      "message": "此窗口太小。请尝试将其放大以使用表格捕获。"
+   },
+   "trialPeriodInfo": {
+      "description": "...",
+      "message": "免费试用14天。"
+   },
+   "tryPresentious": {
+      "description": "Auto translated from the source language",
+      "message": "尝试 Presentious"
+   },
+   "unableToGetAnyWindowByName": {
+      "description": "Auto translated from the source language",
+      "message": "无法通过名称获取任何窗口。"
+   },
+   "unknownError": {
+      "description": "Default message for unknown errors",
+      "message": "未知错误"
+   },
+   "updatePagerDomSelectorActionTooltip": {
+      "description": "提供分页器选择器/xpath操作工具提示。",
+      "message": "更新用于跳转到下一页的按钮的选择器/xpath。"
+   },
+   "upgradeAction": {
+      "description": "升级页面的链接。",
+      "message": "升级到\u003Ci>专业版\u003C/i>"
+   },
+   "upgradeActionTitle": {
+      "description": "升级页面的链接。",
+      "message": "升级到专业版"
+   },
+   "upgradeCloudForFeature_SheetsSync": {
+      "description": "请求升级以获取功能",
+      "message": "升级到Table Capture云版以启用Google表格同步。"
+   },
+   "upgradeForFeature": {
+      "description": "请求升级以获取功能",
+      "message": "升级到Table Capture Pro以启用此功能。"
+   },
+   "upgradeToProButtonText": {
+      "description": "...",
+      "message": "升级到\u003Cspan class='_tc-ext'>Table Capture Pro\u003C/span>"
+   },
+   "upgradeToProCTA": {
+      "description": "...",
+      "message": "更多，更多，更多"
+   },
+   "upgradeToProRecipeLink": {
+      "description": "...",
+      "message": "\u003Ca class=\"alert-link\" href=\"/upgrade.html\">升级到 Pro\u003C/a>来创建一些。"
+   },
+   "upgradeToProSubtitle": {
+      "description": "...",
+      "message": "想要能够直接将表格下载为\u003Cstrong>Excel和CSV文件\u003C/strong>吗？想要捕获\u003Cstrong>动态和多页表格\u003C/strong>吗？"
+   },
+   "useLastSelectionActionText": {
+      "description": "Text to explain an action to use the last selection.",
+      "message": "应用先前的选择"
+   },
+   "useLastSelectionActionTooltip": {
+      "description": "Text to explain an action to use the last selection.",
+      "message": "使用上次导出操作中的选择"
+   },
+   "visitPage": {
+      "description": "Auto translated from the source language",
+      "message": "访问页面"
+   },
+   "weReDyingForFeedback": {
+      "description": "Auto translated from the source language",
+      "message": "我们迫切需要反馈"
+   },
+   "workshopAction": {
+      "description": "打开工作坊的操作",
+      "message": "打开工作坊"
+   },
+   "workshopDescription": {
+      "description": "workshopAction的工具提示。",
+      "message": "点击启动Table Capture工作坊"
+   },
+   "workshopFrameBetaTooltip": {
+      "description": "调用beta功能的工具提示。",
+      "message": "查看Table Capture的实验性功能。"
+   },
+   "workshopFrameBottomDockTooltip": {
+      "description": "",
+      "message": "停靠到页面底部"
+   },
+   "workshopFrameClearTooltip": {
+      "description": "解释工作坊框架清除操作的工具提示。",
+      "message": "清除当前活动元素"
+   },
+   "workshopFrameFullScreenExitTooltip": {
+      "description": "解释工作坊框架退出全屏操作的工具提示。",
+      "message": "退出全屏"
+   },
+   "workshopFrameFullScreenTooltip": {
+      "description": "解释工作坊框架全屏操作的工具提示。",
+      "message": "进入全屏"
+   },
+   "workshopFrameMaximizeTooltip": {
+      "description": "解释工作坊框架最大化操作的工具提示。",
+      "message": "展开工作坊"
+   },
+   "workshopFrameMinimizeTooltip": {
+      "description": "解释工作坊框架最小化操作的工具提示。",
+      "message": "最小化工作坊"
+   },
+   "workshopFrameRemoveTooltip": {
+      "description": "解释工作坊框架移除操作的工具提示。",
+      "message": "移除工作坊"
+   },
+   "workshopFrameSupportTooltip": {
+      "description": "报告错误或获取帮助的工具提示",
+      "message": "获取帮助或报告错误"
+   },
+   "workshopFrameTopDockTooltip": {
+      "description": "",
+      "message": "停靠到页面顶部"
+   },
+   "workshopProAndCloudCTA": {
+      "description": "Auto translated from the source language",
+      "message": "\u003Ca class=\"pro-cta loud-cta\">尝试 Table Capture Pro\u003C/a>来捕获多页表格\u003Ca href=\"https://photos.app.goo.gl/EjjKPnNRStfZZj8TA\" target=\"_blank\">（演示）\u003C/a>和内容动态变化的表格\u003Ca href=\"https://photos.app.goo.gl/hYLsamqXR8ZQjBvj8\" target=\"_blank\">（演示）\u003C/a> 。\u003Cspan class=\"cloud-cta-wrapper support-cloud-only\">此外，\u003Ca class=\"cloud-cta loud-cta\">尝试 Table Capture Cloud（测试版）\u003C/a>来获得一系列更高级别的功能。\u003C/span>"
+   },
+   "workshopSettingsSummary": {
+      "description": "Auto translated from the source language",
+      "message": "\u003Cdiv class=\"_tc-heading\">选项\u003Cspan class=\"inline-action edit-settings\">✲\u003C/span>\u003C/div>\u003Cdiv class=\"settings-summary\">\u003C/div>\u003Cp class=\"disclaimer settings-refresh tc-hidden\"> 刷新页面并重新启动研讨会以反映任何选项的变化。\u003C/p>"
+   },
+   "youCurrentlyHaveNoRecipes": {
+      "description": "Auto translated from the source language",
+      "message": "您目前没有食谱。"
+   },
+   "zillowExplainer": {
+      "description": "Auto translated from the source language",
+      "message": "\u003Cp class=\"explainer-heading\">当前的 Zillow 页面可以更好地导出。\u003C/p>\u003Cp>如果您想从此页面导出数据，George 推荐一位独立开发人员开发的专用扩展程序： \u003Ca target=\"_blank\">Zillow Data Exporter\u003C/a>\u003C/p>\u003Cp>如果表格捕获做得足够好，那就太好了；您可以像往常一样使用它。\u003C/p>"
+   }
+}

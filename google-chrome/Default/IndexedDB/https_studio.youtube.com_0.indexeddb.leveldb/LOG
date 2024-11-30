@@ -1,0 +1,6 @@
+2024/12/04-11:24:08.956 a89 Creating DB /home/statick/.config/google-chrome/Default/IndexedDB/https_studio.youtube.com_0.indexeddb.leveldb since it was missing.
+2024/12/04-11:24:08.967 a89 Reusing MANIFEST /home/statick/.config/google-chrome/Default/IndexedDB/https_studio.youtube.com_0.indexeddb.leveldb/MANIFEST-000001
+2024/12/04-12:05:14.966 a89 Level-0 table #5: started
+2024/12/04-12:05:14.971 a89 Level-0 table #5: 4231 bytes OK
+2024/12/04-12:05:14.978 a89 Delete type=0 #3
+2024/12/04-12:05:14.978 a89 Manual compaction at level-0 from (begin) .. (end); will stop at (end)

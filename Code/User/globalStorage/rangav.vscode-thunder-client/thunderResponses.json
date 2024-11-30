@@ -1,0 +1,89 @@
+[
+    {
+        "_id": "7bdd6716-c850-49fe-88cb-ac01ef458b9e",
+        "colId": "history",
+        "created": "2024-12-01T16:44:42.788Z",
+        "modified": "2024-12-01T16:51:52.861Z",
+        "response": {
+            "responseText": "",
+            "filePath": "",
+            "type": "html",
+            "headers": [
+                {
+                    "name": "date",
+                    "value": "Sun, 01 Dec 2024 16:51:52 GMT"
+                },
+                {
+                    "name": "server",
+                    "value": "WSGIServer/0.2 CPython/3.13.0"
+                },
+                {
+                    "name": "content-type",
+                    "value": "text/html; charset=utf-8"
+                },
+                {
+                    "name": "x-frame-options",
+                    "value": "DENY"
+                },
+                {
+                    "name": "content-length",
+                    "value": "3171"
+                },
+                {
+                    "name": "x-content-type-options",
+                    "value": "nosniff"
+                },
+                {
+                    "name": "referrer-policy",
+                    "value": "same-origin"
+                },
+                {
+                    "name": "cross-origin-opener-policy",
+                    "value": "same-origin"
+                }
+            ],
+            "cookies": [],
+            "testResults": [],
+            "url": "http://127.0.0.1:8000/api/protected",
+            "status": 404,
+            "statusText": "Not Found",
+            "contentType": "text/html; charset=utf-8",
+            "contentLength": "3.1 KB",
+            "responseTimeText": "7 ms",
+            "responseTime": 7,
+            "responseSize": 3171,
+            "preScriptTime": 1,
+            "preReqTime": 1,
+            "reqTime": 12,
+            "postScriptTime": 0,
+            "chartHTML": ""
+        },
+        "requestInfo": {
+            "reqUrl": "http://127.0.0.1:8000/api/protected",
+            "headers": [
+                {
+                    "name": "content-length",
+                    "value": "46"
+                },
+                {
+                    "name": "accept-encoding",
+                    "value": "gzip, deflate, br"
+                },
+                {
+                    "name": "User-Agent",
+                    "value": "Thunder Client (https://www.thunderclient.com)"
+                },
+                {
+                    "name": "Accept",
+                    "value": "*/*"
+                },
+                {
+                    "name": "Content-Type",
+                    "value": "application/json"
+                }
+            ],
+            "body": "{\n  \"username\":\"statick\",\n  \"password\":\"666\"\n}",
+            "type": "json"
+        }
+    }
+]

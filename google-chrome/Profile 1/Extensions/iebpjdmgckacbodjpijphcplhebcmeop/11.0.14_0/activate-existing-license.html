@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <title>__MSG_pageTitleActivateExisting__</title>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, viewport-fit=cover, maximum-scale=1.0, user-scalable=no"
+    />
+
+    <link rel="stylesheet" href="src/styles/style-upgrade.css" />
+    <style type="text/css" id="styles"></style>
+    <style type="text/css" id="fontface"></style>
+
+    <script
+      type="text/javascript"
+      src="src/app/activate-existing.js"
+      defer
+    ></script>
+  </head>
+  <body>
+    <header class="text-bg-light">
+  <div class="container">
+    <div
+      class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start"
+    >
+      <a
+        id="nav-logo-wrapper"
+        href="options.html"
+        class="align-items-center mb-2 mb-lg-0 text-dark text-decoration-none"
+      >
+        <img src="/src/assets/icon.png" />
+        <span class="fs-5">Table Capture</span>
+      </a>
+
+      <ul class="nav col-12 col-lg-auto me-lg-auto px-3 justify-content-center">
+        <li class="logo-wrapper">
+          <img src="/src/assets/icon.png" />
+        </li>
+        <li id="account">
+          <a href="account.html" class="nav-link px-2">Account</a>
+        </li>
+        <li id="options">
+          <a href="options.html" class="nav-link px-2">Options</a>
+        </li>
+        <li id="activity">
+          <a href="activity.html" class="nav-link px-2">Activity</a>
+        </li>
+        <li id="recipes">
+          <a href="recipes.html" class="nav-link px-2">Recipes</a>
+        </li>
+        <li id="support">
+          <a href="support.html" class="nav-link px-2">Support</a>
+        </li>
+        <li id="debug" class="hidden">
+          <a href="debug.html" class="nav-link px-2">Debug</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</header>
+
+
+    <div class="container page-content">
+      <section class="upgrade-wrapper">
+        <div class="error-wrapper global-errors"></div>
+        <div class="title">Activate Your Existing License</div>
+        <div class="row">
+          <div class="col-lg-6">
+            <p class="documentation">
+              Thanks for supporting <span class="pro">Table Capture!</span> Just
+              paste in your license below to activate
+              <span class="pro">Pro</span> in this browser.
+            </p>
+            <div class="activation-wrapper">
+              <form class="activation-form">
+                <div class="form-group form-group-lg mb-3">
+                  <input
+                    type="text"
+                    id="activation"
+                    name="activation"
+                    class="form-control form-control-lg text-activation"
+                    placeholder="Paste in your Table Capture Pro license code here."
+                  />
+                </div>
+                <input
+                  type="button"
+                  class="btn btn-success btn-lg btn-text-activation"
+                  value="Activate"
+                />
+              </form>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <footer class="footer">
+  <div class="container">
+    <a class="footer-link link-review" target="_blank">Leave a Review</a>
+    <span>&middot;</span>
+    <a class="footer-link link-roadmap" target="_blank">Development Roadmap</a>
+    <span>&middot;</span>
+    <a class="footer-link link-email" target="_blank">Email Support</a>
+    <span>&middot;</span>
+    <a class="footer-link link-discord" target="_blank">Discord</a>
+    <span>&middot;</span>
+    <a class="footer-link link-newsletter" target="_blank"
+      >Join the Newsletter</a
+    >
+    <span>&middot;</span>
+    <a class="footer-link" href="thanks.html">Thanks</a>
+    <p class="text-muted">
+      <span class="text-tc-version"></span>
+      <span>&middot;</span>
+      <span>Copyright 2024, GeorgeMike.com</span>
+    </p>
+  </div>
+</footer>
+
+  </body>
+</html>

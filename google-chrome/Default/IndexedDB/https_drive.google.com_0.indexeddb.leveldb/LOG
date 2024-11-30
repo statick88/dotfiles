@@ -1,0 +1,20 @@
+2024/12/05-11:57:14.056 c2a Reusing MANIFEST /home/statick/.config/google-chrome/Default/IndexedDB/https_drive.google.com_0.indexeddb.leveldb/MANIFEST-000001
+2024/12/05-11:57:14.056 c2a Recovering log #31
+2024/12/05-11:57:14.062 c2a Reusing old log /home/statick/.config/google-chrome/Default/IndexedDB/https_drive.google.com_0.indexeddb.leveldb/000031.log 
+2024/12/05-11:57:24.115 c2b Level-0 table #41: started
+2024/12/05-11:57:24.145 c2b Level-0 table #41: 3306392 bytes OK
+2024/12/05-11:57:24.158 c2b Delete type=0 #31
+2024/12/05-12:04:05.367 c2b Compacting 1@1 + 5@2 files
+2024/12/05-12:04:05.443 c2b Generated table #42@1: 1694 keys, 2123261 bytes
+2024/12/05-12:04:05.482 c2b Generated table #43@1: 2211 keys, 2115752 bytes
+2024/12/05-12:04:05.525 c2b Generated table #44@1: 1780 keys, 2121396 bytes
+2024/12/05-12:04:05.555 c2b Generated table #45@1: 2207 keys, 2120943 bytes
+2024/12/05-12:04:05.575 c2b Generated table #46@1: 8493 keys, 922236 bytes
+2024/12/05-12:04:05.575 c2b Compacted 1@1 + 5@2 files => 9403588 bytes
+2024/12/05-12:04:05.581 c2b compacted to: files[ 0 0 5 0 0 0 0 ]
+2024/12/05-12:04:05.582 c2b Delete type=2 #34
+2024/12/05-12:04:05.583 c2b Delete type=2 #35
+2024/12/05-12:04:05.583 c2b Delete type=2 #36
+2024/12/05-12:04:05.583 c2b Delete type=2 #37
+2024/12/05-12:04:05.583 c2b Delete type=2 #38
+2024/12/05-12:04:05.583 c2b Delete type=2 #41

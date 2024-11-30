@@ -1,0 +1,32 @@
+{% extends 'base.html' %} {% block title %}Nuevo Medicamento{% endblock %} 
+{% block content %}
+<h2 class="text-xl font-semibold mb-4">Nuevo Medicamento</h2>
+
+{% if messages %}
+<div class="mb-4">
+  {% for message in messages %} {% if message.tags == 'error' %}
+  <div class="bg-red-500 text-white p-3 rounded mb-2">{{ message }}</div>
+  {% else %}
+  <div class="bg-green-500 text-white p-3 rounded mb-2">{{ message }}</div>
+  {% endif %} {% endfor %}
+</div>
+{% endif %}
+
+<form method="POST">
+  {% csrf_token %} {{ form.as_p }}
+
+  <button
+    type="submit"
+    class="bg-green-500 text-white py-2 px-4 rounded hover:bg-green-600"
+  >
+    Guardar
+  </button>
+</form>
+
+<a
+  href="{% url 'lista_medicamentos' %}"
+  class="mt-4 inline-block bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-600"
+>
+  Volver
+</a>
+{% endblock %}

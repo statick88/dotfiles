@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en" dir="auto">
+  <head>
+    <title>__MSG_pageTitlePdfExtractor__</title>
+    <meta charset="utf-8" />
+
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, viewport-fit=cover, maximum-scale=1.0, user-scalable=no"
+    />
+
+    <link rel="stylesheet" href="src/styles/style-pdf-extract.css" />
+    <style type="text/css" id="styles"></style>
+    <style type="text/css" id="fontface"></style>
+
+    <script
+      type="text/javascript"
+      src="src/scripts/pdfjs-2.14.305-dist/build/pdf.js"
+    ></script>
+
+    <script type="text/javascript" src="src/app/pdf-extract.js" defer></script>
+  </head>
+
+  <body class="init loading">
+    <header class="text-bg-light">
+  <div class="container">
+    <div
+      class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start"
+    >
+      <a
+        id="nav-logo-wrapper"
+        href="options.html"
+        class="align-items-center mb-2 mb-lg-0 text-dark text-decoration-none"
+      >
+        <img src="/src/assets/icon.png" />
+        <span class="fs-5">Table Capture</span>
+      </a>
+
+      <ul class="nav col-12 col-lg-auto me-lg-auto px-3 justify-content-center">
+        <li class="logo-wrapper">
+          <img src="/src/assets/icon.png" />
+        </li>
+        <li id="account">
+          <a href="account.html" class="nav-link px-2">Account</a>
+        </li>
+        <li id="options">
+          <a href="options.html" class="nav-link px-2">Options</a>
+        </li>
+        <li id="activity">
+          <a href="activity.html" class="nav-link px-2">Activity</a>
+        </li>
+        <li id="recipes">
+          <a href="recipes.html" class="nav-link px-2">Recipes</a>
+        </li>
+        <li id="support">
+          <a href="support.html" class="nav-link px-2">Support</a>
+        </li>
+        <li id="debug" class="hidden">
+          <a href="debug.html" class="nav-link px-2">Debug</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</header>
+
+
+    <div class="container page-content">
+      <section class="flashes">
+        <noscript>
+          <div class="alert alert-danger">
+            JavaScript is disabled. That's a problem.
+          </div>
+        </noscript>
+        <div class="error-wrapper global-errors"></div>
+      </section>
+
+      <section>
+        <h3 class="header-with-actions">
+          <div>
+            <span>PDF Extractor</span>
+            <span class="beta-flag">BETA</span>
+          </div>
+          <span class="loading-indicator not-shown"></span>
+        </h3>
+        <hr />
+        <div class="upgrade-wrapper"></div>
+        <div class="row main-app-content">
+          <div class="col-lg-6">
+            <canvas class="pdf-preview hidden"></canvas>
+            <div class="page-actions hidden">
+              <input
+                type="button"
+                value="Previous Page"
+                class="btn btn-outline-primary btn-page-prev"
+              />
+              <input
+                type="button"
+                value="0"
+                class="btn btn-outline-primary btn-page-number"
+              />
+              <input
+                type="button"
+                value="Next Page"
+                class="btn btn-outline-primary btn-page-next"
+              />
+            </div>
+          </div>
+          <div class="col-lg-6">
+            <div class="form-wrapper hidden">
+              <div class="form-group mb-3 pdf-url-form-group">
+                <input
+                  type="text"
+                  readonly
+                  class="form-control form-control-lg pdf-url"
+                />
+              </div>
+              <div class="form-group mb-3">
+                <input
+                  type="text"
+                  id="first-el"
+                  name="first-el"
+                  class="form-control form-control-lg text-first-el"
+                  placeholder="First Cell Value"
+                />
+                <div class="text-search-results"></div>
+              </div>
+              <div class="form-group mb-3">
+                <input
+                  type="text"
+                  id="last-el"
+                  name="last-el"
+                  class="form-control form-control-lg text-last-el"
+                  placeholder="Last Cell Value"
+                />
+                <div class="text-search-results"></div>
+              </div>
+              <div class="form-group mb-3">
+                <input
+                  type="number"
+                  id="expect-cols"
+                  name="expect-cols"
+                  class="form-control form-control-lg expect-cols"
+                  placeholder="Expected Number of Columns"
+                />
+              </div>
+              <div class="actions">
+                <input
+                  type="button"
+                  value="Get started"
+                  class="btn btn-lg btn-primary btn-extract"
+                />
+              </div>
+              <div class="preview-wrapper hidden">
+                <div class="data-preview"></div>
+                <div class="direction-actions btn-group" role="group">
+                  <input
+                    type="button"
+                    value="This looks like a row"
+                    class="btn btn-set-is-row"
+                  />
+                  <input
+                    type="button"
+                    value="This looks like a column"
+                    class="btn btn-set-is-col"
+                  />
+                </div>
+                <div>
+                  <input
+                    type="button"
+                    value="Extract"
+                    class="btn btn-lg btn-primary btn-extract-final"
+                  />
+                  <p class="caption">
+                    Clicking "Extract" will open a new tab with the extracted
+                    data in the Table Capture data editor. If the shape of the
+                    data isn't right, close the tab and check below.
+                  </p>
+                </div>
+                <div class="feedback-wrapper hidden">
+                  <div class="small-heading">How was the extraction?</div>
+                  <div class="feedback-buttons">
+                    <input
+                      type="button"
+                      value="Great"
+                      class="btn btn-outline-primary btn-good-data"
+                    />
+                    <input
+                      type="button"
+                      value="Not Good"
+                      class="btn btn-outline-primary btn-bad-data"
+                    />
+                  </div>
+                  <div class="next-steps"></div>
+                  <div class="report-wrapper">
+                    <input
+                      type="button"
+                      value="Report PDF"
+                      class="btn btn-primary btn-report-pdf"
+                    />
+                    <input
+                      type="button"
+                      value="Try Width Filter"
+                      class="btn btn-primary btn-try-width-filter hidden"
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="dropzone-mask hidden">
+          <span class="message">You can drop in PDF files here.</span>
+        </div>
+        <div class="explanation">
+          <hr />
+          <h4>About the PDF Extractor</h4>
+          <p class="documentation">
+            The <span class="tc">Table Capture</span> PDF Extractor is still in
+            Beta and is a bit limited right now. Some thoughts on its abilities
+            and limitations:
+          </p>
+          <ul>
+            <li>
+              The export functionality is very rudimentary: It gets a list of
+              all of the bits of text in the PDF. It then relies on you telling
+              it where the table begins ("First Cell Value") and ends ("Last
+              Cell Value") and how many columns are in the table such that it
+              can turn a list of text into a table.
+            </li>
+            <li>
+              If your table spans multiple PDF pages, you'll have to export
+              multiple times.
+            </li>
+            <li>
+              If there are mulitple instances of the same cell text, the
+              extractor might get confused.
+            </li>
+          </ul>
+          <p class="documentation">
+            I plan on addressing these limitations in upcoming versions, but I
+            wanted to see if this would be effective as is right now.
+          </p>
+        </div>
+      </section>
+    </div>
+
+    <footer class="footer">
+  <div class="container">
+    <a class="footer-link link-review" target="_blank">Leave a Review</a>
+    <span>&middot;</span>
+    <a class="footer-link link-roadmap" target="_blank">Development Roadmap</a>
+    <span>&middot;</span>
+    <a class="footer-link link-email" target="_blank">Email Support</a>
+    <span>&middot;</span>
+    <a class="footer-link link-discord" target="_blank">Discord</a>
+    <span>&middot;</span>
+    <a class="footer-link link-newsletter" target="_blank"
+      >Join the Newsletter</a
+    >
+    <span>&middot;</span>
+    <a class="footer-link" href="thanks.html">Thanks</a>
+    <p class="text-muted">
+      <span class="text-tc-version"></span>
+      <span>&middot;</span>
+      <span>Copyright 2024, GeorgeMike.com</span>
+    </p>
+  </div>
+</footer>
+
+  </body>
+</html>

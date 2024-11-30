@@ -1,0 +1,39 @@
+2024-12-05 10:31:05.845 [info] Started local extension host with pid 98655.
+2024-12-05 10:31:06.182 [info] [telesoho.excalidraw-editor-cj]: El comando "excalidraw.updateTheme" ya está registrado por Excalidraw (pomdtr.excalidraw-editor)
+2024-12-05 10:31:06.182 [info] [telesoho.excalidraw-editor-cj]: El comando "excalidraw.preventDefault" ya está registrado por Excalidraw (pomdtr.excalidraw-editor)
+2024-12-05 10:31:06.183 [info] [telesoho.excalidraw-editor-cj]: El comando "excalidraw.showSource" ya está registrado por Excalidraw (pomdtr.excalidraw-editor)
+2024-12-05 10:31:06.183 [info] [telesoho.excalidraw-editor-cj]: El comando "excalidraw.showEditor" ya está registrado por Excalidraw (pomdtr.excalidraw-editor)
+2024-12-05 10:31:06.183 [info] [telesoho.excalidraw-editor-cj]: El comando "excalidraw.showImage" ya está registrado por Excalidraw (pomdtr.excalidraw-editor)
+2024-12-05 10:31:06.183 [info] [telesoho.excalidraw-editor-cj]: El comando "excalidraw.showSourceToSide" ya está registrado por Excalidraw (pomdtr.excalidraw-editor)
+2024-12-05 10:31:06.183 [info] [telesoho.excalidraw-editor-cj]: El comando "excalidraw.showEditorToSide" ya está registrado por Excalidraw (pomdtr.excalidraw-editor)
+2024-12-05 10:31:06.183 [info] [telesoho.excalidraw-editor-cj]: El comando "excalidraw.showImageToSide" ya está registrado por Excalidraw (pomdtr.excalidraw-editor)
+2024-12-05 10:31:06.218 [warning] [telesoho.excalidraw-editor-cj]: No se puede registrar "excalidraw.theme". Esta propiedad ya está registrada.
+2024-12-05 10:31:06.219 [warning] [telesoho.excalidraw-editor-cj]: No se puede registrar "excalidraw.language". Esta propiedad ya está registrada.
+2024-12-05 10:31:06.219 [warning] [telesoho.excalidraw-editor-cj]: No se puede registrar "excalidraw.workspaceLibraryPath". Esta propiedad ya está registrada.
+2024-12-05 10:31:06.219 [warning] [telesoho.excalidraw-editor-cj]: No se puede registrar "excalidraw.image". Esta propiedad ya está registrada.
+2024-12-05 10:31:06.286 [info] Creating lazy extension host (LocalWebWorker). Reason: contains 2 extension(s): pomdtr.excalidraw-editor,telesoho.excalidraw-editor-cj.
+2024-12-05 10:31:06.556 [info] Settings Sync: Updating due to initialize
+2024-12-05 10:31:06.556 [info] Settings Sync: Updating authentication providers. Authentication Providers from store: [{"id":"github","scopes":["user:email"]},{"id":"microsoft","scopes":["openid","profile","email","offline_access"]}]
+2024-12-05 10:31:06.556 [info] Settings Sync: Authentication providers updated []
+2024-12-05 10:31:06.745 [info] Settings Sync: Updating authentication providers. Authentication Providers from store: [{"id":"github","scopes":["user:email"]},{"id":"microsoft","scopes":["openid","profile","email","offline_access"]}]
+2024-12-05 10:31:06.745 [info] Settings Sync: Authentication providers updated ["github"]
+2024-12-05 10:31:06.745 [info] Settings Sync: Updating authentication providers. Authentication Providers from store: [{"id":"github","scopes":["user:email"]},{"id":"microsoft","scopes":["openid","profile","email","offline_access"]}]
+2024-12-05 10:31:06.745 [info] Settings Sync: Authentication providers updated ["github"]
+2024-12-05 10:31:06.745 [info] Settings Sync: Updating authentication providers. Authentication Providers from store: [{"id":"github","scopes":["user:email"]},{"id":"microsoft","scopes":["openid","profile","email","offline_access"]}]
+2024-12-05 10:31:06.745 [info] Settings Sync: Authentication providers updated ["github","microsoft"]
+2024-12-05 10:31:06.745 [info] Settings Sync: Updating authentication providers. Authentication Providers from store: [{"id":"github","scopes":["user:email"]},{"id":"microsoft","scopes":["openid","profile","email","offline_access"]}]
+2024-12-05 10:31:06.745 [info] Settings Sync: Authentication providers updated ["github","microsoft"]
+2024-12-05 10:31:06.764 [info] Settings Sync: Updating due to declared authentication providers changed
+2024-12-05 10:31:06.764 [info] Settings Sync: Updating authentication providers. Authentication Providers from store: [{"id":"github","scopes":["user:email"]},{"id":"microsoft","scopes":["openid","profile","email","offline_access"]}]
+2024-12-05 10:31:06.765 [info] Settings Sync: Authentication providers updated ["github","microsoft"]
+2024-12-05 10:31:06.765 [info] Settings Sync: Updating due to declared authentication providers changed
+2024-12-05 10:31:06.765 [info] Settings Sync: Updating authentication providers. Authentication Providers from store: [{"id":"github","scopes":["user:email"]},{"id":"microsoft","scopes":["openid","profile","email","offline_access"]}]
+2024-12-05 10:31:06.765 [info] Settings Sync: Authentication providers updated ["github","microsoft"]
+2024-12-05 10:31:07.635 [info] Settings Sync: Updating authentication providers. Authentication Providers from store: [{"id":"github","scopes":["user:email"]},{"id":"microsoft","scopes":["openid","profile","email","offline_access"]}]
+2024-12-05 10:31:07.636 [info] Settings Sync: Authentication providers updated ["github","microsoft"]
+2024-12-05 10:31:08.527 [info] [perf] Render performance baseline is 21ms
+2024-12-05 10:31:24.291 [info] Started local extension host with pid 98980.
+2024-12-05 10:31:24.653 [info] Settings Sync: Updating due to initialize
+2024-12-05 10:31:24.653 [info] Settings Sync: Updating authentication providers. Authentication Providers from store: [{"id":"github","scopes":["user:email"]},{"id":"microsoft","scopes":["openid","profile","email","offline_access"]}]
+2024-12-05 10:31:24.653 [info] Settings Sync: Authentication providers updated ["github","microsoft"]
+2024-12-05 10:31:26.886 [info] [perf] Render performance baseline is 27ms

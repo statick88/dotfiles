@@ -1,0 +1,30 @@
+{
+   "action": {
+   },
+   "background": {
+      "service_worker": "background.js"
+   },
+   "commands": {
+      "_execute_action": {
+         "description": "__MSG_appName__",
+         "suggested_key": "Alt+A"
+      }
+   },
+   "default_locale": "en",
+   "description": "__MSG_appDesc__",
+   "host_permissions": [ "http://*/*", "https://*/*" ],
+   "icons": {
+      "128": "/images/128x128.png",
+      "16": "/images/16x16.png",
+      "48": "/images/48x48.png",
+      "64": "/images/64x64.png",
+      "96": "/images/96x96-128x128.png"
+   },
+   "key": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAgduKRDZ+h8bABSxUuv4PyY4SAnjXT0jWX6VbaTVMuIskk3nrA9QyrrSPzSviI6e9nZNzsNKzA10sTs7cLYOaE4tHQaNTiYTQNj7+7+y4noPXOGlF0DOnvQH8k+RWQiSAECRbhWhsSKpwgUG6SznhUJ8h7gKxZm7tV/7MAhIr61U6fceASSBEPF7m4S2CNpK6B46jTHeMqeMJ8m+z8mm0dl7BTYRTOdyB9V3BL1/dEIrzUJZjdpzPNeoU+IMWNPXb81PEHjjPmG2Xszoe7hV1dBPwcG8WSOATSm2HfN1KZlmioFwVmBEMvWEXTMZZRFe6dMFgB3keNwhz5ZSS08zJEwIDAQAB",
+   "manifest_version": 3,
+   "name": "__MSG_appName__",
+   "offline_enabled": true,
+   "permissions": [ "contextMenus", "storage", "scripting" ],
+   "update_url": "https://clients2.google.com/service/update2/crx",
+   "version": "1.2.1"
+}

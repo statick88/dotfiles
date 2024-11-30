@@ -1,0 +1,6 @@
+2024/12/04-16:47:50.535 a88 Reusing MANIFEST /home/statick/.config/google-chrome/Default/IndexedDB/https_wetransfer.com_0.indexeddb.leveldb/MANIFEST-000001
+2024/12/04-16:47:50.535 a88 Recovering log #3
+2024/12/04-16:47:50.536 a88 Reusing old log /home/statick/.config/google-chrome/Default/IndexedDB/https_wetransfer.com_0.indexeddb.leveldb/000003.log 
+2024/12/04-17:13:47.454 a89 Level-0 table #5: started
+2024/12/04-17:13:47.468 a89 Level-0 table #5: 932955 bytes OK
+2024/12/04-17:13:47.473 a89 Delete type=0 #3
