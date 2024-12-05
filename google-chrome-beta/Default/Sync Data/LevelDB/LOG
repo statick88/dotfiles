@@ -1,6 +1,0 @@
-2024/12/02-00:33:59.837 ce7 Reusing MANIFEST /home/statick/.config/google-chrome-beta/Default/Sync Data/LevelDB/MANIFEST-000001
-2024/12/02-00:33:59.838 ce7 Recovering log #17
-2024/12/02-00:33:59.843 ce7 Reusing old log /home/statick/.config/google-chrome-beta/Default/Sync Data/LevelDB/000017.log 
-2024/12/02-00:54:15.570 cf3 Level-0 table #21: started
-2024/12/02-00:54:15.580 cf3 Level-0 table #21: 137432 bytes OK
-2024/12/02-00:54:15.594 cf3 Delete type=0 #17
