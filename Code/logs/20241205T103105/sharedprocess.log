@@ -1,9 +1,0 @@
-2024-12-05 10:31:06.662 [info] Deleted uninstalled extension from disk eamodio.gitlens /home/statick/.vscode/extensions/eamodio.gitlens-2024.12.304
-2024-12-05 10:31:06.713 [error] [uncaught exception in sharedProcess]: Error: ENOENT: no such file or directory, stat '/home/statick/.vscode/extensions/eamodio.gitlens-2024.12.304.-1e882bac.vsctmp': EntryNotFound (FileSystemError): Error: ENOENT: no such file or directory, stat '/home/statick/.vscode/extensions/eamodio.gitlens-2024.12.304.-1e882bac.vsctmp'
-    at hm.create (file:///usr/share/code/resources/app/out/vs/code/electron-utility/sharedProcess/sharedProcessMain.js:35:39254)
-    at Es (file:///usr/share/code/resources/app/out/vs/code/electron-utility/sharedProcess/sharedProcessMain.js:35:39361)
-    at Fr.ib (file:///usr/share/code/resources/app/out/vs/code/electron-utility/sharedProcess/sharedProcessMain.js:71:22677)
-    at Fr.stat (file:///usr/share/code/resources/app/out/vs/code/electron-utility/sharedProcess/sharedProcessMain.js:71:16010)
-    at async Zl.stat (file:///usr/share/code/resources/app/out/vs/code/electron-utility/sharedProcess/sharedProcessMain.js:70:84491)
-    at async Jl.yb (file:///usr/share/code/resources/app/out/vs/code/electron-utility/sharedProcess/sharedProcessMain.js:70:66605)
-2024-12-05 10:31:06.717 [info] Deleted uninstalled extension from disk ms-python.python /home/statick/.vscode/extensions/ms-python.python-2024.21.2024112901-linux-x64

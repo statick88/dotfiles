@@ -1,4 +1,0 @@
-GitLens (pre-release) v2024.12.304 activating in Visual Studio Code (1.95.3) on the desktop; language='es', logLevel='warn', defaultDateLocale='null' (a1e9b19ad578162eda2249fd8667617f7f0df56d9cc2de6f7d4389bdf40247af|1d318737-d0ca-45f4-b7fa-a4c75abf59901733361224947)
-To enable debug logging, set `"gitlens.outputLevel: "debug"` or run "GitLens: Enable Debug Logging" from the Command Palette
-[2024-12-05 01:15:20.875] [GIT          ] [/home/statick/workspaces/practicas/python/farmacia2] git rev-parse --show-toplevel • Command failed: /usr/bin/git -c core.quotepath=false -c color.ui=false rev-parse --show-toplevel • not a git repository (or any parent up to mount point /) • Stopping at filesystem boundary (GIT_DISCOVERY_ACROSS_FILESYSTEM not set). [45ms]
-
