@@ -12,3 +12,5 @@
 *.swx
 *~
 
+# Ignorar google-chrome
+google-chrome/
