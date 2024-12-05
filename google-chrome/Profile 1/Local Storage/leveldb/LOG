@@ -1,6 +1,0 @@
-2024/12/04-14:31:04.086 4 Reusing MANIFEST /home/statick/.config/google-chrome/Profile 1/Local Storage/leveldb/MANIFEST-000001
-2024/12/04-14:31:04.087 4 Recovering log #523
-2024/12/04-14:31:04.087 4 Reusing old log /home/statick/.config/google-chrome/Profile 1/Local Storage/leveldb/000523.log 
-2024/12/04-14:32:05.663 5 Level-0 table #526: started
-2024/12/04-14:32:05.671 5 Level-0 table #526: 39143 bytes OK
-2024/12/04-14:32:05.688 5 Delete type=0 #523

@@ -1,3 +1,0 @@
-Telemática
-estresar
-checksum_v1 = 944757aab2e674896e718011c9bd4326

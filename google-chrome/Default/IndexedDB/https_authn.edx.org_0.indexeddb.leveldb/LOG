@@ -1,6 +1,0 @@
-2024/12/03-10:28:10.613 1ac8 Creating DB /home/statick/.config/google-chrome/Default/IndexedDB/https_authn.edx.org_0.indexeddb.leveldb since it was missing.
-2024/12/03-10:28:10.624 1ac8 Reusing MANIFEST /home/statick/.config/google-chrome/Default/IndexedDB/https_authn.edx.org_0.indexeddb.leveldb/MANIFEST-000001
-2024/12/03-11:14:25.974 1ac9 Level-0 table #5: started
-2024/12/03-11:14:25.980 1ac9 Level-0 table #5: 1534 bytes OK
-2024/12/03-11:14:25.986 1ac9 Delete type=0 #3
-2024/12/03-11:14:25.987 1ac9 Manual compaction at level-0 from (begin) .. (end); will stop at (end)

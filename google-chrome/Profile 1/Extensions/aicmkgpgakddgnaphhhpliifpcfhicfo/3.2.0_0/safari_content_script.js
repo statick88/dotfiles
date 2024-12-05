@@ -1,1 +1,0 @@
-setInterval((function(){chrome.runtime.sendMessage({type:"PING_FROM_CONTENT_SCRIPT"})}),1e3);

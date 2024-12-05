@@ -1,5 +1,0 @@
-2024/12/03-14:44:54.817 a56 Reusing MANIFEST /home/statick/.config/google-chrome/Profile 1/IndexedDB/chrome-extension_bgnkhhnnamicmpeenaelnjfhikgbkllg_0.indexeddb.leveldb/MANIFEST-000001
-2024/12/03-14:44:54.818 a56 Recovering log #26
-2024/12/03-14:44:54.818 a56 Reusing old log /home/statick/.config/google-chrome/Profile 1/IndexedDB/chrome-extension_bgnkhhnnamicmpeenaelnjfhikgbkllg_0.indexeddb.leveldb/000026.log 
-2024/12/03-14:44:54.819 a56 Delete type=2 #24
-2024/12/03-14:44:54.836 a67 Manual compaction at level-0 from '\x00\x0a\x00\x00\x00' @ 72057594037927935 : 1 .. '\x00\x0b\x00\x00\x00' @ 0 : 0; will stop at (end)
