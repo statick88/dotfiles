@@ -11,6 +11,8 @@ Esta es la configuración personalizada de Neovim desarrollada por **Diego Medar
 | **Sintaxis** | [Treesitter](https://github.com/nvim-treesitter/nvim-treesitter) | Resaltado de sintaxis avanzado y análisis de código basado en AST. |
 | **Explorador** | [Neo-tree.nvim](https://github.com/nvim-neo-tree/neo-tree.nvim) | Navegación de archivos visual y eficiente dentro del editor. |
 | **Markdown** | [Render-markdown](https://github.com/MeanderingProgrammer/render-markdown.nvim) | Visualización estética in-editor para documentación técnica. |
+| **IA Asistente** | [OpenCode.nvim](https://github.com/NickvanDyke/opencode.nvim) | Asistente de IA para desarrollo, explicación de código y refactorización. |
+| **Integración Terminal** | [Tmux.nvim](https://github.com/aserowy/tmux.nvim) | Navegación seamless entre Neovim splits y tmux panes. |
 
 ---
 
@@ -38,7 +40,9 @@ A continuación se detalla la estructura exacta del sistema de archivos:
             ├── lsp.lua     # Configuración crítica de Mason y lspconfig.
             ├── markdown.lua
             ├── neotree.lua
+            ├── opencode.lua # Asistente de IA para desarrollo de código.
             ├── telescope.lua
+            ├── tmux.lua     # Integración con tmux para terminal workflow.
             └── treesitter.lua
 
 ```
@@ -81,4 +85,49 @@ Inicie Neovim (`nvim`). El gestor `Lazy.nvim` detectará la ausencia de plugins 
 
 * **Transparencia:** Cada plugin tiene su propio archivo de configuración aislado, lo que facilita la auditoría y el ajuste fino sin afectar otras partes del sistema.
 * **Precisión Técnica:** La configuración de LSP está ajustada para proporcionar diagnósticos y autocompletado precisos para el stack definido (Lua, Web, Python), evitando configuraciones globales ruidosas.
+* **Integración Terminal:** Flujo de trabajo optimizado entre Neovim y tmux para desarrollo eficiente con navegación seamless entre splits y panes.
+* **Asistencia IA:** Integración con OpenCode para asistencia inteligente en desarrollo, debugging y refactorización de código.
 * **Entorno Educativo:** La claridad del código y la estructura modular están pensadas para servir como ejemplo en entornos de enseñanza universitaria.
+
+---
+
+## 🎯 Plugins Recientes y Funcionalidades
+
+### OpenCode.nvim - Asistente de IA
+
+Integración con OpenCode para asistencia inteligente durante el desarrollo:
+
+**Keymaps principales:**
+- `<leader>oA` - Abrir prompt de OpenCode
+- `<leader>oa` - Preguntar sobre el código bajo el cursor
+- `<leader>ot` - Toggle de ventana de OpenCode
+- `<leader>on` - Nueva sesión
+- `<leader>oe` - Explicar código en el cursor
+- `<leader>od` - Ayuda con debugging en cursor
+- `<leader>or` - Refactorizar código en cursor
+
+### Tmux.nvim - Integración Terminal
+
+Navegación seamless entre Neovim y tmux:
+
+**Navegación:**
+- `Ctrl+h/j/k/l` - Moverse entre tmux panes y neovim splits
+- `Ctrl+Direction Keys` - Redimensionar tmux panes
+
+**Características:**
+- Sincronización de clipboard bidireccional
+- Navegación cíclica cuando no hay más splits
+- Redimensionado de panes desde Neovim
+
+---
+
+## ⚡ Quick Start Keymaps
+
+| Modo | Keymap | Acción |
+| --- | --- | --- |
+| **Normal** | `<leader>pf` | Buscar archivos (Telescope) |
+| **Normal** | `<leader>pv` | Explorador de archivos (Neo-tree) |
+| **Normal** | `<leader>oA` | Asistente IA (OpenCode) |
+| **Normal** | `Ctrl+h/j/k/l` | Navegación tmux/neovim |
+| **Insert** | `C-SPACE` | Autocompletado |
+| **Visual** | `<leader>oa` | Preguntar a IA sobre selección |
