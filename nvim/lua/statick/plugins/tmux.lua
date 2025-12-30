@@ -1,34 +1,31 @@
+-- tmux.nvim: Integración perfecta entre Neovim y Tmux
+-- Permite usar Ctrl+h/j/k/l para moverse entre splits de nvim y panes de tmux
+-- Elimina la necesidad de cambiar atajos entre Neovim y Tmux
 return {
   {
     "aserowy/tmux.nvim",
     config = function()
       require("tmux").setup({
-        -- Configuración de navegación entre tmux y neovim
         copy_sync = {
-          -- Habilita sincronización de clipboard entre tmux y neovim
-          enable = true,
-          -- Dirección de sincronización (both, tmux_to_neovim, neovim_to_tmux)
-          direction = "both",
+          enable = true,                                       -- Sincronizar clipboard bidireccionalmente
+          direction = "both",                                   -- Copiar de nvim a tmux y viceversa
         },
         navigation = {
-          -- Habilita navegación seamless entre tmux y neovim splits
-          enable = true,
-          -- Ciclo de navegación (solo si no hay más splits en esa dirección)
-          cyclic_navigation = true,
+          enable = true,                                       -- Habilitar navegación entre aplicaciones
+          cyclic_navigation = true,                              -- Volver al inicio si no hay más paneles
         },
         resize = {
-          -- Habilita redimensionado de tmux panes desde neovim
-          enable = true,
+          enable = true,                                       -- Redimensionar tmux desde nvim
         },
       })
 
-      -- Keymaps para navegación tmux-neovim
+      -- Navegación seamless entre Neovim y Tmux (mismo atajo que nvim splits)
       vim.keymap.set("n", "<C-h>", [[<cmd>lua require("tmux").move_left()<cr>]], { silent = true })
       vim.keymap.set("n", "<C-j>", [[<cmd>lua require("tmux").move_bottom()<cr>]], { silent = true })
       vim.keymap.set("n", "<C-k>", [[<cmd>lua require("tmux").move_top()<cr>]], { silent = true })
       vim.keymap.set("n", "<C-l>", [[<cmd>lua require("tmux").move_right()<cr>]], { silent = true })
 
-      -- Keymaps para redimensionado
+      -- Redimensionar paneles de Tmux desde Neovim
       vim.keymap.set("n", "<C-Left>", [[<cmd>lua require("tmux").resize_left()<cr>]], { silent = true })
       vim.keymap.set("n", "<C-Down>", [[<cmd>lua require("tmux").resize_bottom()<cr>]], { silent = true })
       vim.keymap.set("n", "<C-Up>", [[<cmd>lua require("tmux").resize_top()<cr>]], { silent = true })
