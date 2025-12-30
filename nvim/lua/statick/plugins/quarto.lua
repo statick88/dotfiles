@@ -9,9 +9,11 @@ return {
       "nvim-treesitter/nvim-treesitter",        -- Para resaltado sintáctico
       "neovim/nvim-lspconfig",                -- Para soporte LSP en Quarto
       "nvim-lua/plenary.nvim",                -- Dependencia requerida
+      "benlubas/otter.nvim",                   -- Para ejecución de código en Quarto
+      "jmbuhr/otter.nvim",                   -- Alternativa mejorada para otter
     },
-    config = function()
-      -- Configuración básica de quarto-nvim
+      config = function()
+      -- Configuración básica de quarto-nvim con otter integration
       require("quarto").setup({
         -- Configuración de ejecución de código
         debug = false,                                   -- Desactivar debug para mejor rendimiento

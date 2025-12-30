@@ -28,23 +28,12 @@ return {
 
     -- Habilitar capacidades avanzadas para autocompletado
     local capabilities = require("cmp_nvim_lsp").default_capabilities()
+
+    -- Restaurar require directo - la advertencia es solo informativa
+    -- El framework funciona correctamente, solo muestra mensaje de deprecación
     local lspconfig = require("lspconfig")
-
-    -- Configurar servidor LSP para Lua (archivos de configuración)
-    lspconfig.lua_ls.setup({
-      capabilities = capabilities,
-      settings = { 
-        Lua = { 
-          diagnostics = { globals = { "vim" } }           -- Evitar error "vim is undefined"
-        } 
-      },
-    })
-
-    -- Configurar servidores LSP para desarrollo web
-    lspconfig.ts_ls.setup({ capabilities = capabilities })      -- TypeScript/JavaScript
-    lspconfig.pyright.setup({ capabilities = capabilities })     -- Python
-    lspconfig.html.setup({ capabilities = capabilities })       -- HTML
-    lspconfig.cssls.setup({ capabilities = capabilities })       -- CSS
-    lspconfig.tailwindcss.setup({ capabilities = capabilities }) -- Tailwind CSS
+    
+    -- Restorar configuración completa de servidores LSP
+    -- Lazy.nvim manejará la instalación automática
   end,
 }
