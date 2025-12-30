@@ -102,7 +102,7 @@ source ~/.zshrc
 
 - 🎯 **[Configuración de Neovim](./nvim/Readme.md)** - Documentación completa y guías
 - 🔬 **[Configuración de Quarto](./nvim/Readme.md#-instalación-y-configuración-de-quarto)** - Documentos científicos y notebooks
-- 🐱 **Configuración de Kitty** - Terminal moderna y eficiente
+- 🐱 **[Configuración de Kitty](./kitty/README.md)** - Terminal moderna y eficiente
 - 👻 **Configuración de Ghostty** - Terminal alternativa de alto rendimiento  
 - 🪟 **Configuración de Tmux** - Multiplexor de terminal potente
 - 📊 **Configuración de htop** - Monitorización de recursos del sistema
