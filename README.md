@@ -35,14 +35,15 @@ Este repositorio contiene configuraciones optimizadas específicamente para macO
 
 ### **Neovim Configuration**
 El componente principal y más completo de estos dotfiles es la configuración de **Neovim**.
-
 **📋 Características Principales:**
-- 🔍 **Telescope.nvim** - Búsqueda fuzzy potente
-- 🌳 **Treesitter** - Resaltado sintáctico avanzado  
-- 🤖 **OpenCode.nvim** - Asistente de IA integrada
-- 🪟 **Tmux.nvim** - Integración seamless con terminal
-- 🔧 **LSP completo** - Soporte para múltiples lenguajes
-- 📝 **Git integrado** - Control de versiones desde editor
+
+-   🔍 **Telescope.nvim** - Búsqueda fuzzy potente
+-   🌳 **Treesitter** - Resaltado sintáctico avanzado
+-   🔬 **Quarto.nvim** - Integración para documentos científicos
+-   🤖 **OpenCode.nvim** - Asistente de IA integrada
+-   🪟 **Tmux.nvim** - Integración seamless con terminal
+-   🔧 **LSP completo** - Soporte para múltiples lenguajes
+-   📝 **Git integrado** - Control de versiones desde editor
 
 **📖 Documentación Completa:**
 → [nvim/Readme.md](./nvim/Readme.md) - Guía completa para principiantes y uso avanzado
@@ -65,6 +66,7 @@ nvim
 | **Editor** | Neovim | ≥0.9.0 | Entorno de desarrollo principal |
 | **Terminal** | Kitty / Ghostty | Latest | Terminal moderna con GPU acceleration |
 | **Multiplexor** | Tmux | ≥3.2 | Gestión de sesiones y paneles |
+| **Publicación** | Quarto | Latest | Documentos científicos y notebooks |
 | **Shell** | Zsh + Oh My Zsh | Latest | Entorno de línea de comandos |
 | **Monitor** | htop | Latest | Monitor de recursos del sistema |
 
@@ -83,9 +85,13 @@ nvim
 git clone git@github.com:statick88/dotfiles.git ~/.config
 
 # 2. Instalar herramientas principales con Homebrew
-brew install neovim tmux kitty htop
+brew install neovim tmux kitty htop quarto
 
-# 3. Configurar Zsh (si aplica)
+# 3. Instalar Quarto para documentos científicos
+# Usando cask para instalación GUI
+brew install --cask quarto
+
+# 4. Configurar Zsh (si aplica)
 echo 'export EDITOR=nvim' >> ~/.zshrc
 source ~/.zshrc
 ```
@@ -95,6 +101,7 @@ source ~/.zshrc
 ## 📚 **Documentación por Componente**
 
 - 🎯 **[Configuración de Neovim](./nvim/Readme.md)** - Documentación completa y guías
+- 🔬 **[Configuración de Quarto](./nvim/Readme.md#-instalación-y-configuración-de-quarto)** - Documentos científicos y notebooks
 - 🐱 **Configuración de Kitty** - Terminal moderna y eficiente
 - 👻 **Configuración de Ghostty** - Terminal alternativa de alto rendimiento  
 - 🪟 **Configuración de Tmux** - Multiplexor de terminal potente

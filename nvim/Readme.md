@@ -75,6 +75,7 @@ Esta es la configuración personalizada de Neovim desarrollada por **Diego Medar
 | **Sintaxis** | [Treesitter](https://github.com/nvim-treesitter/nvim-treesitter) | Resaltado de sintaxis avanzado y análisis de código basado en AST. |
 | **Explorador** | [Neo-tree.nvim](https://github.com/nvim-neo-tree/neo-tree.nvim) | Navegación de archivos visual y eficiente dentro del editor. |
 | **Markdown** | [Render-markdown](https://github.com/MeanderingProgrammer/render-markdown.nvim) | Visualización estética in-editor para documentación técnica. |
+| **Documentos Científicos** | [Quarto.nvim](https://github.com/quarto-dev/quarto-nvim) | Integración completa para documentos Quarto (.qmd) con ejecución de código. |
 | **IA Asistente** | [OpenCode.nvim](https://github.com/NickvanDyke/opencode.nvim) | Asistente de IA para desarrollo, explicación de código y refactorización. |
 | **Integración Terminal** | [Tmux.nvim](https://github.com/aserowy/tmux.nvim) | Navegación seamless entre Neovim splits y tmux panes. |
 
@@ -149,6 +150,88 @@ Esta es la configuración personalizada de Neovim desarrollada por **Diego Medar
 | `Ctrl+Shift+flechas` | Redimensionar paneles | Ajusta tamaño desde nvim |
 
 **Consejo:** Con esto puedes tener Neovim en un lado y terminal en otro, y moverte entre ellos sin cambiar atajos.
+
+### 📊 **Quarto.nvim - Documentos Científicos**
+
+**¿Qué hace?** Es el plugin oficial para trabajar con documentos Quarto (.qmd), que combina texto, código y resultados como Jupyter notebooks.
+
+| Comando | Acción | Cuándo usarlo |
+| --- | --- | --- |
+| `[b` / `]b` | Navegar entre celdas/chunks | Moverse por el notebook |
+| `<localleader>rc` | Ejecutar celda actual | Para probar código específico |
+| `<localleader>ra` | Ejecutar celda + lo anterior | Para código dependiente |
+| `<localleader>rA` | Ejecutar todas las celdas | Para renderizar notebook completo |
+| `<localleader>pp` | Iniciar previsualización | Ver resultado del documento |
+| `<localleader>ps` | Detener previsualización | Detener servidor de preview |
+
+**¿Qué es Quarto?**
+- **Herramienta de publicación científica** para crear documentos, presentaciones, sitios web
+- **Combina Markdown + código ejecutable** (Python, R, Julia, etc.)
+- **Similar a Jupyter notebooks** pero en archivos de texto plano
+- **Genera múltiples formatos**: HTML, PDF, Word, etc.
+
+**Instalación de Quarto (si no está instalado):**
+```bash
+# macOS con Homebrew
+brew install quarto
+
+# Verificar instalación
+quarto --version
+
+# Crear nuevo proyecto Quarto
+quarto create my-project
+
+# Iniciar proyecto existente
+cd my-project
+quarto preview
+```
+
+**Flujo de trabajo con Quarto + Neovim:**
+1. Crear archivo `.qmd` o abrir proyecto existente
+2. Escribir contenido en Markdown con chunks de código
+3. Usar `]b`/[b` para navegar entre celdas
+4. Ejecutar código con `<localleader>rc`
+5. Previsualizar resultados con `<localleader>pp`
+6. Renderizar documento final con `quarto render` en terminal
+
+**Ejemplo de archivo Quarto (.qmd):**
+````markdown
+---
+title: "Mi Primer Documento Quarto"
+author: "Tu Nombre"
+format: html
+---
+
+# Introducción
+
+Este es un documento Quarto que combina **texto** y **código**.
+
+```{python}
+#| label: fig-ejemplo
+#| fig-cap: "Gráfico de ejemplo"
+
+import matplotlib.pyplot as plt
+import numpy as np
+
+x = np.linspace(0, 10, 100)
+y = np.sin(x)
+
+plt.plot(x, y)
+plt.title("Función Seno")
+plt.show()
+```
+
+## Resultados
+
+Como puedes ver, el código Python se ejecuta y genera un gráfico automáticamente.
+
+```{r}
+#| echo: false
+
+# Código R para análisis de datos
+summary(cars)
+```
+````
 
 ### 🌲 **Treesitter - Resaltado de Código**
 
@@ -250,6 +333,152 @@ Esta es la configuración personalizada de Neovim desarrollada por **Diego Medar
 
 ---
 
+## 🔬 **Instalación y Configuración de Quarto**
+
+### 📦 **Instalar Quarto**
+
+**Para macOS (usando Homebrew):**
+```bash
+# Instalar Quarto CLI
+brew install --cask quarto
+
+# Verificar instalación
+quarto check
+
+# Ver versión
+quarto --version
+```
+
+**Para otros sistemas:**
+```bash
+# Linux (apt/apt)
+sudo apt-get install quarto
+
+# Windows (usando winget)
+winget install Posit.Quarto
+
+# O descargar desde quarto.org
+```
+
+### 🛠️ **Configuración Inicial**
+
+```bash
+# Crear nuevo proyecto Quarto
+quarto create mi-proyecto
+
+# O iniciar en directorio existente
+cd mi-proyecto
+quarto init
+
+# Estructura del proyecto:
+mi-proyecto/
+├── index.qmd          # Documento principal
+├── _quarto.yml         # Configuración del proyecto
+├── styles/             # CSS personalizados
+└── output/             # Archivos generados (after render)
+```
+
+### ⚙️ **Configuración de Neovim para Quarto**
+
+El plugin `quarto-nvim` ya está configurado en este entorno, pero si quieres instalarlo manualmente:
+
+```bash
+# Asegurar que Quarto está en PATH
+echo 'export PATH="$PATH:/Applications/Quarto.app/bin"' >> ~/.zshrc
+source ~/.zshrc
+
+# Verificar que Neovim reconoce archivos Quarto
+nvim --headless -c "autocmd Filetype quarto echo 'Quarto detected'" -c "q"
+```
+
+### 🚀 **Flujo de Trabajo Completo**
+
+1. **Abrir proyecto Quarto:**
+   ```bash
+   cd mi-proyecto
+   nvim index.qmd
+   ```
+
+2. **Escribir contenido** con chunks de código:
+   - Texto normal en Markdown
+   - Código con ````{python}`` o ````{r}`
+   - Opciones de chunk con `#|` 
+
+3. **Ejecutar código:**
+   - `]b/[b` para navegar entre celdas
+   - `<localleader>rc` para ejecutar celda actual
+   - `<localleader>rA` para ejecutar todo
+
+4. **Previsualizar en tiempo real:**
+   ```bash
+   # En terminal (dentro de nvim con :term)
+   quarto preview
+   
+   # O usar atajo en nvim:
+   <localleader>pp
+   ```
+
+5. **Renderizar documento final:**
+   ```bash
+   # Renderizar a HTML (por defecto)
+   quarto render
+   
+   # Renderizar a PDF
+   quarto render --to pdf
+   
+   # Renderizar todos los formatos
+   quarto render --all
+   ```
+
+### 🎯 **Formatos de Salida**
+
+**Comandos de renderizado:**
+```bash
+quarto render --to html          # Página web
+quarto render --to pdf           # Documento PDF
+quarto render --to docx          # Microsoft Word
+quarto render --to revealjs      # Presentación HTML
+quarto render --to github        # Documentos para GitHub
+quarto render --to typst        # Usando Typst para PDF
+```
+
+### 🔧 **Configuración Avanzada**
+
+**Archivo `_quarto.yml`:**
+```yaml
+project:
+  type: default
+  output-dir: _output
+
+format:
+  html:
+    theme: cosmo
+    toc: true
+    code-fold: true
+  
+  pdf:
+    documentclass: article
+    margin-left: 2cm
+  
+revealjs:
+  theme: solarized
+  transition: slide
+```
+
+### 💡 **Consejos Productivos**
+
+1. **Chunks atómicos:** Un chunk = una idea/tarea
+2. **Nombres descriptivos:** Usa `#| label: grafico-ventas`
+3. **Prueba incremental:** Ejecuta celdas individualmente
+4. **Documenta resultados:** Usa chunks de texto para explicar
+5. **Version control:** Git tracking de archivos .qmd
+
+---
+
+## 🎯 **Flujo de Trabajo Diario - Ejemplo Práctico**
+
+---
+
 ## 📂 Estructura del Proyecto
 
 La configuración adopta una arquitectura modular. El punto de entrada `init.lua` delega la carga a módulos específicos ubicados en el directorio `lua/statick/`, asegurando una separación clara entre la configuración base y las extensiones.
@@ -275,6 +504,7 @@ A continuación se detalla la estructura exacta del sistema de archivos:
             ├── markdown.lua
             ├── neotree.lua
             ├── opencode.lua # Asistente de IA para desarrollo de código.
+            ├── quarto.lua    # Integración para documentos científicos Quarto.
             ├── telescope.lua
             ├── tmux.lua     # Integración con tmux para terminal workflow.
             └── treesitter.lua
