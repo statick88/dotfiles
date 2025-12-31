@@ -11,8 +11,10 @@ Esta carpeta contiene la configuración del terminal Kitty para una experiencia 
 
 ### 🎨 Tema y Apariencia
 - **Fuente**: JetBrains Mono en tamaño 14pt
-- **Tema de colores**: Dracula theme
-- **Espaciado**: Padding y márgenes configurados para mejor legibilidad
+- **Tema de colores**: Matrix/Hacker theme (verde brillante sobre negro)
+- **Espaciado**: Padding de 10px para consistencia con WezTerm
+- **Transparencia**: 92% con efecto blur de 10px
+- **Uniformidad**: Configuración sincronizada con WezTerm y Ghostty
 
 ### ⌨️ Atajos de Teclado
 - `Ctrl+Shift+C`: Copiar al portapapeles
@@ -104,3 +106,8 @@ Para verificar que la configuración funciona correctamente, ejecuta los tests:
 
 Configuración mantenida por: Statick
 Última actualización: 2025-12-30
+
+## 🔄 Historial de Cambios
+
+- **2025-12-30**: Migrado a tema Matrix/Hacker para uniformidad con WezTerm
+- **2025-12-30**: Configuración inicial con tema Dracula
