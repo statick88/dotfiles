@@ -29,21 +29,10 @@ return {
     "jose-elias-alvarez/typescript.nvim",
     ft = { "typescript", "typescriptreact" },
     event = "BufReadPost",
-    opts = {
-      server = "tsserver",
-      debug = false,
-    },
-  },
-
-  -- HTML/JSX/TSX tag closing
-  {
-    "windwp/nvim-ts-autotag",
-    ft = { "html", "xml", "javascriptreact", "typescriptreact", "vue", "svelte" },
-    event = "BufReadPost",
     opts = {},
   },
 
-  -- Auto-close HTML/XML tags (alternativa más ligera)
+  -- HTML/JSX/TSX tag closing
   {
     "windwp/nvim-ts-autotag",
     ft = { "html", "xml", "javascriptreact", "typescriptreact", "vue", "svelte" },
