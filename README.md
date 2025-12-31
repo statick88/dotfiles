@@ -37,6 +37,18 @@ Este repositorio contiene configuraciones optimizadas específicamente para macO
 
 ## 🎯 **Subproyectos Principales**
 
+### **🤖 OpenCode AI Assistant - Clean Architecture**
+Configuración avanzada basada en principios de Clean Architecture y filosofía Gentleman Programming:
+
+**📋 Características Principales:**
+-   🤖 **4 Agentes Especializados**: Sisyphus (orquestador), Oracle (Clean Architecture), Librarian (IEEE/ACM), Frontend (UI/UX)
+-   🏗️ **Clean Architecture Completa**: Separación de preocupaciones, SOLID, patrones de diseño
+-   🧪 **TDD y Testing de Comportamientos**: Red-Green-Refactor, pruebas contractuales
+-   🎨 **Gentleman Matrix Theme**: Visual profesional con identidad Diego + Robot
+-   👤 **Autoridad de Diego**: Control final con sistema de aprobación
+-   📋 **Templates Académicos**: Technical Docs, Presentations, Educational Materials
+-   🔄 **Workflow Profesional**: Robot analiza → Diego decide → Robot implementa
+
 ### **Neovim Configuration**
 El componente principal y más completo de estos dotfiles es la configuración de **Neovim**.
 **📋 Características Principales:**
@@ -44,7 +56,7 @@ El componente principal y más completo de estos dotfiles es la configuración d
 -   🔍 **Telescope.nvim** - Búsqueda fuzzy potente
 -   🌳 **Treesitter** - Resaltado sintáctico avanzado
 -   🔬 **Quarto.nvim** - Integración para documentos científicos
--   🤖 **OpenCode.nvim** - Asistente de IA integrada
+-   🤖 **OpenCode.nvim** - Asistente de IA con Clean Architecture
 -   🪟 **Tmux.nvim** - Integración seamless con terminal
 -   🔧 **LSP completo** - Soporte para múltiples lenguajes
 -   📝 **Git integrado** - Control de versiones desde editor
@@ -68,7 +80,7 @@ nvim
 | Componente | Herramienta | Versión Recomendada | Uso Principal |
 |---|---|---|---|
 | **Editor** | Neovim | ≥0.9.0 | Entorno de desarrollo principal |
-| **Asistente IA** | OpenCode | ≥1.0.212 | Asistente de codificación con IA |
+| **Asistente IA Arquitectónico** | OpenCode + Clean Architecture | ≥1.0.212 | IA con principios SOLID y Gentleman Programming |
 | **Terminal** | Kitty / Ghostty | Latest | Terminal moderna con GPU acceleration |
 | **Multiplexor** | Tmux | ≥3.2 | Gestión de sesiones y paneles |
 | **Publicación** | Quarto | Latest | Documentos científicos y notebooks |
@@ -83,6 +95,7 @@ nvim
 - macOS 12.0 (Monterey) o superior
 - [Homebrew](https://brew.sh/) instalado
 - Git configurado con credenciales SSH
+- OpenCode API key (opcional)
 
 ### **Instalación Completa:**
 ```bash
@@ -96,11 +109,15 @@ brew install neovim tmux kitty htop quarto
 # Usando cask para instalación GUI
 brew install --cask quarto
 
-# 4. Instalar OpenCode (opcional pero recomendado)
-# Ver instrucciones en: https://opencode.ai/docs/
-curl -sSL https://opencode.ai/install.sh | bash
+# 4. Instalar OpenCode con Clean Architecture
+# Instalar con soporte para desarrollo guiado por principios SOLID
+curl -fsSL https://opencode.ai/install.sh | bash
 
-# 5. Configurar Zsh (si aplica)
+# 5. Configurar API key de OpenCode (opcional)
+export ANTHROPIC_API_KEY="tu-api-key-aquí"
+echo 'export ANTHROPIC_API_KEY="tu-api-key-aquí"' >> ~/.zshrc
+
+# 6. Configurar Zsh (si aplica)
 echo 'export EDITOR=nvim' >> ~/.zshrc
 source ~/.zshrc
 ```
@@ -109,6 +126,7 @@ source ~/.zshrc
 
 ## 📚 **Documentación por Componente**
 
+- 🤖 **[Configuración de OpenCode + Clean Architecture](./opencode/README.md)** - Asistente IA con principios SOLID y Gentleman Programming
 - 🎯 **[Configuración de Neovim](./nvim/Readme.md)** - Documentación completa y guías
 - 🤖 **[Configuración de OpenCode](./opencode/README.md)** - Asistente de IA para desarrollo
 - 🔬 **[Configuración de Quarto](./nvim/Readme.md#-instalación-y-configuración-de-quarto)** - Documentos científicos y notebooks
@@ -121,12 +139,14 @@ source ~/.zshrc
 
 ## 🤝 **Contribución y Filosofía**
 
-Estos dotfiles están diseñados siguiendo principios de:
+Estos dotfiles están diseñados siguiendo principios de Clean Architecture y Gentleman Programming:
 
+- **🏗️ Clean Architecture** - Separación de preocupaciones, SOLID, patrones de diseño modernos
+- **🧪 TDD y Testing de Comportamientos** - Tests primero, cobertura completa, métricas objetivas
 - **🎓 Educación Transferible** - Cada configuración está documentada para facilitar el aprendizaje
-- **🔧 Productividad Optimizada** - Flujo de trabajo eficiente y sin fricciones
-- **📐 Estandarización Profesional** - Buenas prácticas y convenciones modernas
-- **🔄 Actualización Constante** - Incorporación de nuevas herramientas y técnicas
+- **🔧 Productividad Optimizada** - Flujo de trabajo eficiente con IA asistente
+- **📐 Estandarización Profesional** - IEEE/ACM compliance, principios SOLID
+- **🔄 Actualización Constante** - Incorporación de nuevas herramientas y mejores prácticas
 
 ---
 

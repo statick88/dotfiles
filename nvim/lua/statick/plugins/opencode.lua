@@ -1,45 +1,177 @@
--- OpenCode.nvim: Asistente de IA integrado en Neovim para desarrollo inteligente
--- Es como tener ChatGPT/Copilot dentro de tu editor con comandos específicos
--- Ideal para entender código complejo, debuggear, refactorizar, aprender
+-- OpenCode.nvim: Arquitecto Asistente para Diego siguiendo principios de Clean Architecture
+-- Integración completa con filosofía Gentleman Programming
+-- Basado en: Separación de Preocupaciones, Principios SOLID, TDD, Patrones de Diseño
 return {
   {
     "NickvanDyke/opencode.nvim",
     dependencies = {
-      -- Snacks.nvim: Mejora la experiencia de input/prompt y terminal embebida
       { "folke/snacks.nvim", opts = { input = { enabled = true } } },
+      { "nvim-treesitter/nvim-treesitter" },
+      { "nvim-tree/nvim-web-devicons" },
+      { "nvim-lua/plenary.nvim" }
     },
     opts = {
-      -- Prompts predefinidos para tareas comunes (puedes personalizar)
       prompts = {
-        explain_code = "Explica este código de forma clara y concisa, considerando el contexto actual del proyecto.",
-        optimize_code = "Optimiza este código para mejor rendimiento y mantenibilidad, explicando los cambios realizados.",
-        debug_help = "Ayúdame a encontrar y solucionar posibles errores en este código.",
-        refactor = "Refactoriza este código siguiendo las mejores prácticas y patrones de diseño.",
+        separation_of_concerns = "🤖 Analizo este código aplicando el Principio de Separación de Preocupaciones. Capa de Dominio, Capa de Aplicación, Capa de Infraestructura. Violaciones detectadas y sugerencias de separación. 👤 Diego, ¿quieres que proceda con la separación de capas o necesitas explorar otras opciones arquitectónicas?",
+        
+        domain_independence = "🤖 Evalúo la Independencia del Dominio según Clean Architecture. Dominio puro, dependencias externas, riesgos de acoplamiento, métricas de independencia y recomendaciones arquitectónicas. 👤 Diego, como arquitecto principal, ¿qué dirección arquitectónica prefieres seguir?",
+        
+        solid_principles = "🤖 Evalúo el cumplimiento de Principios SOLID. S-Single Responsibility, O-Open/Closed, L-Liskov Substitution, I-Interface Segregation, D-Dependency Inversion. Calificación general y problemas prioritarios. 👤 Diego, qué principio requiere atención inmediata o necesitas asistencia con patrones específicos?",
+        
+        design_patterns = "🤖 Identifico oportunidades para Patrones de Diseño según Clean Architecture. Factory Pattern, Repository Pattern, Observer Pattern, Strategy Pattern, Adapter Pattern. Implementación sugerida. 👤 Diego, prefieres implementar algún patrón específico o necesitas explore alternativas?",
+        
+        behavior_testing = "🤖 Sigo el principio de Testing de Comportamientos. Comportamientos actuales, tests existentes, tests de comportamiento faltantes, cobertura de comportamientos y estrategia de testing sugerida. 👤 Diego, qué estrategia de testing prefieres implementar o necesitas asistencia con escenarios específicos?",
+        
+        immutability = "🤖 Analizo el código según principios de inmutabilidad. Estado mutable detectado, riesgos de concurrencia, sugerencias inmutables, implementación funcional y estado predecible. 👤 Diego, prefieres enfoque inmutable, funcional, o mantener mutable con controles adicionales?",
+        
+        hexagonal_architecture = "🤖 Diseño de Arquitectura Hexagonal. Puertos del Dominio, Adaptadores de Infraestructura, Casos de Uso, Comunicación puertos-adaptadores y Testing de contratos. 👤 Diego, como arquitecto principal, ¿qué adaptadores quieres implementar o necesitas asistencia con diseño de puertos?"
       },
+      
       ui = {
-        show_line_numbers = true,                            -- Mostrar números de línea en ventana IA
-        show_cursor_line = true,                             -- Resaltar línea actual en ventana IA  
-        wrap_lines = false,                                   -- No wrapping para mejor legibilidad
+        show_line_numbers = true,
+        show_cursor_line = true,
+        wrap_lines = false,
+        theme = "gentleman-matrix-diego",
+        show_quality_metrics = true,
+        show_principle_violations = true,
+        auto_format_on_save = true,
+        
+        identity_display = {
+          robot_prefix = "🤖",
+          diego_prefix = "👤",
+          clear_visual_distinction = true,
+          show_decision_authority = true
+        }
       },
+      
+      agents = {
+        sisyphus = {
+          model = "anthropic/claude-opus-4-5",
+          role = "architectural_orchestrator",
+          specialization = "task_delegation",
+          expertise = "clean_architecture_principles",
+          temperature = 0.7,
+          description = "Arquitecto principal para decisiones complejas"
+        },
+        
+        oracle = {
+          model = "openai/gpt-5.2",
+          role = "clean_architecture_expert", 
+          specialization = "code_review_principles",
+          expertise = "solid_principles_design_patterns",
+          temperature = 0.3,
+          description = "Experto en Clean Architecture y principios SOLID"
+        },
+        
+        librarian = {
+          model = "anthropic/claude-sonnet-4-5",
+          role = "documentation_specialist",
+          specialization = "technical_documentation",
+          expertise = "ieee_acm_standards",
+          temperature = 0.5,
+          description = "Especialista en documentación IEEE/ACM y estándares técnicos"
+        },
+        
+        frontend = {
+          model = "google/gemini-3-pro-high",
+          role = "ui_ux_developer",
+          specialization = "gentleman_ui_patterns",
+          expertise = "react_modern_patterns",
+          temperature = 0.6,
+          description = "Especialista en UI/UX con patrones modernos"
+        }
+      },
+      
+      hexagonal_architecture = {
+        domain_port = {
+          interface = "DomainPort",
+          methods = {"execute_use_case", "validate_business_rules", "get_domain_events"},
+          description = "Interfaz para lógica de negocio pura"
+        },
+        
+        adapters = {
+          database = {
+            implements = "DomainPort",
+            technology = "PostgreSQL/MongoDB",
+            methods = {"save", "findById", "update", "delete"},
+            pattern = "repository_pattern"
+          },
+          
+          web_api = {
+            implements = "DomainPort", 
+            technology = "REST/GraphQL",
+            methods = {"handleRequest", "sendResponse", "validateInput"},
+            pattern = "adapter_pattern"
+          },
+          
+          message_queue = {
+            implements = "DomainPort",
+            technology = "Redis/RabbitMQ", 
+            methods = {"publish", "subscribe", "processMessage"},
+            pattern = "observer_pattern"
+          }
+        },
+        
+        use_cases = {
+          create_entity = "CreateEntityUseCase",
+          update_entity = "UpdateEntityUseCase", 
+          process_order = "ProcessOrderUseCase",
+          generate_report = "GenerateReportUseCase"
+        },
+        
+        testing_strategy = {
+          unit_tests = "Test de cada caso de uso en aislamiento",
+          integration_tests = "Test de adaptadores con servicios externos",
+          behavior_tests = "Test de escenarios completos del negocio",
+          contract_tests = "Test de contratos entre puertos y adaptadores"
+        }
+      }
     },
+    
     keys = {
-      -- Comandos principales para interactuar con la IA
-      { "<leader>oA", function() require("opencode").ask() end, desc = "Ask opencode", mode = { "n", "v" } },
-      { "<leader>oa", function() require("opencode").ask("@cursor: ") end, desc = "Ask about cursor", mode = "n" },
-      { "<leader>oa", function() require("opencode").ask("@selection: ") end, desc = "Ask about selection", mode = "v" },
-      { "<leader>ot", function() require("opencode").toggle() end, desc = "Toggle opencode window" },
-      { "<leader>on", function() require("opencode").command("session_new") end, desc = "New session" },
-      { "<leader>oy", function() require("opencode").command("messages_copy") end, desc = "Copy last message" },
+      { "<leader>ca", function() require("opencode").clean_architecture_review() end, desc = "Clean Architecture Review" },
+      { "<leader>cs", function() require("opencode").separation_concerns_analysis() end, desc = "Separation of Concerns Analysis" },
+      { "<leader>cd", function() require("opencode").domain_independence_check() end, desc = "Domain Independence Check" },
+      { "<leader>ci", function() require("opencode").dependency_inversion_audit() end, desc = "Dependency Inversion Audit" },
       
-      -- Navegación en la ventana de IA
-      { "<S-C-u>", function() require("opencode").command("messages_half_page_up") end, desc = "Scroll messages up" },
-      { "<S-C-d>", function() require("opencode").command("messages_half_page_down") end, desc = "Scroll messages down" },
-      { "<leader>op", function() require("opencode").select_prompt() end, desc = "Select prompt", mode = { "n", "v" } },
+      { "<leader>sl", function() require("opencode").solid_principles_check() end, desc = "SOLID Principles Check" },
+      { "<leader>ss", function() require("opencode").single_responsibility() end, desc = "Single Responsibility Analysis" },
+      { "<leader>so", function() require("opencode").open_closed_check() end, desc = "Open/Closed Principle" },
+      { "<leader>sls", function() require("opencode").liskov_check() end, desc = "Liskov Substitution" },
+      { "<leader>si", function() require("opencode").interface_segregation() end, desc = "Interface Segregation" },
+      { "<leader>sd", function() require("opencode").dependency_inversion() end, desc = "Dependency Inversion" },
       
-      -- Atajos rápidos para tareas específicas (más usados)
-      { "<leader>oe", function() require("opencode").prompt("Explica @cursor y su contexto en este proyecto") end, desc = "Explain code near cursor" },
-      { "<leader>od", function() require("opencode").prompt("Ayúdame a depurar @cursor: posibles errores y soluciones") end, desc = "Debug code at cursor" },
-      { "<leader>or", function() require("opencode").prompt("Refactoriza @cursor aplicando mejores prácticas") end, desc = "Refactor code at cursor" },
-    },
-  },
+      { "<leader>pf", function() require("opencode").suggest_pattern("factory") end, desc = "Suggest Factory Pattern" },
+      { "<leader>pr", function() require("opencode").suggest_pattern("repository") end, desc = "Suggest Repository Pattern" },
+      { "<leader>po", function() require("opencode").suggest_pattern("observer") end, desc = "Suggest Observer Pattern" },
+      { "<leader>ps", function() require("opencode").suggest_pattern("strategy") end, desc = "Suggest Strategy Pattern" },
+      { "<leader>pa", function() require("opencode").suggest_pattern("adapter") end, desc = "Suggest Adapter Pattern" },
+      
+      { "<leader>tb", function() require("opencode").behavior_test_setup() end, desc = "Setup Behavior Tests" },
+      { "<leader>tc", function() require("opencode").contract_test_generate() end, desc = "Generate Contract Tests" },
+      { "<leader>tu", function() require("opencode").use_case_testing() end, desc = "Use Case Testing" },
+      { "<leader>tcov", function() require("opencode").test_coverage_analysis() end, desc = "Test Coverage Analysis" },
+      
+      { "<leader>ad", function() require("opencode").diego_architectural_decision() end, desc = "👤 Diego Architectural Decision" },
+      { "<leader>al", function() require("opencode").log_diego_decision() end, desc = "Log Architectural Decision" },
+      { "<leader>ar", function() require("opencode").review_past_decisions() end, desc = "Review Past Decisions" },
+      
+      { "<leader>as", function() require("opencode").ask_sisyphus_options() end, desc = "Ask 🤖 Sisyphus for options" },
+      { "<leader>ao", function() require("opencode").ask_oracle_advice() end, desc = "Ask 🤖 Oracle for advice" },
+      { "<leader>alb", function() require("opencode").ask_librarian_guidance() end, desc = "Ask 🤖 Librarian for guidance" },
+      { "<leader>af", function() require("opencode").ask_frontend_consultation() end, desc = "Ask 🤖 Frontend for consultation" },
+      
+      { "<leader>qc", function() require("opencode").refactor_to_clean_code() end, desc = "Refactor to Clean Code" },
+      { "<leader>qn", function() require("opencode").improve_descriptive_names() end, desc = "Improve Descriptive Names" },
+      { "<leader>qm", function() require("opencode").make_immutable() end, desc = "Make Code Immutable" },
+      
+      { "<leader>td", function() require("opencode").template_with_diego_approval("technical") end, desc = "Technical Docs (awaiting 👤 Diego approval)" },
+      { "<leader>tp", function() require("opencode").template_with_diego_approval("presentation") end, desc = "Presentation (awaiting 👤 Diego approval)" },
+      { "<leader>te", function() require("opencode").template_with_diego_approval("educational") end, desc = "Educational (awaiting 👤 Diego approval)" },
+      
+      { "<leader>ss", function() require("opencode").open_diego_sidebar() end, desc = "Open 🤖↔👤 Diego Sidebar" },
+      { "<leader>sh", function() require("opencode").show_decision_history() end, desc = "Show 👤 Diego Decision History" },
+      { "<leader>sc", function() require("opencode").request_code_quality_scan() end, desc = "Request Code Quality Scan" }
+    }
+  }
 }
