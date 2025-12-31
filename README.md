@@ -23,6 +23,10 @@ Este repositorio contiene configuraciones optimizadas específicamente para macO
 │   ├── Readme.md         # 📖 Documentación detallada para principiantes
 │   ├── init.lua          # ⚙️ Punto de entrada principal
 │   └── lua/             # 📁 Configuración modular de plugins
+├── opencode/             # 🤖 Configuración de OpenCode AI Assistant
+│   ├── README.md         # 📖 Documentación específica de OpenCode
+│   ├── package.json      # 📦 Dependencias y plugins
+│   └── node_modules/    # 📁 Módulos instalados
 ├── kitty/                # 🐱 Configuración del terminal Kitty
 ├── ghostty/              # 👻 Configuración del terminal Ghostty  
 ├── htop/                # 📊 Configuración del monitor de recursos
@@ -64,6 +68,7 @@ nvim
 | Componente | Herramienta | Versión Recomendada | Uso Principal |
 |---|---|---|---|
 | **Editor** | Neovim | ≥0.9.0 | Entorno de desarrollo principal |
+| **Asistente IA** | OpenCode | ≥1.0.212 | Asistente de codificación con IA |
 | **Terminal** | Kitty / Ghostty | Latest | Terminal moderna con GPU acceleration |
 | **Multiplexor** | Tmux | ≥3.2 | Gestión de sesiones y paneles |
 | **Publicación** | Quarto | Latest | Documentos científicos y notebooks |
@@ -91,7 +96,11 @@ brew install neovim tmux kitty htop quarto
 # Usando cask para instalación GUI
 brew install --cask quarto
 
-# 4. Configurar Zsh (si aplica)
+# 4. Instalar OpenCode (opcional pero recomendado)
+# Ver instrucciones en: https://opencode.ai/docs/
+curl -sSL https://opencode.ai/install.sh | bash
+
+# 5. Configurar Zsh (si aplica)
 echo 'export EDITOR=nvim' >> ~/.zshrc
 source ~/.zshrc
 ```
@@ -101,6 +110,7 @@ source ~/.zshrc
 ## 📚 **Documentación por Componente**
 
 - 🎯 **[Configuración de Neovim](./nvim/Readme.md)** - Documentación completa y guías
+- 🤖 **[Configuración de OpenCode](./opencode/README.md)** - Asistente de IA para desarrollo
 - 🔬 **[Configuración de Quarto](./nvim/Readme.md#-instalación-y-configuración-de-quarto)** - Documentos científicos y notebooks
 - 🐱 **[Configuración de Kitty](./kitty/README.md)** - Terminal moderna y eficiente
 - 👻 **Configuración de Ghostty** - Terminal alternativa de alto rendimiento  
