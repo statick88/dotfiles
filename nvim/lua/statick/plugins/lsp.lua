@@ -1,28 +1,67 @@
--- LSP (Language Server Protocol): Convierte Neovim en un IDE completo
--- Proporciona inteligencia de lenguaje: autocompletado, diagnóstico, definiciones, etc.
--- Comandos principales: gd (go to definition), gr (references), K (documentation)
+-- LSP (Language Server Protocol): Configuración simplificada y robusta
+-- Convierte Neovim en un IDE completo sin dependencias complejas
 return {
   "neovim/nvim-lspconfig",
-  dependencies = {
-    "williamboman/mason.nvim",
-    "williamboman/mason-lspconfig.nvim",
-    "hrsh7th/cmp-nvim-lsp",
-  },
   config = function()
-    require("mason").setup()
-    local mason_lspconfig = require("mason-lspconfig")
+    -- Habilitar capacidades para autocompletado
+    local capabilities = require("cmp_nvim_lsp").default_capabilities()
 
-    mason_lspconfig.setup({
-      ensure_installed = {
-        "lua_ls",
-        "ts_ls",
-        "pyright",
-        "html",
-        "cssls",
-        "tailwindcss",
-        "dartls",
+    vim.lsp.config({
+      capabilities = capabilities,
+
+      -- Lua (para archivos de configuración nvim)
+      lua_ls = {
+        settings = {
+          Lua = {
+            diagnostics = { enable = false, globals = { "vim" } },
+          },
+        },
       },
-      automatic_installation = true,
+
+      -- TypeScript/JavaScript
+      ts_ls = {
+        settings = {
+          typescript = {
+            inlayHints = { enabled = true },
+          },
+        },
+      },
+
+      -- Python
+      pyright = {
+        settings = {
+          python = {
+            analysis = {
+              autoSearchPaths = true,
+              autoImportCompletions = true,
+              typeCheckingMode = "basic",
+            },
+          },
+        },
+      },
+
+      -- HTML
+      html = {},
+
+      -- CSS
+      cssls = {},
+
+      -- Tailwind CSS
+      tailwindcss = {
+        settings = {},
+      },
+
+      -- Dart (para Flutter)
+      dartls = {
+        cmd = { "dart", "language-server", "--protocol=lsp" },
+        filetypes = { "dart" },
+        settings = {
+          dart = {
+            completeFunctionCalls = true,
+            showTodos = true,
+          },
+        },
+      },
     })
   end,
 }
