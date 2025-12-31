@@ -14,22 +14,10 @@ return {
           enable = true,                                       -- Habilitar navegación entre aplicaciones
           cyclic_navigation = true,                              -- Volver al inicio si no hay más paneles
         },
-        resize = {
-          enable = true,                                       -- Redimensionar tmux desde nvim
-        },
-      })
-
-      -- Navegación seamless entre Neovim y Tmux (mismo atajo que nvim splits)
-      vim.keymap.set("n", "<C-h>", [[<cmd>lua require("tmux").move_left()<cr>]], { silent = true })
-      vim.keymap.set("n", "<C-j>", [[<cmd>lua require("tmux").move_bottom()<cr>]], { silent = true })
-      vim.keymap.set("n", "<C-k>", [[<cmd>lua require("tmux").move_top()<cr>]], { silent = true })
-      vim.keymap.set("n", "<C-l>", [[<cmd>lua require("tmux").move_right()<cr>]], { silent = true })
-
-      -- Redimensionar paneles de Tmux desde Neovim
-      vim.keymap.set("n", "<C-Left>", [[<cmd>lua require("tmux").resize_left()<cr>]], { silent = true })
-      vim.keymap.set("n", "<C-Down>", [[<cmd>lua require("tmux").resize_bottom()<cr>]], { silent = true })
-      vim.keymap.set("n", "<C-Up>", [[<cmd>lua require("tmux").resize_top()<cr>]], { silent = true })
-      vim.keymap.set("n", "<C-Right>", [[<cmd>lua require("tmux").resize_right()<cr>]], { silent = true })
+          resize = {
+            enable = true,                                       -- Redimensionar tmux desde nvim
+          },
+        })
     end,
   },
 }

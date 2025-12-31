@@ -1,9 +1,9 @@
--- Gentleman Matrix Theme: Tema visual profesional basado en principios del libro
+-- Statick Matrix Theme: Tema visual profesional basado en principios del libro
 -- Colores inspirados en Clean Architecture y code quality metrics
 return {
   {
     "folke/tokyonight.nvim",
-    name = "gentleman-matrix-diego",
+    name = "matrix",
     priority = 1000,
     opts = {
       -- Paleta de colores basada en principios de Clean Architecture
@@ -14,14 +14,14 @@ return {
           fg = "#00ff41",                   -- Verde Matrix principal
           terminal = "#00cc33",             -- Verde terminal
 
-          -- Colores según principios Gentleman
+          -- Colores según principios Statick
           blue = "#0066ff",                   -- Azul para dominio puro
           cyan = "#00cccc",                    -- Cian para inmutabilidad
           green = "#00cc44",                  -- Verde para interfaces limpias
           magenta = "#9933ff",               -- Púrpura para testing de calidad
           orange = "#ff8800",                -- Naranja para adaptadores
           red = "#ff0000",                    -- Rojo para code smells y errores
-          yellow = "#ffd700",                 -- Oro para decisiones de Diego
+          yellow = "#ffd700",                 -- Oro para decisiones de Statick
 
           -- Colores para patrones de diseño
           purple = "#8844ff",                -- Púrpura para patrones
@@ -78,49 +78,22 @@ return {
         }
 
         return p
-      end,
-      
-      -- Integración con sistema de identidad Diego + Robot
-      custom_highlights = {
-        -- Highlight para identificación de prefijos
-        GentlemanRobotPrefix = { fg = p.fg, bg = p.bg, bold = true },
-        GentlemanDiegoPrefix = { fg = p.yellow, bg = p.bg, bold = true },
-        
-        -- Highlight para principios SOLID
-        SOLIDHighlight = { fg = p.magenta, bg = p.bg, bold = true },
-        
-        -- Highlight para patrones de diseño
-        PatternHighlight = { fg = p.purple, bg = p.bg, bold = true },
-        
-        -- Highlight para violations de Clean Architecture
-        ArchitectureViolation = { fg = p.red, bg = p.bg, undercurl = true },
-        
-        -- Highlight para métricas de calidad
-        QualityMetric = { fg = p.info, bg = p.bg, bold = true },
-        
-        -- Highlight para sugerencias de Diego
-        DiegoDecision = { fg = p.yellow, bg = p.bg, bold = true },
-        
-        -- Highlight para código limpio
-        CleanCode = { fg = p.green, bg = p.bg, bold = true }
-      }
-    }
-  },
-  
-  -- Configuración automática del tema
-  config = function()
-    vim.cmd.colorscheme "gentleman-matrix-diego"
-    
-    -- Configurar highlights personalizados para principios
-    vim.api.nvim_set_hl(0, "GentlemanRobotPrefix", { fg = "#00ff41", bold = true })
-    vim.api.nvim_set_hl(0, "GentlemanDiegoPrefix", { fg = "#ffd700", bold = true })
-    
-    -- Configurar highlights para Clean Architecture
-    vim.api.nvim_set_hl(0, "SOLIDHighlight", { fg = "#9933ff", bold = true })
-    vim.api.nvim_set_hl(0, "PatternHighlight", { fg = "#8844ff", bold = true })
-    vim.api.nvim_set_hl(0, "ArchitectureViolation", { fg = "#ff0000", undercurl = true })
-    vim.api.nvim_set_hl(0, "QualityMetric", { fg = "#00aaff", bold = true })
-    vim.api.nvim_set_hl(0, "DiegoDecision", { fg = "#ffd700", bold = true })
-    vim.api.nvim_set_hl(0, "CleanCode", { fg = "#00cc44", bold = true })
-  end
+      end
+    },
+    config = function()
+      vim.cmd.colorscheme "tokyonight"
+
+      -- Configurar highlights personalizados para principios
+      vim.api.nvim_set_hl(0, "StatickRobotPrefix", { fg = "#00ff41", bold = true })
+      vim.api.nvim_set_hl(0, "StatickStatickPrefix", { fg = "#ffd700", bold = true })
+
+      -- Configurar highlights para Clean Architecture
+      vim.api.nvim_set_hl(0, "SOLIDHighlight", { fg = "#9933ff", bold = true })
+      vim.api.nvim_set_hl(0, "PatternHighlight", { fg = "#8844ff", bold = true })
+      vim.api.nvim_set_hl(0, "ArchitectureViolation", { fg = "#ff0000", undercurl = true })
+      vim.api.nvim_set_hl(0, "QualityMetric", { fg = "#00aaff", bold = true })
+      vim.api.nvim_set_hl(0, "StatickDecision", { fg = "#ffd700", bold = true })
+      vim.api.nvim_set_hl(0, "CleanCode", { fg = "#00cc44", bold = true })
+    end
+  }
 }

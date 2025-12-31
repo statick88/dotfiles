@@ -128,7 +128,7 @@ source ~/.zshrc
 
 - 🤖 **[Configuración de OpenCode + Clean Architecture](./opencode/README.md)** - Asistente IA con principios SOLID y Gentleman Programming
 - 🎯 **[Configuración de Neovim](./nvim/Readme.md)** - Documentación completa y guías
-- 🤖 **[Configuración de OpenCode](./opencode/README.md)** - Asistente de IA para desarrollo
+- 🤖 **[Configuración de OpenCode + Clean Architecture](./opencode/README.md)** - Asistente IA con principios SOLID y Gentleman Programming
 - 🔬 **[Configuración de Quarto](./nvim/Readme.md#-instalación-y-configuración-de-quarto)** - Documentos científicos y notebooks
 - 🐱 **[Configuración de Kitty](./kitty/README.md)** - Terminal moderna y eficiente
 - 👻 **Configuración de Ghostty** - Terminal alternativa de alto rendimiento  
@@ -158,7 +158,7 @@ Este proyecto está bajo licencia MIT. Siéntete libre de usar, modificar y dist
 
 ## 🤵 **Contacto**
 
-**Desarrollado por:** Diego Medardo Saavedra García  
+**Desarrollado por:** Statick Medardo Saavedra García  
 **Experiencia:** 8+ años en Desarrollo Fullstack y Educación Superior  
 **Especialización:** DevOps, Backend Development, Technical Education
 

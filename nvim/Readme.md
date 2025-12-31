@@ -1,6 +1,19 @@
 # Neovim Configuration: Statick 🚀
 
-Esta es la configuración personalizada de Neovim desarrollada por **Diego Medardo Saavedra García**, profesional de TI con más de 8 años de experiencia en desarrollo **Fullstack** y **Educación Superior**. Este entorno está optimizado para la transferencia de conocimiento, la transparencia técnica y el desarrollo profesional.
+Esta es la configuración personalizada de Neovim desarrollada por **Statick Medardo Saavedra García**, profesional de TI con más de 8 años de experiencia en desarrollo **Fullstack** y **Educación Superior**. Este entorno está optimizado para la transferencia de conocimiento, la transparencia técnica y el desarrollo profesional.
+
+---
+
+## 📋 **Tabla de Contenidos**
+
+- [🎯 Guía Rápida para Principiantes](#-guía-rápida-para-principiantes)
+- [🛠️ Stack Tecnológico](#️-stack-tecnológico)
+- [🎮 Guía de Plugins](#-guía-de-plugins)
+- [📊 Quarto](#-quarto)
+- [📂 Estructura del Proyecto](#-estructura-del-proyecto)
+- [🚀 Instalación](#-instalación)
+- [⚡ Quick Start](#-quick-start)
+- [🔧 Solución de Problemas](#-solución-de-problemas)
 
 ---
 
@@ -36,52 +49,313 @@ Esta es la configuración personalizada de Neovim desarrollada por **Diego Medar
 | `:!ls -la` | Listar archivos (shell) | Ver archivos del directorio |
 | `:cd ruta` | Cambiar directorio | `:cd ~/projects` |
 | `:pwd` | Mostrar directorio actual | Print Working Directory |
-| `:o .` | Abrir explorador | Abrir Neo-tree |
 
 ---
 
-## 🛠️ **Flujo de Trabajo con Tmux**
-
-### 🪟 **Comandos Básicos de Tmux**
-
-| Comando | Acción | Descripción |
-| --- | --- | --- |
-| `tmux` | Iniciar nueva sesión | Crea nueva sesión tmux |
-| `tmux new -s nombre` | Sesión con nombre | `tmux new -s proyecto` |
-| `tmux ls` | Listar sesiones | Muestra todas las sesiones |
-| `tmux attach -t nombre` | Unir a sesión | `tmux attach -t proyecto` |
-| `Ctrl+b c` | Nueva ventana | Crear nueva ventana |
-| `Ctrl+b ,` | Renombrar ventana | Cambiar nombre de ventana |
-| `Ctrl+b n/p` | Siguiente/Anterior ventana | Navegar entre ventanas |
-| `Ctrl+b %` | Dividir vertical | Split vertical |
-| `Ctrl+b "` | Dividir horizontal | Split horizontal |
-| `Ctrl+b flechas` | Mover entre panes | Navegar entre paneles |
-| `Ctrl+b x` | Cerrar pane | Eliminar pane actual |
-| `tmux kill-session -t nombre` | Eliminar sesión | Cerrar sesión completa |
-
-### 🔄 **Navegación Neovim + Tmux (Configurada)**
-
-| Comando | Acción |
-| --- | --- |
-| `Ctrl+h/j/k/l` | Navegar entre splits de nvim y panes de tmux |
-| `Ctrl+Shift+flechas` | Redimensionar tmux panes desde nvim |
-
-## 🛠️ Stack Tecnológico y Componentes
+## 🛠️ **Stack Tecnológico**
 
 | Categoría | Herramienta | Descripción |
 | --- | --- | --- |
 | **Gestor de Plugins** | [Lazy.nvim](https://github.com/folke/lazy.nvim) | Instalación rápida, gestión de dependencias y carga diferida. |
+| **Ayuda Visual** | [Which-key.nvim](https://github.com/folke/which-key.nvim) | Muestra un menú visual de todos los atajos disponibles. |
 | **LSP Management** | [Mason.nvim](https://github.com/williamboman/mason.nvim) | Gestión centralizada de servidores LSP, linters y formateadores. |
 | **Sintaxis** | [Treesitter](https://github.com/nvim-treesitter/nvim-treesitter) | Resaltado de sintaxis avanzado y análisis de código basado en AST. |
 | **Explorador** | [Neo-tree.nvim](https://github.com/nvim-neo-tree/neo-tree.nvim) | Navegación de archivos visual y eficiente dentro del editor. |
 | **Markdown** | [Render-markdown](https://github.com/MeanderingProgrammer/render-markdown.nvim) | Visualización estética in-editor para documentación técnica. |
 | **Documentos Científicos** | [Quarto.nvim](https://github.com/quarto-dev/quarto-nvim) | Integración completa para documentos Quarto (.qmd) con ejecución de código. |
-| **IA Asistente** | [OpenCode.nvim](https://github.com/NickvanDyke/opencode.nvim) | Asistente de IA para desarrollo, explicación de código y refactorización. |
+| **Búsqueda** | [Telescope.nvim](https://github.com/nvim-telescope/telescope.nvim) | Buscador fuzzy potente para archivos, texto y comandos. |
 | **Integración Terminal** | [Tmux.nvim](https://github.com/aserowy/tmux.nvim) | Navegación seamless entre Neovim splits y tmux panes. |
+| **Git** | [Gitsigns.nvim](https://github.com/lewis6991/gitsigns.nvim) | Indicadores visuales de cambios Git en el gutter. |
+| **Autocompletado** | [nvim-cmp](https://github.com/hrsh7th/nvim-cmp) | Sistema de autocompletado inteligente. |
+| **Tema** | [Tokyonight.nvim](https://github.com/folke/tokyonight.nvim) | Tema visual profesional Matrix-inspired. |
 
 ---
 
-## 🎮 **Guía de Plugins - Cómo Usar Cada Uno**
+## 🚀 **Plugins Especializados - Perfil FullStack Developer**
+
+Basado en el perfil de **Statick88** (FullStack Developer + Docente), se agregaron plugins especializados con **lazy loading inteligente**:
+
+### 📊 **Productividad** - `productivity.lua`
+**Solo se cargan cuando se abren archivos relevantes.**
+
+| Plugin | Descripción | Keymap |
+| --- | --- | --- |
+| **Flash.nvim** | Navegación rápida con highlights | `s` / `S` |
+| **nvim-surround** | Manipular texto alrededor | `ys` / `ds` / `cs` |
+| **todo-comments.nvim** | Highlight TODO, FIXME, etc. | `]t` / `[t` |
+| **indent-blankline.nvim** | Líneas de indentación visual | Automático |
+| **nvim-colorizer** | Muestra colores hexadecimales | Automático |
+| **Trouble.nvim** | Lista de diagnósticos | `<leader>xx`, `<leader>xX`, `<leader>cs` |
+| **Comment.nvim** | Comentarios inteligentes | `gc` / `gb` |
+| **mini.pairs** | Autopares mejorado | Automático |
+
+### 🌐 **Web Development** - `web-dev.lua`
+**Solo se cargan cuando se detectan archivos web (HTML, CSS, JS/TS).**
+
+| Plugin | Descripción |
+| --- | --- |
+| **Emmet** | Expansión rápida de HTML/CSS | Automático en insert |
+| **Tailwind Tools** | Autocompletado para clases Tailwind | Automático |
+| **React/Next.js Snippets** | Snippets para React/Next.js | Automático |
+| **TypeScript Tools** | Herramientas adicionales para TS | Automático |
+| **nvim-ts-autotag** | Cerrar HTML/XML tags | Automático |
+| **nvim-closetag** | Auto-close HTML/XML tags | Automático |
+
+**Soporta:** React, Next.js, TypeScript, HTML, CSS, Tailwind, Node.js, Vue, Svelte
+
+### 🐍 **Python Development** - `python-dev.lua`
+**Solo se carga cuando se detectan archivos Python.**
+
+| Plugin | Descripción | Keymap |
+| --- | --- | --- |
+| **venv-selector.nvim** | Selector de entornos virtuales | `<leader>vs` |
+| **Neotest-python** | PyTest integration | `<leader>tr`, `<leader>tf`, `<leader>ts`, `<leader>to` |
+| **neogen** | Generador de docstrings | `<leader>nd` |
+| **Django templates** | Soporte para plantillas Django | Automático |
+
+**Soporta:** Django, FastAPI, PyTest, Virtual Envs
+
+### ⚙️ **DevOps & Databases** - `git-docker.lua`
+**Solo se cargan cuando se detectan archivos Docker/YAML.**
+
+| Plugin | Descripción | Keymap |
+| --- | --- | --- |
+| **lazygit.nvim** | Interfaz TUI para Git | `<leader>gg` |
+| **diffview.nvim** | Visualización de diffs mejorada | `<leader>gvo`, `<leader>gvc`, `<leader>gvf`, `<leader>gvk` |
+| **git-conflict.nvim** | Resolver conflictos Git | `<leader>gco`, `<leader>gct`, `<leader>gcb`, `<leader>gc0`, `<leader>gcn`, `<leader>gcp` |
+| **blamer.nvim** | Git blame inline | Automático |
+| **nui-docker.nvim** | UI para Docker con NUI | `<leader>du` |
+| **Dockerfile.vim** | Syntax highlighting para Docker | Automático |
+| **yaml-companion.nvim** | Schema validation YAML/K8s | Automático |
+| **vim-helm** | Soporte para Helm charts | Automático |
+
+**Soporta:** Docker, Docker Compose, Kubernetes, Terraform, Helm, Ansible
+
+### 📱 **Flutter & Mobile Dev** - `flutter-dev.lua`
+**Solo se carga cuando se detectan archivos Dart o Flutter.**
+
+| Plugin | Descripción | Keymap |
+| --- | --- | --- |
+| **flutter-tools.nvim** | Herramientas para Flutter | `<leader>F`, `<leader>D`, `<leader>Q`, `<leader>R`, `<leader>H` |
+| **dartls** | LSP para Dart | Automático |
+
+**Soporta:** Flutter, Dart, desarrollo móvil multiplataforma
+
+### 🐛 **Debugger** - `debugger.lua` (Temporalmente Desactivado)
+| Plugin | Descripción |
+| --- | --- |
+| **nvim-dap** | DAP (Debug Adapter Protocol) | `F5`, `F10`, `F11`, `F12`, `<leader>b`, `<leader>du` |
+
+**Nota:** Desactivado temporalmente. Puedo activarlo eliminando el comentario del plugin.
+
+### 🔬 **Data Science** - `data-science.lua` (Temporalmente Desactivado)
+| Plugin | Descripción |
+| --- | --- |
+| **jupytext.nvim** | Conversión Jupyter <-> Markdown | Automático |
+| **vim-csv** | Visualizador de CSV | Automático |
+
+**Nota:** Desactivado temporalmente por dependencias complejas.
+
+### ✅ **Testing** - `testing.lua`
+| Plugin | Descripción | Keymap |
+| --- | --- | --- |
+| **vim-test** | Test runner universal | Automático según filetype |
+| **neotest** | Test runner multi-lenguaje | Automático según filetype |
+
+**Soporta:** Python, JavaScript, TypeScript, Ruby, Rust, Go, Zig, Lua
+
+### 🔀 **Git Avanzado** - `git-docker.lua`**
+| Plugin | Descripción | Keymap |
+| --- | --- | --- |
+| **lazygit.nvim** | Interfaz TUI para Git | `<leader>gg` |
+| **diffview.nvim** | Visualización de diffs mejorada | `<leader>gvo`, `<leader>gvc` |
+| **git-conflict.nvim** | Resolver conflictos Git | `<leader>gco`, `<leader>gct`, `<leader>gcb`, `<leader>gc0`, `<leader>gcn`, `<leader>gcp` |
+| **blamer.nvim** | Git blame inline | Automático |
+| **git-browse** | Abrir repo en navegador | `<leader>go` |
+
+**Características:**
+- Integración mejorada con Git workflows
+- Resolución de conflictos simplificada
+- Navegación de repositorios
+- Git blame inline automático
+
+---
+
+---
+
+## 🚀 **Plugins Especializados - Perfil FullStack Developer**
+
+Basado en el perfil de **Statick88** (FullStack Developer + Docente), se agregaron plugins especializados para:
+
+### 📊 **Productividad** - `productivity.lua`
+
+| Plugin | Descripción | Comando |
+| --- | --- | --- |
+| **Flash.nvim** | Navegación rápida con highlights | `s` / `S` |
+| **nvim-surround** | Manipular texto alrededor (comillas, paréntesis) | `ys`, `ds`, `cs` |
+| **todo-comments.nvim** | Highlight TODO, FIXME, etc. | `]t` / `[t` |
+| **indent-blankline.nvim** | Líneas de indentación visual | Automático |
+| **nvim-colorizer** | Muestra colores en código hexadecimal | Automático |
+| **Trouble.nvim** | Lista de diagnósticos y referencias | `<leader>xx` |
+| **Comment.nvim** | Comentarios inteligentes | `gc` / `gb` |
+| **mini.pairs** | Autopares mejorado | Automático |
+| **mini.ai** | LLM de texto para manipulación | Automático |
+
+**Keymaps:**
+- `s` / `S` - Flash navigation
+- `]t` / `[t` - TODO navigation
+- `<leader>xx` - Trouble diagnostics
+- `gc` - Toggle comment
+
+### 🌐 **Web Development** - `web-dev.lua`
+
+| Plugin | Descripción | Comando |
+| --- | --- | --- |
+| **Emmet** | Expansión rápida de HTML/CSS | `<C-y>,` en insert |
+| **Tailwind Tools** | Autocompletado para clases Tailwind | Automático |
+| **React Snippets** | Snippets para React/Next.js | Automático |
+| **TypeScript Tools** | Herramientas adicionales para TS | Automático |
+| **nvim-ts-autotag** | Cerrar HTML/XML tags automáticamente | Automático |
+| **nvim-closetag** | Auto-close HTML/XML tags | Automático |
+
+**Características:**
+- Soporte para React, Next.js, TypeScript
+- Emmet para HTML/CSS
+- Tailwind CSS autocompletado
+- ESLint y Prettier integration
+
+### 🐍 **Python Development** - `python-dev.lua`
+
+| Plugin | Descripción | Comando |
+| --- | --- | --- |
+| **venv-selector.nvim** | Selector de entornos virtuales | `<leader>vs` |
+| **Neotest-python** | PyTest integration | `<leader>tr`, `<leader>tf` |
+| **neogen** | Generador de docstrings | `<leader>nd` |
+| **Django templates** | Soporte para plantillas Django | Automático |
+
+**Características:**
+- Integración con Django y FastAPI
+- PyTest integration
+- Generación automática de docstrings
+- Selector de entornos virtuales
+
+### ⚙️ **DevOps & Databases** - `devops.lua`
+
+| Plugin | Descripción | Soporta |
+| --- | --- | --- |
+| **Dockerfile.vim** | Syntax highlighting para Docker | Dockerfile, docker-compose |
+| **web-tools.nvim** | Validación YAML/JSON | Kubernetes, Helm, Terraform |
+| **yaml-companion** | Schema validation para YAML | Kubernetes, Ansible |
+| **vim-helm** | Soporte para Helm charts | Helm |
+| **vim-terraform** | Soporte para Terraform | Terraform, HCL |
+| **ansible-vim** | Soporte para Ansible | Ansible playbooks |
+
+**Keymaps:**
+- `<leader>k` - Instant K8s
+- `<leader>db` - Database UI
+- `<leader>tf` - Terraform commands
+
+### 📱 **Flutter & Mobile Dev** - `flutter-dev.lua`
+
+| Plugin | Descripción | Comando |
+| --- | --- | --- |
+| **flutter-tools.nvim** | Herramientas para Flutter | `<leader>F`, `<leader>D` |
+| **dartls** | LSP para Dart | Automático |
+
+**Keymaps:**
+- `<leader>F` - Run Flutter app
+- `<leader>D` - List Flutter devices
+- `<leader>Q` - Quit Flutter app
+- `<leader>R` - Hot reload
+- `<leader>H` - Hot restart
+
+**Características:**
+- Ejecutar aplicaciones Flutter
+- Listar dispositivos disponibles
+- Hot reload/restart
+- Depuración de código Dart
+
+### 🐛 **Debugger** - `debugger.lua` (Temporalmente Desactivado)
+
+| Característica | Descripción |
+| --- | --- |
+| **nvim-dap** | Debugger Adapter Protocol |
+| **nvim-dap-ui** | UI para el debugger |
+| **dap-virtual-text** | Valores de variables en línea |
+| **telescope-dap** | Búsqueda en el debugger |
+
+**Keymaps** (cuando activado):
+- `F5` - Start/Continue debugging
+- `F10` - Step over
+- `F11` - Step into
+- `F12` - Step out
+- `<leader>b` - Toggle breakpoint
+
+### 🔬 **Data Science** - `data-science.lua`
+
+| Plugin | Descripción | Comando |
+| --- | --- | --- |
+| **jupytext.nvim** | Conversión Jupyter <-> Markdown | Automático |
+| **vim-csv** | Visualizador de archivos CSV | Automático |
+
+**Características:**
+- Soporte para notebooks Jupyter
+- Visualización de archivos CSV
+- Pandas syntax highlighting
+
+### ✅ **Testing** - `testing.lua`
+
+| Plugin | Descripción | Comando |
+| --- | --- | --- |
+| **vim-test** | Test runner universal | `<leader>tn`, `<leader>tf` |
+| **nvim-neotest** | Test runner multi-lenguaje | Integrado |
+
+**Keymaps:**
+- `<leader>tn` - Test nearest
+- `<leader>tf` - Test file
+- `<leader>ts` - Test suite
+- `<leader>tv` - Test visit
+- `<leader>tg` - Test go
+
+**Características:**
+- Soporte para múltiples lenguajes (Python, JS/TS, Ruby, Rust, Go)
+- Integración con PyTest, Jest, RSpec
+- Visualización de resultados de tests
+
+### 🔀 **Git Avanzado** - `git-advanced.lua`
+
+| Plugin | Descripción | Comando |
+| --- | --- | --- |
+| **git-conflict.nvim** | Resolver conflictos Git | `<leader>gco`, `<leader>gct` |
+| **blamer.nvim** | Git blame inline | Automático |
+| **git-browse** | Abrir repo en navegador | `<leader>go` |
+
+**Keymaps:**
+- `<leader>gco` - Choose ours (en conflicto)
+- `<leader>gct` - Choose theirs (en conflicto)
+- `<leader>gcb` - Choose both (en conflicto)
+- `<leader>gcn` / `<leader>gcp` - Next/Prev conflicto
+- `<leader>go` - Browse repo en navegador
+
+---
+
+## 🎮 **Guía de Plugins**
+
+### 🔮 **Which-key.nvim - Ayuda Visual**
+
+**¿Qué hace?** Muestra automáticamente un menú visual cuando presiones la tecla `<leader>` (Espacio), mostrando todos los atajos disponibles organizados por categoría.
+
+**Características:**
+- Menú visual organizado por categorías
+- Descripciones claras para cada comando
+- Aparición automática al presionar `<leader>`
+
+**Uso:**
+- Presiona `<leader>` y espera un momento
+- Aparecerá un menú con todas las opciones disponibles
+- Navega con las flechas y presiona Enter para seleccionar
+
+---
 
 ### 🔍 **Telescope.nvim - Búsqueda Inteligente**
 
@@ -89,17 +363,18 @@ Esta es la configuración personalizada de Neovim desarrollada por **Diego Medar
 
 | Comando | Acción | Ejemplo de Uso |
 | --- | --- | --- |
-| `<leader>pf` | Buscar archivos | Escribe el nombre del archivo que buscas |
-| `<leader>pg` | Buscar texto en archivos | Encuentra dónde aparece una palabra en el proyecto |
-| `<leader>pb` | Buscar buffers | Navegar entre archivos abiertos |
-| `<leader>ps` | Buscar símbolos | Encontrar funciones, variables en archivo actual |
-| `<leader>ph` | Buscar help | Buscar documentación de comandos vim/nvim |
+| `<leader>ff` | Buscar archivos | Escribe el nombre del archivo que buscas |
+| `<leader>fg` | Buscar texto en archivos | Encuentra dónde aparece una palabra en el proyecto |
+| `<leader>fb` | Buscar buffers | Navegar entre archivos abiertos |
+| `<leader>fh` | Buscar help | Buscar documentación de comandos vim/nvim |
 
 **Flujo de trabajo típico:**
-1. Presiona `<leader>pf`
+1. Presiona `<leader>ff`
 2. Escribe parte del nombre del archivo
 3. Usa flechas para seleccionar
 4. Presiona Enter para abrir
+
+---
 
 ### 🌳 **Neo-tree.nvim - Explorador de Archivos**
 
@@ -107,7 +382,7 @@ Esta es la configuración personalizada de Neovim desarrollada por **Diego Medar
 
 | Comando | Acción | Uso |
 | --- | --- | --- |
-| `<leader>pv` | Abrir/cerrar explorador | Principal para ver archivos |
+| `<leader>e` | Abrir/cerrar explorador | Principal para ver archivos |
 | `a` | Crear archivo/directorio | En el explorador, crea nuevo |
 | `d` | Borrar archivo/directorio | Elimina lo seleccionado |
 | `r` | Renombrar archivo/directorio | Cambia nombre del archivo |
@@ -116,26 +391,26 @@ Esta es la configuración personalizada de Neovim desarrollada por **Diego Medar
 | `p` | Pegar archivo | Pega archivo copiado/cortado |
 | `Tab` | Cambiar foco | Alterna entre archivos y contenido |
 
-**Consejo:** Usa `<leader>pv` para abrir el explorador y `Tab` para cambiar entre el explorador y el editor.
+**Consejo:** Usa `<leader>e` para abrir el explorador y `Tab` para cambiar entre el explorador y el editor.
 
-### 🤖 **OpenCode.nvim - Asistente de IA**
+---
 
-**¿Qué hace?** Es como tener un programador experto disponible para ayudarte con tu código.
+### 🌈 **Tema Matrix - Statick Theme**
 
-| Comando | Acción | Cuándo usarlo |
-| --- | --- | --- |
-| `<leader>oA` | Abrir asistente IA | Para preguntas generales de programación |
-| `<leader>oa` | Preguntar sobre cursor | Para entender código específico |
-| `<leader>oe` | Explicar código | Cuando no entiendes qué hace un código |
-| `<leader>od` | Debuggear código | Cuando tienes errores que no entiendes |
-| `<leader>or` | Refactorizar código | Para mejorar calidad del código |
-| `<leader>ot` | Toggle ventana | Mostrar/ocultar panel de IA |
+**¿Qué hace?** Tema visual profesional inspirado en Matrix con colores optimizados para desarrollo.
 
-**Ejemplos de uso práctico:**
-1. Coloca el cursor sobre una función compleja
-2. Presiona `<leader>oe` 
-3. Pregunta: "¿Qué hace esta función y cómo funciona?"
-4. La IA te dará una explicación detallada
+**Características:**
+- Colores inspirados en Clean Architecture
+- Alto contraste para largas sesiones
+- Colores semánticos para diferentes elementos del código
+- Integración con principios SOLID y Clean Architecture
+
+**Cambios recientes:**
+- ✅ Renombrado de `gentleman-matrix.lua` a `matrix.lua`
+- ✅ Todos los nombres actualizados a "Statick"
+- ✅ Basado en Tokyonight con paleta Matrix personalizada
+
+---
 
 ### 🪟 **Tmux.nvim - Integración Terminal**
 
@@ -151,6 +426,8 @@ Esta es la configuración personalizada de Neovim desarrollada por **Diego Medar
 
 **Consejo:** Con esto puedes tener Neovim en un lado y terminal en otro, y moverte entre ellos sin cambiar atajos.
 
+---
+
 ### 📊 **Quarto.nvim - Documentos Científicos**
 
 **¿Qué hace?** Es el plugin oficial para trabajar con documentos Quarto (.qmd), que combina texto, código y resultados como Jupyter notebooks.
@@ -163,6 +440,8 @@ Esta es la configuración personalizada de Neovim desarrollada por **Diego Medar
 | `<localleader>rA` | Ejecutar todas las celdas | Para renderizar notebook completo |
 | `<localleader>pp` | Iniciar previsualización | Ver resultado del documento |
 | `<localleader>ps` | Detener previsualización | Detener servidor de preview |
+| `<localleader>qi` | Inspeccionar documento | Ver información del documento |
+| `<localleader>qf` | Formatear documento | Aplicar formato Quarto |
 
 **¿Qué es Quarto?**
 - **Herramienta de publicación científica** para crear documentos, presentaciones, sitios web
@@ -194,44 +473,7 @@ quarto preview
 5. Previsualizar resultados con `<localleader>pp`
 6. Renderizar documento final con `quarto render` en terminal
 
-**Ejemplo de archivo Quarto (.qmd):**
-````markdown
 ---
-title: "Mi Primer Documento Quarto"
-author: "Tu Nombre"
-format: html
----
-
-# Introducción
-
-Este es un documento Quarto que combina **texto** y **código**.
-
-```{python}
-#| label: fig-ejemplo
-#| fig-cap: "Gráfico de ejemplo"
-
-import matplotlib.pyplot as plt
-import numpy as np
-
-x = np.linspace(0, 10, 100)
-y = np.sin(x)
-
-plt.plot(x, y)
-plt.title("Función Seno")
-plt.show()
-```
-
-## Resultados
-
-Como puedes ver, el código Python se ejecuta y genera un gráfico automáticamente.
-
-```{r}
-#| echo: false
-
-# Código R para análisis de datos
-summary(cars)
-```
-````
 
 ### 🌲 **Treesitter - Resaltado de Código**
 
@@ -240,10 +482,12 @@ summary(cars)
 | Característica | Beneficio |
 | --- | --- |
 | Resaltado sintáctico preciso | Entiende la estructura del código |
-| Navegación de código | Usa `]c` y `[c` para moverse entre funciones |
+| Navegación de código | Usa ]c y [c para moverse entre funciones |
 | Refactorización inteligente | Sabe qué es función, variable, etc. |
 
 **Consejo:** Treesitter funciona automáticamente, solo necesita que los lenguajes estén instalados.
+
+---
 
 ### 🔤 **Autopairs - Pares Automáticos**
 
@@ -258,17 +502,7 @@ summary(cars)
 
 **Consejo:** Ayuda a escribir código más rápido y evita errores de paréntesis no cerrados.
 
-### 🎨 **Colorscheme - Tema Catppuccin**
-
-**¿Qué hace?** Da un aspecto visual atractivo y profesional a Neovim.
-
-| Característica | Ventaja |
-| --- | --- |
-| Diseño moderno | Colores cuidadostamente seleccionados |
-| Alto contraste | Fácil de leer por largas horas |
-| Consistencia | Mismo esquema en todos los lenguajes |
-
-**Consejo:** Si quieres cambiar de tema, puedes modificar este archivo.
+---
 
 ### 💬 **Completions - Autocompletado Inteligente**
 
@@ -283,6 +517,8 @@ summary(cars)
 
 **Consejo:** Funciona mejor si tienes configurado LSP.
 
+---
+
 ### 🔧 **LSP - Servidor de Lenguaje**
 
 **¿Qué hace?** Proporciona inteligencia avanzada del lenguaje que estás usando.
@@ -290,10 +526,11 @@ summary(cars)
 | Característica | Beneficio |
 | --- | --- |
 | `gd` | Ir a definición de función/variable |
-| `gr` | Buscar referencias |  
+| `gr` | Buscar referencias |
 | `K` | Mostrar documentación |
-| `[d` | Ir al diagnóstico anterior |
-| `]d` | Ir al siguiente diagnóstico |
+| `[d` / `]d` | Navegar entre diagnósticos |
+| `<leader>rn` | Renombrar símbolo |
+| `<leader>ca` | Code actions |
 | `:LspInfo` | Ver servidores activos |
 
 **Lenguajes configurados:**
@@ -303,6 +540,8 @@ summary(cars)
 - `html`, `cssls`, `tailwindcss` - Para desarrollo web
 
 **Consejo:** LSP es lo que transforma Neovim en un IDE completo.
+
+---
 
 ### 📝 **Markdown - Renderizado**
 
@@ -314,6 +553,8 @@ summary(cars)
 | Editar archivo .md | Alterna entre modo edición y vista previa |
 
 **Consejo:** Ideal para tomar notas o documentar proyectos.
+
+---
 
 ### 🌈 **Git - Control de Versiones Integrado**
 
@@ -329,11 +570,32 @@ summary(cars)
 | `<leader>hs` | Stage cambio actual |
 | `<leader>hr` | Reset cambio actual |
 
-**Consejo:** Con esto no necesitas salir de Neovim para usar Git. |
+**Consejo:** Con esto no necesitas salir de Neovim para usar Git.
 
 ---
 
-## 🔬 **Instalación y Configuración de Quarto**
+### 🤖 **OpenCode.nvim - Asistente de IA (Desactivado)**
+
+**Estado:** ⚠️ **Desactivado temporalmente**
+
+El plugin OpenCode.nvim ha sido desactivado temporalmente debido a diferencias en la API o incompatibilidad con la versión actual.
+
+**Keymaps desactivados (comentados en keymaps.lua):**
+- Clean Architecture (`<leader>ca`, `<leader>cs`, `<leader>cd`, `<leader>ci`)
+- SOLID Principles (`<leader>spl`, `<leader>ssr`, `<leader>soc`, `<leader>sli`, `<leader>sii`, `<leader>sdi`)
+- Design Patterns (`<leader>pf`, `<leader>pr`, `<leader>po`, `<leader>pst`, `<leader>pa`)
+- Testing (`<leader>tb`, `<leader>tc`, `<leader>tu`, `<leader>tcov`)
+- Architectural Decisions (`<leader>ad`, `<leader>al`, `<leader>ar`)
+- AI Agents (`<leader>as`, `<leader>ao`, `<leader>alb`, `<leader>af`)
+- Code Quality (`<leader>qc`, `<leader>qn`, `<leader>qm`)
+- Templates (`<leader>td`, `<leader>tp`, `<leader>te`)
+- UI (`<leader>osb`, `<leader>oh`, `<leader>oc`)
+
+**Nota:** Estos keymaps se pueden reactivar eliminando los comentarios en `lua/statick/core/keymaps.lua` y cambiando `enabled = false` a `enabled = true` en `lua/statick/plugins/opencode.lua`.
+
+---
+
+## 📊 **Instalación y Configuración de Quarto**
 
 ### 📦 **Instalar Quarto**
 
@@ -402,7 +664,7 @@ nvim --headless -c "autocmd Filetype quarto echo 'Quarto detected'" -c "q"
 2. **Escribir contenido** con chunks de código:
    - Texto normal en Markdown
    - Código con ````{python}`` o ````{r}`
-   - Opciones de chunk con `#|` 
+   - Opciones de chunk con `#|`
 
 3. **Ejecutar código:**
    - `]b/[b` para navegar entre celdas
@@ -413,7 +675,7 @@ nvim --headless -c "autocmd Filetype quarto echo 'Quarto detected'" -c "q"
    ```bash
    # En terminal (dentro de nvim con :term)
    quarto preview
-   
+
    # O usar atajo en nvim:
    <localleader>pp
    ```
@@ -422,10 +684,10 @@ nvim --headless -c "autocmd Filetype quarto echo 'Quarto detected'" -c "q"
    ```bash
    # Renderizar a HTML (por defecto)
    quarto render
-   
+
    # Renderizar a PDF
    quarto render --to pdf
-   
+
    # Renderizar todos los formatos
    quarto render --all
    ```
@@ -439,7 +701,7 @@ quarto render --to pdf           # Documento PDF
 quarto render --to docx          # Microsoft Word
 quarto render --to revealjs      # Presentación HTML
 quarto render --to github        # Documentos para GitHub
-quarto render --to typst        # Usando Typst para PDF
+quarto render --to typst         # Usando Typst para PDF
 ```
 
 ### 🔧 **Configuración Avanzada**
@@ -455,14 +717,14 @@ format:
     theme: cosmo
     toc: true
     code-fold: true
-  
+
   pdf:
     documentclass: article
     margin-left: 2cm
-  
-revealjs:
-  theme: solarized
-  transition: slide
+
+  revealjs:
+    theme: solarized
+    transition: slide
 ```
 
 ### 💡 **Consejos Productivos**
@@ -475,11 +737,7 @@ revealjs:
 
 ---
 
-## 🎯 **Flujo de Trabajo Diario - Ejemplo Práctico**
-
----
-
-## 📂 Estructura del Proyecto
+## 📂 **Estructura del Proyecto**
 
 La configuración adopta una arquitectura modular. El punto de entrada `init.lua` delega la carga a módulos específicos ubicados en el directorio `lua/statick/`, asegurando una separación clara entre la configuración base y las extensiones.
 
@@ -487,35 +745,48 @@ A continuación se detalla la estructura exacta del sistema de archivos:
 
 ```
 ~/.config/nvim/
-├── init.lua                # Punto de entrada principal: inicializa Lazy.nvim y carga módulos.
-├── lazy-lock.json          # Instantánea de versiones exactas de los plugins (garantiza reproducibilidad).
-├── Readme.md               # Documentación del proyecto.
+├── init.lua                    # Punto de entrada principal: inicializa Lazy.nvim y carga módulos.
+├── lazy-lock.json              # Instantánea de versiones exactas de los plugins (garantiza reproducibilidad).
+├── Readme.md                   # Documentación del proyecto.
 └── lua/
-    └── statick/            # Namespace principal del usuario.
-        ├── core/           # Configuraciones fundamentales de Neovim.
-        │   ├── options.lua # Opciones generales (vim.opt).
-        │   └── keymaps.lua # Mapeos de teclado globales.
-        └── plugins/        # Especificaciones modulares de cada plugin.
+    └── statick/                # Namespace principal del usuario.
+        ├── core/               # Configuraciones fundamentales de Neovim.
+        │   ├── options.lua     # Opciones generales (vim.opt).
+        │   └── keymaps.lua     # 🆕 Todos los mapeos de teclado centralizados.
+        └── plugins/            # Especificaciones modulares de cada plugin.
             ├── autopairs.lua
             ├── colorscheme.lua
             ├── completions.lua
             ├── git.lua
-            ├── lsp.lua     # Configuración crítica de Mason y lspconfig.
+            ├── help.lua        # 🆕 Which-key.nvim - Menú visual de atajos.
+            ├── lsp.lua         # Configuración crítica de Mason y lspconfig.
             ├── markdown.lua
+            ├── matrix.lua       # 🆕 Renombrado de gentleman-matrix.lua
             ├── neotree.lua
-            ├── opencode.lua # Asistente de IA para desarrollo de código.
-            ├── quarto.lua    # Integración para documentos científicos Quarto.
+            ├── opencode.lua     # Asistente de IA (desactivado temporalmente).
+            ├── quarto.lua       # Integración para documentos científicos Quarto.
             ├── telescope.lua
-            ├── tmux.lua     # Integración con tmux para terminal workflow.
+            ├── tmux.lua        # Integración con tmux para terminal workflow.
             └── treesitter.lua
-
 ```
 
 *Estructura visual basada en la implementación actual.*
 
+### 🔄 **Cambios Recientes**
+
+**Actualización v2.0 - Arquitectura Mejorada:**
+
+- ✅ **Keymaps centralizados**: Todos los keymaps ahora están en `lua/statick/core/keymaps.lua`
+- ✅ **Ayuda visual agregada**: `which-key.nvim` muestra menú de atajos al presionar `<leader>`
+- ✅ **Tema renombrado**: `matrix.lua` (antes `gentleman-matrix.lua`)
+- ✅ **Nombres actualizados**: Todos los nombres cambiados de "Diego" a "Statick"
+- ✅ **Plugin IA desactivado**: `opencode.nvim` desactivado temporalmente por incompatibilidad de API
+- ✅ **Lazy loading implementado**: Keymaps de Quarto y Gitsigns cargados solo cuando es necesario
+- ✅ **Documentación mejorada**: README.md actualizado con todos los cambios
+
 ---
 
-## 🚀 Instalación y Requisitos
+## 🚀 **Instalación y Requisitos**
 
 Para garantizar la veracidad y el correcto funcionamiento del entorno, asegúrese de cumplir con los siguientes requisitos previos:
 
@@ -529,139 +800,45 @@ Para garantizar la veracidad y el correcto funcionamiento del entorno, asegúres
 1. **Respaldar configuración existente (si aplica):**
 ```bash
 mv ~/.config/nvim ~/.config/nvim.bak
-
 ```
-
 
 2. **Clonar el repositorio:**
 ```bash
 git clone <URL_DE_TU_REPOSITORIO> ~/.config/nvim
-
 ```
-
 
 3. **Inicialización automática:**
 Inicie Neovim (`nvim`). El gestor `Lazy.nvim` detectará la ausencia de plugins y comenzará la instalación y compilación automática de todos los componentes definidos en `lua/statick/plugins/`. Espere a que el proceso finalice.
 
 ---
 
-## 📋 Principios de Diseño
+## 📋 **Principios de Diseño**
 
 * **Transparencia:** Cada plugin tiene su propio archivo de configuración aislado, lo que facilita la auditoría y el ajuste fino sin afectar otras partes del sistema.
 * **Precisión Técnica:** La configuración de LSP está ajustada para proporcionar diagnósticos y autocompletado precisos para el stack definido (Lua, Web, Python), evitando configuraciones globales ruidosas.
 * **Integración Terminal:** Flujo de trabajo optimizado entre Neovim y tmux para desarrollo eficiente con navegación seamless entre splits y panes.
-* **Asistencia IA:** Integración con OpenCode para asistencia inteligente en desarrollo, debugging y refactorización de código.
+* **Ayuda Visual:** Integración con which-key.nvim para mostrar menú visual de todos los atajos disponibles.
 * **Entorno Educativo:** La claridad del código y la estructura modular están pensadas para servir como ejemplo en entornos de enseñanza universitaria.
-
----
-
-## 🎯 Plugins Recientes y Funcionalidades
-
-### OpenCode.nvim - Asistente de IA
-
-Integración con OpenCode para asistencia inteligente durante el desarrollo:
-
-**Keymaps principales:**
-- `<leader>oA` - Abrir prompt de OpenCode
-- `<leader>oa` - Preguntar sobre el código bajo el cursor
-- `<leader>ot` - Toggle de ventana de OpenCode
-- `<leader>on` - Nueva sesión
-- `<leader>oe` - Explicar código en el cursor
-- `<leader>od` - Ayuda con debugging en cursor
-- `<leader>or` - Refactorizar código en cursor
-
-### Tmux.nvim - Integración Terminal
-
-Navegación seamless entre Neovim y tmux:
-
-**Navegación:**
-- `Ctrl+h/j/k/l` - Moverse entre tmux panes y neovim splits
-- `Ctrl+Direction Keys` - Redimensionar tmux panes
-
-**Características:**
-- Sincronización de clipboard bidireccional
-- Navegación cíclica cuando no hay más splits
-- Redimensionado de panes desde Neovim
-
----
-
-## 🎯 **Flujo de Trabajo Diario - Ejemplo Práctico**
-
-### 🌅 **Iniciar el Día:**
-
-```bash
-# 1. Iniciar tmux y nvim
-tmux new -s proyecto
-cd ~/mi-proyecto
-nvim .
-```
-
-### 📝 **Trabajando en Código:**
-
-```bash
-# 1. Abrir archivo existente
-<leader>pf  # Buscar archivo main.py
-
-# 2. Crear nuevo archivo
-:a nuevo_componente.py
-
-# 3. Navegar por código
-gd          # Ir a definición de función
-Ctrl+o      # Volver atrás
-K           # Ver documentación
-
-# 4. Usar IA para entender código
-<leader>oe  # Explicar código bajo cursor
-
-# 5. Debugear con ayuda de IA
-<leader>od  # Pedir ayuda con error
-
-# 6. Refactorizar código
-<leader>or  # Sugerir mejoras
-```
-
-### 🔄 **Working con Terminal:**
-
-```bash
-# En Neovim:
-:term       # Abrir terminal integrada
-Ctrl+h/j/k/l # Navegar entre nvim y tmux
-
-# En Tmux:
-Ctrl+b c    # Nueva ventana para testing
-Ctrl+b %    # Dividir vertical para ver logs
-Ctrl+b "    # Dividir horizontal para comandos
-```
-
-### 📊 **Usar Git Integrado:**
-
-```bash
-# Ver cambios:
-]c [c       # Navegar entre cambios
-
-# Stage/unstaged:
-<leader>hs  # Agregar cambio actual
-<leader>hr  # Descartar cambio actual
-
-# Commit:
-:Git commit -m "feat: añadir nueva funcionalidad"
-:Git push
-```
 
 ---
 
 ## ⚡ **Quick Start - Comandos Esenciales**
 
-| Categoría | Comando | Acción | Primer Recordatorio |
+| Categoría | Comando | Acción | Mnemotécnico |
 | --- | --- | --- | --- |
-| **Búsqueda** | `<leader>pf` | Buscar archivos | "Project Files" |
-| **Explorador** | `<leader>pv` | Abrir Neo-tree | "Project View" |
-| **IA Ayuda** | `<leader>oe` | Explicar código | "OpenCode Explain" |
-| **IA Debug** | `<leader>od` | Debug con IA | "OpenCode Debug" |
+| **Ayuda** | `<leader>` | Mostrar menú de atajos | Press leader key |
+| **Explorador** | `<leader>e` | Abrir Neo-tree | "E"xplorer |
+| **Búsqueda** | `<leader>ff` | Buscar archivos | "Find Files" |
+| **Búsqueda** | `<leader>fg` | Buscar texto | "Find Grep" |
+| **Búsqueda** | `<leader>fb` | Buscar buffers | "Find Buffers" |
+| **Búsqueda** | `<leader>fh` | Buscar ayuda | "Find Help" |
 | **Navegación** | `gd` | Ir a definición | "Go to Definition" |
 | **Documentación** | `K` | Ver docs | "Keep" (mantener pulsado) |
 | **Terminal** | `:term` | Abrir terminal | "Terminal" |
-| **Git Status** | `:Git status` | Ver estado git | "Git" |
+| **Git** | `:Git status` | Ver estado git | "Git" |
+| **Quarto** | `<localleader>rc` | Ejecutar celda | "Run Cell" |
+| **Quarto** | `<localleader>pp` | Previsualizar | "Preview" |
+| **Tmux** | `Ctrl+h/j/k/l` | Navegar paneles | Navegación en 4 direcciones |
 
 ---
 
@@ -693,13 +870,31 @@ tmux
 tmux ls
 ```
 
-### ❓ **"La IA no responde"**
+### ❓ **"El tema no se aplica correctamente"**
 ```bash
-# Abrir OpenCode manualmente
-<leader>oA
+# Verificar que el tema está cargado
+:colorscheme
 
-# Verificar tienes conexión a internet
-# Configurar tu API key si es necesario
+# Si muestra error, verificar archivo matrix.lua
+:lua print(vim.inspect(package.loaded))
+```
+
+### ❓ **"Which-key no aparece"**
+```bash
+# Verificar que el plugin está instalado
+:Lazy
+
+# Presiona <leader> y espera 1 segundo
+# Si no aparece, verificar configuración en help.lua
+```
+
+### ❓ **"Quarto keymaps no funcionan"**
+```bash
+# Los keymaps de Quarto solo se cargan al abrir archivos .qmd
+# Abrir un archivo Quarto y verificar:
+:echo exists("*quarto#runner#run_cell")
+
+# Si devuelve 0, el plugin no está cargado correctamente
 ```
 
 ---
@@ -707,12 +902,15 @@ tmux ls
 ## 💡 **Consejos para Máxima Productividad**
 
 1. **Configura tu leader key**: `<leader>` es `Espacio` por defecto
-2. **Usa frecuentemente `<leader>pf`**: Es más rápido que navegar manualmente
-3. **Aprovecha la IA**: No sufras entendiendo código complejo, pregunta
-4. **Mantén tmux abierto**: Un solo terminal con múltiples ventanas
-5. **Usa Git integrado**: No salgas de nvim para hacer commits
-6. **Personaliza gradualmente**: Añade tus propios atajos con el tiempo
-7. **Practica los comandos básicos**: La velocidad viene con la práctica
+2. **Usa which-key frecuentemente**: Presiona `<leader>` para ver todos los comandos disponibles
+3. **Usa `<leader>ff` frecuentemente**: Es más rápido que navegar manualmente
+4. **Aprovecha la navegación tmux**: Muevete entre nvim y tmux sin cambiar atajos
+5. **Mantén tmux abierto**: Un solo terminal con múltiples ventanas
+6. **Usa Git integrado**: No salgas de nvim para hacer commits
+7. **Personaliza gradualmente**: Añade tus propios atajos con el tiempo
+8. **Practica los comandos básicos**: La velocidad viene con la práctica
+9. **Usa Quarto para documentación**: Combina código y documentación en archivos .qmd
+10. **Explora which-key**: Descubre nuevas funcionalidades presionando `<leader>`
 
 ---
 
@@ -723,3 +921,35 @@ tmux ls
 - **Guía de comandos LSP**: `:help lsp`
 - **Documentación Telescope**: `:help telescope`
 - **Guía Treesitter**: `:help treesitter`
+- **Documentación Quarto**: https://quarto.org/
+- **Lazy.nvim**: https://github.com/folke/lazy.nvim
+- **Which-key.nvim**: https://github.com/folke/which-key.nvim
+
+---
+
+## 🔄 **Historial de Cambios**
+
+### v2.0 - Diciembre 2024
+- Arquitectura modular mejorada
+- Keymaps centralizados en `core/keymaps.lua`
+- Integración de which-key.nvim
+- Tema renombrado a Matrix
+- Todos los nombres actualizados a Statick
+- OpenCode.nvim desactivado temporalmente
+- Documentación mejorada y expandida
+
+### v1.0 - Versión inicial
+- Configuración base de Neovim
+- Plugins esenciales instalados
+- Integración con Quarto
+- Tema personalizado
+
+---
+
+## 📝 **Notas del Autor**
+
+Esta configuración ha sido diseñada para ser modular, mantenible y educativa. Cada archivo tiene un propósito claro y está documentado para facilitar el aprendizaje y la personalización.
+
+Para cualquier pregunta o sugerencia, por favor abra un issue en el repositorio.
+
+**Statick Medardo Saavedra García** - 2024
