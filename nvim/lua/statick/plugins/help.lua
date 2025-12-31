@@ -7,7 +7,7 @@ return {
     opts = {
       plugins = { spelling = true },
       defaults = {
-        mode = { "n", "v" },
+        mode = { "n", "i", "v" },
         ["<leader>"] = {
           ["<leader>"] = { name = "+lazy", _ = "which_key_ignore" },
 
@@ -139,11 +139,10 @@ return {
           D = { "Go to type definition" },
         },
       },
+      config = function(_, opts)
+        local wk = require("which-key")
+        wk.setup(opts)
+      end,
     },
-    config = function(_, opts)
-      local wk = require("which-key")
-      wk.setup(opts)
-      wk.register(opts.defaults)
-    end,
   },
 }
