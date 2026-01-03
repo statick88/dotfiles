@@ -6,11 +6,12 @@ return {
   {
     "NickvanDyke/opencode.nvim",
     enabled = true,
-    dependencies = {
-      { "folke/snacks.nvim", opts = { input = { enabled = true } } },
-      { "nvim-treesitter/nvim-treesitter" },
-      { "nvim-tree/nvim-web-devicons" },
-      { "nvim-lua/plenary.nvim" }
+    lazy = true,
+    cmd = {
+      "CleanArchitectureReview",
+      "SeparationConcernsAnalysis",
+      "DomainIndependenceCheck",
+      "DependencyInversionAudit",
     },
     config = function()
       require("opencode").setup({
@@ -133,8 +134,8 @@ return {
       })
     end,
     keys = {
-      { "<leader>ca", function() require("opencode").clean_architecture_review() end, desc = "Clean Architecture Review" },
-      { "<leader>cs", function() require("opencode").separation_concerns_analysis() end, desc = "Separation of Concerns Analysis" },
+      { "<leader>acr", function() require("opencode").clean_architecture_review() end, desc = "Clean Architecture Review" },
+      { "<leader>sca", function() require("opencode").separation_concerns_analysis() end, desc = "Separation of Concerns Analysis" },
       { "<leader>cd", function() require("opencode").domain_independence_check() end, desc = "Domain Independence Check" },
       { "<leader>ci", function() require("opencode").dependency_inversion_audit() end, desc = "Dependency Inversion Audit" },
 
@@ -175,7 +176,7 @@ return {
 
       { "<leader>osb", function() require("opencode").open_statick_sidebar() end, desc = "Open 🤖↔👤 Statick Sidebar" },
       { "<leader>oh", function() require("opencode").show_decision_history() end, desc = "Show 👤 Statick Decision History" },
-      { "<leader>oc", function() require("opencode").request_code_quality_scan() end, desc = "Request Code Quality Scan" }
+      { "<leader>cqs", function() require("opencode").request_code_quality_scan() end, desc = "Request Code Quality Scan" }
     }
   }
 }

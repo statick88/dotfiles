@@ -71,17 +71,6 @@ keymap.set("n", "<C-Down>", [[<cmd>lua require("tmux").resize_bottom()<cr>]], { 
 keymap.set("n", "<C-Up>", [[<cmd>lua require("tmux").resize_top()<cr>]], { silent = true })
 keymap.set("n", "<C-Right>", [[<cmd>lua require("tmux").resize_right()<cr>]], { silent = true })
 
--- Git - Gitsigns (lazy loading)
-vim.api.nvim_create_autocmd("User", {
-  pattern = "GitsignsAttach",
-  callback = function()
-    vim.keymap.set("n", "]c", function() require("gitsigns").next_hunk() end, { desc = "Next Git hunk", silent = true })
-    vim.keymap.set("n", "[c", function() require("gitsigns").prev_hunk() end, { desc = "Previous Git hunk", silent = true })
-    vim.keymap.set("n", "<leader>hs", function() require("gitsigns").stage_hunk() end, { desc = "Stage hunk", silent = true })
-    vim.keymap.set("n", "<leader>hr", function() require("gitsigns").reset_hunk() end, { desc = "Reset hunk", silent = true })
-  end,
-})
-
 -- Git - lazygit
 keymap.set("n", "<leader>gg", "<cmd>LazyGit<cr>", { desc = "LazyGit" })
 
@@ -146,25 +135,6 @@ vim.api.nvim_create_autocmd("FileType", {
     keymap.set("n", "<leader>et", "<cmd>Excalidraw create_from_template<cr>", { desc = "Create from template", buffer = true })
     keymap.set("n", "<leader>ef", "<cmd>Excalidraw find_scenes<cr>", { desc = "Find saved scenes", buffer = true })
     keymap.set("n", "<leader>el", "<cmd>Excalidraw find_scenes_in_buffer<cr>", { desc = "List buffer links", buffer = true })
-  end,
-})
-
--- Obsidian - Gestión de notas (lazy loading)
-vim.api.nvim_create_autocmd("FileType", {
-  pattern = { "markdown" },
-  callback = function()
-    keymap.set("n", "<leader>on", "<cmd>ObsidianNew<cr>", { desc = "New Obsidian note", buffer = true })
-    keymap.set("n", "<leader>oo", "<cmd>ObsidianSearch<cr>", { desc = "Search Obsidian notes", buffer = true })
-    keymap.set("n", "<leader>os", "<cmd>ObsidianQuickSwitch<cr>", { desc = "Quick switch notes", buffer = true })
-    keymap.set("n", "<leader>ot", "<cmd>ObsidianToday<cr>", { desc = "Today's note", buffer = true })
-    keymap.set("n", "<leader>oy", "<cmd>ObsidianYesterday<cr>", { desc = "Yesterday's note", buffer = true })
-    keymap.set("n", "<leader>om", "<cmd>ObsidianTomorrow<cr>", { desc = "Tomorrow's note", buffer = true })
-    keymap.set("n", "<leader>ob", "<cmd>ObsidianBacklinks<cr>", { desc = "Backlinks", buffer = true })
-    keymap.set("n", "<leader>ol", "<cmd>ObsidianLinks<cr>", { desc = "Links in note", buffer = true })
-    keymap.set("n", "<leader>oc", "<cmd>ObsidianFollowLink<cr>", { desc = "Follow link", buffer = true })
-    keymap.set("n", "<leader>oi", "<cmd>ObsidianPasteImg<cr>", { desc = "Paste image", buffer = true })
-    keymap.set("n", "<leader>ota", "<cmd>ObsidianTOC<cr>", { desc = "Table of contents", buffer = true })
-    keymap.set("n", "<leader>otp", "<cmd>ObsidianTemplate<cr>", { desc = "Insert template", buffer = true })
   end,
 })
 
