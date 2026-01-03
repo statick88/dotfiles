@@ -82,6 +82,7 @@ Configuración personalizada de Neovim desarrollada por **Statick Medardo Saaved
 | [Diffview.nvim](https://github.com/sindrets/diffview.nvim) | Visualización de diffs |
 | [Git-conflict.nvim](https://github.com/akinsho/git-conflict.nvim) | Resolver conflictos |
 | [Excalidraw.nvim](https://github.com/CRAG666/excalidraw.nvim) | Diagramas visuales |
+| [Obsidian.nvim](https://github.com/epwalsh/obsidian.nvim) | Gestión de notas (Obsidian) |
 | [Flash.nvim](https://github.com/folke/flash.nvim) | Navegación rápida |
 | [Trouble.nvim](https://github.com/folke/trouble.nvim) | Diagnósticos y errores |
 | [GGA](https://github.com/Gentleman-Programming/gentleman-guardian-angel) | Revisión de código con IA |
@@ -156,6 +157,23 @@ Configuración personalizada de Neovim desarrollada por **Statick Medardo Saaved
 | `<leader>tn` | Test nearest |
 | `<leader>tf` | Test file |
 | `<leader>ts` | Test suite |
+
+### Obsidian (Notas)
+
+| Atajo | Acción |
+|-------|--------|
+| `<leader>on` | Nueva nota |
+| `<leader>oo` | Buscar notas |
+| `<leader>os` | Cambiar nota |
+| `<leader>ot` | Nota de hoy |
+| `<leader>oy` | Nota de ayer |
+| `<leader>om` | Nota de mañana |
+| `<leader>ob` | Ver backlinks |
+| `<leader>ol` | Ver links |
+| `<leader>oc` | Seguir link |
+| `<leader>oi` | Pegar imagen |
+| `<leader>ota` | Tabla de contenidos |
+| `<leader>otp` | Insertar plantilla |
 
 ---
 
@@ -333,6 +351,7 @@ git commit -n -m "hotfix"
             ├── lsp.lua         # LSP servers (lua_ls, ts_ls, pyright, html, cssls, tailwindcss, dartls)
             ├── markdown.lua    # Markdown render
             ├── neotree.lua     # Explorador
+            ├── obsidian.lua    # Gestión de notas Obsidian
             ├── opencode.lua    # Clean Architecture Assistant (deshabilitado)
             ├── productivity.lua
             ├── python-dev.lua
@@ -554,6 +573,27 @@ gga run
 ---
 
 ## 🔄 Cambios Recientes
+
+### v3.3 - Enero 2026
+
+- ✅ **Obsidian.nvim agregado**: Gestión completa de notas (compatible con Obsidian app y standalone)
+  - Notas diarias (today, yesterday, tomorrow)
+  - Búsqueda y cambio rápido entre notas (Telescope integration)
+  - Plantillas y backlinks
+  - Links inteligentes (wiki y markdown)
+  - Tabla de contenidos
+  - Compatibilidad completa con Markdown
+- ✅ **Keymaps agregados**: 11 atajos nuevos para Obsidian
+  - `<leader>on` - Nueva nota
+  - `<leader>oo` - Buscar notas
+  - `<leader>os` - Cambiar nota
+  - `<leader>ot/oy/om` - Notas diarias (hoy/ayer/mañana)
+  - `<leader>ob/ol/oc` - Backlinks/Links/Seguir link
+  - `<leader>oi/ota/otp` - Imagen/TOC/Plantilla
+- ✅ **Which-key actualizado**: Sección "+obsidian" agregada
+- ✅ **Lazy loading**: Obsidian se activa solo en archivos markdown
+- ✅ **README actualizado**: Documentación completa de Obsidian
+- ✅ **Total plugins**: 62 plugins + obsidian.nvim
 
 ### v3.2 - Enero 2026
 

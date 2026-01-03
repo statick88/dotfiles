@@ -117,6 +117,23 @@ return {
             l = { "List buffer links" },
           },
 
+          -- Obsidian - Gestión de notas
+          o = {
+            name = "+obsidian",
+            n = { "New note" },
+            o = { "Search notes" },
+            s = { "Quick switch" },
+            t = { "Today's note" },
+            y = { "Yesterday's note" },
+            m = { "Tomorrow's note" },
+            b = { "Backlinks" },
+            l = { "Links in note" },
+            c = { "Follow link" },
+            i = { "Paste image" },
+            ta = { "Table of contents" },
+            tp = { "Insert template" },
+          },
+
           -- Gentleman Guardian Angel - AI Code Review (Temporalmente deshabilitado)
           a = {
             name = "+ai_review (GGA)",
