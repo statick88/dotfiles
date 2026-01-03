@@ -10,102 +10,94 @@ return {
     { "hrsh7th/nvim-cmp" },
   },
   config = function()
-    -- Inicializar Mason (gestor de herramientas de desarrollo)
-    require("mason").setup()
-
     local mason_lspconfig = require("mason-lspconfig")
-
-    -- Habilitar capacidades avanzadas para autocompletado
     local capabilities = require("cmp_nvim_lsp").default_capabilities()
 
-    -- Configurar qué servidores LSP instalar automáticamente
+    require("mason").setup()
+
     mason_lspconfig.setup({
       ensure_installed = {
-        "lua_ls",         -- Servidor para archivos Lua (configuración nvim)
-        "ts_ls",          -- Servidor para TypeScript/JavaScript
-        "pyright",        -- Servidor para Python
-        "html",           -- Servidor para HTML
-        "cssls",          -- Servidor para CSS
-        "tailwindcss",    -- Servidor para Tailwind CSS
-        "dartls",         -- Servidor para Dart (Flutter)
+        "lua_ls",
+        "ts_ls",
+        "pyright",
+        "html",
+        "cssls",
+        "tailwindcss",
+        "dartls",
       },
       automatic_installation = true,
     })
 
-    -- Configurar servidores LSP usando vim.lsp.config (nueva API)
-    -- Lua (para archivos de configuración nvim)
-    vim.lsp.config("lua_ls", {
-      settings = {
-        Lua = {
-          diagnostics = {
-            enable = false,
-            globals = { "vim" },
-          },
-          workspace = {
-            checkThirdParty = false,
-          },
-        },
-      },
-      capabilities = capabilities,
-    })
-
-    -- TypeScript/JavaScript
-    vim.lsp.config("ts_ls", {
-      settings = {
-        typescript = {
-          inlayHints = {
-            includeInlayParameterNameHints = "all",
-            includeInlayFunctionLikeTypeHints = "all",
+    local servers = {
+      lua_ls = {
+        settings = {
+          Lua = {
+            diagnostics = {
+              enable = false,
+              globals = { "vim" },
+            },
+            workspace = {
+              checkThirdParty = false,
+            },
           },
         },
       },
-      capabilities = capabilities,
-    })
-
-    -- Python
-    vim.lsp.config("pyright", {
-      settings = {
-        python = {
-          analysis = {
-            autoSearchPaths = true,
-            autoImportCompletions = true,
-            typeCheckingMode = "standard",
-            diagnosticMode = "workspace",
+      ts_ls = {
+        settings = {
+          typescript = {
+            inlayHints = {
+              includeInlayParameterNameHints = "all",
+              includeInlayFunctionLikeTypeHints = "all",
+            },
           },
         },
       },
-      capabilities = capabilities,
-    })
-
-    -- HTML
-    vim.lsp.config("html", {
-      capabilities = capabilities,
-    })
-
-    -- CSS
-    vim.lsp.config("cssls", {
-      capabilities = capabilities,
-    })
-
-    -- Tailwind CSS
-    vim.lsp.config("tailwindcss", {
-      capabilities = capabilities,
-    })
-
-    -- Dart (Flutter)
-    vim.lsp.config("dartls", {
-      cmd = { "dart", "language-server", "--protocol=lsp" },
-      filetypes = { "dart" },
-      settings = {
-        dart = {
-          completeFunctionCalls = true,
-          showTodos = true,
+      pyright = {
+        settings = {
+          python = {
+            analysis = {
+              autoSearchPaths = true,
+              autoImportCompletions = true,
+              typeCheckingMode = "standard",
+              diagnosticMode = "workspace",
+            },
+          },
         },
       },
-      capabilities = capabilities,
-    })
+      html = {},
+      cssls = {},
+      tailwindcss = {},
+      dartls = {
+        cmd = { "dart", "language-server", "--protocol=lsp" },
+        filetypes = { "dart" },
+        settings = {
+          dart = {
+            completeFunctionCalls = true,
+            showTodos = true,
+          },
+        },
+      },
+    }
 
-    -- Configurar diagnóstico
+    local server_map = {
+      lua = "lua_ls",
+      typescript = "ts_ls",
+      typescriptreact = "ts_ls",
+      javascript = "ts_ls",
+      javascriptreact = "ts_ls",
+      python = "pyright",
+      html = "html",
+      css = "cssls",
+      htmldjango = "html",
+      jinja2 = "html",
+      dart = "dartls",
+    }
+
+    for server_name, server_config in pairs(servers) do
+      server_config.capabilities = capabilities
+      vim.lsp.config(server_name, server_config)
+    end
+
     vim.diagnostic.config({
       virtual_text = true,
       signs = true,
@@ -114,23 +106,9 @@ return {
       severity_sort = true,
     })
 
-    -- Iniciar LSP para los filetypes configurados
     vim.api.nvim_create_autocmd("FileType", {
       pattern = "lua,typescript,typescriptreact,javascript,javascriptreact,python,html,css,htmldjango,jinja2,dart",
       callback = function(event)
-        local server_map = {
-          lua = "lua_ls",
-          typescript = "ts_ls",
-          typescriptreact = "ts_ls",
-          javascript = "ts_ls",
-          javascriptreact = "ts_ls",
-          python = "pyright",
-          html = "html",
-          css = "cssls",
-          htmldjango = "html",
-          jinja2 = "html",
-          dart = "dartls",
-        }
         local server = server_map[event.match] or vim.bo.filetype
         vim.lsp.start({ name = server })
       end,

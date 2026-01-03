@@ -1,10 +1,11 @@
 vim.g.mapleader = " "
 local keymap = vim.keymap
+local utils = require("statick.utils")
 
 -- Salir del modo insertar rápido
 keymap.set("i", "jj", "<ESC>")
 
--- LSP - Language Server Protocol
+-- LSP - Language Server Protocol (globales)
 keymap.set("n", "gd", vim.lsp.buf.definition, { desc = "Go to definition" })
 keymap.set("n", "gr", vim.lsp.buf.references, { desc = "Go to references" })
 keymap.set("n", "K", vim.lsp.buf.hover, { desc = "Hover documentation" })
@@ -32,33 +33,6 @@ keymap.set("n", "<leader>xX", "<cmd>Trouble diagnostics toggle filter.buf=0<cr>"
 keymap.set("n", "<leader>cs", "<cmd>Trouble symbols toggle focus=false<cr>", { desc = "Symbols (Trouble)" })
 keymap.set("n", "<leader>cl", "<cmd>Trouble lsp toggle focus=false win.position=right<cr>", { desc = "LSP Definitions / references / ... (Trouble)" })
 
- -- OpenCode - Clean Architecture (plugin desactivado temporalmente)
--- Nota: Usa lazy.nvim para cargar estos plugins solo cuando se usen
-
--- Quarto - Navegación entre celdas (lazy loading)
-vim.api.nvim_create_autocmd("FileType", {
-  pattern = { "quarto", "markdown" },
-  callback = function()
-    if pcall(require, "quarto.navigator") then
-      vim.keymap.set("n", "]b", [[<cmd>lua require("quarto.navigator").next()<cr>]], { desc = "Next Quarto cell", silent = true, buffer = true })
-      vim.keymap.set("n", "[b", [[<cmd>lua require("quarto.navigator").previous()<cr>]], { desc = "Previous Quarto cell", silent = true, buffer = true })
-    end
-    if pcall(require, "quarto.runner") then
-      local runner = require("quarto.runner")
-      vim.keymap.set("n", "<localleader>rc", runner.run_cell, { desc = "Run current cell", silent = true, buffer = true })
-      vim.keymap.set("n", "<localleader>ra", runner.run_above, { desc = "Run cell and above", silent = true, buffer = true })
-      vim.keymap.set("n", "<localleader>rA", runner.run_all, { desc = "Run all cells", silent = true, buffer = true })
-      vim.keymap.set("n", "<localleader>rl", runner.run_line, { desc = "Run current line", silent = true, buffer = true })
-      vim.keymap.set("v", "<localleader>r", runner.run_range, { desc = "Run visual range", silent = true, buffer = true })
-      vim.keymap.set("n", "<localleader>RA", function() runner.run_all(true) end, { desc = "Run all cells of all languages", silent = true, buffer = true })
-      vim.keymap.set("n", "<localleader>pp", [[<cmd>QuartoPreview<cr>]], { desc = "Quarto preview", silent = true, buffer = true })
-      vim.keymap.set("n", "<localleader>ps", [[<cmd>QuartoPreviewStop<cr>]], { desc = "Stop Quarto preview", silent = true, buffer = true })
-      vim.keymap.set("n", "<localleader>qi", [[<cmd>QuartoInspect<cr>]], { desc = "Inspect Quarto document", silent = true, buffer = true })
-      vim.keymap.set("n", "<localleader>qf", [[<cmd>QuartoFormat<cr>]], { desc = "Format Quarto document", silent = true, buffer = true })
-    end
-  end,
-})
-
 -- Tmux - Navegación
 keymap.set("n", "<C-h>", [[<cmd>lua require("tmux").move_left()<cr>]], { silent = true })
 keymap.set("n", "<C-j>", [[<cmd>lua require("tmux").move_bottom()<cr>]], { silent = true })
@@ -71,71 +45,69 @@ keymap.set("n", "<C-Down>", [[<cmd>lua require("tmux").resize_bottom()<cr>]], { 
 keymap.set("n", "<C-Up>", [[<cmd>lua require("tmux").resize_top()<cr>]], { silent = true })
 keymap.set("n", "<C-Right>", [[<cmd>lua require("tmux").resize_right()<cr>]], { silent = true })
 
--- Git - lazygit
+-- Git - lazygit y diffview
 keymap.set("n", "<leader>gg", "<cmd>LazyGit<cr>", { desc = "LazyGit" })
-
--- Git - diffview
 keymap.set("n", "<leader>gv", "<cmd>DiffviewOpen<cr>", { desc = "Open diff view" })
 keymap.set("n", "<leader>gq", "<cmd>DiffviewClose<cr>", { desc = "Close diff view" })
 keymap.set("n", "<leader>gf", "<cmd>DiffviewToggleFile<cr>", { desc = "Toggle diff view file" })
 keymap.set("n", "<leader>gk", "<cmd>DiffviewFocusFiles<cr>", { desc = "Focus diff files" })
 
--- Git - conflicts (git-conflict.nvim)
-vim.api.nvim_create_autocmd("User", {
-  pattern = "GitConflict",
-  callback = function()
-    vim.keymap.set("n", "<leader>gco", "<cmd>GitConflictChooseOurs<cr>", { desc = "Choose ours", silent = true })
-    vim.keymap.set("n", "<leader>gct", "<cmd>GitConflictChooseTheirs<cr>", { desc = "Choose theirs", silent = true })
-    vim.keymap.set("n", "<leader>gcb", "<cmd>GitConflictChooseBoth<cr>", { desc = "Choose both", silent = true })
-    vim.keymap.set("n", "<leader>gc0", "<cmd>GitConflictChooseNone<cr>", { desc = "Choose none", silent = true })
-  end,
+-- Git-conflict keymaps
+utils.user_event_keymaps("GitConflict", {
+  ["<leader>gco"] = { rhs = "<cmd>GitConflictChooseOurs<cr>", desc = "Choose ours" },
+  ["<leader>gct"] = { rhs = "<cmd>GitConflictChooseTheirs<cr>", desc = "Choose theirs" },
+  ["<leader>gcb"] = { rhs = "<cmd>GitConflictChooseBoth<cr>", desc = "Choose both" },
+  ["<leader>gc0"] = { rhs = "<cmd>GitConflictChooseNone<cr>", desc = "Choose none" },
 })
 
-
-
--- Flutter Development (lazy loading)
-vim.api.nvim_create_autocmd("FileType", {
-  pattern = { "dart", "flutter" },
-  callback = function()
-    keymap.set("n", "<leader>F", "<cmd>FlutterRun<cr>", { desc = "Run Flutter app", buffer = true })
-    keymap.set("n", "<leader>D", "<cmd>FlutterDevices<cr>", { desc = "List Flutter devices", buffer = true })
-    keymap.set("n", "<leader>Q", "<cmd>FlutterQuit<cr>", { desc = "Quit Flutter app", buffer = true })
-    keymap.set("n", "<leader>R", "<cmd>FlutterHotReload<cr>", { desc = "Hot reload", buffer = true })
-    keymap.set("n", "<leader>H", "<cmd>FlutterHotRestart<cr>", { desc = "Hot restart", buffer = true })
-  end,
+-- Quarto keymaps (quarto, markdown)
+utils.ft_keymaps_multiple({ "quarto", "markdown" }, {
+  ["]b"] = { rhs = [[<cmd>lua require("quarto.navigator").next()<cr>]], desc = "Next Quarto cell" },
+  ["[b"] = { rhs = [[<cmd>lua require("quarto.navigator").previous()<cr>]], desc = "Previous Quarto cell" },
 })
 
--- Python Development (lazy loading)
-vim.api.nvim_create_autocmd("FileType", {
-  pattern = { "python" },
-  callback = function()
-    keymap.set("n", "<leader>vs", "<cmd>VenvSelect<cr>", { desc = "Select Virtual Env", buffer = true })
-    keymap.set("n", "<leader>nd", function() require("neogen").generate() end, { desc = "Generate docstring", buffer = true })
-  end,
+utils.ft_keymaps_multiple({ "quarto", "markdown" }, {
+  ["<localleader>rc"] = { rhs = function() return require("quarto.runner").run_cell end, desc = "Run current cell" },
+  ["<localleader>ra"] = { rhs = function() return require("quarto.runner").run_above end, desc = "Run cell and above" },
+  ["<localleader>rA"] = { rhs = function() return require("quarto.runner").run_all end, desc = "Run all cells" },
+  ["<localleader>rl"] = { rhs = function() return require("quarto.runner").run_line end, desc = "Run current line" },
+  ["<localleader>pp"] = { rhs = "<cmd>QuartoPreview<cr>", desc = "Quarto preview" },
+  ["<localleader>ps"] = { rhs = "<cmd>QuartoPreviewStop<cr>", desc = "Stop Quarto preview" },
+  ["<localleader>qi"] = { rhs = "<cmd>QuartoInspect<cr>", desc = "Inspect Quarto document" },
+  ["<localleader>qf"] = { rhs = "<cmd>QuartoFormat<cr>", desc = "Format Quarto document" },
 })
 
--- Testing (lazy loading)
-vim.api.nvim_create_autocmd("FileType", {
-  pattern = { "python", "javascript", "typescript", "ruby", "go", "rust", "lua" },
-  callback = function()
-    keymap.set("n", "<leader>tn", "<cmd>TestNearest<cr>", { desc = "Test nearest", buffer = true })
-    keymap.set("n", "<leader>tf", "<cmd>TestFile<cr>", { desc = "Test file", buffer = true })
-    keymap.set("n", "<leader>ts", "<cmd>TestSuite<cr>", { desc = "Test suite", buffer = true })
-    keymap.set("n", "<leader>tv", "<cmd>TestVisit<cr>", { desc = "Test visit", buffer = true })
-    keymap.set("n", "<leader>tg", "<cmd>TestGo<cr>", { desc = "Test go", buffer = true })
-  end,
+-- Flutter Development keymaps
+utils.ft_keymaps_multiple({ "dart", "flutter" }, {
+  ["<leader>F"] = { rhs = "<cmd>FlutterRun<cr>", desc = "Run Flutter app" },
+  ["<leader>D"] = { rhs = "<cmd>FlutterDevices<cr>", desc = "List Flutter devices" },
+  ["<leader>Q"] = { rhs = "<cmd>FlutterQuit<cr>", desc = "Quit Flutter app" },
+  ["<leader>R"] = { rhs = "<cmd>FlutterHotReload<cr>", desc = "Hot reload" },
+  ["<leader>H"] = { rhs = "<cmd>FlutterHotRestart<cr>", desc = "Hot restart" },
 })
 
--- Excalidraw - Diagramas en Markdown (lazy loading)
-vim.api.nvim_create_autocmd("FileType", {
-  pattern = { "markdown", "quarto" },
-  callback = function()
-    keymap.set("n", "<leader>ed", "<cmd>Excalidraw open<cr>", { desc = "Open Excalidraw link", buffer = true })
-    keymap.set("n", "<leader>ec", "<cmd>Excalidraw create<cr>", { desc = "Create Excalidraw scene", buffer = true })
-    keymap.set("n", "<leader>et", "<cmd>Excalidraw create_from_template<cr>", { desc = "Create from template", buffer = true })
-    keymap.set("n", "<leader>ef", "<cmd>Excalidraw find_scenes<cr>", { desc = "Find saved scenes", buffer = true })
-    keymap.set("n", "<leader>el", "<cmd>Excalidraw find_scenes_in_buffer<cr>", { desc = "List buffer links", buffer = true })
-  end,
+-- Python Development keymaps
+utils.ft_keymaps("python", {
+  ["<leader>vs"] = { rhs = "<cmd>VenvSelect<cr>", desc = "Select Virtual Env" },
+  ["<leader>nd"] = { rhs = function() require("neogen").generate() end, desc = "Generate docstring" },
 })
 
- -- nvim-cmp (autocompletado) - configurado en completions.lua
+-- Testing keymaps
+utils.ft_keymaps_multiple({ "python", "javascript", "typescript", "ruby", "go", "rust", "lua" }, {
+  ["<leader>tn"] = { rhs = "<cmd>TestNearest<cr>", desc = "Test nearest" },
+  ["<leader>tf"] = { rhs = "<cmd>TestFile<cr>", desc = "Test file" },
+  ["<leader>ts"] = { rhs = "<cmd>TestSuite<cr>", desc = "Test suite" },
+  ["<leader>tv"] = { rhs = "<cmd>TestVisit<cr>", desc = "Test visit" },
+  ["<leader>tg"] = { rhs = "<cmd>TestGo<cr>", desc = "Test go" },
+})
+
+-- Excalidraw keymaps (markdown, quarto)
+utils.ft_keymaps_multiple({ "markdown", "quarto" }, {
+  ["<leader>ed"] = { rhs = "<cmd>Excalidraw open<cr>", desc = "Open Excalidraw link" },
+  ["<leader>ec"] = { rhs = "<cmd>Excalidraw create<cr>", desc = "Create Excalidraw scene" },
+  ["<leader>et"] = { rhs = "<cmd>Excalidraw create_from_template<cr>", desc = "Create from template" },
+  ["<leader>ef"] = { rhs = "<cmd>Excalidraw find_scenes<cr>", desc = "Find saved scenes" },
+  ["<leader>el"] = { rhs = "<cmd>Excalidraw find_scenes_in_buffer<cr>", desc = "List buffer links" },
+})
+
+-- nvim-cmp (autocompletado) - configurado en completions.lua
