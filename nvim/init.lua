@@ -1,4 +1,3 @@
--- Usuario: statick
 require("statick.core.options")
 require("statick.core.keymaps")
 
@@ -10,4 +9,8 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 -- Esto buscará automáticamente todos los archivos .lua dentro de lua/statick/plugins/
-require("lazy").setup("statick.plugins")
+require("lazy").setup("statick.plugins", {
+  rocks = {
+    enabled = false,  -- Desactivar rocks.nvim (no usado)
+  },
+})

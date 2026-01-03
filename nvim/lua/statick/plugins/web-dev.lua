@@ -8,28 +8,11 @@ return {
     event = "InsertEnter",
   },
 
-  -- Tailwind CSS - Autocompletado para clases Tailwind
-  {
-    "luckasRanarison/tailwind-tools.nvim",
-    dependencies = { "nvim-treesitter/nvim-treesitter" },
-    ft = { "typescriptreact", "javascriptreact", "vue", "svelte", "html", "css" },
-    event = "BufReadPost",
-    opts = {},
-  },
-
   -- React/Next.js snippets
   {
     "dsznajder/vscode-es7-javascript-react-snippets",
     run = "yarn install --frozen-lockfile && yarn build",
     ft = { "javascriptreact", "typescriptreact", "javascript", "typescript" },
-  },
-
-  -- TypeScript/JavaScript additional tools
-  {
-    "jose-elias-alvarez/typescript.nvim",
-    ft = { "typescript", "typescriptreact" },
-    event = "BufReadPost",
-    opts = {},
   },
 
   -- HTML/JSX/TSX tag closing

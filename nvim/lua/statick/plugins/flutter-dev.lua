@@ -30,13 +30,6 @@ return {
         prefix = " ",
       },
     },
-    keys = {
-      { "<leader>F", "<cmd>FlutterRun<cr>", desc = "Run Flutter app" },
-      { "<leader>D", "<cmd>FlutterDevices<cr>", desc = "List Flutter devices" },
-      { "<leader>Q", "<cmd>FlutterQuit<cr>", desc = "Quit Flutter app" },
-      { "<leader>R", "<cmd>FlutterHotReload<cr>", desc = "Hot reload" },
-      { "<leader>H", "<cmd>FlutterHotRestart<cr>", desc = "Hot restart" },
-    },
   },
 
   -- Dart LSP (ya configurado en lsp.lua con dartls)

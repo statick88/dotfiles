@@ -5,12 +5,11 @@ return {
   {
     "quarto-dev/quarto-nvim",
     dependencies = {
-      "hrsh7th/nvim-cmp",                      -- Para autocompletado en archivos Quarto
-      "nvim-treesitter/nvim-treesitter",        -- Para resaltado sintáctico
-      "neovim/nvim-lspconfig",                -- Para soporte LSP en Quarto
-      "nvim-lua/plenary.nvim",                -- Dependencia requerida
-      "benlubas/otter.nvim",                   -- Para ejecución de código en Quarto
-      "jmbuhr/otter.nvim",                   -- Alternativa mejorada para otter
+      "hrsh7th/nvim-cmp",
+      "nvim-treesitter/nvim-treesitter",
+      "neovim/nvim-lspconfig",
+      "nvim-lua/plenary.nvim",
+      "benlubas/otter.nvim",
     },
       config = function()
       -- Configuración básica de quarto-nvim con otter integration

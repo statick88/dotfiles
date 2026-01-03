@@ -35,7 +35,6 @@ return {
           w = {
             name = "+web",
             e = { "Emmet expansion" },
-            t = { "Tailwind tools" },
             l = { "ESLint" },
             p = { "Prettier format" },
           },
@@ -107,6 +106,22 @@ return {
 
           -- LSP - Language Server Protocol
           n = { name = "+lsp" },
+
+          -- Excalidraw - Diagramas
+          e = {
+            name = "+excalidraw",
+            d = { "Open link under cursor" },
+            c = { "Create new scene" },
+            t = { "Create from template" },
+            f = { "Find saved scenes" },
+            l = { "List buffer links" },
+          },
+
+          -- Gentleman Guardian Angel - AI Code Review (Temporalmente deshabilitado)
+          a = {
+            name = "+ai_review (GGA)",
+            _ = "gg.plugin_not_loaded",
+          },
         },
 
         -- Comandos de Quarto (localleader)

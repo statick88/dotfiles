@@ -4,6 +4,15 @@ local keymap = vim.keymap
 -- Salir del modo insertar rápido
 keymap.set("i", "jj", "<ESC>")
 
+-- LSP - Language Server Protocol
+keymap.set("n", "gd", vim.lsp.buf.definition, { desc = "Go to definition" })
+keymap.set("n", "gr", vim.lsp.buf.references, { desc = "Go to references" })
+keymap.set("n", "K", vim.lsp.buf.hover, { desc = "Hover documentation" })
+keymap.set("n", "]d", vim.diagnostic.goto_next, { desc = "Next diagnostic" })
+keymap.set("n", "[d", vim.diagnostic.goto_prev, { desc = "Previous diagnostic" })
+keymap.set("n", "<leader>rn", vim.lsp.buf.rename, { desc = "Rename" })
+keymap.set("n", "<leader>ca", vim.lsp.buf.code_action, { desc = "Code action" })
+
 -- Explorador de archivos (Neo-tree)
 keymap.set("n", "<leader>e", ":Neotree toggle<CR>", { desc = "Toggle Neo-tree" })
 
@@ -12,6 +21,16 @@ keymap.set("n", "<leader>ff", ":Telescope find_files<CR>", { desc = "Find files"
 keymap.set("n", "<leader>fg", ":Telescope live_grep<CR>", { desc = "Live grep" })
 keymap.set("n", "<leader>fb", ":Telescope buffers<CR>", { desc = "Find buffers" })
 keymap.set("n", "<leader>fh", ":Telescope help_tags<CR>", { desc = "Help tags" })
+
+-- Flash - Navegación rápida
+keymap.set({ "n", "x", "o" }, "s", function() require("flash").jump() end, { desc = "Flash" })
+keymap.set({ "n", "o", "x" }, "S", function() require("flash").treesitter() end, { desc = "Flash Treesitter" })
+
+-- Trouble - Lista de diagnósticos
+keymap.set("n", "<leader>xx", "<cmd>Trouble diagnostics toggle<cr>", { desc = "Diagnostics (Trouble)" })
+keymap.set("n", "<leader>xX", "<cmd>Trouble diagnostics toggle filter.buf=0<cr>", { desc = "Buffer Diagnostics (Trouble)" })
+keymap.set("n", "<leader>cs", "<cmd>Trouble symbols toggle focus=false<cr>", { desc = "Symbols (Trouble)" })
+keymap.set("n", "<leader>cl", "<cmd>Trouble lsp toggle focus=false win.position=right<cr>", { desc = "LSP Definitions / references / ... (Trouble)" })
 
 -- OpenCode - Clean Architecture (plugin desactivado temporalmente)
 -- keymap.set("n", "<leader>ca", function() require("opencode").clean_architecture_review() end, { desc = "Clean Architecture Review" })
@@ -135,9 +154,6 @@ vim.api.nvim_create_autocmd("User", {
 
 
 
--- Docker - nui-docker
-keymap.set("n", "<leader>du", function() require("nui-docker").toggle() end, { desc = "Toggle Docker UI" })
-
 -- Flutter Development (lazy loading)
 vim.api.nvim_create_autocmd("FileType", {
   pattern = { "dart", "flutter" },
@@ -150,7 +166,68 @@ vim.api.nvim_create_autocmd("FileType", {
   end,
 })
 
--- Testing (lazy loading - ya configurado en testing.lua
--- vim-test y neotest tienen sus propios keymaps definidos en testing.lua
+-- Python Development (lazy loading)
+vim.api.nvim_create_autocmd("FileType", {
+  pattern = { "python" },
+  callback = function()
+    keymap.set("n", "<leader>vs", "<cmd>VenvSelect<cr>", { desc = "Select Virtual Env", buffer = true })
+    keymap.set("n", "<leader>nd", function() require("neogen").generate() end, { desc = "Generate docstring", buffer = true })
+  end,
+})
+
+-- Testing (lazy loading)
+vim.api.nvim_create_autocmd("FileType", {
+  pattern = { "python", "javascript", "typescript", "ruby", "go", "rust", "lua" },
+  callback = function()
+    keymap.set("n", "<leader>tn", "<cmd>TestNearest<cr>", { desc = "Test nearest", buffer = true })
+    keymap.set("n", "<leader>tf", "<cmd>TestFile<cr>", { desc = "Test file", buffer = true })
+    keymap.set("n", "<leader>ts", "<cmd>TestSuite<cr>", { desc = "Test suite", buffer = true })
+    keymap.set("n", "<leader>tv", "<cmd>TestVisit<cr>", { desc = "Test visit", buffer = true })
+    keymap.set("n", "<leader>tg", "<cmd>TestGo<cr>", { desc = "Test go", buffer = true })
+  end,
+})
+
+-- Excalidraw - Diagramas en Markdown (lazy loading)
+vim.api.nvim_create_autocmd("FileType", {
+  pattern = { "markdown", "quarto" },
+  callback = function()
+    keymap.set("n", "<leader>ed", "<cmd>Excalidraw open<cr>", { desc = "Open Excalidraw link", buffer = true })
+    keymap.set("n", "<leader>ec", "<cmd>Excalidraw create<cr>", { desc = "Create Excalidraw scene", buffer = true })
+    keymap.set("n", "<leader>et", "<cmd>Excalidraw create_from_template<cr>", { desc = "Create from template", buffer = true })
+    keymap.set("n", "<leader>ef", "<cmd>Excalidraw find_scenes<cr>", { desc = "Find saved scenes", buffer = true })
+    keymap.set("n", "<leader>el", "<cmd>Excalidraw find_scenes_in_buffer<cr>", { desc = "List buffer links", buffer = true })
+  end,
+})
 
 -- nvim-cmp (autocompletado) - configurado en completions.lua
+
+-- ============================================
+-- Gentleman Guardian Angel (GGA) - AI Code Review
+-- Nota: GGA requiere instalación externa: brew install gentleman-programming/tap/gga
+-- Y el plugin de Neovim debe estar correctamente configurado en plugins/gga.lua
+-- ============================================
+
+-- Configuración de GGA comentada hasta que el plugin esté instalado
+--[[
+local gga_ok, gga = pcall(require, "statick.plugins.gga")
+if gga_ok and gga and gga.setup then
+  gga.setup({
+    enabled = true,
+    auto_review_on_save = false,
+    prefix = "<leader>a",
+    provider = "opencode",
+    file_patterns = { "*.ts", "*.tsx", "*.js", "*.jsx", "*.py", "*.go", "*.lua", "*.rs" },
+    exclude_patterns = { "*.test.ts", "*.spec.ts", "*.test.js", "*.spec.js", "*.d.ts" },
+    rules_file = "AGENTS.md",
+    strict_mode = true,
+    enable_cache = true,
+    show_notification = true,
+    use_floating_window = true,
+  })
+  if gga.setup_keymaps then
+    gga.setup_keymaps()
+  end
+else
+  vim.notify("GGA plugin not fully configured. Install gga CLI and run :Lazy sync.", vim.log.levels.WARN)
+end
+--]]

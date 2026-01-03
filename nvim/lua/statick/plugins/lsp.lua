@@ -1,39 +1,40 @@
--- LSP (Language Server Protocol): Configuración de servidores LSP
--- Lenguajes configurados: Lua, TypeScript/JavaScript, Python, HTML, CSS, Tailwind, Dart
+-- LSP (Language Server Protocol): Convierte Neovim en un IDE completo
+-- Proporciona inteligencia de lenguaje: autocompletado, diagnóstico, definiciones, etc.
+-- Comandos principales: gd (go to definition), gr (references), K (documentation)
 return {
   "neovim/nvim-lspconfig",
   dependencies = {
-    "williamboman/mason.nvim",
-    "williamboman/mason-lspconfig.nvim",
-    "hrsh7th/cmp-nvim-lsp",
+    { "williamboman/mason.nvim" },
+    { "williamboman/mason-lspconfig.nvim" },
+    { "hrsh7th/cmp-nvim-lsp" },
+    { "hrsh7th/nvim-cmp" },
   },
   config = function()
     -- Inicializar Mason (gestor de herramientas de desarrollo)
     require("mason").setup()
-    local mason_lspconfig = require("mason-lspconfig")
 
-    -- Configurar qué servidores LSP instalar automáticamente
-    mason_lspconfig.setup({
-      ensure_installed = {
-        "lua_ls",
-        "ts_ls",
-        "pyright",
-        "html",
-        "cssls",
-        "tailwindcss",
-        "dartls",
-      },
-      automatic_installation = true,
-    })
+    local mason_lspconfig = require("mason-lspconfig")
 
     -- Habilitar capacidades avanzadas para autocompletado
     local capabilities = require("cmp_nvim_lsp").default_capabilities()
 
-    -- Configurar servidores LSP
-    local lspconfig = require("lspconfig")
+    -- Configurar qué servidores LSP instalar automáticamente
+    mason_lspconfig.setup({
+      ensure_installed = {
+        "lua_ls",         -- Servidor para archivos Lua (configuración nvim)
+        "ts_ls",          -- Servidor para TypeScript/JavaScript
+        "pyright",        -- Servidor para Python
+        "html",           -- Servidor para HTML
+        "cssls",          -- Servidor para CSS
+        "tailwindcss",    -- Servidor para Tailwind CSS
+        "dartls",         -- Servidor para Dart (Flutter)
+      },
+      automatic_installation = true,
+    })
 
+    -- Configurar servidores LSP usando vim.lsp.config (nueva API)
     -- Lua (para archivos de configuración nvim)
-    lspconfig.lua_ls({
+    vim.lsp.config("lua_ls", {
       settings = {
         Lua = {
           diagnostics = {
@@ -45,85 +46,83 @@ return {
           },
         },
       },
+      capabilities = capabilities,
     })
 
-    -- TypeScript/JavaScript (configuración para ts_ls)
-    lspconfig.ts_ls({
+    -- TypeScript/JavaScript
+    vim.lsp.config("ts_ls", {
       settings = {
-        javascript = {
+        typescript = {
           inlayHints = {
             includeInlayParameterNameHints = "all",
-            includeInlayFunctionParameterTypeHints = true,
-            includeInlayVariableTypeHints = true,
-            includeInlayPropertyDeclarationTypeHints = true,
+            includeInlayFunctionLikeTypeHints = "all",
           },
         },
-        },
       },
+      capabilities = capabilities,
     })
 
-    -- Python (configuración para pyright)
-    lspconfig.pyright({
+    -- Python
+    vim.lsp.config("pyright", {
       settings = {
         python = {
           analysis = {
             autoSearchPaths = true,
             autoImportCompletions = true,
-            typeCheckingMode = "basic",
-            diagnosticSeverity = {
-              error = "Error",
-              warning = "Warning",
-              information = "Information",
-            },
+            typeCheckingMode = "standard",
+            diagnosticMode = "workspace",
           },
         },
       },
+      capabilities = capabilities,
     })
 
     -- HTML
-    lspconfig.html({})
-
-    -- CSS
-    lspconfig.cssls({})
-
-    -- Tailwind CSS
-    lspconfig.tailwindcss({
-      settings = {
-        tailwindCSS = {
-          experimental = {
-            classRegex = "class\\s*((?:[a-zA-Z]+[a-z0-9]*)+",
-          },
-        },
-      },
+    vim.lsp.config("html", {
+      capabilities = capabilities,
     })
 
-    -- Dart/Flutter
-    lspconfig.dartls({
+    -- CSS
+    vim.lsp.config("cssls", {
+      capabilities = capabilities,
+    })
+
+    -- Tailwind CSS
+    vim.lsp.config("tailwindcss", {
+      capabilities = capabilities,
+    })
+
+    -- Dart (Flutter)
+    vim.lsp.config("dartls", {
       cmd = { "dart", "language-server", "--protocol=lsp" },
       filetypes = { "dart" },
-      init_options = {
-        onlyAnalyzeProjectsWithOpenFiles = true,
-        suggestFromUnimportedLibraries = true,
-        closingLabels = true,
-        outline = true,
-      },
       settings = {
         dart = {
           completeFunctionCalls = true,
           showTodos = true,
         },
       },
+      capabilities = capabilities,
     })
 
-    -- Keymaps de LSP
-    local keymap = vim.keymap
+    -- Configurar diagnóstico
+    vim.diagnostic.config({
+      virtual_text = true,
+      signs = true,
+      underline = true,
+      update_in_insert = false,
+      severity_sort = true,
+    })
 
-    keymap.set("n", "gd", vim.lsp.buf.definition, { desc = "Go to definition" })
-    keymap.set("n", "gr", vim.lsp.buf.references, { desc = "Go to references" })
-    keymap.set("n", "K", vim.lsp.buf.hover, { desc = "Hover documentation" })
-    keymap.set("n", "]d", vim.diagnostic.goto_next, { desc = "Next diagnostic" })
-    keymap.set("n", "[d", vim.diagnostic.goto_prev, { desc = "Previous diagnostic" })
-    keymap.set("n", "<leader>rn", vim.lsp.buf.rename, { desc = "Rename" })
-    keymap.set("n", "<leader>ca", vim.lsp.buf.code_action, { desc = "Code action" })
+    -- Iniciar LSP para los filetypes configurados
+    vim.api.nvim_create_autocmd("FileType", {
+      pattern = "lua,typescript,typescriptreact,javascript,javascriptreact,python,html,css,htmldjango,jinja2,dart",
+      callback = function(event)
+        vim.lsp.start({
+          name = vim.bo.filetype,
+          cmd = vim.lsp.get_log_path(),
+        })
+      end,
+    })
   end,
 }

@@ -19,7 +19,6 @@ return {
       },
     },
     ft = "python",
-    keys = { { "<leader>vs", "<cmd>VenvSelect<cr>", desc = "Select Virtual Env" } },
   },
 
   -- Python docstring generator
@@ -28,9 +27,6 @@ return {
     dependencies = { "nvim-treesitter/nvim-treesitter" },
     config = true,
     ft = "python",
-    keys = {
-      { "<leader>nd", function() require("neogen").generate() end, desc = "Generate docstring" },
-    },
   },
 
   -- Django templates support
