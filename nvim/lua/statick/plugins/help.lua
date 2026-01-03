@@ -1,180 +1,22 @@
--- which-key.nvim: Muestra las opciones disponibles al presionar la tecla leader
--- Similar a LazyVim, muestra un menú visual con todos los atajos organizados
+-- which-key.nvim: Guía completa de uso de Neovim y plugins
+-- Muestra ayuda contextual cuando presionas teclas y comandos
 return {
   {
     "folke/which-key.nvim",
-    event = "VeryLazy",
+    event = "verylazy",
     opts = {
       plugins = { spelling = true },
       defaults = {
         mode = { "n", "i", "v" },
-        ["<leader>"] = {
-          ["<leader>"] = { name = "+lazy", _ = "which_key_ignore" },
-
-          -- Explorador de archivos
-          e = { name = "+explorer" },
-
-          -- Telescope - Búsqueda
-          f = {
-            name = "+find",
-            f = { "Find files" },
-            g = { "Live grep" },
-            b = { "Find buffers" },
-            h = { "Help tags" },
-          },
-
-          -- Productividad
-          p = {
-            name = "+productivity",
-            s = { "Flash search" },
-            t = { "Todo comments" },
-            x = { "Trouble (diagnostics)" },
-          },
-
-          -- Web Development (React, TS, HTML, CSS)
-          w = {
-            name = "+web",
-            e = { "Emmet expansion" },
-            l = { "ESLint" },
-            p = { "Prettier format" },
-          },
-
-          -- Python Development (Django, FastAPI, PyTest)
-          y = {
-            name = "+python",
-            v = { "Select virtual env" },
-            tr = { "PyTest run nearest" },
-            tf = { "PyTest run file" },
-            ts = { "PyTest stop" },
-            to = { "PyTest output" },
-            d = { "Generate docstring" },
-          },
-
-          -- Flutter & Mobile
-          f = {
-            name = "+flutter",
-            r = { "Run app" },
-            d = { "List devices" },
-            q = { "Quit app" },
-            h = { "Hot reload" },
-          },
-
-          -- Git Avanzado
-          g = {
-            name = "+git",
-            g = { "LazyGit" },
-            vo = { "Open diffview" },
-            vc = { "Close diffview" },
-            vf = { "File history" },
-            co = { "Conflict: Choose ours" },
-            ct = { "Conflict: Choose theirs" },
-            cb = { "Conflict: Choose both" },
-            c0 = { "Conflict: Choose none" },
-            cn = { "Conflict: Next" },
-            cp = { "Conflict: Previous" },
-            b = { "Git blame" },
-          },
-
-          -- Docker
-          d = {
-            name = "+docker",
-            u = { "Docker UI" },
-          },
-
-          -- Testing
-          t = {
-            name = "+testing",
-            n = { "Test nearest" },
-            f = { "Test file" },
-            s = { "Test suite" },
-            v = { "Test visit" },
-            g = { "Test go" },
-          },
-
-          -- Quarto - Navegación (pre-configurado en keymaps.lua)
-          -- Usar ]b y [b para moverse entre celdas
-
-          -- Quarto - Ejecución (pre-configurado en keymaps.lua)
-          -- Usar <localleader>r* para ejecutar código
-
-          -- Quarto - Previsualización (pre-configurado en keymaps.lua)
-          -- Usar <localleader>p* para previsualizar
-
-          -- Git - Gitsigns
-          h = { name = "+git_hunk" },
-          r = { name = "+git_reset" },
-
-          -- LSP - Language Server Protocol
-          n = { name = "+lsp" },
-
-          -- Excalidraw - Diagramas
-          e = {
-            name = "+excalidraw",
-            d = { "Open link under cursor" },
-            c = { "Create new scene" },
-            t = { "Create from template" },
-            f = { "Find saved scenes" },
-            l = { "List buffer links" },
-          },
-
-          -- Obsidian - Gestión de notas
-          o = {
-            name = "+obsidian",
-            n = { "New note" },
-            o = { "Search notes" },
-            s = { "Quick switch" },
-            t = { "Today's note" },
-            y = { "Yesterday's note" },
-            m = { "Tomorrow's note" },
-            b = { "Backlinks" },
-            l = { "Links in note" },
-            c = { "Follow link" },
-            i = { "Paste image" },
-            ta = { "Table of contents" },
-            tp = { "Insert template" },
-          },
-
-          -- Gentleman Guardian Angel - AI Code Review (Temporalmente deshabilitado)
-          a = {
-            name = "+ai_review (GGA)",
-            _ = "gg.plugin_not_loaded",
-          },
-        },
-
-        -- Comandos de Quarto (localleader)
-        ["<localleader>"] = {
-          r = {
-            name = "+run",
-            c = { "Run current cell" },
-            a = { "Run cell and above" },
-            A = { "Run all cells" },
-            l = { "Run current line" },
-          },
-          p = {
-            name = "+preview",
-            p = { "Quarto preview" },
-            s = { "Stop preview" },
-          },
-          q = {
-            name = "+quarto",
-            i = { "Inspect document" },
-            f = { "Format document" },
-          },
-        },
-
-        -- Navegación LSP
-        g = {
-          name = "+goto",
-          d = { "Go to definition" },
-          r = { "Go to references" },
-          i = { "Go to implementation" },
-          D = { "Go to type definition" },
-        },
+        ["<leader>"] = { name = "+leader", _ = "which_key_ignore" },
       },
-      config = function(_, opts)
-        local wk = require("which-key")
-        wk.setup(opts)
-      end,
+      plugins = {
+        spelling = { enabled = true },
+      },
     },
+    config = function(_, opts)
+      local wk = require("which-key")
+      wk.setup(opts)
+    end,
   },
 }
