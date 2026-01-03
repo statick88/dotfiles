@@ -4,10 +4,30 @@
 return {
   {
     "nvim-telescope/telescope.nvim",
-    tag = "0.1.8",                                   -- Versión estable para evitar breaking changes
     dependencies = { "nvim-lua/plenary.nvim" },       -- Dependencia requerida para funciones utilitarias
     config = function()
-      require("telescope").setup({})                   -- Configuración básica, se expandirá en keymaps.lua
+      local telescope = require("telescope")
+      telescope.setup({
+        defaults = {
+          path_display = { "smart" },
+          mappings = {
+            i = {
+              ["<C-j>"] = "move_selection_next",
+              ["<C-k>"] = "move_selection_previous",
+            },
+          },
+        },
+        pickers = {
+          find_files = {
+            hidden = true,
+          },
+        },
+      })
+      telescope.load_extension("fzf")
     end,
+  },
+  {
+    "nvim-telescope/telescope-fzf-native.nvim",
+    build = "make",
   },
 }

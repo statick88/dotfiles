@@ -1,10 +1,11 @@
 -- OpenCode.nvim: Arquitecto Asistente para Statick siguiendo principios de Clean Architecture
 -- Integración completa con filosofía Statick Programming
+-- Modelos configurados para usar Ollama local (deepseek-coder, gemma3)
 -- Basado en: Separación de Preocupaciones, Principios SOLID, TDD, Patrones de Diseño
 return {
   {
     "NickvanDyke/opencode.nvim",
-    enabled = false,
+    enabled = true,
     dependencies = {
       { "folke/snacks.nvim", opts = { input = { enabled = true } } },
       { "nvim-treesitter/nvim-treesitter" },
@@ -46,41 +47,42 @@ return {
           }
         },
 
+        -- Configuración de agentes con Google Gemini
         agents = {
           sisyphus = {
-            model = "anthropic/claude-opus-4-5",
+            model = "gemini-2.5-pro",
             role = "architectural_orchestrator",
             specialization = "task_delegation",
             expertise = "clean_architecture_principles",
             temperature = 0.7,
-            description = "Arquitecto principal para decisiones complejas"
+            description = "Arquitecto principal - Gemini 2.5 Pro para decisiones complejas"
           },
 
           oracle = {
-            model = "openai/gpt-5.2",
+            model = "gemini-2.5-pro",
             role = "clean_architecture_expert",
             specialization = "code_review_principles",
             expertise = "solid_principles_design_patterns",
             temperature = 0.3,
-            description = "Experto en Clean Architecture y principios SOLID"
+            description = "Experto en Clean Architecture - análisis de código y patrones"
           },
 
           librarian = {
-            model = "anthropic/claude-sonnet-4-5",
+            model = "gemini-2.5-flash",
             role = "documentation_specialist",
             specialization = "technical_documentation",
             expertise = "ieee_acm_standards",
             temperature = 0.5,
-            description = "Especialista en documentación IEEE/ACM y estándares técnicos"
+            description = "Especialista en documentación - Gemini 2.5 Flash"
           },
 
           frontend = {
-            model = "google/gemini-3-pro-high",
+            model = "gemini-2.5-flash",
             role = "ui_ux_developer",
             specialization = "statick_ui_patterns",
             expertise = "react_modern_patterns",
             temperature = 0.6,
-            description = "Especialista en UI/UX con patrones modernos"
+            description = "Especialista en UI/UX - Gemini 2.5 Flash"
           }
         },
 

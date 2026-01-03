@@ -118,10 +118,21 @@ return {
     vim.api.nvim_create_autocmd("FileType", {
       pattern = "lua,typescript,typescriptreact,javascript,javascriptreact,python,html,css,htmldjango,jinja2,dart",
       callback = function(event)
-        vim.lsp.start({
-          name = vim.bo.filetype,
-          cmd = vim.lsp.get_log_path(),
-        })
+        local server_map = {
+          lua = "lua_ls",
+          typescript = "ts_ls",
+          typescriptreact = "ts_ls",
+          javascript = "ts_ls",
+          javascriptreact = "ts_ls",
+          python = "pyright",
+          html = "html",
+          css = "cssls",
+          htmldjango = "html",
+          jinja2 = "html",
+          dart = "dartls",
+        }
+        local server = server_map[event.match] or vim.bo.filetype
+        vim.lsp.start({ name = server })
       end,
     })
   end,

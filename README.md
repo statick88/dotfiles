@@ -2,6 +2,16 @@
 
 Configuración personalizada de entorno de desarrollo optimizada para macOS con más de 8 años de experiencia profesional en desarrollo Fullstack y Educación Superior.
 
+**Estado Actual:**
+- ✅ Neovim: 0.11.5
+- ✅ Lazy.nvim: Todos los plugins actualizados
+- ✅ Lazy rocks: Desactivado (no usado)
+- ✅ LSP: Configuración optimizada SIN ERRORES NI WARNINGS
+- ✅ Tema: Catppuccin (moderno y suave)
+- ✅ Todos los plugins .bak migrados a .lua
+- ✅ Archivo model.md creado con reglas de desarrollo
+- ✅ Versión: v2.8 - Configuración 100% estable
+
 ---
 
 ## 🖥️ **Entorno del Sistema**
@@ -44,10 +54,11 @@ Configuración avanzada basada en principios de Clean Architecture y filosofía 
 -   🤖 **4 Agentes Especializados**: Sisyphus (orquestador), Oracle (Clean Architecture), Librarian (IEEE/ACM), Frontend (UI/UX)
 -   🏗️ **Clean Architecture Completa**: Separación de preocupaciones, SOLID, patrones de diseño
 -   🧪 **TDD y Testing de Comportamientos**: Red-Green-Refactor, pruebas contractuales
--   🎨 **Gentleman Matrix Theme**: Visual profesional con identidad Diego + Robot
--   👤 **Autoridad de Diego**: Control final con sistema de aprobación
+-   🎨 **Statick Matrix Theme**: Visual profesional con identidad Statick
+-   👤 **Autoridad de Statick**: Control final con sistema de aprobación
 -   📋 **Templates Académicos**: Technical Docs, Presentations, Educational Materials
--   🔄 **Workflow Profesional**: Robot analiza → Diego decide → Robot implementa
+-   🔄 **Workflow Profesional**: Robot analiza → Statick decide → Robot implementa
+-   ⚠️ **Estado**: Temporalmente desactivado por compatibilidad de API
 
 ### **Neovim Configuration**
 El componente principal y más completo de estos dotfiles es la configuración de **Neovim**.
@@ -83,6 +94,7 @@ nvim
 | **Asistente IA Arquitectónico** | OpenCode + Clean Architecture | ≥1.0.212 | IA con principios SOLID y Gentleman Programming |
 | **Terminal** | Kitty / Ghostty | Latest | Terminal moderna con GPU acceleration |
 | **Multiplexor** | Tmux | ≥3.2 | Gestión de sesiones y paneles |
+| **Docker UI** | Lazydocker | Latest | Interfaz TUI para Docker |
 | **Publicación** | Quarto | Latest | Documentos científicos y notebooks |
 | **Shell** | Zsh + Oh My Zsh | Latest | Entorno de línea de comandos |
 | **Monitor** | htop | Latest | Monitor de recursos del sistema |
@@ -103,21 +115,24 @@ nvim
 git clone git@github.com:statick88/dotfiles.git ~/.config
 
 # 2. Instalar herramientas principales con Homebrew
-brew install neovim tmux kitty htop quarto
+brew install neovim tmux kitty htop quarto lazydocker
 
-# 3. Instalar Quarto para documentos científicos
+# 3. Instalar Lazydocker (si no está incluido en brew)
+# curl https://raw.githubusercontent.com/jesseduffield/lazydocker/master/scripts/install_update_linux.sh | bash
+
+# 4. Instalar Quarto para documentos científicos
 # Usando cask para instalación GUI
 brew install --cask quarto
 
-# 4. Instalar OpenCode con Clean Architecture
+# 5. Instalar OpenCode con Clean Architecture
 # Instalar con soporte para desarrollo guiado por principios SOLID
 curl -fsSL https://opencode.ai/install.sh | bash
 
-# 5. Configurar API key de OpenCode (opcional)
+# 6. Configurar API key de OpenCode (opcional)
 export ANTHROPIC_API_KEY="tu-api-key-aquí"
 echo 'export ANTHROPIC_API_KEY="tu-api-key-aquí"' >> ~/.zshrc
 
-# 6. Configurar Zsh (si aplica)
+# 7. Configurar Zsh (si aplica)
 echo 'export EDITOR=nvim' >> ~/.zshrc
 source ~/.zshrc
 ```

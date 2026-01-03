@@ -32,58 +32,8 @@ keymap.set("n", "<leader>xX", "<cmd>Trouble diagnostics toggle filter.buf=0<cr>"
 keymap.set("n", "<leader>cs", "<cmd>Trouble symbols toggle focus=false<cr>", { desc = "Symbols (Trouble)" })
 keymap.set("n", "<leader>cl", "<cmd>Trouble lsp toggle focus=false win.position=right<cr>", { desc = "LSP Definitions / references / ... (Trouble)" })
 
--- OpenCode - Clean Architecture (plugin desactivado temporalmente)
--- keymap.set("n", "<leader>ca", function() require("opencode").clean_architecture_review() end, { desc = "Clean Architecture Review" })
--- keymap.set("n", "<leader>cs", function() require("opencode").separation_concerns_analysis() end, { desc = "Separation of Concerns Analysis" })
--- keymap.set("n", "<leader>cd", function() require("opencode").domain_independence_check() end, { desc = "Domain Independence Check" })
--- keymap.set("n", "<leader>ci", function() require("opencode").dependency_inversion_audit() end, { desc = "Dependency Inversion Audit" })
-
--- OpenCode - SOLID Principles (plugin desactivado temporalmente)
--- keymap.set("n", "<leader>spl", function() require("opencode").solid_principles_check() end, { desc = "SOLID Principles Check" })
--- keymap.set("n", "<leader>ssr", function() require("opencode").single_responsibility() end, { desc = "Single Responsibility Analysis" })
--- keymap.set("n", "<leader>soc", function() require("opencode").open_closed_check() end, { desc = "Open/Closed Principle" })
--- keymap.set("n", "<leader>sli", function() require("opencode").liskov_check() end, { desc = "Liskov Substitution" })
--- keymap.set("n", "<leader>sii", function() require("opencode").interface_segregation() end, { desc = "Interface Segregation" })
--- keymap.set("n", "<leader>sdi", function() require("opencode").dependency_inversion() end, { desc = "Dependency Inversion" })
-
--- OpenCode - Design Patterns (plugin desactivado temporalmente)
--- keymap.set("n", "<leader>pf", function() require("opencode").suggest_pattern("factory") end, { desc = "Suggest Factory Pattern" })
--- keymap.set("n", "<leader>pr", function() require("opencode").suggest_pattern("repository") end, { desc = "Suggest Repository Pattern" })
--- keymap.set("n", "<leader>po", function() require("opencode").suggest_pattern("observer") end, { desc = "Suggest Observer Pattern" })
--- keymap.set("n", "<leader>pst", function() require("opencode").suggest_pattern("strategy") end, { desc = "Suggest Strategy Pattern" })
--- keymap.set("n", "<leader>pa", function() require("opencode").suggest_pattern("adapter") end, { desc = "Suggest Adapter Pattern" })
-
--- OpenCode - Testing (plugin desactivado temporalmente)
--- keymap.set("n", "<leader>tb", function() require("opencode").behavior_test_setup() end, { desc = "Setup Behavior Tests" })
--- keymap.set("n", "<leader>tc", function() require("opencode").contract_test_generate() end, { desc = "Generate Contract Tests" })
--- keymap.set("n", "<leader>tu", function() require("opencode").use_case_testing() end, { desc = "Use Case Testing" })
--- keymap.set("n", "<leader>tcov", function() require("opencode").test_coverage_analysis() end, { desc = "Test Coverage Analysis" })
-
--- OpenCode - Architectural Decisions (plugin desactivado temporalmente)
--- keymap.set("n", "<leader>ad", function() require("opencode").statick_architectural_decision() end, { desc = "👤 Statick Architectural Decision" })
--- keymap.set("n", "<leader>al", function() require("opencode").log_statick_decision() end, { desc = "Log Architectural Decision" })
--- keymap.set("n", "<leader>ar", function() require("opencode").review_past_decisions() end, { desc = "Review Past Decisions" })
-
--- OpenCode - AI Agents (plugin desactivado temporalmente)
--- keymap.set("n", "<leader>as", function() require("opencode").ask_sisyphus_options() end, { desc = "Ask 🤖 Sisyphus for options" })
--- keymap.set("n", "<leader>ao", function() require("opencode").ask_oracle_advice() end, { desc = "Ask 🤖 Oracle for advice" })
--- keymap.set("n", "<leader>alb", function() require("opencode").ask_librarian_guidance() end, { desc = "Ask 🤖 Librarian for guidance" })
--- keymap.set("n", "<leader>af", function() require("opencode").ask_frontend_consultation() end, { desc = "Ask 🤖 Frontend for consultation" })
-
--- OpenCode - Code Quality (plugin desactivado temporalmente)
--- keymap.set("n", "<leader>qc", function() require("opencode").refactor_to_clean_code() end, { desc = "Refactor to Clean Code" })
--- keymap.set("n", "<leader>qn", function() require("opencode").improve_descriptive_names() end, { desc = "Improve Descriptive Names" })
--- keymap.set("n", "<leader>qm", function() require("opencode").make_immutable() end, { desc = "Make Code Immutable" })
-
--- OpenCode - Templates (plugin desactivado temporalmente)
--- keymap.set("n", "<leader>td", function() require("opencode").template_with_statick_approval("technical") end, { desc = "Technical Docs (awaiting 👤 Statick approval)" })
--- keymap.set("n", "<leader>tp", function() require("opencode").template_with_statick_approval("presentation") end, { desc = "Presentation (awaiting 👤 Statick approval)" })
--- keymap.set("n", "<leader>te", function() require("opencode").template_with_statick_approval("educational") end, { desc = "Educational (awaiting 👤 Statick approval)" })
-
--- OpenCode - UI (plugin desactivado temporalmente)
--- keymap.set("n", "<leader>osb", function() require("opencode").open_statick_sidebar() end, { desc = "Open 🤖↔👤 Statick Sidebar" })
--- keymap.set("n", "<leader>oh", function() require("opencode").show_decision_history() end, { desc = "Show 👤 Statick Decision History" })
--- keymap.set("n", "<leader>oc", function() require("opencode").request_code_quality_scan() end, { desc = "Request Code Quality Scan" })
+ -- OpenCode - Clean Architecture (plugin desactivado temporalmente)
+-- Nota: Usa lazy.nvim para cargar estos plugins solo cuando se usen
 
 -- Quarto - Navegación entre celdas (lazy loading)
 vim.api.nvim_create_autocmd("FileType", {
@@ -199,35 +149,4 @@ vim.api.nvim_create_autocmd("FileType", {
   end,
 })
 
--- nvim-cmp (autocompletado) - configurado en completions.lua
-
--- ============================================
--- Gentleman Guardian Angel (GGA) - AI Code Review
--- Nota: GGA requiere instalación externa: brew install gentleman-programming/tap/gga
--- Y el plugin de Neovim debe estar correctamente configurado en plugins/gga.lua
--- ============================================
-
--- Configuración de GGA comentada hasta que el plugin esté instalado
---[[
-local gga_ok, gga = pcall(require, "statick.plugins.gga")
-if gga_ok and gga and gga.setup then
-  gga.setup({
-    enabled = true,
-    auto_review_on_save = false,
-    prefix = "<leader>a",
-    provider = "opencode",
-    file_patterns = { "*.ts", "*.tsx", "*.js", "*.jsx", "*.py", "*.go", "*.lua", "*.rs" },
-    exclude_patterns = { "*.test.ts", "*.spec.ts", "*.test.js", "*.spec.js", "*.d.ts" },
-    rules_file = "AGENTS.md",
-    strict_mode = true,
-    enable_cache = true,
-    show_notification = true,
-    use_floating_window = true,
-  })
-  if gga.setup_keymaps then
-    gga.setup_keymaps()
-  end
-else
-  vim.notify("GGA plugin not fully configured. Install gga CLI and run :Lazy sync.", vim.log.levels.WARN)
-end
---]]
+ -- nvim-cmp (autocompletado) - configurado en completions.lua

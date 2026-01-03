@@ -9,8 +9,34 @@ return {
   -- Gitsigns - Indicadores visuales de cambios en el gutter
   {
     "lewis6991/gitsigns.nvim",
-    config = true,
-    -- Comandos útiles: ]c [c para navegar cambios
+    event = { "BufReadPre", "BufNewFile" },
+    opts = {
+      signs = {
+        add = { text = "+" },
+        change = { text = "~" },
+        delete = { text = "_" },
+        topdelete = { text = "‾" },
+        changedelete = { text = "~" },
+      },
+      on_attach = function(bufnr)
+        local gs = package.loaded.gitsigns
+        local function map(mode, l, r, opts)
+          opts = opts or {}
+          opts.buffer = bufnr
+          vim.keymap.set(mode, l, r, opts)
+        end
+        map("n", "]c", function()
+          if vim.wo.diff then return "]c" end
+          vim.schedule(function() gs.next_hunk() end)
+          return "<Ignore>"
+        end, { expr = true })
+        map("n", "[c", function()
+          if vim.wo.diff then return "[c" end
+          vim.schedule(function() gs.prev_hunk() end)
+          return "<Ignore>"
+        end, { expr = true })
+      end,
+    },
   },
 
   -- Lazygit - Interfaz TUI para Git
@@ -38,13 +64,6 @@ return {
     "sindrets/diffview.nvim",
     dependencies = { "nvim-lua/plenary.nvim" },
     event = "VeryLazy",
-    cmd = "Diffview",
-    keys = {
-      { "<leader>gvo", "<cmd>DiffviewOpen<cr>", desc = "Open diffview" },
-      { "<leader>gvc", "<cmd>DiffviewClose<cr>", desc = "Close diffview" },
-      { "<leader>gvf", "<cmd>DiffviewToggleFile<cr>", desc = "Toggle diff view file" },
-      { "<leader>gvk", "<cmd>DiffviewFocusFiles<cr>", desc = "Focus diff files" },
-    },
   },
 
   -- Git-conflict - Resolver conflictos Git
@@ -53,19 +72,9 @@ return {
     version = "*",
     event = "BufReadPost",
     opts = {
-      default_mappings = true,
+      default_mappings = false,
       disable_diagnostics = true,
     },
-  },
-
-  -- Blamer - Git blame inline
-  {
-    "APZelos/blamer.nvim",
-    event = "BufReadPost",
-    config = function()
-      vim.g.blamer_enabled = true
-      vim.g.blamer_date_format = "%Y-%m-%d %H:%M:%S"
-    end,
   },
 
   -- Dockerfile.vim - Syntax highlighting para Docker

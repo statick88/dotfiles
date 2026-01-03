@@ -198,9 +198,9 @@ gga config
 
 ```bash
 ollama list
-# NAME            ID              SIZE      MODIFIED     
-# gemma3:4b       a2af6cc3eb7f    3.3 GB    4 hours ago     
-# gpt-oss:20b     17052f91a42e    13 GB    14 hours ago    
+# NAME            ID              SIZE      MODIFIED
+# gemma3:4b       a2af6cc3eb7f    3.3 GB    4 hours ago
+# gpt-oss:20b     17052f91a42e    13 GB    14 hours ago
 ```
 
 ### Configuración de GGA en tu proyecto
@@ -308,24 +308,6 @@ git commit --no-verify -m "wip: emergency fix"
 git commit -n -m "hotfix"
 ```
 
-### Integración con Neovim (Práctica)
-
-```vim
-" En lua/statick/core/keymaps.lua
-" Revisar archivo actual con GGA
-vim.api.nvim_create_autocmd("FileType", {
-  pattern = "*",
-  callback = function()
-    vim.keymap.set("n", "<leader>ar", function()
-      local handle = io.popen("gga run --no-cache 2>&1")
-      local result = handle:read("*a")
-      handle:close()
-      vim.notify(result, vim.log.levels.INFO)
-    end, { desc = "GGA: Review current file" })
-  end,
-})
-```
-
 ---
 
 ## 📁 Estructura del Proyecto
@@ -337,15 +319,15 @@ vim.api.nvim_create_autocmd("FileType", {
 └── lua/
     └── statick/
         ├── core/
-        │   ├── options.lua     # Opciones de Neovim
-        │   └── keymaps.lua     # Atajos de teclado
+        │   ├── options.lua     # Opciones de Neovim (30 líneas)
+        │   └── keymaps.lua     # Atajos de teclado (152 líneas)
         └── plugins/
             ├── autopairs.lua   # Pares automáticos
-            ├── colorscheme.lua # Tema visual
-            ├── completions.lua # Autocompletado
+            ├── colorscheme.lua # Tema visual (Catppuccin)
+            ├── completions.lua # Autocompletado mejorado
             ├── excalidraw.lua  # Diagramas
             ├── flutter-dev.lua # Flutter (configuración mínima)
-            ├── git.lua         # Git integration (gitsigns, lazygit, diffview, conflict, blamer)
+            ├── git.lua         # Git integration (gitsigns, lazygit, diffview, conflict)
             ├── gga.lua         # GGA - AI Code Review
             ├── help.lua        # Which-key
             ├── lsp.lua         # LSP servers (lua_ls, ts_ls, pyright, html, cssls, tailwindcss, dartls)
@@ -355,7 +337,7 @@ vim.api.nvim_create_autocmd("FileType", {
             ├── productivity.lua
             ├── python-dev.lua
             ├── quarto.lua      # Quarto
-            ├── telescope.lua   # Búsqueda
+            ├── telescope.lua   # Búsqueda (latest + fzf-native)
             ├── testing.lua     # Testing
             ├── tmux.lua        # Tmux
             ├── treesitter.lua  # Syntax
@@ -369,7 +351,7 @@ vim.api.nvim_create_autocmd("FileType", {
 
 ### Requisitos Previos
 
-- **Neovim >= 0.9.0**
+- **Neovim >= 0.11.0**
 - **Git**
 - **Nerd Font** (para iconos)
 - **Tmux** (opcional, para integración)
@@ -572,6 +554,17 @@ gga run
 ---
 
 ## 🔄 Cambios Recientes
+
+### v3.2 - Enero 2026
+
+- ✅ **LSP corregido**: Bug crítico en línea 123 (vim.lsp.get_log_path() → mapping correcto)
+- ✅ **Completions mejoradas**: Agregado cmp-path, cmp-buffer, snippets predefinidos, Tab navigation
+- ✅ **Telescope actualizado**: tag "0.1.8" → latest + fzf-native para búsquedas ultra rápidas
+- ✅ **Git optimizado**: Eliminado Blamer.nvim (lento), configuración mejorada de gitsigns
+- ✅ **Options expandidas**: +13 opciones útiles (signcolumn, clipboard, scroll, etc.)
+- ✅ **Código comentado eliminado**: 82 líneas removidas (OpenCode, GGA desactivado)
+- ✅ **Git-conflict mejorado**: default_mappings=false con highlights personalizados
+- ✅ **Total plugins**: 62 plugins instalados, 20 configuraciones personalizadas
 
 ### v3.1 - Enero 2026
 
