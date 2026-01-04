@@ -1,4 +1,4 @@
--- nvim-autopairs: Cierra automáticamente paréntesis, llaves, comillas
+-- [UX] nvim-autopairs: Cierra automáticamente paréntesis, llaves, comillas
 -- Escribe '(' -> automáticamente se convierte en '()' con cursor dentro
 -- Funciona con todos los pares: (), [], {}, "", '', ``
 return {

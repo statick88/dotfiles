@@ -1,4 +1,4 @@
--- Plugins Git & Docker: Integración completa de control de versiones en Neovim
+-- [TOOLS] Plugins Git & Docker: Integración completa de control de versiones en Neovim
 -- Gitsigns: Muestra cambios en el gutter
 -- Lazygit: Interfaz TUI para Git
 -- Diffview: Visualización de diffs mejorada

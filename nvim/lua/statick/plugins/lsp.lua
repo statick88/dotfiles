@@ -1,4 +1,4 @@
--- LSP (Language Server Protocol): Convierte Neovim en un IDE completo
+-- [DEV] LSP (Language Server Protocol): Convierte Neovim en un IDE completo
 -- Proporciona inteligencia de lenguaje: autocompletado, diagnóstico, definiciones, etc.
 -- Comandos principales: gd (go to definition), gr (references), K (documentation)
 return {

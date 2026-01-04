@@ -1,4 +1,4 @@
--- Flutter Development - Plugins para Flutter y Dart
+-- [LANG] Flutter Development - Plugins para Flutter y Dart
 -- Solo se carga cuando se detectan archivos Dart o Flutter
 return {
   -- Flutter tools

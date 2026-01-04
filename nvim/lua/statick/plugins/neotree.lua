@@ -1,4 +1,4 @@
--- Neo-tree.nvim: Explorador de archivos visual similar al de VSCode
+-- [UX] Neo-tree.nvim: Explorador de archivos visual similar al de VSCode
 -- Permite navegar, crear, borrar, mover archivos con atajos de teclado
 -- Uso principal: <leader>pv para abrir/cerrar, 'a' para crear, 'd' para borrar
 return {

@@ -1,4 +1,4 @@
--- Treesitter: Resaltado de sintaxis avanzado basado en estructura del código
+-- [UX] Treesitter: Resaltado de sintaxis avanzado basado en estructura del código
 -- Entiende la diferencia entre función, variable, string, comentario, etc.
 -- Comandos útiles: :TSInstall <lang>, :TSInfo, :TSUpdate
 return {

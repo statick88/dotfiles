@@ -1,4 +1,4 @@
--- quarto-nvim: Plugin oficial de Quarto para Neovim
+-- [DOC] quarto-nvim: Plugin oficial de Quarto para Neovim
 -- Proporciona herramientas para trabajar con documentos Quarto (.qmd)
 -- Ejecución de celdas, navegación entre chunks, previsualización, etc.
 return {

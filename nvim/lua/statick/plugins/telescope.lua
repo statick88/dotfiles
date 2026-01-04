@@ -1,4 +1,4 @@
--- Telescope.nvim: Buscador fuzzy potente para encontrar archivos, texto y más
+-- [DEV] Telescope.nvim: Buscador fuzzy potente para encontrar archivos, texto y más
 -- Es como tener "Ctrl+Shift+F" de VSCode pero mucho más potente
 -- Uso principal: <leader>pf para buscar archivos, <leader>pg para buscar texto
 return {

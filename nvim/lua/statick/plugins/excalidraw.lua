@@ -1,4 +1,4 @@
--- excalidraw.nvim: Diagramas Excalidraw en archivos Markdown
+-- [DOC] excalidraw.nvim: Diagramas Excalidraw en archivos Markdown
 -- Plugin para gestionar diagramas Excalidraw directamente desde Neovim
 return {
   "marcocofano/excalidraw.nvim",

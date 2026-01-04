@@ -1,4 +1,4 @@
--- Obsidian.nvim: Integración completa con Obsidian para gestión de notas
+-- [DOC] Obsidian.nvim: Integración completa con Obsidian para gestión de notas
 -- Compatible con Obsidian app y standalone
 -- Funcionalidades: notas diarias, búsqueda, plantillas, links, backlinks, etc.
 return {

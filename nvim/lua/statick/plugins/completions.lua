@@ -1,4 +1,4 @@
--- nvim-cmp: Sistema de autocompletado inteligente para Neovim
+-- [DEV] nvim-cmp: Sistema de autocompletado inteligente para Neovim
 -- Sugiere palabras, funciones, variables mientras escribes (como IntelliSense)
 -- Uso principal: Ctrl+Space para activar, Tab/Enter para aceptar sugerencias
 return {

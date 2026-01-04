@@ -1,4 +1,4 @@
--- Productivity - Plugins para mejorar la eficiencia en desarrollo
+-- [UX] Productivity - Plugins para mejorar la eficiencia en desarrollo
 -- Solo se carga cuando se detecta un archivo relevante
 return {
   -- Flash.nvim - Navegación rápida con highlights

@@ -1,4 +1,4 @@
--- which-key.nvim: Guía completa de Neovim con descripciones detalladas de todos los plugins
+-- [UX] which-key.nvim: Guía completa de Neovim con descripciones detalladas de todos los plugins
 return {
   {
     "folke/which-key.nvim",
@@ -9,6 +9,7 @@ return {
       wk.add({
         mode = { "n", "i", "v" },
         ["<leader>"] = { name = "+leader", _ = "which_key_ignore" },
+        ["<leader>a"] = { name = "+android", icon = "📱 " },
         ["<leader>e"] = { name = "+explorer", icon = " " },
         ["<leader>f"] = { name = "+find", icon = " " },
         ["<leader>g"] = { name = "+git", icon = " " },
@@ -39,6 +40,18 @@ return {
         ["<leader>gq"] = { desc = "Close Diffview" },
         ["<leader>gf"] = { desc = "Toggle diff file" },
         ["<leader>gk"] = { desc = "Focus diff files" },
+        -- Flutter keybindings
+        ["<leader>F"] = { desc = "Run Flutter app" },
+        ["<leader>D"] = { desc = "List Flutter devices" },
+        ["<leader>Q"] = { desc = "Quit Flutter app" },
+        ["<leader>R"] = { desc = "Hot reload" },
+        ["<leader>H"] = { desc = "Hot restart" },
+        -- Android ADB WiFi keybindings
+        ["<leader>aw"] = { desc = "Connect Android via WiFi" },
+        ["<leader>ad"] = { desc = "List ADB devices" },
+        ["<leader>af"] = { desc = "Run Flutter on WiFi device" },
+        ["<leader>ar"] = { desc = "Reconnect ADB device" },
+        ["<leader>aq"] = { desc = "Disconnect ADB device" },
       }, { mode = "n" })
 
       return {

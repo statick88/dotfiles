@@ -86,6 +86,37 @@ utils.ft_keymaps_multiple({ "dart", "flutter" }, {
   ["<leader>H"] = { rhs = "<cmd>FlutterHotRestart<cr>", desc = "Hot restart" },
 })
 
+-- Android ADB WiFi Connection keymaps
+-- Reemplaza 192.168.1.100 con la IP de tu dispositivo
+keymap.set("n", "<leader>aw", function()
+  local ip = vim.fn.input("Enter device IP: ", "192.168.1.100")
+  if ip ~= "" then
+    vim.fn.system("adb connect " .. ip .. ":5555")
+    print("Conectando a " .. ip .. "...")
+    vim.defer_fn(function()
+      vim.fn.system("adb devices")
+    end, 2000)
+  end
+end, { desc = "Connect Android device via WiFi" })
+
+keymap.set("n", "<leader>ad", function()
+  vim.fn.system("adb devices")
+end, { desc = "List ADB devices" })
+
+keymap.set("n", "<leader>af", function()
+  vim.fn.system("cd /Users/statick/apps/proyectos/task/devstack_tasks && flutter run -d 192.168.1.100:5555")
+end, { desc = "Run Flutter on WiFi device" })
+
+keymap.set("n", "<leader>ar", function()
+  vim.fn.system("adb reconnect 192.168.1.100:5555")
+  print("Reconectando dispositivo...")
+end, { desc = "Reconnect ADB device" })
+
+keymap.set("n", "<leader>aq", function()
+  vim.fn.system("adb disconnect 192.168.1.100:5555")
+  print("Desconectando dispositivo...")
+end, { desc = "Disconnect ADB device" })
+
 -- Python Development keymaps
 utils.ft_keymaps("python", {
   ["<leader>vs"] = { rhs = "<cmd>VenvSelect<cr>", desc = "Select Virtual Env" },

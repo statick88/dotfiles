@@ -1,4 +1,4 @@
--- Catppuccin: Tema visual moderno y cuidado para Neovim
+-- [UX] Catppuccin: Tema visual moderno y cuidado para Neovim
 -- Esquema de colores suave pero con buen contraste para trabajar largas horas
 -- Variantes disponibles: catppuccin-latte, catppuccin-frappe, catppuccin-macchiato, catppuccin-mocha
 return {

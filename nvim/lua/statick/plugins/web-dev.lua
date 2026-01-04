@@ -1,4 +1,4 @@
--- Web Development - Plugins especializados para desarrollo web
+-- [LANG] Web Development - Plugins especializados para desarrollo web
 -- Solo se carga cuando se detectan archivos web (JS/TS/HTML/CSS)
 return {
   -- Emmet - Expansión rápida de HTML/CSS

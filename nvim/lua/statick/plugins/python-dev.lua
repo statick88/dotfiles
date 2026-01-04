@@ -1,4 +1,4 @@
--- Python Development - Plugins especializados para Python
+-- [LANG] Python Development - Plugins especializados para Python
 -- Django, FastAPI, Data Science - sin nvim-nio dependency
 return {
   -- Python LSP ya configurado en lsp.lua (pyright)

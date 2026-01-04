@@ -1,4 +1,4 @@
--- tmux.nvim: Integración perfecta entre Neovim y Tmux
+-- [TOOLS] tmux.nvim: Integración perfecta entre Neovim y Tmux
 -- Permite usar Ctrl+h/j/k/l para moverse entre splits de nvim y panes de tmux
 -- Elimina la necesidad de cambiar atajos entre Neovim y Tmux
 return {
