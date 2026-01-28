@@ -1,1137 +1,535 @@
-# 📚 Neovim Configuration: Statick - Tutorial Completo
+# 🚀 Neovim Configuration - LazyVim + OpenCode
 
-Configuración personalizada de Neovim desarrollada por **Statick Medardo Saavedra García**, profesional de TI con más de 8 años de experiencia en desarrollo **Fullstack** y **Educación Superior**.
+Una configuración completa de Neovim basada en LazyVim con integración de OpenCode.nvim para asistencia con IA. Optimizada para desarrollo moderno con soporte para múltiples lenguajes de programación y renderizado avanzado de Markdown.
 
----
+## 📋 Requisitos Previos
 
-## 📋 Tabla de Contenidos
+- [Neovim](https://neovim.io/) (versión 0.9.0 o superior)
+- [Git](https://git-scm.com/)
+- [Kitty](https://sw.kovidgoyal.net/kitty/) terminal (requerido para OpenCode.nvim)
+- [Node.js](https://nodejs.org/) (para algunos LSPs)
+- [Python](https://www.python.org/) (para formateadores y LSPs)
 
-- [🎯 Día 1: Fundamentos de Neovim](#día-1-fundamentos-de-neovim)
-- [🔍 Día 2: Búsqueda y Navegación](#día-2-búsqueda-y-navegación)
-- [💡 Día 3: LSP y Autocompletado](#día-3-lsp-y-autocompletado)
-- [🐙 Día 4: Git Integration](#día-4-git-integration)
-- [📝 Día 5: Gestión de Notas con Obsidian](#día-5-gestión-de-notas-con-obsidian)
-- [🎨 Día 6: Excalidraw - Diagramas](#día-6-excalidraw---diagramas)
-- [🔬 Día 7: Quarto - Documentos Científicos](#-día-7-quarto---documentos-científicos)
-- [🐦 Día 8: Flutter Development](#día-8-flutter-development)
-- [🐍 Día 9: Python Development](#día-9-python-development)
-- [🧪 Día 10: Testing](#día-10-testing)
-- [🏗️ Stack Tecnológico](#stack-tecnológico)
-- [📁 Estructura del Proyecto](#estructura-del-proyecto)
-- [🔧 Solución de Problemas](#solución-de-problemas)
+## 🛠️ Instalación
 
----
+1. **Clonar la configuración:**
+   ```bash
+   git clone https://github.com/tu-usuario/nvim-config ~/.config/nvim
+   ```
 
-## 🎯 Día 1: Fundamentos de Neovim
+2. **Eliminar configuración existente (si aplica):**
+   ```bash
+   rm -rf ~/.config/nvim
+   ```
 
-### 📖 Modos de Neovim
+3. **Iniciar Neovim:**
+   ```bash
+   nvim
+   ```
 
-Neovim tiene 4 modos principales que debes dominar:
+4. **Esperar a que Lazy.nvim instale los plugins automáticamente**
 
-| Modo | Tecla | Descripción | Cómo entrar |
-|------|-------|-------------|------------------------|
-| **Normal** | `Esc` | Navegar y ejecutar comandos | Presiona `Esc` desde cualquier modo |
-| **Insert** | `i` | Escribir texto | Presiona `i` desde modo Normal |
-| **Visual** | `v` | Seleccionar texto | Presiona `v` desde modo Normal |
-| **Command** | `:` | Ejecutar comandos | Presiona `:` desde modo Normal |
+## 🎯 Guía de Uso Básico de Neovim
 
-### ⌨️ Comandos Esenciales
+### 🎮 Navegación Fundamental (hjkl)
 
-| Comando | Acción | Ejemplo |
-|---------|--------|---------|-----------|
-| `:w` | Guardar | `:w` - Guarda el archivo actual |
-| `:q` | Salir | `:q` - Cierra Neovim |
-| `:wq` | Guardar y salir | `:wq` - Combina w + q |
-| `:q!` | Salir sin guardar | `:q!` - Cierra sin guardar cambios |
-| `u` | Deshacer | `u` - Deshace el último cambio |
-| `Ctrl+r` | Rehacer | `Ctrl+r` - Rehace el último deshacer |
+La navegación en Vim/Neovim usa las siguientes teclas - ¡es más eficiente que usar las flechas!
 
-### 🧭 Navegación Básica
+| Tecla | Movimiento | Descripción |
+|-------|------------|-------------|
+| `h` | ← | Izquierda |
+| `j` | ↓ | Abajo |
+| `k` | ↑ | Arriba |
+| `l` | → | Derecha |
 
-| Tecla | Acción | Atajo alternativo |
-|-------|--------|------------------|
-| `h/j/k/l` | Izquierda/Abajo/Arriba/Derecha | ←/↓/↑/→ |
-| `w` | Siguiente palabra | `e` |
-| `b` | Palabra anterior | `ge` |
-| `dd` | Borrar línea | `dd` (borra) + `yy` (copia) + `p` (pega) |
-| `0` | Inicio de línea | `^` |
-| `$` | Fin de línea | `G` |
-| `gg` | Inicio del archivo | `1` |
-| `G` | Fin del archivo | `:$` |
+**Movimientos Rápidos Adicionales:**
+| Comando | Acción |
+|---------|--------|
+| `w` | Saltar a siguiente palabra |
+| `b` | Saltar a palabra anterior |
+| `0` | Inicio de línea |
+| `$` | Fin de línea |
+| `gg` | Inicio del archivo |
+| `G` | Fin del archivo |
+| `Ctrl + u` | Subir media pantalla |
+| `Ctrl + d` | Bajar media pantalla |
 
-### 💡 Tu Primer Archivo
+**Modos Básicos:**
+- `ESC` - Volver al modo normal (¡usar frecuentemente!)
+- `i` - Entrar al modo inserción (escribir antes del cursor)
+- `a` - Entrar al modo inserción (escribir después del cursor)
+- `o` - Crear nueva línea abajo y entrar a modo inserción
+- `O` - Crear nueva línea arriba y entrar a modo inserción
+- `:` - Entrar al modo comandos
+- `v` - Modo visual (seleccionar texto caracter por caracter)
+- `V` - Modo visual línea (seleccionar líneas enteras)
+- `Ctrl + v` - Modo visual bloque (seleccionar columnas)
 
-```bash
-# 1. Crear un archivo de prueba
-nvim hola_mundo.py
+**Comandos Esenciales para Principiantes:**
+| Comando | Acción |
+|---------|--------|
+| `:w` | Guardar archivo |
+| `:q` | Salir |
+| `:wq` | Guardar y salir |
+| `:q!` | Salir sin guardar |
+| `:e nombre.txt` | Abrir archivo |
+| `:w nombre.txt` | Guardar como |
+| `:help tema` | Ayuda sobre un tema |
+| `u` | Deshacer |
+| `Ctrl + r` | Rehacer |
+| `dd` | Eliminar línea completa |
+| `yy` | Copiar línea completa |
+| `p` | Pegar después del cursor |
+| `P` | Pegar antes del cursor |
 
-# 2. Escribir código Python
-i
-def saludo():
-    print("¡Hola Mundo desde Neovim!")
-    return "Funcionando correctamente"
+## 🧩 Gestión de Ventanas
 
-# 3. Guardar y salir
-<Esc>:wq
-```
+### Movimiento entre Ventanas
 
-**Resultado esperado:**
-```python
-def saludo():
-    print("¡Hola Mundo desde Neovim!")
-    return "Funcionando correctamente"
-```
+| Atajo | Acción |
+|-------|--------|
+| `<C-h>` | Mover cursor a ventana izquierda |
+| `<C-j>` | Mover cursor a ventana inferior |
+| `<C-k>` | Mover cursor a ventana superior |
+| `<C-l>` | Mover cursor a ventana derecha |
 
-### 💡 Tip Rápido: Salir del modo Insert
+### Redimensionar Ventanas
 
-**Atajo personalizado:** `jj` (presiona `j` dos veces)
+| Atajo | Acción |
+|-------+--------|
+| `<C-left>` | Reducir ancho ventana |
+| `<C-right>` | Aumentar ancho ventana |
+| `<C-up>` | Aumentar alto ventana |
+| `<C-down>` | Reducir alto ventana |
 
-Configurado en: `lua/statick/core/keymaps.lua`
+### Creación de Ventanas
 
-```bash
-# Configurado en: lua/statick/core/keymaps.lua
-keymap.set("i", "jj", "<ESC>")
+| Comando | Acción |
+|---------|--------|
+| `:split` o `:sp` | Dividir ventana horizontalmente |
+| `:vsplit` o `:vs` | Dividir ventana verticalmente |
+| `<C-w>c` | Cerrar ventana actual |
+| `<C-w>o` | Cerrar todas excepto la actual |
 
-# En modo Insert:
-# Escribe "jj" → Vuelves al modo Normal automáticamente
-```
+### Navegación de Buffers (Pestañas)
 
----
+| Atajo | Acción |
+|-------|--------|
+| `<Tab>` | Siguiente buffer |
+| `<S-Tab>` | Buffer anterior |
+| `<leader>1` | Ir al buffer 1 |
+| `<leader>2` | Ir al buffer 2 |
+| `<leader>3` | Ir al buffer 3 |
+| `<leader>4` | Ir al buffer 4 |
+| `<leader>5` | Ir al buffer 5 |
 
-## 🔍 Día 2: Búsqueda y Navegación
+## 🤖 Integración con OpenCode.nvim
 
-### 🎯 Which-key.nvim - Tu menú de atajos
+OpenCode.nvim proporciona asistencia con IA directamente en Neovim.
 
-**¿Qué es `<leader>`?**
-- Es la tecla **Espacio** en esta configuración
-- Configurado en: `vim.g.mapleader = " " "`
+### Atajos Principales
 
-**Uso:**
-```bash
-# 1. Abrir Neovim
-nvim
+| Atajo | Acción | Descripción |
+|-------|--------|-------------|
+| `<leader>oa` | Ask | Preguntar a OpenCode con contexto actual |
+| `<leader>os` | Select | Seleccionar acción de OpenCode desde menú |
+| `<leader>ot` | Toggle | Alternar sesión de OpenCode |
+| `<leader>oe` | Explain | Explicar código seleccionado |
+| `<leader>of` | Fix | Corregir diagnósticos/errores |
+| `<leader>ov` | Review | Revisar código |
+| `<leader>od` | Document | Agregar documentación |
+| `<leader>op` | Test | Agregar pruebas |
+| `<leader>or` | Add range | Agregar rango al prompt |
+| `<leader>ol` | Add line | Agregar línea actual al prompt |
 
-# 2. Presionar Espacio (tu leader)
-# → Verás un menú organizado por categorías
+**Nota:** `<leader>` es la barra espaciadora (`<space>`) por defecto.
 
-# Ejemplo de menú que verás:
-# ╭─────────────────────────────────────────╮
-# │ +explorer        │
-# │ +find           │
-# │ +productivity    │
-# │ +git            │
-# │ +obsidian       │
-# │ +python         │
-# │ +flutter        │
-# │ +testing        │
-# │ +lsp            │
-# │ +excalidraw     │
-# │ +quarto         │
-# │ +web            │
-# │ +docker         │
-# ╰─────────────────────────────────────────╯
-```
+### Ejemplos de Uso
 
-**Explorando categorías:**
-```bash
-# 1. Presiona Espacio
-# 2. Navega con flechas (↑/↓/←/→)
-# 3. Selecciona una categoría
+1. **Explicar código:**
+   - Selecciona el código con `v` o `V`
+   - Presiona `<leader>oe`
+   - OpenCode explicará qué hace el código
 
-# Ejemplo de navegación:
-↓  # Siguiente categoría
-↑ # Categoría anterior
-```
+2. **Corregir errores:**
+   - Posiciona el cursor en una línea con errores
+   - Presiona `<leader>of`
+   - OpenCode sugerirá correcciones
 
-### 🔍 Telescope.nvim - Búsqueda Inteligente
+3. **Agregar pruebas:**
+   - Selecciona una función
+   - Presiona `<leader>op`
+   - OpenCode generará pruebas unitarias
 
-**Comandos principales:**
+4. **Preguntar sobre código:**
+   - Presiona `<leader>oa`
+   - Escribe tu pregunta sobre el código actual
 
-| Atajo | Descripción | Uso práctico |
-|-------|-------------|---------------|
-| `<leader>ff` | Buscar archivos | `nvim archivo.py` → `<leader>ff` → `archivo.py` → Enter` |
-| `<leader>fg` | Buscar texto | `nvim` → `<leader>fg` → `function` → Enter` → Navegar con `↓/↑` |
-| `<leader>fb` | Buscar buffers | Presiona `<leader>fb` → Selecciona archivo abierto |
-| `<leader>fh` | Buscar ayuda | Presiona `<leader>fh` → `help` → Enter` |
+## 🔍 Búsqueda y Navegación
 
-**Ejemplo práctico - Buscar una función:**
-```bash
-# 1. Abrir tu proyecto
-nvim ~/tu-proyecto
+### Telescope (Buscador Fuzzy)
 
-# 2. Buscar texto (<leader>fg)
-<leader>fg>
+| Atajo | Acción |
+|-------|--------|
+| `<leader>ff` | Buscar archivos |
+| `<leader>fg` | Buscar en contenido (live grep) |
+| `<leader>fb` | Buscar buffers |
+| `<leader>fh` | Buscar ayuda |
+| `<leader>fc` | Buscar comandos |
 
-# 3. Escribe el texto a buscar
-funcion
+### Flash Navegación Rápida
 
-# 4. Navegar con flechas
-↓ / ↑
+| Atajo | Acción |
+|-------|--------|
+| `s` | Saltar a cualquier caracter visible |
+| `S` | Saltar usando Treesitter (más inteligente) |
 
-# 5. Enter para abrir el archivo
-<Enter>
-```
+### Navegación LSP
 
-**Características útiles de Telescope:**
-- **Búsqueda fuzzy**: Escribe cualquier parte del nombre
-- **Previsualización**: Ve el contenido antes de abrir
-- **Filtros**: `Ctrl+f` para filtrar por tipo
-- **Preview**: `Ctrl+p` para ver preview con teclado
+| Atajo | Acción |
+|-------|--------|
+| `<leader>gd` | Ir a definición |
+| `<leader>gr` | Ir a referencias |
+| `<leader>gi` | Ir a implementación |
+| `<leader>k` | Mostrar documentación flotante |
+| `<leader>rn` | Renombrar símbolo |
+| `<leader>ca` | Acciones de código |
 
-### ⚡ Flash.nvim - Navegación Rápida
+## 📝 Edición Avanzada
 
-Flash te permite saltar a cualquier parte del archivo rápidamente.
+### Autocompletado
 
-| Atajo | Descripción | Uso |
-|-------|-------------|------|
-| `s` | Saltar a cualquier letra | Escribe la letra y presiona `s` para saltar |
-| `S` | Saltar a Treesitter | Escribe `S` para saltar a función/clase |
-
-**Uso práctico:**
-```bash
-# 1. Abrir un archivo grande
-nvim archivo_grande.py
-
-# 2. Buscar una palabra lejana
-s
-variable
-# 3. El cursor saltó a la primera ocurrencia
-# 4. Presiona Enter para confirmar
-```
-
----
-
-## 💡 Día 3: LSP y Autocompletado
-
-### 🌟 nvim-cmp - Autocompletado Inteligente
-
-**¿Qué es el autocompletado?**
-- Sugiere funciones, variables, tipos mientras escribes
-- Funciona como IntelliSense en VS Code
-- Aparece automáticamente mientras escribes
-
-**Fuentes de autocompletado:**
-```bash
-# nvim-cmp consulta estas fuentes en orden:
-
-nvim_lsp     # LSP (prioridad más alta)
-luasnip       # Snippets (fragmentos de código)
-path           # Rutas de archivos
-buffer         # Palabras del archivo actual
-
-# Ejemplo en Python:
-def mi_funcion():
-    return "hola"
-    │           ↑
-    │     nvim_lsp, luasnip, path, buffer
-```
-
-**Atajos de autocompletado:**
 | Tecla | Acción |
-|-------|--------|-----------|
-| `Tab` | Siguiente sugerencia | `Tab` → siguiente opción |
-| `Enter` | Aceptar sugerencia | `Enter` → confirmar |
-| `Ctrl+Space` | Forzar menú |
-
-**Ejemplo práctico:**
-```python
-# 1. Crear un archivo Python
-nvim test.py
-
-# 2. Escribir código
-import numpy as np
-
-# 3. El autocompletado sugiere numpy
-def procesar_datos(datos):
-    return datos
-```
-
-# 4. Presiona Tab para aceptar
-numpy
-# → Se inserta: import numpy as np
-```
-
-### 🤖 LSP (Language Server Protocol)
-
-**¿Qué es LSP?**
-- Proporciona inteligencia de lenguaje
-- Navegación a definiciones, referencias, documentación
-- Errores, warnings, code actions
-
-**Atajos principales:**
-| Atajo | Descripción | Uso |
-|-------|-------------|------|
-| `gd` | Ir a definición | Colócate sobre función y presiona `gd` |
-| `gr` | Buscar referencias | Colócate sobre función y presiona `gr` |
-| `K` | Ver documentación | Colócate y presiona `K` |
-| `]d` / `[d` | Siguiente/anterior error | Navega entre errores |
-| `<leader>rn` | Renombrar símbolo | Renombra variable/función |
-| `<leader>ca` | Code actions | `<leader>ca` → Ver acciones disponibles |
-| `<leader>rn` | `:lua vim.lsp.buf.rename()`
-
-**Ejemplo práctico completo:**
-```python
-# 1. Abrir un archivo Python con funciones
-nvim proyecto/main.py
-
-# 2. Ver definición de una función
-def funcion_antigua(nombre):
-    return nombre.upper()
-    # Colócate en funcion_antigua
-    # Presiona gd
-# → El cursor salta a la definición
-
-# 3. Ver documentación
-# Colócate en funcion_nueva y presiona K
-# → Verás la documentación
-
-# 4. Renombrar función
-# Colócate en funcion_nueva
-# Presiona <leader>rn
-# → Escribe nuevo nombre
-new_funcion<Enter>
-
-# 5. Code actions (arreglar problemas)
-# Presiona <leader>ca
-# → Verás opciones como:
-#   • Fix all: Resolver todos los errores
-#   • Organize imports: Organizar importaciones
-```
-
----
-
-## 🐙 Día 4: Git Integration
-
-### 📊 Gitsigns.nvim - Indicadores de Cambios
-
-**¿Qué son Gitsigns?**
-- Muestra cambios en el gutter (margen izquierdo)
-- Colores diferentes para cada tipo de cambio
-
-**Indicadores visuales:**
-```
-+ Línea agregada (verde)
-~ Línea modificada (amarillo)
-- Línea eliminada (rojo)
-_  Línea cambiada (azul)
-```
-
-**Atajos de Gitsigns:**
-| Atajo | Descripción |
-|-------|-------------|
-| `]c` | Siguiente hunk | `]c` - Hunk anterior |
-| `[c` | Hunk anterior | `[d` - Siguiente hunk |
-| `<leader>hs` | Stage hunk | Agregar hunk al commit |
-| `<leader>hr` | Reset hunk | Deshacer hunk |
-
-**Ejemplo práctico:**
-```bash
-# 1. Abrir archivo modificado
-nvim archivo_modificado.py
-
-# 2. Verás indicadores en el gutter:
-┌──────────────────────┐
-│ + def nueva_funcion │ ← Línea agregada
-│ ~     return False      │ ← Línea modificada
-└──────────────────────┘
-
-# 3. Navegar entre cambios
-]c → Siguiente hunk
-[c → Hunk anterior
-
-# 4. Stage un hunk
-# Presiona <leader>hs
-# → Se agrega a commit
-
-# 5. Reset hunk
-Presiona <leader>hr
-```
-
-### 🎯 LazyGit.nvim - Interfaz Git Visual
-
-**¿Qué es LazyGit?**
-- Interfaz TUI (Terminal UI) para Git
-- Similar a gitk pero más moderno
-
-**Comandos principales:**
-| Atajo | Descripción |
-|-------|-------------|
-| `s` | Status | `s` - Ver estado del repositorio |
-| `f` | Files | `f` - Ver archivos |
-| `c` | Commits | `c` - Ver commits |
-| `b` | Branches | `b` - Ver ramas |
-
-**Ejemplo práctico:**
-```bash
-# 1. Abrir LazyGit
-nvim
-<leader>gg
-
-# 2. Verás la interfaz visual:
-# ╔══════════════════════════════╗
-# │ 📁 Files    │ 📊 Status    │ 📝 Commits   │ 🔀 Branches  ╮
-# ╚════════════════════════════╝
-
-# 3. Navegar con teclado
-#   s: Status
-#   f: Files
-#   c: Commits
-#   b: Branches
-
-# 4. Usar comandos:
-#   s: Stage (agregar archivos)
-#   c: Commit (crear commit)
-#   ?: Ver ayuda
-```
-
-### 🔍 Diffview.nvim - Visualización de Diffs
-
-**¿Qué es Diffview?**
-- Visualiza cambios lado a lado
-- Comparar commits, branches, archivos
-
-**Atajos principales:**
-| Atajo | Descripción |
-|-------|-------------|
-| `<leader>gvo` | Abrir diffview | Abre comparación lateral |
-| `<leader>gvc` | Cerrar diffview | Cierra comparación |
-| `<leader>gq` | Abrir diffview (otra vez) |
-
-**Ejemplo práctico:**
-```bash
-# 1. Abrir diffview
-nvim
-<leader>gvo
-
-# 2. Verás comparación:
-# ┌──────────────────────┐
-# │ Archivo local     │ Archivo remoto   │
-# ├─────────────────┼───────────────────┤
-# │ - linea1         │   - linea1        │
-# │   linea2         │   + linea2        │
-# │   linea3         │   ~ linea3        │
-# └─────────────────┴───────────────────┘
-
-# 3. Navegar entre archivos
-#   Tab/I: Cambiar entre archivos
-#   [d: Cambio siguiente
-```
-
-### 🔀 Git-conflict.nvim - Resolver Conflictos
-
-**Atajos para resolver conflictos:**
-| Atajo | Descripción |
-|-------|-------------|
-| `<leader>gco` | Elegir "ours" | Tus cambios |
-| `<leader>gct` | Elegir "theirs" | Cambios del otro |
-| `<leader>gcb` | Elegir "both" | Ambas versiones |
-| `<leader>gc0` | Elegir "none" | Ninguna versión |
-
-**Ejemplo práctico:**
-```bash
-# 1. Archivo con conflicto:
-<<<<<<< HEAD
-def funcion_conflictiva():
-    return "version_local"
-=======
-    return "version_remota"
->>>>>>> branch-feature
-    pass
-```
-
-# 2. Colócate en el conflicto
-# 3. Presiona <leader>gco para elegir tu versión
-# Resultado:
-def funcion_conflictiva():
-    return "version_local"
-```
-
----
-
-## 📝 Día 5: Gestión de Notas con Obsidian
-
-### 📚 Obsidian.nvim - Tu Sistema de Notas
-
-**¿Qué es Obsidian?**
-- Sistema de gestión de notas potente
-- Compatible con Obsidian app y standalone
-- Links bidireccionales (backlinks)
-- Plantillas, tags, diarios
-- Búsqueda y cambio rápido entre notas
-
-### ⌨️ Atajos de Obsidian
-
-| Atajo | Descripción | Uso |
-|-------|-------------|------|
-| `<leader>on` | Nueva nota | `<leader>on` → Crea nueva nota en Obsidian |
-| `<leader>oo` | Buscar notas | `<leader>oo` → Abrir buscador de notas |
-| `<leader>os` | Cambiar nota | `<leader>os` → Abrir otra nota |
-| `<leader>ot` | Nota de hoy | `<leader>ot` → Abrir nota diaria actual |
-| `<leader>oy` | Nota de ayer | `<leader>oy` → Abrir nota de ayer |
-| `<leader>om` | Nota de mañana | `<leader>om` → Abrir nota de mañana |
-| `<leader>ob` | Ver backlinks | `<leader>ob` → Ver qué notas enlazan a esta |
-| `<leader>ol` | Ver links internos de esta |
-| `<leader>oc` | Seguir link | `<leader>oc` → Ir a la nota enlazada |
-| `<leader>oi` | Pegar imagen | `<leader>oi` → Pegar imagen desde clipboard |
-| `<leader>ota` | Tabla de contenidos | `<leader>ota` → Mostrar tabla de contenidos |
-| `<leader>otp` | Insertar plantilla | `<leader>otp` → Insertar plantilla guardada |
-
-### 📝 Tutorial Completo de Obsidian
-
-#### Paso 1: Crear tu primera nota
-
-```bash
-# 1. Abrir Neovim
-nvim
-
-# 2. Crear nueva nota
-<leader>on
-
-# 3. La nota se crea automáticamente
-# Nombre: ~/Documents/notes/<timestamp>.md
-
-# 4. Escribe contenido:
----
-# Esta es mi primera nota en Obsidian.
-
-## Características
-- [[Links bidireccionales]]
-- [[Tags]]
-```
-
-# 5. Guardar
-:wq
-```
-
-#### Paso 2: Crear nota diaria
-
-```bash
-# 1. Abrir nota de hoy
-<leader>ot
-
-# 2. Se crea automáticamente
-# Nombre: ~/Documents/notes/daily/2026-01-03.md
-
-# 3. Contenido ejemplo:
----
-date: 2026-01-03
-tags: [daily]
-
-## Tareas del día
-- [ ] Revisar código
-- [ ] Actualizar documentación
-- [ ] Revisar PRs
-```
-
-#### Paso 3: Crear links entre notas
-
-```bash
-# 1. Abrir nota A
-nvim ~/Documents/notes/proyecto_alpha.md
-
-# 2. Añadir link a nota B
-## Enlaces importantes
-
-- [[proyecto_beta]]: Proyecto relacionado
-
-# 3. Colócate en el link y presiona:
-<leader>oc
-
-# 4. Obsidian te lleva a la nota destino
-```
-
-#### Paso 4: Usar plantillas
-
-```bash
-# 1. Crear archivo de plantilla
-nvim ~/Documents/notes/templates/reunion.md
-
-# 2. Contenido:
----
-date: {{ date }}
-tags: [template]
-
-# 1. Reunión
-
-## Notas
-- [ ]
-- [ ]
-- [ ]
-
-# 3. Guardar
-:wq
-```
-
-# 4. Usar plantilla en nueva nota:
-<leader>otp
-
-# 5. Selecciona la plantilla
-# 6. Presiona Enter para insertar contenido
-```
-
-#### Paso 5: Búsqueda avanzada con Obsidian
-
-```bash
-# 1. Buscar notas (<leader>oo)
-nvim
-
-# 2. Escribir texto a buscar
-proyecto
-
-# 3. Navegar con flechas:
-↓ / ↑
-
-# 4. Enter para abrir
-<Enter>
-```
-
-**Características de búsqueda de Obsidian:**
-- **Búsqueda fuzzy**: Escribe cualquier parte del nombre
-- **Backlinks**: Ver qué notas enlazan a cada nota
-- **Cambio rápido**: Cambia entre notas con `<leader>os`
-
----
-
-## 🎨 Día 6: Excalidraw - Diagramas
-
-### 🎯 ¿Qué es Excalidraw?
-
-- **Diagramas en Markdown**
-- Integración directa con Excalidraw online
-- No necesitas salir de Neovim
-- Crea diagramas UML, arquitectura, wireframes
-
-### ⌨️ Atajos principales
-
-| Atajo | Descripción |
-|-------|-------------|
-| `<leader>ed` | Abrir link bajo cursor | `<leader>ed` → Abre en Excalidraw |
-| `<leader>ec` | Crear nueva escena | `<leader>ec` → Crea diagrama nuevo |
-| `<leader>et` | Crear desde plantilla | `<leader>et` → Crea desde plantilla |
-| `<leader>ef` | Buscar escenas guardadas | `<leader>ef` → Lista escenas |
-| `<leader>el` | Listar escenas en buffer | `<leader>el` → Links en el buffer |
-
-### 📊 Tutorial Completo de Excalidraw
-
-#### Paso 1: Crear diagrama de arquitectura
-
-```bash
-# 1. Abrir archivo Markdown
-nvim arquitectura.md
-
-# 2. Crear nueva escena
-<leader>ec
-
-# 3. Se abre Excalidraw en el navegador
-# 4. Crea tu diagrama
-
-# Ejemplo de arquitectura:
+|-------|--------|
+| `<C-Space>` | Activar autocompletado |
+| `<Tab>` | Seleccionar siguiente item / expandir snippet |
+| `<S-Tab>` | Seleccionar item anterior |
+| `<CR>` | Confirmar selección |
+
+### Formateo
+
+| Atajo | Acción |
+|-------|--------|
+| `<leader>fm` | Formatear buffer actual |
+
+### Diagnósticos
+
+| Atajo | Acción |
+|-------|--------|
+| `<leader>e` | Mostrar diagnósticos flotantes |
+| `[d` | Ir a diagnóstico anterior |
+| `]d` | Ir a siguiente diagnóstico |
+
+## 📝 Markdown - Herramientas Especializadas
+
+Esta configuración incluye herramientas avanzadas para edición de Markdown con renderizado automático y LSP inteligente.
+
+### 🎨 Renderizado Automático (render-markdown.nvim)
+
+**Características principales:**
+- ✅ **Auto-enable**: Se activa automáticamente en archivos `.md`
+- 🎯 **Renderizado en tiempo real**: Mejora visual de todos los elementos markdown
+- 📊 **Tablas formateadas**: Bordes y alineación automáticos
+- 🎨 **Encabezados personalizados**: Iconos y estilos diferenciados
+- 💻 **Bloques de código**: Con sintaxis highlighting y bordes
+- ✅ **Checkboxes interactivos**: Estilos visuales para tareas
+- 🔗 **Enlaces mejorados**: Iconos diferenciados para tipos de enlaces
+- 📝 **Listas con bullets**: Estilos personalizados para diferentes niveles
+
+**Atajos de control:**
+| Atajo | Acción |
+|-------|--------|
+| `<leader>mr` | Toggle render markdown |
+| `<leader>me` | Enable render markdown |
+| `<leader>md` | Disable render markdown |
+
+### 🌐 Previsualización en Navegador (markdown-preview.nvim)
+
+| Atajo | Acción |
+|-------|--------|
+| `<leader>mp` | Alternar previsualización markdown |
+| `<leader>ms` | Iniciar previsualización |
+| `<leader>mq` | Detener previsualización |
+
+**Características del Preview:**
+- 🔄 **Actualización automática** al guardar
+- 🎨 **Sintaxis completa** con highlighting
+- 📊 **Diagramas Mermaid** renderizados
+- 📊 **Tablas y listas** formateadas
+- 🔗 **Enlaces internos** funcionales
+- 🌙 **Tema oscuro/claro** automático
+
+### 🧠 LSP Inteligente para Markdown (Marksman)
+
+| Característica | Descripción |
+|--------------|-------------|
+| **Autocompletado** | Sugerencias inteligentes de enlaces, referencias |
+| **Diagnósticos** | Detección de enlaces rotos, referencias faltantes |
+| **Go to Definition** | Salta a archivos referenciados |
+| **Rename** | Renombra símbolos y referencias |
+| **Workspace** | Detecta archivos relacionados en el repositorio |
+
+### 🔧 Formateo y Linting
+
+| Herramienta | Función |
+|------------|---------|
+| **Prettier** | Formatea estilo, listas, tablas |
+| **markdownlint-cli2** | Detecta problemas de estilo y sintaxis |
+| **Autofix** | Corrige automáticamente problemas comunes |
+
+### 📊 Diagramas Mermaid
+
+Para incluir diagramas en tus archivos markdown:
+
+```markdown
+## 📊 Diagrama de Flujo
 
 ```mermaid
 graph TD
-    A[Frontend] --> B[API]
-    B[API] --> C[Database]
-    B[API] --> D[Auth Service]
-    A[Frontend] --> D[Auth Service]
+    A[Inicio] --> B{¿Hay cambios?}
+    B -->|Sí| C[Commit]
+    B -->|No| D[Continuar trabajando]
+    C --> E[Push a repositorio]
+    D --> A
+```
 ```
 
-# 5. Guardar en Excalidraw
-# 6. Presiona el botón de guardado
+### 🎯 Comandos Útiles para Markdown
+
+| Comando | Descripción |
+|---------|-------------|
+| `<leader>fm` | Formatear archivo actual |
+| `<leader>gd` | Ir a definición de enlace |
+| `<leader>rn` | Renombrar referencia |
+| `<leader>k` | Mostrar documentación flotante |
+| `[d` | Siguiente diagnóstico |
+| `]d` | Diagnóstico anterior |
+
+## 🎯 Integración con Git
+
+### Comandos Git Principales
+
+| Atajo | Acción |
+|-------|--------|
+| `<leader>gs` | Estado de Git |
+| `<leader>gc` | Hacer commit |
+| `<leader>gp` | Hacer push |
+| `<leader>gl` | Hacer pull |
+
+### Gitsigns (Navegación de Cambios)
+
+| Atajo | Acción |
+|-------+--------|
+| `]c` | Siguiente hunk de Git |
+| `[c` | Hunk anterior de Git |
+| `<leader>hs` | Stage del hunk actual |
+| `<leader>hr` | Reset del hunk actual |
+| `<leader>hp` | Previsualizar hunk |
+| `<leader>hb` | Blame de línea |
+| `<leader>hS` | Stage del buffer completo |
+| `<leader>hR` | Reset del buffer completo |
+
+## 🧪 Testing
+
+### Neotest
+
+| Atajo | Acción |
+|-------|--------|
+| `<leader>tt` | Ejecutar tests del archivo |
+| `<leader>tn` | Ejecutar test más cercano |
+| `<leader>ts` | Mostrar/ocultar resumen de tests |
+| `<leader>to` | Mostrar salida de test |
+
+## 🐛 Depuración (Debugging)
+
+### DAP (Debug Adapter Protocol)
+
+| Atajo | Acción |
+|-------+--------|
+| `<leader>db` | Toggle breakpoint |
+| `<leader>dc` | Continuar ejecución |
+| `<leader>do` | Step over |
+| `<leader>di` | Step into |
+| `<leader>dO` | Step out |
+| `<leader>dr` | Abrir REPL |
+| `<leader>dl` | Ejecutar última configuración |
+
+## 💾 Gestión de Sesiones
+
+### Persistence
+
+| Atajo | Acción |
+|-------+--------|
+| `<leader>qs` | Restaurar sesión |
+| `<leader>ql` | Restaurar última sesión |
+| `<leader>qd` | No guardar sesión actual |
+
+## 🖥️ Terminal
+
+### ToggleTerm
+
+| Atajo | Acción |
+|-------+--------|
+| `<C-\>` | Alternar terminal flotante |
+
+## 🎨 Temas y Personalización
+
+### Cambiar Tema
+
+Los temas están configurados en `lua/plugins/ui.lua`. Para cambiar el tema:
+
+1. Editar el archivo `lua/plugins/ui.lua`
+2. Cambiar el valor de `vim.cmd.colorscheme`
+3. Recargar Neovim con `:source %`
+
+### Configuración Adicional
+
+- **Opciones:** `lua/config/options.lua`
+- **Keymaps:** `lua/config/keymaps.lua`
+- **Autocomandos:** `lua/config/autocmds.lua`
+
+## 🔧 Mantenimiento
+
+### Actualizar Plugins
+
+```vim
+:Lazy update    # Actualizar todos los plugins
+:Lazy clean     # Limpiar plugins no usados
+:Lazy install   # Instalar plugins faltantes
 ```
 
-#### Paso 2: Insertar diagrama en Markdown
+### Formatear Código
 
 ```bash
-# 1. Vuelve a Neovim
-nvim
+# Formatear todos los archivos Lua
+stylua .
 
-# 2. Abrir tu archivo Markdown
-nvim arquitectura.md
-
-# 3. Colócate donde quieres el diagrama
-# 4. Presiona Enter para pegar diagrama:
-
-# Resultado:
-# [excalidraw:diagrama_id]()
+# Verificar formato sin cambiar
+stylua --check .
 ```
 
----
+### Verificar Configuración
 
-## 🔬 Día 7: Quarto - Documentos Científicos
-
-### 📚 ¿Qué es Quarto?
-
-- **Documentos científicos** con código ejecutable
-- Markdown + Python + Julia + más lenguajes
-- Publicación a HTML, PDF, beamer
-- Código ejecutable en celdas
-
-### ⌨️ Atajos de Quarto
-
-| Atajo | Descripción | Uso |
-|-------|-------------|------|
-| `]b` / `[b` | Navegar celdas | `]b` - Celda anterior | `]b` - Celda siguiente |
-| `<localleader>rc` | Ejecutar celda | `<localleader>rc` → `rc` → Ejecuta celda actual |
-| `<localleader>ra` | Ejecutar celda y anteriores | `<localleader>ra` → Ejecuta celdas desde aquí |
-| `<localleader>rA` | Ejecutar todas | `<localleader>rA` → Ejecuta todas las celdas |
-| `<localleader>rl` | Ejecutar línea actual | `<localleader>rl` → Ejecuta línea actual |
-| `<localleader>pp` | Previsualizar | `<localleader>pp` → Previsualiza HTML (renderizado) |
-| `<localleader>ps` | Detener previsualización | `<localleader>ps` → Detener previsualización |
-| `<localleader>qi` | Inspectar documento | `<localleader>qi` → Inspectar metadatos |
-| `<localleader>qf` | Formatear documento | `<localleader>qf` → Formatear documento |
-
-### 📊 Tutorial Completo de Quarto
-
-#### Paso 1: Crear tu primer documento Quarto
-
-```bash
-# 1. Crear archivo .qmd
-nvim analisis.qmd
-
-# 2. Escribe código Python en celdas
-```python
-import pandas as pd
-import matplotlib.pyplot as plt
-
-# 3. Cargar datos
-datos = pd.read_csv('datos.csv')
-
-# 4. Visualizar
-plt.plot(datos['x'], datos['y'])
-plt.show()
+```vim
+:checkhealth lazyvim    # Verificar salud de LazyVim
+:checkhealth           # Verificación general de Neovim
 ```
-
-#### Paso 2: Ejecutar celda actual
-
-```bash
-# 1. Colócate en una celda Python
-localleader>rc
-
-# 2. Ejecutar celda
-<localleader>rc
-
-# 3. Ver resultados en la ventana flotante
-```
-
-#### Paso 3: Ejecutar todas las celdas
-
-```bash
-# 1. Ejecutar todo el documento
-<localleader>rA
-
-# 2. Ver resultados en consola
-```
-
----
-
-## 🐦 Día 8: Flutter Development
-
-### 🎯 Plugins de Flutter
-
-| Herramienta | Descripción |
-|-------------|-------------|
-| [flutter-tools.nvim](https://github.com/nvim-flutter/flutter-tools.nvim) | Herramientas Flutter para Neovim |
-| [dartls](https://github.com/dart-lang/sdk/tree/main/pkg/analysis_server) | LSP para Dart |
-
-### ⌨️ Atajos de Flutter
-
-| Atajo | Descripción | Uso |
-|-------|-------------|------|
-| `<leader>F` | Run Flutter app | `<leader>F` → Ejecuta app de Flutter |
-| `<leader>D` | Devices | `<leader>D` → Lista dispositivos disponibles |
-| `<leader>Q` | Quit Flutter | `<leader>Q` → Detener aplicación |
-| `<leader>R` | Hot Reload | `<leader>R` → Recarga sin reiniciar |
-| `<leader>H` | Hot Restart | `<leader>H` → Reiniciar completamente |
-
-### 📱 Tutorial Completo de Flutter
-
-#### Paso 1: Abrir proyecto Flutter
-
-```bash
-# 1. Abrir proyecto Flutter
-nvim mi_app_flutter
-
-# 2. Verás que el LSP se activa
-# Dartls se inicia automáticamente
-
-# 3. Autocompletado de Flutter disponible
-```
-
-#### Paso 2: Ejecutar aplicación
-
-```bash
-# 1. Ejecutar
-<leader>F>
-
-# 2. Ver output en ventana flotante
-# Logs, errores, etc. en tiempo real
-```
-
-#### Paso 3: Hot Reload
-
-```bash
-# 1. Modifica el código
-def actualizar_estado():
-    return "estado_actualizado"
-    # Cambio rápido
-
-# 2. Hot reload
-<leader>R>
-
-# 3. La app se recarga sin reiniciar
-# Presiona <leader>H
-```
-
----
-
-## 🐍 Día 9: Python Development
-
-### 🐍 Plugins de Python
-
-| Herramienta | Descripción |
-|-------------|-------------|
-| [pyright](https://github.com/microsoft/pyright) | LSP para Python |
-| [venv-selector.nvim](https://github.com/linux-cultist/venv-selector.nvim) | Selector de entornos virtuales |
-| [neogen](https://github.com/danymas/neogen) | Generador de docstrings |
-
-### ⌨️ Atajos de Python
-
-| Atajo | Descripción | Uso |
-|-------|-------------|------|
-| `<leader>vs` | Seleccionar env virtual | `<leader>vs` → Abre selector de venvs |
-| `<leader>nd` | Generar docstring | `<leader>nd` → Genera docstring |
-
-### 📊 Tutorial Completo de Python
-
-#### Paso 1: Abrir archivo Python
-
-```bash
-# 1. Crear archivo Python
-nvim script.py
-
-# 2. El LSP Pyright se activa automáticamente
-# Autocompletado disponible
-```
-
-#### Paso 2: Autocompletado en acción
-
-```python
-# 1. Escribir código
-import numpy as np
-
-# 2. El autocompletado sugiere:
-#    ┌──────────────────────────────┐
-#    │ import pandas as pd         │
-#    │ import numpy as np          │
-#    │ import pytorch as pt          │
-#    └──────────────────────────────┘
-
-# 3. Presiona Tab o Enter
-# → Se acepta sugerencia
-```
-
-#### Paso 3: Generar docstring
-
-```python
-# 1. Colócate en una función
-def calcular_promedio(numeros: list[float]) -> float:
-    """
-    # Colócate aquí
-    """
-    return sum(numeros) / len(numeros)
-
-# 2. Generar docstring
-<leader>nd>
-
-# 3. Se genera automáticamente:
-"""
-Calcula el promedio de una lista de números.
-
-Args:
-    numeros: Lista de números para calcular
-
-Returns:
-    float: Promedio de los números
-"""
-```
-
-#### Paso 4: Seleccionar virtual environment
-
-```bash
-# 1. Abrir selector de venvs
-<leader>vs
-
-# 2. Verás lista:
-# ╔══════════════════════════════╗
-# │ venv1 (python3.9)       │
-# │ venv2 (python3.10)      │
-# │ venv3 (python3.11)      │
-# ╚════════════════════════════╝
-
-# 3. Navegar y seleccionar con Enter
-# 4. El LSP usa la versión del venv seleccionado
-```
-
----
-
-## 🧪 Día 10: Testing
-
-### 🧪 Plugins de Testing
-
-| Herramienta | Descripción |
-|-------------|-------------|
-| [vim-test](https://github.com/vim-test/vim-test) | Framework de testing |
-| [nvim-dap](https://github.com/mfussenegger/nvim-dap) | Debugger (integrado con testing) |
-
-### ⌨️ Atajos de Testing
-
-| Atajo | Descripción | Uso |
-|-------|-------------|------|
-| `<leader>tn` | Test nearest | `<leader>tn` → Test más cercano al cursor |
-| `<leader>tf` | Test file | `<leader>tf` → Test todo el archivo |
-| `<leader>ts` | Test suite | `<leader>ts` → Test suite completa |
-| `<leader>tv` | Test visit | `<leader>tv` → Ir al último test |
-| `<leader>tg` | Test go | `<leader>tg` → Ir a tests fallidos |
-
-### 📊 Tutorial Completo de Testing
-
-#### Paso 1: Ejecutar test más cercano
-
-```bash
-# 1. Abrir archivo de tests
-nvim tests/test_usuario.py
-
-# 2. Colócate en un test
-def test_usuario_valido():
-    usuario = Usuario("juan", "juan@email.com")
-    assert usuario.validar()
-
-# 3. Ejecutar test
-<leader>tn
-
-# 4. Ver resultado:
-# ✅ test_usuario_valido PASSED
-```
-
-#### Paso 2: Ejecutar todos los tests del archivo
-
-```bash
-# 1. Ejecutar suite completa
-<leader>ts
-
-# 2. Verás resumen:
-# ✅ 15 tests ejecutados
-# ✅ 13 PASSED
-# ✅ 2 FAILED
-```
-
-#### Paso 3: Ejecutar test visit
-
-```bash
-# 1. Ir al último test ejecutado
-<leader>tv
-
-# 2. Verás código que causó el fallo
-# ← Ir a la línea con error
-```
-
----
-
-## 🏗️ Stack Tecnológico
-
-### Core
-
-| Herramienta | Descripción |
-|-------------|-------------|
-| [Lazy.nvim](https://github.com/folke/lazy.nvim) | Gestor de plugins moderno |
-| [Which-key.nvim](https://github.com/folke/which-key.nvim) | Menú visual de atajos |
-| [Catppuccin](https://github.com/catppuccin/nvim) | Tema visual moderno |
-| [Treesitter](https://github.com/nvim-treesitter/nvim-treesitter) | Resaltado de sintaxis avanzado |
-
-### Desarrollo
-
-| Herramienta | Descripción |
-|-------------|-------------|
-| [Mason.nvim](https://github.com/williamboman/mason.nvim) | Gestión de servidores LSP |
-| [nvim-lspconfig](https://github.com/neovim/nvim-lspconfig) | Configuración LSP |
-| [nvim-cmp](https://github.com/hrsh7th/nvim-cmp) | Autocompletado |
-| [Telescope.nvim](https://github.com/nvim-telescope/telescope.nvim) | Búsqueda inteligente |
-
-### Herramientas Especializadas
-
-| Herramienta | Descripción |
-|-------------|-------------|
-| [Neo-tree.nvim](https://github.com/nvim-neo-tree/neo-tree.nvim) | Explorador de archivos |
-| [Quarto.nvim](https://github.com/quarto-dev/quarto-nvim) | Documentos científicos |
-| [Gitsigns.nvim](https://github.com/lewis6991/gitsigns.nvim) | Integración Git |
-| [Tmux.nvim](https://github.com/aserowy/tmux.nvim) | Integración tmux |
-| [Diffview.nvim](https://github.com/sindrets/diffview.nvim) | Visualización de diffs |
-| [Git-conflict.nvim](https://github.com/akinsho/git-conflict.nvim) | Resolver conflictos |
-| [Excalidraw.nvim](https://github.com/CRAG666/excalidraw.nvim) | Diagramas visuales |
-| [Obsidian.nvim](https://github.com/epwalsh/obsidian.nvim) | Gestión de notas (Obsidian) |
-| [Flash.nvim](https://github.com/folke/flash.nvim) | Navegación rápida |
-| [Trouble.nvim](https://github.com/folke/trouble.nvim) | Diagnósticos y errores |
-| [GGA](https://github.com/Gentleman-Programming/gentleman-guardian-angel) | Revisión de código con IA |
-
----
 
 ## 📁 Estructura del Proyecto
 
 ```
-~/.config/nvim/
-├── init.lua                    # Punto de entrada
-├── lazy-lock.json              # Versiones de plugins
-└── lua/
-    └── statick/
-        ├── core/
-        │   ├── options.lua     # Opciones de Neovim (30 líneas)
-        │   └── keymaps.lua     # Atajos de teclado (165 líneas)
-        └── plugins/
-            ├── autopairs.lua   # Pares automáticos
-            ├── colorscheme.lua # Tema visual (Catppuccin)
-            ├── completions.lua # Autocompletado mejorado
-            ├── excalidraw.lua  # Diagramas
-            ├── flutter-dev.lua # Flutter (configuración mínima)
-            ├── git.lua         # Git integration
-            ├── gga.lua         # GGA - AI Code Review
-            ├── help.lua        # Which-key
-            ├── lsp.lua         # LSP servers
-            ├── markdown.lua    # Markdown render
-            ├── neotree.lua     # Explorador
-            ├── obsidian.lua    # Gestión de notas Obsidian
-            ├── opencode.lua    # Clean Architecture (deshabilitado)
-            ├── productivity.lua
-            ├── python-dev.lua
-            ├── quarto.lua      # Quarto
-            ├── telescope.lua   # Búsqueda
-            ├── testing.lua     # Testing
-            ├── tmux.lua        # Tmux
-            ├── treesitter.lua  # Syntax
-            ├── web-dev.lua     # Web dev
-            └── ...             # Más plugins especializados
+lua/
+├── config/              # Configuración core
+│   ├── lazy.lua        # Bootstrap de Lazy.nvim
+│   ├── options.lua     # Opciones de Neovim
+│   ├── keymaps.lua     # Mapeos de teclas
+│   └── autocmds.lua    # Autocomandos
+└── plugins/            # Configuración de plugins
+    ├── desarrollo.lua  # LSP, formateo, git, testing, debugging
+    ├── productividad.lua # Telescope, flash, autocompletado, terminal
+    ├── ui.lua         # Temas e interfaz
+    ├── opencode.lua   # OpenCode.nvim
+    ├── render-markdown.lua # Renderizado avanzado de markdown
+    └── extras.lua     # Plugins adicionales
 ```
 
----
+### Herramientas Markdown Instaladas
 
-## 🔧 Solución de Problemas
+| Herramienta | Ubicación | Función |
+|------------|----------|---------|
+| **render-markdown.nvim** | Lazy plugin | Renderizado automático en Neovim |
+| **Marksman** | System + Mason | LSP inteligente para markdown |
+| **markdownlint-cli2** | Global npm | Linting y validación |
+| **Mermaid CLI** | Global npm | Diagramas y visualizaciones |
+| **markdown-preview.nvim** | Lazy plugin | Previsualización en navegador |
 
-### "No funciona autocompletado"
+## 🚀 Comenzando Rápido (Workflow Básico)
+
+### Para Archivos Markdown
+
+1. **Abrir archivo:** `nvim README.md`
+2. **Renderizado automático:** Ya está activo al abrir el archivo
+3. **Controlar renderizado:** `<leader>mr` para toggle si es necesario
+4. **Iniciar preview en navegador:** `<leader>mp`
+5. **Escribir con LSP:** Autocompletado de enlaces y referencias
+6. **Formatear:** `<leader>fm`
+7. **Verificar enlaces:** `<leader>gd` sobre enlaces, diagnósticos automáticos
+8. **Agregar diagramas:** Usa bloques Mermaid para visualizaciones
+
+### Para Código General
+
+1. **Abrir Neovim:** `nvim .` (abre directorio actual)
+2. **Navegar archivos:** Usa `<leader>ff` para buscar archivos
+3. **Moverse eficientemente:** Usa `hjkl` para navegación básica, `w/b` para saltos de palabras
+4. **Editar código:** Presiona `i` para escribir, `ESC` para salir
+5. **Dividir ventanas:** Usa `:sp` (horizontal) o `:vs` (vertical)
+6. **Mover entre ventanas:** Usa `Ctrl + h/j/k/l`
+7. **Explicar código con IA:** Selecciona con `v`, luego `<leader>oe`
+8. **Formatear código:** `<leader>fm`
+9. **Guardar y salir:** `:wq`
+
+## 💡 Tips para Principiantes
+
+### Para Markdown
+- **Renderizado automático:** Los archivos `.md` se renderizan automáticamente al abrirlos
+- **LSP Inteligente:** Escribe `[` y el LSP sugerirá enlaces del proyecto
+- **Preview en vivo:** Usa `<leader>mp` para ver cambios en tiempo real en el navegador
+- **Diagramas sencillos:** Usa Mermaid para gráficos sin herramientas externas
+- **Validación automática:** Los errores de sintaxis se detectan solos
+
+### Para Uso General
+- **Practica hjkl:** Al principio parece lento pero luego es mucho más rápido
+- **Usa ESC frecuentemente:** Vuelve siempre al modo normal antes de nuevos comandos
+- **Aprovecha la IA:** Usa `<leader>oe` para entender código que no conoces
+- **Divide tu espacio:** Trabaja con múltiples ventanas para ver código y tests
+- **Usa Telescope:** `<leader>ff` es tu mejor amigo para encontrar archivos
+- **Formatea automáticamente:** `<leader>fm` mantiene tu código limpio
+
+### Atajos Esenciales
+- **Markdown:** `<leader>mr` (toggle render), `<leader>mp` (preview navegador), `<leader>fm` (formato)
+- **Navegación:** `hjkl` (básico), `w/b` (palabras), `<leader>gd` (definición)
+- **Ventanas:** `Ctrl + h/j/k/l` (mover), `:sp/:vs` (dividir)
+- **Búsqueda:** `<leader>ff` (archivos), `<leader>fg` (contenido)
+
+## 🎊 Estado del Sistema
+
+### ✅ Verificación Completa (LazyHealth)
+
+Todos los componentes están verificados y funcionando correctamente:
+
+| Componente | Estado | Verificación |
+|-----------|--------|-------------|
+| **render-markdown.nvim** | ✅ OK | Renderizado automático activo |
+| **Marksman LSP** | ✅ OK | Markdown LSP funcional |
+| **markdownlint-cli2** | ✅ OK | Linting activo |
+| **Mermaid CLI** | ✅ OK | Diagramas listos |
+| **markdown-preview.nvim** | ✅ OK | Preview en tiempo real |
+| **Lazy.nvim** | ✅ OK | Gestión de plugins |
+| **Mason** | ✅ OK | Herramientas instaladas |
+| **Treesitter** | ✅ OK | Syntax highlighting |
+
+### 🎯 Herramientas Markdown Listas
 
 ```bash
-:LspInfo          # Verificar LSP activo
-:LspRestart       # Reiniciar LSP
+# Verificación de herramientas instaladas:
+✅ render-markdown.nvim: OK (auto-enable)
+✅ marksman: OK
+✅ markdownlint-cli2: OK  
+✅ mmdc: OK
+✅ Configuración: Cargada
+✅ Sistema: Listo para desarrollo markdown avanzado
 ```
 
-### "No se ven los colores"
+## 🤝 Contribución
 
-```bash
-:TSInstallInfo    # Ver parsers instalados
-:TSInstall python # Instalar parser de Python
-```
+Esta configuración está basada en:
 
-### "Which-key no aparece"
+- [LazyVim](https://github.com/LazyVim/LazyVim) - Configuración base
+- [OpenCode.nvim](https://github.com/NickvanDyke/opencode.nvim) - Integración con IA
+- [render-markdown.nvim](https://github.com/MeanderingProgrammer/render-markdown.nvim) - Renderizado avanzado de Markdown
+- [Marksman](https://github.com/artempyanykh/marksman) - LSP para Markdown
+- [markdown-preview.nvim](https://github.com/iamcco/markdown-preview.nvim) - Previsualizador
 
-```bash
-:Lazy             # Verificar instalación
-# Presionar <leader> lentamente
-```
+## 📄 Licencia
 
-### "Tmux navigation no funciona"
-
-```bash
-# Verificar que estás en tmux
-tmux ls
-
-# Verificar plugin cargado
-:checkhealth tmux
-```
-
-### Error de LSP
-
-```bash
-# Verificar servidores instalados
-:Mason
-
-# Instalar servidor faltante
-:LspInstall <nombre>
-```
-
-### GGA no funciona
-
-```bash
-# Verificar instalación
-which gga
-gga version
-
-# Verificar proveedor
-gga config
-
-# Probar manualmente
-gga run
-```
-
----
-
-## 🔄 Cambios Recientes
-
-### v3.3 - Enero 2026
-
-- ✅ **Tutorial README reescrito**: README transformado en guía didáctica completa paso a paso (10 días)
-- ✅ **help.lua mejorado**: Sistema de ayuda contextual con Which-key
-  - Descripciones detalladas para todos los comandos principales
-  - Iconos visuales para cada categoría (explorer, find, git, obsidian, etc.)
-  - Configuración mejorada del popup (borde redondeado, winblend, padding)
-  - Mapeo de atajos principales: Telescope, LSP, Trouble, Git
-  - Notificación de carga del sistema de ayuda
-- ✅ **Obsidian.nvim agregado**: Gestión completa de notas
-  - Notas diarias (today, yesterday, tomorrow)
-  - Búsqueda y cambio rápido entre notas (Telescope integration)
-  - Plantillas y backlinks
-  - Links inteligentes (wiki y markdown)
-  - Tabla de contenidos
-  - 11 atajos dedicados (on, oo, os, ot, oy, om, ob, ol, oc, oi, ota, otp)
-
-### v3.2 - Enero 2026
-
-- ✅ **Obsidian.nvim agregado**: Gestión completa de notas
-  - Notas diarias (today, yesterday, tomorrow)
-  - Búsqueda y cambio rápido entre notas (Telescope integration)
-  - Plantillas y backlinks
-  - Links inteligentes (wiki y markdown)
-  - Tabla de contenidos
-- Compatibilidad completa con Markdown
-- ✅ **Keymaps agregados**: 11 atajos nuevos para Obsidian
-- ✅ **Lazy loading**: Obsidian se activa solo en archivos markdown
-- ✅ **Total plugins**: 62 plugins + obsidian.nvim
-
-### v3.1 - Enero 2026
-
-- ✅ **LSP corregido**: Bug crítico en línea 123 (vim.lsp.get_log_path() → mapping correcto)
-- ✅ **Completions mejoradas**: Agregado cmp-path, cmp-buffer, snippets predefinidos, Tab navigation
-- ✅ **Telescope actualizado**: tag "0.1.8" → latest + fzf-native para búsquedas ultra rápidas
-- ✅ **Git optimizado**: Eliminado Blamer.nvim (lento), configuración mejorada de gitsigns
-- ✅ **Options expandidas**: +13 opciones útiles (signcolumn, clipboard, scroll, etc.)
-- ✅ **Código comentado eliminado**: 82 líneas removidas (OpenCode, GGA desactivado)
-- ✅ **Git-conflict mejorado**: default_mappings=false con highlights personalizados
-
-### v3.0 - Enero 2026
-
-- ✅ **Total plugins**: 52 plugins instalados, 20 configuraciones personalizadas
-
----
-
-## 📚 Recursos
-
-- [Documentación Neovim](https://neovim.io/doc/)
-- [Vimtutor](https://tutor.dev/) - Tutorial interactivo
-- [Lazy.nvim](https://github.com/folke/lazy.nvim)
-- [Telescope](https://github.com/nvim-telescope/telescope.nvim)
-- [Quarto](https://quarto.org/)
-- [Obsidian](https://github.com/epwalsh/obsidian.nvim)
-- [Excalidraw](https://github.com/CRAG666/excalidraw.nvim)
-- [GGA Repo](https://github.com/Gentleman-Programming/gentleman-guardian-angel)
-- [GGA Documentación](https://github.com/Gentleman-Programming/gentleman-guardian-angel?tab=readme-ov-file#-providers)
-
----
-
-**Statick Medardo Saavedra García** - 2026
+MIT License - Siéntete libre de usar, modificar y distribuir esta configuración.
