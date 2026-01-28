@@ -217,6 +217,7 @@ Esta configuración incluye herramientas avanzadas para edición de Markdown:
 ## 📚 **Documentación por Componente**
 
 - 🎯 **[Configuración de Neovim](./nvim/NEOVIM_CONFIGURATION.md)** - Documentación completa y guías
+- 📸 **[Snapshot de Configuración](./nvim/CONFIGURATION_SNAPSHOT.md)** - Vista detallada del estado actual
 - 🤖 **[Configuración de OpenCode](./opencode/)** - Asistente IA con principios SOLID
 - 🐱 **[Configuración de Kitty](./kitty/)** - Terminal moderna y eficiente
 - 🪟 **[Configuración de Tmux](./tmux/)** - Multiplexor de terminal potente

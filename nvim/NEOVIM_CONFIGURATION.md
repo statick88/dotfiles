@@ -429,8 +429,10 @@ lua/
     ├── productividad.lua # Telescope, flash, autocompletado, terminal
     ├── ui.lua         # Temas e interfaz
     ├── opencode.lua   # OpenCode.nvim
-    ├── render-markdown.lua # Renderizado avanzado de markdown
-    └── extras.lua     # Plugins adicionales
+    └── render-markdown.lua # Renderizado avanzado de markdown
+```
+
+📸 **Ver snapshot actual**: [CONFIGURATION_SNAPSHOT.md](./CONFIGURATION_SNAPSHOT.md) - Vista detallada del estado actual
 ```
 
 ### Herramientas Markdown Instaladas
