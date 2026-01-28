@@ -3,14 +3,12 @@
 Configuración personalizada de entorno de desarrollo optimizada para macOS con más de 8 años de experiencia profesional en desarrollo Fullstack y Educación Superior.
 
 **Estado Actual:**
-- ✅ Neovim: 0.11.5
-- ✅ Lazy.nvim: Todos los plugins actualizados
-- ✅ Lazy rocks: Desactivado (no usado)
+- ✅ Neovim: 0.11.5 con LazyVim v4.0 - Clean Architecture
+- ✅ OpenCode.nvim: Integración completa con IA
 - ✅ LSP: Configuración optimizada SIN ERRORES NI WARNINGS
 - ✅ Tema: Catppuccin (moderno y suave)
-- ✅ Todos los plugins .bak migrados a .lua
-- ✅ Archivo model.md creado con reglas de desarrollo
-- ✅ Versión: v2.8 - Configuración 100% estable
+- ✅ Arquitectura: Migrada a LazyVim nativo
+- ✅ Versión: v4.0 - Configuración 100% estable
 
 ---
 
@@ -28,61 +26,67 @@ Este repositorio contiene configuraciones optimizadas específicamente para macO
 
 ```
 ~/.config/
-├── README.md              # Este archivo - descripción general del proyecto
-├── nvim/                 # 🎯 Configuración completa de Neovim
-│   ├── Readme.md         # 📖 Documentación detallada para principiantes
-│   ├── init.lua          # ⚙️ Punto de entrada principal
-│   └── lua/             # 📁 Configuración modular de plugins
-├── opencode/             # 🤖 Configuración de OpenCode AI Assistant
-│   ├── README.md         # 📖 Documentación específica de OpenCode
-│   ├── package.json      # 📦 Dependencias y plugins
-│   └── node_modules/    # 📁 Módulos instalados
-├── kitty/                # 🐱 Configuración del terminal Kitty
-├── ghostty/              # 👻 Configuración del terminal Ghostty  
-├── htop/                # 📊 Configuración del monitor de recursos
-└── tmux/                # 🪟 Configuración del multiplexor de terminal
+├── README.md                    # 📖 Este archivo - descripción general del proyecto
+├── AGENTS.md                     # 🤖 Guía para agentes de IA y desarrollo
+├── model.md                      # 🏗️ Principios de desarrollo (Clean Architecture, SOLID)
+├── nvim/                         # 🎯 Configuración completa de Neovim
+│   ├── NEOVIM_CONFIGURATION.md   # 📖 Documentación detallada de Neovim
+│   ├── AGENTS.md                 # 🤖 Guía específica para agentes en Neovim
+│   ├── init.lua                  # ⚙️ Punto de entrada principal
+│   ├── lua/                      # 📁 Configuración modular
+│   │   ├── config/               # Configuración core
+│   │   │   ├── lazy.lua          # Bootstrap de Lazy.nvim
+│   │   │   ├── options.lua       # Opciones de Neovim
+│   │   │   ├── keymaps.lua       # Mapeos de teclas
+│   │   │   └── autocmds.lua      # Autocomandos
+│   │   └── plugins/              # Configuración de plugins
+│   │       ├── desarrollo.lua    # LSP, formateo, git, testing
+│   │       ├── productividad.lua # Telescope, flash, completion
+│   │       ├── ui.lua            # Temas e interfaz
+│   │       ├── opencode.lua      # OpenCode.nvim
+│   │       └── render-markdown.lua # Markdown avanzado
+├── opencode/                     # 🤖 Configuración de OpenCode AI Assistant
+│   ├── package.json              # 📦 Dependencias y plugins
+│   └── node_modules/             # 📁 Módulos instalados
+├── kitty/                        # 🐱 Configuración del terminal Kitty
+├── htop/                         # 📊 Configuración del monitor de recursos
+├── karabiner/                    # ⌨️ Configuración de teclado personalizado
+└── tmux/                         # 🪟 Configuración del multiplexor de terminal
 ```
 
 ---
 
-## 🎯 **Subproyectos Principales**
+## 🎯 **Componentes Principales**
+
+### **🎯 Neovim Configuration - El Componente Principal**
+
+La configuración de **Neovim** es el corazón de estos dotfiles, basada en LazyVim con integración completa de OpenCode.nvim.
+
+**📋 Características Principales:**
+- 🔍 **Telescope.nvim** - Búsqueda fuzzy potente
+- 🌳 **Treesitter** - Resaltado sintáctico avanzado
+- 🤖 **OpenCode.nvim** - Asistente de IA con Clean Architecture
+- 🪟 **Tmux.nvim** - Integración seamless con terminal
+- 🔧 **LSP completo** - Soporte para múltiples lenguajes
+- 📝 **Git integrado** - Control de versiones desde editor
+- 🎨 **Markdown avanzado** - Renderizado automático y preview
+- 🧪 **Testing integrado** - Neotest con múltiples frameworks
+
+**📖 Documentación Completa:**
+→ [nvim/NEOVIM_CONFIGURATION.md](./nvim/NEOVIM_CONFIGURATION.md) - Guía completa para principiantes y uso avanzado
 
 ### **🤖 OpenCode AI Assistant - Clean Architecture**
+
 Configuración avanzada basada en principios de Clean Architecture y filosofía Gentleman Programming:
 
 **📋 Características Principales:**
--   🤖 **4 Agentes Especializados**: Sisyphus (orquestador), Oracle (Clean Architecture), Librarian (IEEE/ACM), Frontend (UI/UX)
--   🏗️ **Clean Architecture Completa**: Separación de preocupaciones, SOLID, patrones de diseño
--   🧪 **TDD y Testing de Comportamientos**: Red-Green-Refactor, pruebas contractuales
--   🎨 **Statick Matrix Theme**: Visual profesional con identidad Statick
--   👤 **Autoridad de Statick**: Control final con sistema de aprobación
--   📋 **Templates Académicos**: Technical Docs, Presentations, Educational Materials
--   🔄 **Workflow Profesional**: Robot analiza → Statick decide → Robot implementa
--   ⚠️ **Estado**: Temporalmente desactivado por compatibilidad de API
-
-### **Neovim Configuration**
-El componente principal y más completo de estos dotfiles es la configuración de **Neovim**.
-**📋 Características Principales:**
-
--   🔍 **Telescope.nvim** - Búsqueda fuzzy potente
--   🌳 **Treesitter** - Resaltado sintáctico avanzado
--   🔬 **Quarto.nvim** - Integración para documentos científicos
--   🤖 **OpenCode.nvim** - Asistente de IA con Clean Architecture
--   🪟 **Tmux.nvim** - Integración seamless con terminal
--   🔧 **LSP completo** - Soporte para múltiples lenguajes
--   📝 **Git integrado** - Control de versiones desde editor
-
-**📖 Documentación Completa:**
-→ [nvim/Readme.md](./nvim/Readme.md) - Guía completa para principiantes y uso avanzado
-
-**🚀 Inicio Rápido:**
-```bash
-# Clonar configuración de Neovim
-git clone https://github.com/statick88/dotfiles.git ~/.config/nvim
-
-# Iniciar Neovim (instalación automática de plugins)
-nvim
-```
+- 🤖 **4 Agentes Especializados**: Sisyphus (orquestador), Oracle (Clean Architecture), Librarian (IEEE/ACM), Frontend (UI/UX)
+- 🏗️ **Clean Architecture Completa**: Separación de preocupaciones, SOLID, patrones de diseño
+- 🧪 **TDD y Testing de Comportamientos**: Red-Green-Refactor, pruebas contractuales
+- 🎨 **Statick Matrix Theme**: Visual profesional con identidad Statick
+- 👤 **Autoridad de Statick**: Control final con sistema de aprobación
+- 📋 **Templates Académicos**: Technical Docs, Presentations, Educational Materials
+- 🔄 **Workflow Profesional**: Robot analiza → Statick decide → Robot implementa
 
 ---
 
@@ -91,7 +95,7 @@ nvim
 | Componente | Herramienta | Versión Recomendada | Uso Principal |
 |---|---|---|---|
 | **Editor** | Neovim | ≥0.9.0 | Entorno de desarrollo principal |
-| **Asistente IA Arquitectónico** | OpenCode + Clean Architecture | ≥1.0.212 | IA con principios SOLID y Gentleman Programming |
+| **Asistente IA** | OpenCode + Clean Architecture | ≥1.0.212 | IA con principios SOLID y Gentleman Programming |
 | **Terminal** | Kitty / Ghostty | Latest | Terminal moderna con GPU acceleration |
 | **Multiplexor** | Tmux | ≥3.2 | Gestión de sesiones y paneles |
 | **Docker UI** | Lazydocker | Latest | Interfaz TUI para Docker |
@@ -117,42 +121,110 @@ git clone git@github.com:statick88/dotfiles.git ~/.config
 # 2. Instalar herramientas principales con Homebrew
 brew install neovim tmux kitty htop quarto lazydocker
 
-# 3. Instalar Lazydocker (si no está incluido en brew)
-# curl https://raw.githubusercontent.com/jesseduffield/lazydocker/master/scripts/install_update_linux.sh | bash
-
-# 4. Instalar Quarto para documentos científicos
-# Usando cask para instalación GUI
-brew install --cask quarto
-
-# 5. Instalar OpenCode con Clean Architecture
-# Instalar con soporte para desarrollo guiado por principios SOLID
+# 3. Instalar OpenCode con Clean Architecture
 curl -fsSL https://opencode.ai/install.sh | bash
 
-# 6. Configurar API key de OpenCode (opcional)
+# 4. Configurar API key de OpenCode (opcional)
 export ANTHROPIC_API_KEY="tu-api-key-aquí"
 echo 'export ANTHROPIC_API_KEY="tu-api-key-aquí"' >> ~/.zshrc
 
-# 7. Configurar Zsh (si aplica)
+# 5. Configurar Zsh
 echo 'export EDITOR=nvim' >> ~/.zshrc
 source ~/.zshrc
+
+# 6. Iniciar Neovim (instalación automática de plugins)
+nvim
 ```
+
+---
+
+## 🎮 **Guía Rápida de Neovim**
+
+### **Navegación Esencial**
+| Tecla | Movimiento | Descripción |
+|-------|------------|-------------|
+| `h` | ← | Izquierda |
+| `j` | ↓ | Abajo |
+| `k` | ↑ | Arriba |
+| `l` | → | Derecha |
+| `w` | → | Siguiente palabra |
+| `b` | ← | Palabra anterior |
+
+### **Comandos Fundamentales**
+| Comando | Acción |
+|---------|--------|
+| `:w` | Guardar archivo |
+| `:q` | Salir |
+| `:wq` | Guardar y salir |
+| `i` | Modo inserción |
+| `ESC` | Modo normal |
+| `dd` | Eliminar línea |
+| `yy` | Copiar línea |
+
+### **Atajos Principales**
+| Atajo | Acción |
+|-------|--------|
+| `<leader>ff` | Buscar archivos |
+| `<leader>fg` | Buscar en contenido |
+| `<leader>oa` | Preguntar a OpenCode |
+| `<leader>oe` | Explicar código |
+| `<leader>fm` | Formatear archivo |
+
+---
+
+## 🤖 **Integración con OpenCode.nvim**
+
+OpenCode.nvim proporciona asistencia con IA directamente en Neovim:
+
+### **Atajos Principales**
+| Atajo | Acción | Descripción |
+|-------|--------|-------------|
+| `<leader>oa` | Ask | Preguntar a OpenCode con contexto actual |
+| `<leader>os` | Select | Seleccionar acción de OpenCode desde menú |
+| `<leader>ot` | Toggle | Alternar sesión de OpenCode |
+| `<leader>oe` | Explain | Explicar código seleccionado |
+| `<leader>of` | Fix | Corregir diagnósticos/errores |
+| `<leader>op` | Test | Agregar pruebas |
+
+### **Ejemplos de Uso**
+1. **Explicar código:** Selecciona código + `<leader>oe`
+2. **Corregir errores:** Posiciona en error + `<leader>of`
+3. **Agregar pruebas:** Selecciona función + `<leader>op`
+4. **Preguntar:** `<leader>oa` + escribe pregunta
+
+---
+
+## 📝 **Markdown Avanzado**
+
+Esta configuración incluye herramientas avanzadas para edición de Markdown:
+
+### **Características Principales**
+- ✅ **Renderizado automático** en Neovim
+- 🌐 **Preview en navegador** en tiempo real
+- 🧠 **LSP inteligente** (Marksman) para enlaces y referencias
+- 📊 **Diagramas Mermaid** renderizados
+- 🔧 **Formateo automático** con Prettier
+
+### **Atajos Markdown**
+| Atajo | Acción |
+|-------|--------|
+| `<leader>mr` | Toggle render markdown |
+| `<leader>mp` | Preview en navegador |
+| `<leader>fm` | Formatear archivo |
 
 ---
 
 ## 📚 **Documentación por Componente**
 
-- 🤖 **[Configuración de OpenCode + Clean Architecture](./opencode/README.md)** - Asistente IA con principios SOLID y Gentleman Programming
-- 🎯 **[Configuración de Neovim](./nvim/Readme.md)** - Documentación completa y guías
-- 🤖 **[Configuración de OpenCode + Clean Architecture](./opencode/README.md)** - Asistente IA con principios SOLID y Gentleman Programming
-- 🔬 **[Configuración de Quarto](./nvim/Readme.md#-instalación-y-configuración-de-quarto)** - Documentos científicos y notebooks
-- 🐱 **[Configuración de Kitty](./kitty/README.md)** - Terminal moderna y eficiente
-- 👻 **Configuración de Ghostty** - Terminal alternativa de alto rendimiento  
-- 🪟 **Configuración de Tmux** - Multiplexor de terminal potente
-- 📊 **Configuración de htop** - Monitorización de recursos del sistema
+- 🎯 **[Configuración de Neovim](./nvim/NEOVIM_CONFIGURATION.md)** - Documentación completa y guías
+- 🤖 **[Configuración de OpenCode](./opencode/)** - Asistente IA con principios SOLID
+- 🐱 **[Configuración de Kitty](./kitty/)** - Terminal moderna y eficiente
+- 🪟 **[Configuración de Tmux](./tmux/)** - Multiplexor de terminal potente
+- 📊 **[Configuración de htop](./htop/)** - Monitorización de recursos
 
 ---
 
-## 🤝 **Contribución y Filosofía**
+## 🤝 **Filosofía de Desarrollo**
 
 Estos dotfiles están diseñados siguiendo principios de Clean Architecture y Gentleman Programming:
 
@@ -162,6 +234,26 @@ Estos dotfiles están diseñados siguiendo principios de Clean Architecture y Ge
 - **🔧 Productividad Optimizada** - Flujo de trabajo eficiente con IA asistente
 - **📐 Estandarización Profesional** - IEEE/ACM compliance, principios SOLID
 - **🔄 Actualización Constante** - Incorporación de nuevas herramientas y mejores prácticas
+
+---
+
+## 🔧 **Mantenimiento**
+
+### **Actualizar Neovim**
+```vim
+:Lazy update    # Actualizar todos los plugins
+:Lazy clean     # Limpiar plugins no usados
+:checkhealth    # Verificar salud de la configuración
+```
+
+### **Formatear Código**
+```bash
+# Formatear todos los archivos Lua
+stylua .
+
+# Verificar formato sin cambiar
+stylua --check .
+```
 
 ---
 

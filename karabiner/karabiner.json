@@ -1,0 +1,227 @@
+{
+  "profiles": [
+    {
+      "name": "WARP WK-2 Keyboard",
+      "complex_modifications": {
+        "parameters": {
+          "basic.simultaneous_threshold_milliseconds": 50,
+          "basic.to_delayed_action_delay_milliseconds": 500,
+          "basic.to_if_alone_timeout_milliseconds": 1000,
+          "basic.to_if_held_down_threshold_milliseconds": 500,
+          "mouse_motion_to_scroll.speed": 100
+        },
+        "rules": [
+          {
+            "description": "F10/F11 to Volume Down/Up (native behavior)",
+            "manipulators": [
+              {
+                "type": "basic",
+                "from": {
+                  "key_code": "f10",
+                  "modifiers": { "optional": ["any"] }
+                },
+                "to": [
+                  {
+                    "key_code": "volume_decrement"
+                  }
+                ],
+                "conditions": [
+                  {
+                    "type": "device_if",
+                    "identifiers": [
+                      {
+                        "vendor_id": 9610,
+                        "product_id": 22,
+                        "is_keyboard": true
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "type": "basic",
+                "from": {
+                  "key_code": "f11",
+                  "modifiers": { "optional": ["any"] }
+                },
+                "to": [
+                  {
+                    "key_code": "volume_increment"
+                  }
+                ],
+                "conditions": [
+                  {
+                    "type": "device_if",
+                    "identifiers": [
+                      {
+                        "vendor_id": 9610,
+                        "product_id": 22,
+                        "is_keyboard": true
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      "devices": [
+        {
+          "identifiers": {
+            "vendor_id": 9610,
+            "product_id": 22,
+            "is_keyboard": true,
+            "is_pointing_device": false
+          },
+          "disable_built_in_keyboard_if_exists": false,
+          "fn_function_keys": [
+            {
+              "from": {
+                "key_code": "f1"
+              },
+              "to": {
+                "key_code": "display_brightness_decrement"
+              }
+            },
+            {
+              "from": {
+                "key_code": "f2"
+              },
+              "to": {
+                "key_code": "display_brightness_increment"
+              }
+            },
+            {
+              "from": {
+                "key_code": "f3"
+              },
+              "to": {
+                "key_code": "mission_control"
+              }
+            },
+            {
+              "from": {
+                "key_code": "f4"
+              },
+              "to": {
+                "key_code": "launchpad"
+              }
+            },
+            {
+              "from": {
+                "key_code": "f5"
+              },
+              "to": {
+                "key_code": "illumination_decrement"
+              }
+            },
+            {
+              "from": {
+                "key_code": "f6"
+              },
+              "to": {
+                "key_code": "illumination_increment"
+              }
+            },
+            {
+              "from": {
+                "key_code": "f7"
+              },
+              "to": {
+                "key_code": "rewind"
+              }
+            },
+            {
+              "from": {
+                "key_code": "f8"
+              },
+              "to": {
+                "key_code": "play_or_pause"
+              }
+            },
+            {
+              "from": {
+                "key_code": "f9"
+              },
+              "to": {
+                "key_code": "fastforward"
+              }
+            },
+            {
+              "from": {
+                "key_code": "f10"
+              },
+              "to": {
+                "key_code": "volume_decrement"
+              }
+            },
+            {
+              "from": {
+                "key_code": "f11"
+              },
+              "to": {
+                "key_code": "volume_increment"
+              }
+            },
+            {
+              "from": {
+                "key_code": "f12"
+              },
+              "to": {
+                "key_code": "volume_mute"
+              }
+            }
+          ],
+          "simple_modifications": [
+            {
+              "from": {
+                "key_code": "left_command"
+              },
+              "to": {
+                "key_code": "left_option"
+              }
+            },
+            {
+              "from": {
+                "key_code": "left_option"
+              },
+              "to": {
+                "key_code": "left_command"
+              }
+            },
+            {
+              "from": {
+                "key_code": "right_command"
+              },
+              "to": {
+                "key_code": "right_option"
+              }
+            }
+          ],
+          "ignore": false,
+          "manipulate_caps_lock": false,
+          "treat_as_built_in_keyboard": false
+        }
+      ],
+      "name": "Default profile",
+      "selected": true,
+      "virtual_hid_keyboard": {
+        "country_code": 0,
+        "mouse_key_xy_scale": 100
+      }
+    }
+  ],
+  "global": {
+    "check_for_updates_on_startup": true,
+    "show_in_menu_bar": true,
+    "show_profile_name_in_menu_bar": false,
+    "shell_check": {
+      "enable": true
+    },
+    "ask_for_confirmation_before_quitting": false
+  },
+  "assets": {
+    "karabiner_icon_url": "https://pqrs.org/osx/karabiner/files/img/karabiner-500x500.png"
+  }
+}
