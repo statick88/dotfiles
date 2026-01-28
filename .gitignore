@@ -67,3 +67,4 @@ jspm_packages/
 tmp/
 temp/configstore/
 supabase/
+configstore/
