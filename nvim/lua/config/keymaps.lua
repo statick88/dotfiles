@@ -2,6 +2,12 @@
 -- Default keymaps that are always set: https://github.com/LazyVim/LazyVim/blob/main/lua/lazyvim/config/keymaps.lua
 -- Add any additional keymaps here
 
+-- Initialize Copilot Chat LSP integration
+local lsp_integration_ok, lsp_integration = pcall(require, "config.copilot-lsp-integration")
+if lsp_integration_ok then
+  lsp_integration.setup()
+end
+
 -- OpenCode.nvim keymaps for AI assistant integration
 local opencode = pcall(require, "opencode")
 if opencode then
