@@ -9,7 +9,7 @@ return {
     padding = { top = 1, bottom = 1 },
     heading = {
       border = false,
-      icons = {},
+      icons = { "# ", "## ", "### ", "#### ", "##### ", "###### " },
       width = 'full',
     },
     code = {
@@ -23,6 +23,8 @@ return {
       win_options = { winhl = 'Normal:Normal' },
     },
     pipe_table = {
+      head = '━',
+      body = '─',
       border = {
         '┌', '┬', '┐',
         '├', '┼', '┤',
@@ -30,6 +32,13 @@ return {
       },
       padding = 1,
       use_virt_lines = true,
+      icon = '│',
+    },
+    bullet = {
+      '●',
+      '○',
+      '◆',
+      '◇',
     },
   },
   config = function(_, opts)
