@@ -17,7 +17,8 @@
 7. [AI & Copilot](#ai--copilot)
 8. [Git Integration](#git-integration)
 9. [Testing & Debugging](#testing--debugging)
-10. [Tips & Tricks](#tips--tricks)
+10. [Quarto & Notebook Analysis](#quarto--notebook-analysis)
+11. [Tips & Tricks](#tips--tricks)
 
 ---
 
@@ -655,7 +656,156 @@ print(x)         " Evaluar expresiones
 
 ---
 
-## Tips & Tricks
+## Quarto & Notebook Analysis
+
+### ¿Qué es Quarto?
+
+Quarto es un sistema de publicación científico abierto que permite crear documentos dinámicos con código ejecutable integrado. Perfecto para análisis de datos, reportes científicos y documentación interactiva.
+
+**Soporte en Neovim:**
+- **quarto-nvim** - Integración completa con Quarto para renderizado y ejecución
+- **otter.nvim** - Soporte para múltiples lenguajes embebidos
+- **image.nvim** - Visualización de gráficos y salida
+
+### Archivos Soportados
+
+```vim
+*.qmd              " Archivos Quarto Markdown (principal)
+*.md               " Markdown con código embebido
+*.ipynb            " Jupyter notebooks (con conversión)
+```
+
+### Comandos Principales de Quarto
+
+```vim
+<leader>qr         " Render document - Renderizar documento a HTML/PDF
+<leader>qc         " Run code cell - Ejecutar celda actual
+<leader>qa         " Run all code cells - Ejecutar todos los chunks
+```
+
+### Otter - Soporte de Múltiples Lenguajes
+
+Otter mejora el soporte de autocomplete e LSP en código embebido dentro de archivos Quarto:
+
+```vim
+<leader>oo         " Otter: Enable language support - Activar features LSP en código
+<leader>od         " Otter: Disable language support - Desactivar
+<leader>og         " Otter: Ask hover - Información sobre símbolo
+```
+
+### Flujo de Trabajo Típico con Quarto
+
+**1. Crear documento:**
+```bash
+touch analysis.qmd
+```
+
+**2. Estructura básica:**
+```markdown
+---
+title: "Mi Análisis"
+format: html
+engine: python  # o: r, julia, bash, lua
+---
+
+## Introducción
+
+Este es un documento Quarto con código ejecutable.
+
+```{python}
+# El código aquí se ejecutará
+import pandas as pd
+data = pd.read_csv("data.csv")
+print(data.head())
+```
+```
+
+**3. En Neovim:**
+```vim
+" Editar el archivo
+nvim analysis.qmd
+
+" Renderizar el documento completo
+<leader>qr              " Renderizar a HTML
+" El navegador abre automáticamente
+
+" O ejecutar celdas individuales
+<leader>qc              " Ejecutar celda actual
+```
+
+### Lenguajes Soportados
+
+Quarto soporta múltiples lenguajes de programación:
+
+| Lenguaje | Engine | Requisitos |
+|----------|--------|-----------|
+| **Python** | Jupyter | `pip install jupyter` |
+| **R** | Knitr | `R` instalado |
+| **Julia** | Julia | Julia instalado |
+| **Bash** | Bash | Bash shell |
+| **Lua** | Lua | Lua instalado |
+
+### Características
+
+**Visualización en tiempo real:**
+- Renderizado de HTML/PDF directamente
+- Vista previa en navegador
+- Integración con LSP para código embebido
+- Soporte de gráficos interactivos
+
+**Ejemplo con Python:**
+```python
+import matplotlib.pyplot as plt
+import numpy as np
+
+x = np.linspace(0, 2*np.pi, 100)
+y = np.sin(x)
+plt.plot(x, y)
+plt.show()
+```
+
+### Tips & Trucos
+
+**1. Renderizar incrementalmente:**
+```vim
+" Quarto renderiza cambios automáticamente
+" Abre HTML en navegador con auto-refresh
+<leader>qr             " Preview documento
+```
+
+**2. Generar reportes profesionales:**
+```markdown
+---
+title: "Reporte de Análisis"
+author: "Tu Nombre"
+date: today
+format: 
+  html:
+    toc: true
+    code-fold: true
+---
+```
+
+**3. Compartir análisis:**
+```vim
+" Los documentos .qmd pueden compartirse directamente
+" Otros pueden renderizarlos con: quarto render analysis.qmd
+```
+
+### Instalación de Requisitos
+
+Si necesitas usar Python:
+```bash
+pip install jupyter ipython
+```
+
+Si necesitas usar R:
+```bash
+# En R
+install.packages("rmarkdown")
+```
+
+---
 
 ### 1. Which-Key - Descubre Atajos
 
@@ -917,6 +1067,7 @@ oprint("value=", value)<Esc>    " Nueva línea con print
 │   │   ├── lazy.lua                   # Bootstrap de Lazy.nvim
 │   │   ├── options.lua                # Opciones de Neovim
 │   │   ├── keymaps.lua                # Atajos de teclado
+│   │   ├── quarto-keymaps.lua         # Keymaps específicos para Quarto
 │   │   ├── autocmds.lua               # Auto commands
 │   │   ├── copilot-prompts.lua        # Prompts personalizados
 │   │   └── copilot-lsp-integration.lua # Integración LSP+Copilot
@@ -924,6 +1075,7 @@ oprint("value=", value)<Esc>    " Nueva línea con print
 │       ├── ui.lua                     # Tema, bufferline, notificaciones
 │       ├── desarrollo.lua             # LSP, formateo, Git, debugging
 │       ├── productividad.lua          # Telescope, flash, terminal, markdown
+│       ├── quarto.lua                 # Quarto + Molten + Otter + Image
 │       ├── copilot.lua                # GitHub Copilot autocompletado
 │       ├── copilot-chat.lua           # Chat de Copilot
 │       ├── opencode.lua               # OpenCode AI assistant
@@ -968,6 +1120,12 @@ oprint("value=", value)<Esc>    " Nueva línea con print
 | **Testing** | | |
 | Test más cercano | `<leader>tn` | Normal |
 | Todos los tests | `<leader>tt` | Normal |
+| **Quarto** | | |
+| Renderizar documento | `<leader>qr` | Normal |
+| Ejecutar celda actual | `<leader>qc` | Normal |
+| Ejecutar todos | `<leader>qa` | Normal |
+| Otter: Enable | `<leader>oo` | Normal |
+| Otter: Disable | `<leader>od` | Normal |
 
 ---
 

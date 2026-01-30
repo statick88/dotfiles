@@ -2,6 +2,12 @@
 -- Default keymaps that are always set: https://github.com/LazyVim/LazyVim/blob/main/lua/lazyvim/config/keymaps.lua
 -- Add any additional keymaps here
 
+-- Load Quarto keymaps
+local quarto_keymaps_ok, quarto_keymaps = pcall(require, "config.quarto-keymaps")
+if not quarto_keymaps_ok then
+  -- Quarto plugin might not be loaded yet, which is fine
+end
+
 -- Initialize Copilot Chat LSP integration
 local lsp_integration_ok, lsp_integration = pcall(require, "config.copilot-lsp-integration")
 if lsp_integration_ok then
