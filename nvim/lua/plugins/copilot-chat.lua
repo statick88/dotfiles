@@ -25,14 +25,32 @@ return {
       answer_header = "烙  Copilot ",
       error_header = "  Error ",
       separator = "---",
-      auto_insert_mode = false,
-      insert_at_start = false,
+      auto_insert_mode = true,
+      insert_at_start = true,
       chat_autocomplete = true,
       log_level = "INFO",
       proxy = nil,
       show_system_prompt = false,
       model = "gpt-4o",
       prompts = prompts.prompts,
+      window = {
+        layout = "float",
+        relative = "cursor",
+        width = 0.8,
+        height = 0.8,
+        row = 1,
+      },
+    })
+
+    -- Set chat buffer to modifiable when created
+    vim.api.nvim_create_autocmd("BufEnter", {
+      pattern = "copilot-*",
+      callback = function(event)
+        local bufnr = event.buf
+        vim.bo[bufnr].modifiable = true
+        vim.bo[bufnr].readonly = false
+      end,
+      desc = "Make Copilot Chat buffer modifiable",
     })
 
     -- Telescope integration if available
