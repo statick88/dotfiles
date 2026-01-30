@@ -60,6 +60,7 @@ return {
   -- Debugging
   {
     "mfussenegger/nvim-dap",
+    cmd = { "DapBreakpoint", "DapContinue", "DapStepOver", "DapStepInto", "DapStepOut", "DapRepl" },
     dependencies = {
       "rcarriga/nvim-dap-ui",
       "theHamsta/nvim-dap-virtual-text",
@@ -84,6 +85,7 @@ return {
   -- Testing
   {
     "nvim-neotest/neotest",
+    cmd = { "Neotest" },
     dependencies = {
       "nvim-neotest/nvim-nio",
       "nvim-lua/plenary.nvim",

@@ -2,6 +2,7 @@ return {
   -- Fuzzy finder con múltiples fuentes
   {
     "nvim-telescope/telescope.nvim",
+    event = "VeryLazy",  -- Optimized: load after UI setup
     tag = "0.1.8",
     dependencies = {
       "nvim-lua/plenary.nvim",
@@ -58,6 +59,7 @@ return {
   -- Terminal mejorado
   {
     "akinsho/toggleterm.nvim",
+    cmd = "ToggleTerm",  -- Optimized: load on command
     version = "*",
     opts = {
       size = 20,
@@ -83,9 +85,10 @@ return {
     },
   },
 
--- Movimiento mejorado entre ventanas
+  -- Movimiento mejorado entre ventanas
   {
     "mrjones2014/smart-splits.nvim",
+    event = "VeryLazy",  -- Optimized: load after UI setup
     opts = {},
   },
 

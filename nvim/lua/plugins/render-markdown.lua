@@ -1,8 +1,7 @@
 return {
   "MeanderingProgrammer/render-markdown.nvim",
+  ft = { "markdown", "markdown_inline", "quarto" },  -- Optimized: load on markdown files
   dependencies = { "nvim-treesitter/nvim-treesitter", "nvim-tree/nvim-web-devicons" },
-  lazy = false,
-  priority = 50,
   opts = {
     enabled = true,
     max_width = 80,
