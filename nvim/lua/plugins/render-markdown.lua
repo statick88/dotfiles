@@ -9,7 +9,6 @@ return {
     padding = { top = 1, bottom = 1 },
     heading = {
       border = false,
-      icons = { "# ", "## ", "### ", "#### ", "##### ", "###### " },
       width = 'full',
     },
     code = {
@@ -23,22 +22,19 @@ return {
       win_options = { winhl = 'Normal:Normal' },
     },
     pipe_table = {
-      head = '━',
-      body = '─',
+      -- Border array must have exactly 11 elements:
+      -- Positions 1-3: top (┌ ┬ ┐)
+      -- Positions 4-6: middle (├ ┼ ┤)
+      -- Positions 7-9: bottom (└ ┴ ┘)
+      -- Position 10: vertical separator (│)
+      -- Position 11: horizontal line (─)
       border = {
         '┌', '┬', '┐',
         '├', '┼', '┤',
-        '└', '┴', '┘'
+        '└', '┴', '┘',
+        '│', '─'
       },
       padding = 1,
-      use_virt_lines = true,
-      icon = '│',
-    },
-    bullet = {
-      '●',
-      '○',
-      '◆',
-      '◇',
     },
   },
   config = function(_, opts)
