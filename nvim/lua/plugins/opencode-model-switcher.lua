@@ -2,6 +2,8 @@ local switcher_path = vim.fn.expand("~/.opencode/config/model-switcher.lua")
 local switcher_exists = vim.fn.filereadable(switcher_path) == 1
 
 return {
+  dir = vim.fn.expand("~/.config/nvim"),
+  name = "opencode-model-switcher-config",
   enabled = switcher_exists,
   lazy = false,
   priority = 100,
