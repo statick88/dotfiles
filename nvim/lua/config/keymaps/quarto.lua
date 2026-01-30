@@ -1,38 +1,38 @@
--- Quarto keymaps - Ejecutar código, renderizar documentos, etc.
--- Keymaps are automatically loaded on the VeryLazy event
+---@desc Quarto and literate programming keymaps
 
+-- Quarto keymaps - Execute code, render documents, etc.
 local quarto_ok, quarto = pcall(require, "quarto")
 if quarto_ok then
-  -- Renderizar documento Quarto
-  vim.keymap.set("n", "<leader>qr", function()
+  -- Preview/Render document Quarto
+  vim.keymap.set("n", "<leader>qp", function()
     quarto.quartoPreview()
-  end, { desc = "Quarto: Render document" })
+  end, { desc = "Quarto: Preview document" })
 
-  -- Ejecutar chunk actual
+  -- Run code cell
   vim.keymap.set("n", "<leader>qc", function()
     quarto.runCodeCell()
   end, { desc = "Quarto: Run code cell" })
 
-  -- Ejecutar todos los chunks
+  -- Run all code cells
   vim.keymap.set("n", "<leader>qa", function()
     quarto.runAll()
   end, { desc = "Quarto: Run all code cells" })
 end
 
--- Otter keymaps - Soporte de múltiples lenguajes en archivos Quarto
+-- Otter keymaps - Support for multiple languages in Quarto files
 local otter_ok, otter = pcall(require, "otter")
 if otter_ok then
-  -- Activar soporte de Otter para edición mejorada
+  -- Enable Otter for enhanced language support
   vim.keymap.set("n", "<leader>oo", function()
     otter.enable()
   end, { desc = "Otter: Enable language support" })
 
-  -- Desactivar Otter
+  -- Disable Otter
   vim.keymap.set("n", "<leader>od", function()
     otter.disable()
   end, { desc = "Otter: Disable language support" })
 
-  -- Ir a definición en código embebido
+  -- Go to definition in embedded code
   vim.keymap.set("n", "<leader>og", function()
     otter.ask_hover()
   end, { desc = "Otter: Ask hover" })

@@ -1,0 +1,33 @@
+---@desc Git and version control keymaps
+
+-- Fugitive keymaps for Git operations
+vim.keymap.set("n", "<leader>gs", "<cmd>Git<cr>", { desc = "Git status" })
+vim.keymap.set("n", "<leader>gc", "<cmd>Git commit<cr>", { desc = "Git commit" })
+vim.keymap.set("n", "<leader>gp", "<cmd>Git push<cr>", { desc = "Git push" })
+vim.keymap.set("n", "<leader>gl", "<cmd>Git pull<cr>", { desc = "Git pull" })
+
+-- Gitsigns keymaps for hunks
+local gitsigns_ok, gitsigns = pcall(require, "gitsigns")
+if gitsigns_ok then
+  vim.keymap.set("n", "]c", gitsigns.next_hunk, { desc = "Next git hunk" })
+  vim.keymap.set("n", "[c", gitsigns.prev_hunk, { desc = "Previous git hunk" })
+  vim.keymap.set("n", "<leader>hs", gitsigns.stage_hunk, { desc = "Stage hunk" })
+  vim.keymap.set("n", "<leader>hr", gitsigns.reset_hunk, { desc = "Reset hunk" })
+  vim.keymap.set("v", "<leader>hs", function()
+    gitsigns.stage_hunk({ vim.fn.line("."), vim.fn.line("v") })
+  end, { desc = "Stage hunk" })
+  vim.keymap.set("v", "<leader>hr", function()
+    gitsigns.reset_hunk({ vim.fn.line("."), vim.fn.line("v") })
+  end, { desc = "Reset hunk" })
+  vim.keymap.set("n", "<leader>hS", gitsigns.stage_buffer, { desc = "Stage buffer" })
+  vim.keymap.set("n", "<leader>hu", gitsigns.undo_stage_hunk, { desc = "Undo stage hunk" })
+  vim.keymap.set("n", "<leader>hR", gitsigns.reset_buffer, { desc = "Reset buffer" })
+  vim.keymap.set("n", "<leader>hp", gitsigns.preview_hunk, { desc = "Preview hunk" })
+  vim.keymap.set("n", "<leader>hb", function()
+    gitsigns.blame_line({ full = true })
+  end, { desc = "Blame line" })
+  vim.keymap.set("n", "<leader>hd", gitsigns.diffthis, { desc = "Diff this" })
+  vim.keymap.set("n", "<leader>hD", function()
+    gitsigns.diffthis("~")
+  end, { desc = "Diff against last commit" })
+end

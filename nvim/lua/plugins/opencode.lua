@@ -8,6 +8,7 @@ return {
         kitty = {
           command = "opencode",
           args = { "--port", "0" },
+          location = "vsplit",  -- Open on right side (vsplit = vertical split right)
         },
       },
       events = {
@@ -33,6 +34,11 @@ return {
 
     -- Keymaps for OpenCode with model switching
     local opts = { noremap = true, silent = true }
+
+    -- Toggle sidebar on <leader>t
+    vim.keymap.set("n", "<leader>t", function()
+      require("opencode").toggle()
+    end, vim.tbl_extend("force", opts, { desc = "Toggle OpenCode sidebar" }))
 
     -- Primary: Claude 3.5 Sonnet (main assistant)
     vim.keymap.set("n", "<C-a>", function()
@@ -62,34 +68,29 @@ return {
       require("opencode").select()
     end, vim.tbl_extend("force", opts, { desc = "Select code for analysis" }))
 
-    -- Toggle sidebar
-    vim.keymap.set("n", "<C-.>", function()
-      require("opencode").toggle()
-    end, vim.tbl_extend("force", opts, { desc = "Toggle OpenCode sidebar" }))
-
     -- Teaching-specific shortcuts
-    vim.keymap.set("n", "<leader>ot", function()
+    vim.keymap.set("n", "<leader>oce", function()
       vim.cmd("set model=sonnet")
       vim.g.opencode_prompt = "teach"
       require("opencode").ask()
     end, vim.tbl_extend("force", opts, { desc = "OpenCode: Teach (explain code)" }))
 
     -- Code review shortcut
-    vim.keymap.set("n", "<leader>or", function()
+    vim.keymap.set("n", "<leader>ocr", function()
       vim.cmd("set model=sonnet")
       vim.g.opencode_prompt = "review"
       require("opencode").ask()
     end, vim.tbl_extend("force", opts, { desc = "OpenCode: Review code" }))
 
     -- Debug shortcut
-    vim.keymap.set("n", "<leader>od", function()
+    vim.keymap.set("n", "<leader>ocb", function()
       vim.cmd("set model=sonnet")
       vim.g.opencode_prompt = "debug"
       require("opencode").ask()
     end, vim.tbl_extend("force", opts, { desc = "OpenCode: Debug" }))
 
     -- Optimize shortcut
-    vim.keymap.set("n", "<leader>oo", function()
+    vim.keymap.set("n", "<leader>ocx", function()
       vim.cmd("set model=sonnet")
       vim.g.opencode_prompt = "optimize"
       require("opencode").ask()

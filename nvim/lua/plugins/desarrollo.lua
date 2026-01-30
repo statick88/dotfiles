@@ -7,44 +7,7 @@ return {
       "mason-org/mason-lspconfig.nvim",
     },
     config = function()
-      require("mason").setup()
-      require("mason-lspconfig").setup({
-        ensure_installed = {
-          "lua_ls",
-          "pyright",
-          "ts_ls",
-          "html",
-          "cssls",
-          "jsonls",
-          "yamlls",
-          "bashls",
-          "templ",
-          "marksman",
-        },
-      })
-
-      local lspconfig = require("lspconfig")
-      local capabilities = vim.lsp.protocol.make_client_capabilities()
-
-      -- Configuración base para todos los LSPs
-      local function setup_lsp(server, opts)
-        opts = opts or {}
-        opts.capabilities = capabilities
-        lspconfig[server].setup(opts)
-      end
-
-      -- Configurar LSPs específicos
-      setup_lsp("lua_ls")
-      setup_lsp("pyright")
-      setup_lsp("tsserver")
-      setup_lsp("html")
-      setup_lsp("cssls")
-      setup_lsp("jsonls")
-      setup_lsp("yamlls")
-setup_lsp("bashls")
-      setup_lsp("marksman")
-       
-      
+      require("config.lsp-setup").setup()
     end,
   },
 

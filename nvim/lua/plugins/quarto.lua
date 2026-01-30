@@ -25,6 +25,9 @@ return {
           enabled = true,
           default_method = "quarto",
         },
+        preview = {
+          use_quarto = true,
+        },
       })
     end,
   },

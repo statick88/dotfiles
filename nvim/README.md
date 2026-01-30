@@ -678,7 +678,7 @@ Quarto es un sistema de publicación científico abierto que permite crear docum
 ### Comandos Principales de Quarto
 
 ```vim
-<leader>qr         " Render document - Renderizar documento a HTML/PDF
+<leader>qp         " Preview document - Vista previa del documento renderizado
 <leader>qc         " Run code cell - Ejecutar celda actual
 <leader>qa         " Run all code cells - Ejecutar todos los chunks
 ```
@@ -726,7 +726,7 @@ print(data.head())
 nvim analysis.qmd
 
 " Renderizar el documento completo
-<leader>qr              " Renderizar a HTML
+<leader>qp              " Preview/Renderizar a HTML
 " El navegador abre automáticamente
 
 " O ejecutar celdas individuales
@@ -766,11 +766,11 @@ plt.show()
 
 ### Tips & Trucos
 
-**1. Renderizar incrementalmente:**
+**1. Preview incremental:**
 ```vim
 " Quarto renderiza cambios automáticamente
 " Abre HTML en navegador con auto-refresh
-<leader>qr             " Preview documento
+<leader>qp             " Preview documento
 ```
 
 **2. Generar reportes profesionales:**
@@ -1066,8 +1066,7 @@ oprint("value=", value)<Esc>    " Nueva línea con print
 │   ├── config/
 │   │   ├── lazy.lua                   # Bootstrap de Lazy.nvim
 │   │   ├── options.lua                # Opciones de Neovim
-│   │   ├── keymaps.lua                # Atajos de teclado
-│   │   ├── quarto-keymaps.lua         # Keymaps específicos para Quarto
+│   │   ├── keymaps.lua                # Atajos de teclado (incluye Quarto)
 │   │   ├── autocmds.lua               # Auto commands
 │   │   ├── copilot-prompts.lua        # Prompts personalizados
 │   │   └── copilot-lsp-integration.lua # Integración LSP+Copilot
@@ -1121,7 +1120,7 @@ oprint("value=", value)<Esc>    " Nueva línea con print
 | Test más cercano | `<leader>tn` | Normal |
 | Todos los tests | `<leader>tt` | Normal |
 | **Quarto** | | |
-| Renderizar documento | `<leader>qr` | Normal |
+| Renderizar documento | `<leader>qp` | Normal |
 | Ejecutar celda actual | `<leader>qc` | Normal |
 | Ejecutar todos | `<leader>qa` | Normal |
 | Otter: Enable | `<leader>oo` | Normal |

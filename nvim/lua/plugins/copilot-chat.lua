@@ -1,12 +1,19 @@
 return {
   "CopilotC-Nvim/CopilotChat.nvim",
-  branch = "canary",
+  branch = "main",
   dependencies = {
     { "github/copilot.vim" },
     { "nvim-lua/plenary.nvim" },
   },
   build = "make tiktoken",
-  cmd = { "CopilotChat", "CopilotChatToggle", "CopilotChatExplain", "CopilotChatReview" },
+  cmd = {
+    "CopilotChat",
+    "CopilotChatToggle",
+    "CopilotChatExplain",
+    "CopilotChatReview",
+    "CopilotChatFix",
+    "CopilotChatOptimize",
+  },
   keys = {
     { "<leader>cc", "<cmd>CopilotChatToggle<cr>", desc = "Copilot Chat Toggle", mode = { "n", "v" } },
     { "<leader>ce", "<cmd>CopilotChatExplain<cr>", desc = "Copilot Explain", mode = { "n", "v" } },
@@ -15,24 +22,26 @@ return {
     { "<leader>co", "<cmd>CopilotChatOptimize<cr>", desc = "Copilot Optimize", mode = { "v" } },
   },
   config = function()
-    -- Load project-specific prompts
-    local prompts = require("config.copilot-prompts")
+    -- Load project-specific prompts with error handling
+    local prompts_ok, prompts = pcall(require, "config.copilot-prompts")
+    if not prompts_ok then
+      prompts = { prompts = {} }
+    end
 
-    require("CopilotChat").setup({
+    local config = {
       debug = false,
       show_help = true,
       question_header = "  User ",
-      answer_header = "烙  Copilot ",
+      answer_header = "󰚀 Copilot ",
       error_header = "  Error ",
       separator = "---",
       auto_insert_mode = true,
       insert_at_start = true,
       chat_autocomplete = true,
-      log_level = "INFO",
-      proxy = nil,
+      log_level = "warn",
       show_system_prompt = false,
       model = "gpt-4o",
-      prompts = prompts.prompts,
+      prompts = prompts.prompts or {},
       window = {
         layout = "float",
         relative = "cursor",
@@ -40,7 +49,9 @@ return {
         height = 0.8,
         row = 1,
       },
-    })
+    }
+
+    require("CopilotChat").setup(config)
 
     -- Set chat buffer to modifiable when created
     vim.api.nvim_create_autocmd("BufEnter", {
@@ -54,9 +65,8 @@ return {
     })
 
     -- Telescope integration if available
-    if pcall(require, "telescope") then
-      local telescope = require("CopilotChat.integrations.telescope")
-
+    local telescope_ok, telescope = pcall(require, "CopilotChat.integrations.telescope")
+    if telescope_ok and telescope then
       -- Basic history picker
       vim.keymap.set("n", "<leader>ch", telescope.pick, { desc = "Copilot Chat History" })
 
