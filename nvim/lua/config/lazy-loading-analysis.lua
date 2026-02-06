@@ -37,7 +37,6 @@ M.plugins_analysis = {
 
   -- AI Plugins (Medium Priority)
   ai = {
-    opencode = { status = "GOOD", lazy = false, reason = "Plugin-based, needs startup" },
     copilot = { status = "GOOD", lazy = false, reason = "Auto-suggestions needed" },
     copilot_chat = { status = "OKAY", lazy = false, reason = "RECOMMEND: Lazy on commands" },
   },

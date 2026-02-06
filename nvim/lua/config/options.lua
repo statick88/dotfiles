@@ -3,7 +3,7 @@
 -- Add any additional options here
 
 -- Fira Code Nerd Font configuration
--- 
+--
 -- IMPORTANT: Make sure Fira Code Nerd Font is installed on your system:
 -- macOS: brew tap homebrew/cask-fonts && brew install --cask font-fira-code-nerd-font
 -- Linux: sudo apt-get install fonts-firacode-nerd-font
@@ -31,6 +31,11 @@ vim.opt.title = true
 vim.opt.titlestring = "Neovim - %t"
 
 -- Disable problematic providers
-vim.g.loaded_perl_provider = 0
-vim.g.loaded_ruby_provider = 0
-vim.g.loaded_node_provider = 1
+vim.g.loaded_perl_provider = false
+vim.g.loaded_ruby_provider = false
+vim.g.loaded_node_provider = true
+
+-- Soft wrap configuration
+vim.opt.wrap = true
+vim.opt.linebreak = true
+vim.opt.breakindent = true

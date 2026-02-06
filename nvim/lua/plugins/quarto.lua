@@ -1,18 +1,31 @@
 return {
   {
     "quarto-dev/quarto-nvim",
+    ft = { "quarto", "markdown" },
     dependencies = {
       "jmbuhr/otter.nvim",
       "nvim-treesitter/nvim-treesitter",
+      "3rd/image.nvim",
     },
-    ft = { "quarto", "markdown" },
     config = function()
       local quarto = require("quarto")
 
       quarto.setup({
         lspfeatures = {
           enabled = true,
-          languages = { "r", "python", "julia", "bash", "html", "lua", "sql", "sql_r" },
+          languages = {
+            "r",
+            "python",
+            "julia",
+            "bash",
+            "html",
+            "lua",
+            "sql",
+            "sql_r",
+            "typescript",
+            "javascript",
+            "dart",
+          },
           diagnostics = {
             enabled = true,
             triggers = { "BufWritePost" },
@@ -27,12 +40,24 @@ return {
         },
         preview = {
           use_quarto = true,
+          multiplex = {
+            enabled = true,
+          },
+        },
+        keymaps = {
+          show_help = "<leader>qh",
+          show_usage = "<leader>qu",
         },
       })
+
+      vim.keymap.set("n", "<leader>qp", function()
+        quarto.quarto_preview()
+      end, { desc = "Quarto preview" })
+      vim.keymap.set("n", "<leader>qr", function()
+        quarto.render()
+      end, { desc = "Quarto render" })
     end,
   },
-  -- Molten plugin temporarily disabled - repo not found
-  -- Use Quarto's built-in runner instead with: quarto preview
   {
     "3rd/image.nvim",
     ft = { "quarto", "python", "markdown" },

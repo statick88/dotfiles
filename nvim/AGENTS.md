@@ -4,7 +4,21 @@ This file contains guidelines and commands for agentic coding agents working in 
 
 ## Project Overview
 
-This is a LazyVim-based Neovim configuration with OpenCode.nvim integration. The configuration follows LazyVim conventions and uses Lua as the primary configuration language.
+This is a LazyVim-based Neovim configuration for Full Stack Development and Education. Focus on:
+- **Languages**: Python (Django, FastAPI), TypeScript (React, Next.js), Flutter, Lua
+- **Architecture**: Clean Architecture / Domain-Driven Design
+- **Workflow**: AI-assisted coding with Claude API, productivity tools, and documentation
+
+## Supported Languages
+
+| Category | Languages/Frameworks |
+|----------|---------------------|
+| **Backend** | Python, Django, FastAPI, Node.js, TypeScript |
+| **Frontend** | React, Next.js, Vue, Svelte, HTML, CSS, Tailwind |
+| **Mobile** | Flutter, Dart |
+| **Data** | SQL, MongoDB |
+| **DevOps** | Docker, Kubernetes, Bash |
+| **Documentation** | Markdown, Quarto, LaTeX |
 
 ## Build/Lint/Test Commands
 
@@ -33,6 +47,9 @@ stylua --check .
 
 # Clean unused plugins
 :Lazy clean
+
+# Sync plugins from lockfile
+:Lazy sync
 ```
 
 ### Health Checks
@@ -42,6 +59,9 @@ stylua --check .
 
 # Check overall Neovim health
 :checkhealth
+
+# Check specific plugin health
+:checkhealth <plugin-name>
 ```
 
 ### Configuration Validation
@@ -51,7 +71,36 @@ nvim --headless -c "lua print('Config loaded successfully')" -c "q"
 
 # Test specific configuration file
 nvim --headless -c "lua require('config.lazy')" -c "q"
+
+# Profile startup time
+nvim --headless -c "profile start /tmp/profile.log" -c "profile func *" -c "q"
 ```
+
+## Plugin Architecture
+
+### Core Plugins (lua/plugins/)
+- **core.lua** - Essential plugins (LSP, Treesitter, Completion)
+- **ai.lua** - AI assistants (codecompanion, avante, parrot)
+- **productivity.lua** - Navigation and productivity (oil, harpoon, telescope)
+- **formatting.lua** - Formatters and linters (conform, nvim-lint)
+- **git.lua** - Git integration (lazygit, diffview, grug-far)
+- **refactoring.lua** - Code refactoring tools
+- **organization.lua** - Notes and documentation (neorg, quarto)
+- **ui.lua** - UI enhancements (snacks, noice, dressing)
+- **development.lua** - Language-specific tools (Flutter, Python, TypeScript)
+
+### Keymap Modules (lua/config/keymaps/)
+- **core.lua** - Core editor navigation
+- **telescope.lua** - Telescope picker keymaps
+- **ai.lua** - AI assistant keymaps
+- **productivity.lua** - Navigation keymaps (oil, harpoon)
+- **refactoring.lua** - Refactor keymaps
+- **git.lua** - Git operations
+- **formatting.lua** - Format and lint keymaps
+- **lsp.lua** - LSP operations
+- **testing.lua** - Testing keymaps
+- **flutter.lua** - Flutter-specific keymaps
+- **quarto.lua** - Quarto documentation keymaps
 
 ## Code Style Guidelines
 
@@ -63,13 +112,22 @@ nvim --headless -c "lua require('config.lazy')" -c "q"
 ### File Structure Conventions
 ```
 lua/
-├── config/          # Core configuration files
-│   ├── lazy.lua     # Lazy.nvim bootstrap and setup
-│   ├── options.lua  # Neovim options
-│   ├── keymaps.lua  # Key mappings
-│   └── autocmds.lua # Auto commands
-└── plugins/         # Plugin configurations
-    ├── *.lua        # Individual plugin specs
+├── config/              # Core configuration
+│   ├── lazy.lua        # Lazy.nvim bootstrap
+│   ├── options.lua     # Neovim options
+│   ├── keymaps.lua    # Key mappings loader
+│   ├── autocmds.lua   # Auto commands
+│   └── keymaps/       # Keymap modules
+└── plugins/            # Plugin configurations
+    ├── core.lua       # Essential plugins
+    ├── ai.lua         # AI assistants
+    ├── productivity.lua # Navigation tools
+    ├── formatting.lua  # Formatters/linters
+    ├── git.lua        # Git tools
+    ├── refactoring.lua # Refactor tools
+    ├── organization.lua # Notes/docs
+    ├── ui.lua         # UI enhancements
+    └── development.lua # Language tools
 ```
 
 ### Plugin Configuration Patterns
@@ -77,7 +135,22 @@ lua/
 - Use `return { "plugin/name", ... }` format
 - Plugin config should be in a `config = function()` block
 - Dependencies go in `dependencies = { ... }` table
-- Use LazyVim's plugin import system: `{ import = "plugins" }`
+- Use lazy loading with events: `event`, `cmd`, `ft`, `VeryLazy`
+
+### Lazy Loading Examples
+```lua
+-- Load on command
+{ "cmd = { "Oil", "Harpoon" } }
+
+-- Load on file type
+{ "ft = { "python", "typescript" } }
+
+-- Load on event
+{ "event = "BufReadPre" }
+
+-- Load on VeryLazy (after startup)
+{ "event = "VeryLazy" }
+```
 
 ### Naming Conventions
 - **Files**: lowercase with underscores (snake_case)
@@ -91,84 +164,116 @@ lua/
 - LazyVim plugins imported via `{ import = "lazyvim.plugins" }`
 - Custom plugins imported via `{ import = "plugins" }`
 
-### Error Handling
+## AI Integration
+
+### Supported AI Plugins
+| Plugin | Purpose | Provider |
+|--------|---------|----------|
+| **codecompanion.nvim** | Chat + inline edits + agent flows | Claude API (Anthropic) |
+| **avante.nvim** | Cursor-like editing, diff/apply | Claude API |
+| **parrot.nvim** | Persistent chat, markdown notes | Claude API |
+
+### Configuration
+AI plugins should be configured with:
+- API key via environment variable: `ANTHROPIC_API_KEY`
+- Model selection: claude-sonnet-4, claude-haiku-3
+- Temperature settings for different tasks
+
+## Error Handling
 - Use `pcall()` for safe plugin loading where needed
 - Check `vim.v.shell_error` after system commands
 - Use `vim.api.nvim_echo()` for user-facing error messages
 - Graceful fallbacks for optional features
 
-### Key Mapping Patterns
+## Key Mapping Patterns
 - Use `vim.keymap.set()` for all key mappings
 - Include descriptive `desc` for all mappings
 - Use mode table: `{ "n", "x", "v" }` for multiple modes
 - Buffer-local mappings should include `buffer = bufnr`
 - Silent mappings for non-interactive commands: `silent = true`
 
-### Configuration Variables
-- Global config: `vim.g.config_name = value`
-- Buffer-local: `vim.bo[bufnr].option = value`
-- Window-local: `vim.wo[winid].option = value`
-- Use `vim.opt` for options that support it
-
-### Plugin Dependencies
-- Declare all dependencies explicitly
-- Use version constraints sparingly (prefer latest)
-- Lazy-load heavy plugins when possible
-- Configure required dependencies in `opts` parameter
-
-### Performance Guidelines
+## Performance Guidelines
 - Use lazy loading for non-essential plugins
 - Disable unused runtime plugins in lazy config
 - Prefer `vim.fn.stdpath()` for cross-platform paths
 - Use `vim.uv` (or `vim.loop`) for async operations
+- Profile startup with `nvim --startuptime /tmp/startup.log`
 
-### Code Organization
-- Separate concerns: options, keymaps, autocmds in different files
-- Group related functionality in the same file
-- Use local variables for frequently accessed APIs
-- Keep plugin configurations focused and minimal
+## Language-Specific Setup
 
-## Testing Strategy
+### Python (Django/FastAPI)
+- LSP: pyright, ruff
+- Formatter: black, isort, ruff
+- Linter: ruff, mypy
+- Testing: neotest, pytest
 
-This configuration does not include traditional tests. Validation is done through:
+### TypeScript (React/Next.js)
+- LSP: ts_ls, tailwindcss
+- Formatter: prettierd, biome
+- Linter: eslint_d
+- Testing: vitest
 
-1. **Configuration Loading**: Ensure Neovim starts without errors
-2. **Health Checks**: Use `:checkhealth` for plugin validation
-3. **Manual Testing**: Verify key mappings and functionality work as expected
-4. **Plugin Loading**: Check Lazy.nvim status with `:Lazy`
+### Flutter
+- LSP: flutter-tools
+- Formatter: dart-format
+- Widget guides, hot reload
 
 ## Common Tasks
 
 ### Adding a New Plugin
-1. Create `lua/plugins/plugin-name.lua`
-2. Return Lazy.nvim spec with plugin configuration
-3. Add dependencies if needed
-4. Configure with `opts` or `config` function
+1. Create `lua/plugins/category.lua` with Lazy.nvim spec
+2. Add lazy loading strategy (event, cmd, ft)
+3. Configure with `opts` or `config` function
+4. Add keymaps to appropriate `lua/config/keymaps/*.lua`
+5. Run `:checkhealth <plugin-name>` after installation
 
 ### Modifying Core Configuration
 1. Edit files in `lua/config/`
 2. Follow existing patterns for options, keymaps, autocmds
 3. Use LazyVim's VeryLazy event for startup-heavy operations
 4. Restart Neovim to test changes
+5. Run `:checkhealth lazyvim`
 
 ### Debugging Configuration Issues
 1. Check `:messages` for error messages
 2. Run `:checkhealth` for plugin health status
 3. Use `:Lazy log` for plugin-related errors
 4. Test individual files with `nvim --headless` commands
+5. Check startup time: `nvim --startuptime /tmp/startup.log`
 
-## Integration Notes
+### Refactoring Workflow
+1. Backup current config
+2. Create new plugin file
+3. Add to lazy.lua spec
+4. Test with `:checkhealth`
+5. Add keymaps
+6. Verify functionality
+7. Run `stylua .` for formatting
+8. Commit changes
 
-### OpenCode.nvim Integration
-- Uses Kitty provider for better terminal integration
-- Key mappings: `<C-a>` (ask), `<C-x>` (select), `<C-.>` (toggle)
-- Auto-reload enabled for edited buffers
-- Statusline integration available with lualine
+## Verification Commands
 
-### LazyVim Base
-- Extends LazyVim's default plugin set
-- Follows LazyVim's loading conventions
-- Compatible with LazyVim's color schemes and themes
-- Maintains LazyVim's performance optimizations
+After any plugin installation:
+```bash
+# Health check
+nvim --headless -c "checkhealth <plugin>" -c "q"
+
+# Full health
+nvim --headless -c "checkhealth lazyvim" -c "q"
+
+# Config load
+nvim --headless -c "lua print('OK')" -c "q"
+
+# Format check
+stylua --check lua/
+```
+
+## Notes
+
+- This config prioritizes clean architecture and developer productivity
+- AI plugins use Claude API (not Claude Code)
+- Flutter support via flutter-tools.nvim
+- Documentation via Quarto and Neorg
+- All plugins use lazy loading for performance
 
 Remember to run `stylua .` after making changes to maintain consistent code formatting.

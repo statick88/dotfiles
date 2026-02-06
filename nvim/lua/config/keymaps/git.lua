@@ -1,12 +1,15 @@
 ---@desc Git and version control keymaps
 
--- Fugitive keymaps for Git operations
 vim.keymap.set("n", "<leader>gs", "<cmd>Git<cr>", { desc = "Git status" })
 vim.keymap.set("n", "<leader>gc", "<cmd>Git commit<cr>", { desc = "Git commit" })
 vim.keymap.set("n", "<leader>gp", "<cmd>Git push<cr>", { desc = "Git push" })
 vim.keymap.set("n", "<leader>gl", "<cmd>Git pull<cr>", { desc = "Git pull" })
 
--- Gitsigns keymaps for hunks
+vim.keymap.set("n", "<leader>gg", ":LazyGit<CR>", { desc = "LazyGit" })
+vim.keymap.set("n", "<leader>gf", ":GrugFar<CR>", { desc = "GrugFar (search/replace)" })
+vim.keymap.set("n", "<leader>gd", ":DiffviewOpen<CR>", { desc = "Diffview" })
+vim.keymap.set("n", "<leader>gdc", ":DiffviewClose<CR>", { desc = "Diffview close" })
+
 local gitsigns_ok, gitsigns = pcall(require, "gitsigns")
 if gitsigns_ok then
   vim.keymap.set("n", "]c", gitsigns.next_hunk, { desc = "Next git hunk" })

@@ -69,8 +69,14 @@ end
 
 -- Setup function to add these commands
 function M.setup()
-  local ok, copilot_chat = pcall(require, "CopilotChat")
-  if not ok then
+  local copilot_chat_ok, copilot_chat = pcall(require, "CopilotChat")
+  if not copilot_chat_ok then
+    vim.notify("CopilotChat not available yet", vim.log.levels.DEBUG)
+    return
+  end
+
+  if not copilot_chat or not copilot_chat.ask then
+    vim.notify("CopilotChat incomplete, skipping integration", vim.log.levels.WARN)
     return
   end
 

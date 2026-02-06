@@ -2,7 +2,7 @@ return {
   -- Fuzzy finder con múltiples fuentes
   {
     "nvim-telescope/telescope.nvim",
-    event = "VeryLazy",  -- Optimized: load after UI setup
+    event = "VeryLazy", -- Optimized: load after UI setup
     tag = "0.1.8",
     dependencies = {
       "nvim-lua/plenary.nvim",
@@ -33,9 +33,24 @@ return {
     "nvim-treesitter/nvim-treesitter",
     build = ":TSUpdate",
     opts = {
-      ensure_installed = { 
-        "lua", "vim", "vimdoc", "javascript", "typescript", "python", "json", "yaml",
-        "css", "latex", "scss", "svelte", "typst", "vue", "markdown", "markdown_inline", "r"
+      ensure_installed = {
+        "lua",
+        "vim",
+        "vimdoc",
+        "javascript",
+        "typescript",
+        "python",
+        "json",
+        "yaml",
+        "css",
+        "latex",
+        "scss",
+        "svelte",
+        "typst",
+        "vue",
+        "markdown",
+        "markdown_inline",
+        "r",
       },
       sync_install = false,
       auto_install = true,
@@ -47,8 +62,6 @@ return {
     },
   },
 
-
-
   -- Gestor de sesiones
   {
     "folke/persistence.nvim",
@@ -59,7 +72,7 @@ return {
   -- Terminal mejorado
   {
     "akinsho/toggleterm.nvim",
-    cmd = "ToggleTerm",  -- Optimized: load on command
+    cmd = "ToggleTerm", -- Optimized: load on command
     version = "*",
     opts = {
       size = 20,
@@ -88,7 +101,7 @@ return {
   -- Movimiento mejorado entre ventanas
   {
     "mrjones2014/smart-splits.nvim",
-    event = "VeryLazy",  -- Optimized: load after UI setup
+    event = "VeryLazy", -- Optimized: load after UI setup
     opts = {},
   },
 
@@ -122,7 +135,7 @@ return {
         flowchart_diagrams = {},
         content_editable = false,
         disable_filename = 0,
-        toc = {}
+        toc = {},
       }
     end,
   },

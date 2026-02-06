@@ -22,7 +22,7 @@ return {
         typescript = { "prettier" },
         json = { "prettier" },
         yaml = { "prettier" },
-        markdown = { "prettier", "markdownlint-cli2" },
+        markdown = { "prettier" },
       },
     },
   },
@@ -46,6 +46,12 @@ return {
             opts.buffer = bufnr
             vim.keymap.set(mode, l, r, opts)
           end
+          map("n", "<leader>hs", gs.stage_hunk)
+          map("n", "<leader>hr", gs.reset_hunk)
+          map("v", "<leader>hs", gs.stage_hunk)
+          map("v", "<leader>hr", gs.reset_hunk)
+          map("n", "<leader>hS", gs.stage_buffer)
+          map("n", "<leader>hR", gs.reset_buffer)
         end,
       })
     end,
