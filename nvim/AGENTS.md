@@ -62,6 +62,15 @@ stylua --check .
 
 # Check specific plugin health
 :checkhealth <plugin-name>
+
+# Check blink.cmp
+:checkhealth blink_cmp
+
+# Check fzf-lua
+:checkhealth fzf-lua
+
+# Check neotest
+:checkhealth neotest
 ```
 
 ### Configuration Validation
@@ -79,19 +88,20 @@ nvim --headless -c "profile start /tmp/profile.log" -c "profile func *" -c "q"
 ## Plugin Architecture
 
 ### Core Plugins (lua/plugins/)
-- **core.lua** - Essential plugins (LSP, Treesitter, Completion)
-- **ai.lua** - AI assistants (codecompanion, avante, parrot)
-- **productivity.lua** - Navigation and productivity (oil, harpoon, telescope)
+- **ai.lua** - AI assistants (blink.cmp, copilot, codecompanion, avante)
+- **productividad.lua** - Navigation and productivity (fzf-lua, flash, treesitter)
 - **formatting.lua** - Formatters and linters (conform, nvim-lint)
+- **debugging.lua** - Debugging tools (dap, dap-ui, dap-python, neotest)
+- **documentation.lua** - Documentation tools (marksman, render-markdown)
+- **ui.lua** - UI enhancements (snacks, noice, dressing)
 - **git.lua** - Git integration (lazygit, diffview, grug-far)
 - **refactoring.lua** - Code refactoring tools
 - **organization.lua** - Notes and documentation (neorg, quarto)
-- **ui.lua** - UI enhancements (snacks, noice, dressing)
 - **development.lua** - Language-specific tools (Flutter, Python, TypeScript)
 
 ### Keymap Modules (lua/config/keymaps/)
 - **core.lua** - Core editor navigation
-- **telescope.lua** - Telescope picker keymaps
+- **finder.lua** - Fzf-lua picker keymaps
 - **ai.lua** - AI assistant keymaps
 - **productivity.lua** - Navigation keymaps (oil, harpoon)
 - **refactoring.lua** - Refactor keymaps
@@ -119,9 +129,10 @@ lua/
 │   ├── autocmds.lua   # Auto commands
 │   └── keymaps/       # Keymap modules
 └── plugins/            # Plugin configurations
-    ├── core.lua       # Essential plugins
     ├── ai.lua         # AI assistants
-    ├── productivity.lua # Navigation tools
+    ├── productividad.lua # Navigation tools
+    ├── debugging.lua  # Debugging tools
+    ├── documentation.lua # Docs tools
     ├── formatting.lua  # Formatters/linters
     ├── git.lua        # Git tools
     ├── refactoring.lua # Refactor tools
@@ -140,7 +151,7 @@ lua/
 ### Lazy Loading Examples
 ```lua
 -- Load on command
-{ "cmd = { "Oil", "Harpoon" } }
+{ "cmd = { "Oil", "FzfLua" } }
 
 -- Load on file type
 { "ft = { "python", "typescript" } }
@@ -169,15 +180,65 @@ lua/
 ### Supported AI Plugins
 | Plugin | Purpose | Provider |
 |--------|---------|----------|
+| **blink.cmp** | Autocomplete with Copilot ghost text | GitHub Copilot |
+| **copilot.vim** | GitHub Copilot ghost text | GitHub Copilot |
 | **codecompanion.nvim** | Chat + inline edits + agent flows | Claude API (Anthropic) |
 | **avante.nvim** | Cursor-like editing, diff/apply | Claude API |
-| **parrot.nvim** | Persistent chat, markdown notes | Claude API |
+| **parrot.nvim** | Persistent chat, markdown notes | Claude API (optional) |
 
 ### Configuration
 AI plugins should be configured with:
 - API key via environment variable: `ANTHROPIC_API_KEY`
-- Model selection: claude-sonnet-4, claude-haiku-3
+- Model selection: claude-sonnet-4-20250520, claude-haiku-3
 - Temperature settings for different tasks
+
+## Fuzzy Finder
+
+### fzf-lua (Primary)
+| Command | Description |
+|---------|-------------|
+| `<leader>ff` | Find files |
+| `<leader>fg` | Live grep |
+| `<leader>fb` | Buffers |
+| `<leader>fh` | Help tags |
+| `<leader>fc` | Commands |
+| `<leader>fr` | Recent files |
+| `<leader>fd` | Diagnostics |
+| `<leader>fs` | LSP document symbols |
+| `<leader>fG` | Git status |
+| `<leader>fgc` | Git commits |
+| `<leader>fgb` | Git branches |
+
+### Dependencies
+- `fzf` (via homebrew: `brew install fzf`)
+- `fd` (optional, better find utility)
+- `ripgrep` (optional, better grep utility)
+- `bat` (optional, syntax highlighted previews)
+
+## Debugging
+
+### nvim-dap
+| Command | Description |
+|---------|-------------|
+| `<leader>db` | Toggle breakpoint |
+| `<leader>dc` | Continue/Pause |
+| `<leader>ds` | Step over |
+| `<leader>di` | Step into |
+| `<leader>do` | Step out |
+| `<leader>dr` | Run to cursor |
+
+### Python Debugging
+- Requires `nvim-dap-python`
+- Python path: `~/.cache/pypoetry/virtualenvs/*/bin/python`
+- pytest integration via `neotest-pytest`
+
+### neotest
+| Command | Description |
+|---------|-------------|
+| `<leader>tr` | Run nearest test |
+| `<leader>tf` | Run file tests |
+| `<leader>ts` | Toggle test summary |
+| `<leader>to` | Toggle output panel |
 
 ## Error Handling
 - Use `pcall()` for safe plugin loading where needed
@@ -206,6 +267,7 @@ AI plugins should be configured with:
 - Formatter: black, isort, ruff
 - Linter: ruff, mypy
 - Testing: neotest, pytest
+- Debugging: nvim-dap-python
 
 ### TypeScript (React/Next.js)
 - LSP: ts_ls, tailwindcss
@@ -271,9 +333,11 @@ stylua --check lua/
 ## Notes
 
 - This config prioritizes clean architecture and developer productivity
-- AI plugins use Claude API (not Claude Code)
+- AI plugins use Claude API (codecompanion, avante) and GitHub Copilot (blink.cmp)
 - Flutter support via flutter-tools.nvim
-- Documentation via Quarto and Neorg
+- Documentation via Quarto, Markdown, and Neorg
 - All plugins use lazy loading for performance
+- fzf-lua is the primary fuzzy finder (replaces telescope)
+- Debugging via nvim-dap with dap-ui and dap-python
 
 Remember to run `stylua .` after making changes to maintain consistent code formatting.

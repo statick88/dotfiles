@@ -12,10 +12,6 @@ return {
           padding = 2,
           max_width = 80,
         },
-        keymaps = {
-          ["<C-h>"] = false,
-          ["<M-h>"] = "actions.select_split",
-        },
       })
     end,
   },
@@ -39,7 +35,7 @@ return {
     end,
   },
   {
-    "echasnovski/mini.bracketed",
+    "nvim-mini/mini.bracketed",
     event = "VeryLazy",
     config = function()
       require("mini.bracketed").setup()
@@ -52,6 +48,13 @@ return {
       local dial = require("dial")
       vim.keymap.set("n", "<C-a>", dial.increment, { desc = "Increment" })
       vim.keymap.set("n", "<C-x>", dial.decrement, { desc = "Decrement" })
+    end,
+  },
+  {
+    "folke/flash.nvim",
+    event = "VeryLazy",
+    config = function()
+      require("flash").setup()
     end,
   },
 }

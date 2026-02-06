@@ -5,7 +5,6 @@ function prod.setup()
   local oil_ok, _ = pcall(require, "oil")
   if oil_ok then
     vim.keymap.set("n", "<leader>o", ":Oil<CR>", { desc = "Open Oil (file manager)" })
-    vim.keymap.set("n", "<leader>ff", ":Oil --float<CR>", { desc = "Oil floating" })
   end
 
   local harpoon_ok, _ = pcall(require, "harpoon")
@@ -28,6 +27,13 @@ function prod.setup()
     vim.keymap.set("n", "<leader>h4", function()
       require("harpoon.ui"):nav_file(4)
     end, { desc = "Harpoon file 4" })
+  end
+
+  local snacks_ok, _ = pcall(require, "snacks")
+  if snacks_ok then
+    vim.keymap.set("n", "<leader>sp", function()
+      require("snacks.picker"):open()
+    end, { desc = "Snacks picker" })
   end
 
   vim.keymap.set("n", "<leader>ls", ":ls<CR>", { desc = "Buffer list" })

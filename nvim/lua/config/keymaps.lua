@@ -11,7 +11,7 @@ end, 100)
 
 -- Load all keymap modules
 require("config.keymaps.core")
-require("config.keymaps.telescope")
+require("config.keymaps.finder")
 require("config.keymaps.flash")
 require("config.keymaps.lsp")
 require("config.keymaps.git")
