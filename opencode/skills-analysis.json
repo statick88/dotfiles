@@ -1,0 +1,724 @@
+{
+  "analysis": {
+    "metadata": {
+      "timestamp": "2026-03-07T00:00:00Z",
+      "total_skills": 12,
+      "categories": {
+        "sdd_workflow": 8,
+        "specialized": 2,
+        "shared_infrastructure": 1,
+        "utilities": 1
+      }
+    },
+    "directory_structure": {
+      "root": "./skills/",
+      "organization": "Flat structure with _shared subdirectory",
+      "description": "Skills are organized by functional domain (SDD workflow stages) rather than by technology",
+      "layout": {
+        "skills/": {
+          "_shared/": {
+            "purpose": "Shared conventions and contracts",
+            "files": [
+              "persistence-contract.md - Mode resolution rules (engram|openspec|none)",
+              "engram-convention.md - Naming and recovery for Engram persistence",
+              "openspec-convention.md - File structure for OpenSpec persistence"
+            ]
+          },
+          "sdd-*/ (8 skills)": {
+            "purpose": "SDD workflow phases",
+            "structure": "Each skill has only SKILL.md (no code, only documentation)"
+          },
+          "go-testing/": {
+            "purpose": "Specialized Go testing patterns",
+            "structure": "Only SKILL.md"
+          },
+          "skill-creator/": {
+            "purpose": "Meta-skill for creating new skills",
+            "structure": "Only SKILL.md"
+          }
+        }
+      }
+    },
+    "skills_catalog": [
+      {
+        "id": 1,
+        "name": "sdd-init",
+        "phase": "Initialization",
+        "version": "2.0",
+        "license": "MIT",
+        "purpose": "Initialize SDD context in any project - detects stack, conventions, bootstraps persistence backend",
+        "trigger": "When user wants to initialize SDD in a project (sdd init, iniciar sdd, openspec init)",
+        "inputs": {
+          "required": ["project_root"],
+          "optional": ["explicit_config"]
+        },
+        "outputs": {
+          "engram_mode": "Project context saved to Engram (sdd-init/{project-name})",
+          "openspec_mode": "Creates openspec/ directory structure with config.yaml",
+          "none_mode": "Returns detected context inline only"
+        },
+        "key_responsibilities": [
+          "Detect project tech stack (package.json, go.mod, pyproject.toml, etc)",
+          "Detect testing framework and CI conventions",
+          "Create openspec/config.yaml with detected context (if openspec mode)",
+          "Persist project context for dependency by other SDD skills"
+        ],
+        "dependencies": {
+          "incoming": "None - this is the entry point",
+          "outgoing": "All other SDD skills depend on sdd-init for project context"
+        },
+        "file_paths": {
+          "reads": "project root (package.json, go.mod, Makefile, etc)",
+          "writes_engram": "Engram artifact with topic_key: sdd-init/{project-name}",
+          "writes_openspec": "openspec/config.yaml, openspec/specs/, openspec/changes/, openspec/changes/archive/",
+          "writes_none": "Nothing"
+        },
+        "persistence_modes": ["engram", "openspec", "none"],
+        "config_integration": "Reads project's existing linters, formatters, CI to auto-populate rules"
+      },
+      {
+        "id": 2,
+        "name": "sdd-explore",
+        "phase": "Planning - Discovery",
+        "version": "2.0",
+        "license": "MIT",
+        "purpose": "Explore and investigate ideas before committing to a change - think through problems, compare approaches",
+        "trigger": "When orchestrator launches to think through feature, investigate codebase, or clarify requirements (/sdd-explore <topic>)",
+        "inputs": {
+          "required": ["topic"],
+          "optional": ["change_name (for saving), project_context"]
+        },
+        "outputs": {
+          "always": "Structured analysis markdown with approaches, pros/cons, recommendation",
+          "if_change_name": "Optionally saves to openspec/changes/{change-name}/exploration.md"
+        },
+        "key_responsibilities": [
+          "Read and understand the request (new feature, bug fix, refactor)",
+          "Investigate codebase thoroughly - entry points, affected files, existing behavior",
+          "Analyze multiple approaches if they exist",
+          "Compare approaches with pros/cons/complexity",
+          "Make recommendation with risks",
+          "Optionally save exploration to file if change name provided"
+        ],
+        "dependencies": {
+          "incoming": "Optional: sdd-init context (for project conventions)",
+          "outgoing": "Feeds into sdd-propose"
+        },
+        "file_paths": {
+          "reads": "Entire codebase (searches for patterns, related functionality, tests)",
+          "writes_optional": "openspec/changes/{change-name}/exploration.md (only if change_name provided)",
+          "writes_none": "Returns inline only if no change_name"
+        },
+        "persistence_modes": ["engram", "openspec", "none"],
+        "special_notes": "This is a DISCOVERY phase - does NOT modify code, only analyzes. Can be standalone (/sdd-explore) or tied to a change (/sdd-new)"
+      },
+      {
+        "id": 3,
+        "name": "sdd-propose",
+        "phase": "Planning - Proposal",
+        "version": "2.0",
+        "license": "MIT",
+        "purpose": "Create a change proposal with intent, scope, and approach",
+        "trigger": "When orchestrator launches to create/update proposal for a change (/sdd-new <change-name>)",
+        "inputs": {
+          "required": ["change_name"],
+          "optional": ["exploration_analysis", "project_context"]
+        },
+        "outputs": {
+          "engram": "Artifact type: proposal, topic_key: sdd/{change-name}/proposal",
+          "openspec": "File: openspec/changes/{change-name}/proposal.md",
+          "none": "Returns inline only"
+        },
+        "key_responsibilities": [
+          "Read existing specs if they exist (understand current behavior being modified)",
+          "Create change directory structure (if openspec mode)",
+          "Write proposal.md with: Intent, Scope, Approach, Affected Areas, Risks, Rollback Plan, Dependencies, Success Criteria",
+          "Every proposal MUST have rollback plan",
+          "Every proposal MUST have success criteria"
+        ],
+        "dependencies": {
+          "incoming": "Optional: sdd-explore (exploration_analysis)",
+          "outgoing": "Feeds into sdd-spec, sdd-design, sdd-tasks"
+        },
+        "file_paths": {
+          "reads": "openspec/specs/ (if exists, read current behavior)",
+          "writes_engram": "Engram artifact",
+          "writes_openspec": "openspec/changes/{change-name}/proposal.md",
+          "writes_none": "Nothing"
+        },
+        "persistence_modes": ["engram", "openspec", "none"],
+        "contract_notes": "Must follow persistence-contract.md - NEVER force openspec creation unless explicitly requested"
+      },
+      {
+        "id": 4,
+        "name": "sdd-spec",
+        "phase": "Planning - Specification",
+        "version": "2.0",
+        "license": "MIT",
+        "purpose": "Write specifications with requirements and scenarios (delta specs for changes)",
+        "trigger": "When orchestrator launches to write/update specs for a change",
+        "inputs": {
+          "required": ["change_name", "artifact_store_mode"],
+          "dependencies_required": ["proposal"]
+        },
+        "outputs": {
+          "engram": "Artifact type: spec, topic_key: sdd/{change-name}/spec",
+          "openspec": "Files: openspec/changes/{change-name}/specs/{domain}/spec.md (delta or full)",
+          "none": "Returns inline only"
+        },
+        "key_responsibilities": [
+          "Identify affected domains from proposal's 'Affected Areas'",
+          "Read existing spec.md if it exists (understand current behavior)",
+          "Write delta specs: ADDED Requirements, MODIFIED Requirements, REMOVED Requirements",
+          "If no existing spec, write FULL spec (not delta)",
+          "Every requirement MUST have at least ONE scenario",
+          "Use Given/When/Then format for scenarios",
+          "Use RFC 2119 keywords (MUST, SHALL, SHOULD, MAY) for requirement strength"
+        ],
+        "dependencies": {
+          "incoming": "proposal (required), optional existing main specs",
+          "outgoing": "Feeds into sdd-design and sdd-tasks"
+        },
+        "file_paths": {
+          "reads_engram": "Retrieves proposal artifact via mem_search + mem_get_observation",
+          "reads_openspec": "openspec/changes/{change-name}/proposal.md, openspec/specs/ (main specs)",
+          "writes_openspec": "openspec/changes/{change-name}/specs/{domain}/spec.md"
+        },
+        "persistence_modes": ["engram", "openspec", "none"],
+        "spec_format": "RFC 2119 format with Given/When/Then scenarios",
+        "critical_rule": "Never include implementation details - specs describe WHAT, not HOW"
+      },
+      {
+        "id": 5,
+        "name": "sdd-design",
+        "phase": "Planning - Design",
+        "version": "2.0",
+        "license": "MIT",
+        "purpose": "Create technical design document with architecture decisions and approach",
+        "trigger": "When orchestrator launches to write/update technical design for a change",
+        "inputs": {
+          "required": ["change_name", "artifact_store_mode"],
+          "dependencies_required": ["proposal"]
+        },
+        "outputs": {
+          "engram": "Artifact type: design, topic_key: sdd/{change-name}/design",
+          "openspec": "File: openspec/changes/{change-name}/design.md",
+          "none": "Returns inline only"
+        },
+        "key_responsibilities": [
+          "Read actual codebase that will be affected - entry points, modules, patterns",
+          "Read proposal and spec (understand WHAT)",
+          "Write design.md describing HOW with: Technical Approach, Architecture Decisions, Data Flow, File Changes, Interfaces/Contracts, Testing Strategy, Migration Plan",
+          "Every decision MUST have rationale",
+          "Include concrete file paths, not abstract descriptions",
+          "Follow existing project patterns (not generic best practices)"
+        ],
+        "dependencies": {
+          "incoming": "proposal (required), spec (optional - spec may not exist yet if running in parallel)",
+          "outgoing": "Feeds into sdd-tasks and sdd-apply"
+        },
+        "file_paths": {
+          "reads": "Actual source code in project",
+          "writes_engram": "Engram artifact",
+          "writes_openspec": "openspec/changes/{change-name}/design.md",
+          "writes_none": "Nothing"
+        },
+        "persistence_modes": ["engram", "openspec", "none"],
+        "critical_rule": "MUST read actual codebase before designing - never guess"
+      },
+      {
+        "id": 6,
+        "name": "sdd-tasks",
+        "phase": "Planning - Task Breakdown",
+        "version": "2.0",
+        "license": "MIT",
+        "purpose": "Break down a change into an implementation task checklist",
+        "trigger": "When orchestrator launches to create/update task breakdown for a change",
+        "inputs": {
+          "required": ["change_name", "artifact_store_mode"],
+          "dependencies_required": ["proposal", "spec", "design"]
+        },
+        "outputs": {
+          "engram": "Artifact type: tasks, topic_key: sdd/{change-name}/tasks",
+          "openspec": "File: openspec/changes/{change-name}/tasks.md (updated by sdd-apply as tasks complete)",
+          "none": "Returns inline only"
+        },
+        "key_responsibilities": [
+          "Analyze design to identify all file changes and dependencies",
+          "Determine correct implementation order",
+          "Write tasks.md with hierarchical phases: Foundation, Core Implementation, Integration, Testing, Cleanup",
+          "Each task MUST be: Specific (what file/method), Actionable (how to do it), Verifiable (how to test), Small (one session)",
+          "Use hierarchical numbering: 1.1, 1.2, 2.1, 2.2",
+          "Reference concrete file paths",
+          "Order tasks by dependency - Phase 1 shouldn't depend on Phase 2"
+        ],
+        "dependencies": {
+          "incoming": "proposal, spec, design (all required)",
+          "outgoing": "Feeds into sdd-apply and sdd-verify"
+        },
+        "file_paths": {
+          "reads_engram": "proposal, spec, design artifacts",
+          "reads_openspec": "proposal.md, specs/, design.md",
+          "writes_openspec": "openspec/changes/{change-name}/tasks.md"
+        },
+        "persistence_modes": ["engram", "openspec", "none"],
+        "task_format": "[ ] {phase}.{number} {Concrete action - what file, what change}",
+        "tdd_integration": "If TDD mode detected, integrate test-first tasks: RED task (write failing test) → GREEN task (make it pass) → REFACTOR task"
+      },
+      {
+        "id": 7,
+        "name": "sdd-apply",
+        "phase": "Implementation",
+        "version": "2.0",
+        "license": "MIT",
+        "purpose": "Implement tasks from the change, writing actual code following specs and design",
+        "trigger": "When orchestrator launches to implement one or more tasks from a change",
+        "inputs": {
+          "required": ["change_name", "task_range (e.g., Phase 1, tasks 1.1-1.3)", "artifact_store_mode"],
+          "dependencies_required": ["proposal", "spec", "design", "tasks"]
+        },
+        "outputs": {
+          "engram": "Artifact type: apply-progress, topic_key: sdd/{change-name}/apply-progress",
+          "openspec": "Updates openspec/changes/{change-name}/tasks.md with [x] marks, creates actual code files",
+          "none": "Returns progress summary inline only"
+        },
+        "key_responsibilities": [
+          "Read specs - understand WHAT the code must do",
+          "Read design - understand HOW to structure the code",
+          "Read existing code - understand current patterns",
+          "Detect implementation mode: TDD or Standard",
+          "TDD mode: RED (write failing test) → GREEN (minimal code to pass) → REFACTOR (clean up)",
+          "Standard mode: Write code directly following specs as acceptance criteria",
+          "Mark tasks complete [x] as they finish",
+          "Load and follow relevant coding skills if available (react-19, typescript, django-drf, tdd, pytest, vitest, etc)",
+          "Match project conventions and patterns"
+        ],
+        "dependencies": {
+          "incoming": "proposal, spec, design, tasks (all required)",
+          "outgoing": "Feeds into sdd-verify"
+        },
+        "file_paths": {
+          "reads_engram": "All previous artifacts",
+          "reads_openspec": "All previous artifacts, reads existing code to match patterns",
+          "writes": "Actual project code files (implementation code, test files)",
+          "updates": "tasks.md with [x] marks"
+        },
+        "persistence_modes": ["engram (no file writes)", "openspec (file writes)", "none (no file writes)"],
+        "tdd_workflow": {
+          "detection": "From openspec/config.yaml rules.apply.tdd, or project's installed skills, or existing test patterns",
+          "red_phase": "Write failing test first - confirms the test is meaningful",
+          "green_phase": "Write minimum code to make test pass",
+          "refactor_phase": "Clean up without changing behavior"
+        },
+        "test_runner_detection": "From config.yaml rules.apply.test_command, package.json scripts.test, pyproject.toml, Makefile, etc",
+        "critical_rule": "ALWAYS read specs before implementing - specs are your acceptance criteria"
+      },
+      {
+        "id": 8,
+        "name": "sdd-verify",
+        "phase": "Verification",
+        "version": "2.0",
+        "license": "MIT",
+        "purpose": "Validate that implementation matches specs, design, and tasks",
+        "trigger": "When orchestrator launches to verify a completed (or partially completed) change",
+        "inputs": {
+          "required": ["change_name", "artifact_store_mode"],
+          "dependencies_required": ["proposal", "spec", "design", "tasks"]
+        },
+        "outputs": {
+          "engram": "Artifact type: verify-report, topic_key: sdd/{change-name}/verify-report",
+          "openspec": "File: openspec/changes/{change-name}/verify-report.md",
+          "none": "Returns verification report inline only"
+        },
+        "key_responsibilities": [
+          "Check completeness: Count total vs completed tasks",
+          "Check correctness: For each spec requirement/scenario, find evidence in code",
+          "Check coherence: Verify design decisions were followed",
+          "Check testing: Verify test files exist and cover scenarios",
+          "Run tests: Execute test suite (real execution, not static analysis)",
+          "Run build: Execute build/type-check commands",
+          "Run coverage: Check if configured coverage threshold is met",
+          "Spec Compliance Matrix: Cross-reference each spec scenario to test results",
+          "Generate verify-report.md with CRITICAL/WARNING/SUGGESTION issues"
+        ],
+        "dependencies": {
+          "incoming": "proposal, spec, design, tasks (all required)",
+          "outgoing": "Feeds into sdd-archive"
+        },
+        "file_paths": {
+          "reads_engram": "All previous artifacts",
+          "reads_openspec": "All previous artifacts",
+          "reads": "Source code, test files, project configs (tsconfig.json, pyproject.toml, Makefile, etc)",
+          "writes_openspec": "openspec/changes/{change-name}/verify-report.md",
+          "executes": "Tests (detected test runner), build commands, coverage analysis"
+        },
+        "persistence_modes": ["engram", "openspec", "none"],
+        "verification_gates": {
+          "completeness": "All tasks completed? (warning if incomplete core tasks)",
+          "correctness": "Code implements all spec requirements? (critical if missing)",
+          "coherence": "Design decisions followed? (warning if deviated)",
+          "testing": "Tests pass? (critical if failed)",
+          "build": "Build succeeds? (critical if failed)",
+          "coverage": "Above configured threshold? (warning if below)"
+        },
+        "compliance_matrix": "Each spec scenario must have: test exists + test passed = COMPLIANT",
+        "critical_rule": "Static analysis alone is NOT enough - ALWAYS execute tests and build"
+      },
+      {
+        "id": 9,
+        "name": "sdd-archive",
+        "phase": "Finalization",
+        "version": "2.0",
+        "license": "MIT",
+        "purpose": "Sync delta specs to main specs and archive a completed change",
+        "trigger": "When orchestrator launches to archive a change after implementation and verification",
+        "inputs": {
+          "required": ["change_name", "artifact_store_mode"]
+        },
+        "outputs": {
+          "engram": "Artifact type: archive-report, topic_key: sdd/{change-name}/archive-report (includes lineage of all observation IDs)",
+          "openspec": "Moves openspec/changes/{change-name}/ → openspec/changes/archive/YYYY-MM-DD-{change-name}/, updates main specs",
+          "none": "Returns closure summary inline only"
+        },
+        "key_responsibilities": [
+          "Read delta specs from openspec/changes/{change-name}/specs/",
+          "If main spec exists: Apply delta (ADDED/MODIFIED/REMOVED requirements)",
+          "If main spec doesn't exist: Copy delta as new main spec",
+          "Preserve all OTHER requirements not mentioned in delta",
+          "Move change folder to archive with date prefix (YYYY-MM-DD-{change-name})",
+          "Verify archive contains all artifacts (proposal, specs, design, tasks, verify-report)"
+        ],
+        "dependencies": {
+          "incoming": "verify-report (required to check for CRITICAL issues before archive), all other artifacts (for audit trail)",
+          "outgoing": "None - this is the exit point of the SDD cycle"
+        },
+        "file_paths": {
+          "reads_openspec": "Delta specs from openspec/changes/{change-name}/specs/",
+          "reads_openspec_main": "Main specs from openspec/specs/{domain}/spec.md",
+          "moves": "openspec/changes/{change-name}/ → openspec/changes/archive/YYYY-MM-DD-{change-name}/",
+          "writes": "Updated main specs with merged deltas"
+        },
+        "persistence_modes": ["engram", "openspec", "none"],
+        "merge_rules": {
+          "matching": "Match requirements by name (e.g., '### Requirement: Session Expiration')",
+          "preserve": "Keep all OTHER requirements not in delta",
+          "apply": "ADDED → append, MODIFIED → replace, REMOVED → delete",
+          "destructive_warning": "If merge would remove large sections, WARN orchestrator and ask for confirmation"
+        },
+        "archive_format": "openspec/changes/archive/YYYY-MM-DD-{change-name}/ (ISO date format)",
+        "audit_trail": "Archive is permanent - never delete or modify archived changes"
+      },
+      {
+        "id": 10,
+        "name": "go-testing",
+        "phase": "Specialized - Go Testing",
+        "version": "1.0",
+        "license": "Apache-2.0",
+        "purpose": "Go testing patterns for Gentleman.Dots, including Bubbletea TUI testing",
+        "trigger": "When writing Go tests, using teatest, or adding test coverage",
+        "inputs": "N/A - this is a reference skill, not invoked by orchestrator",
+        "outputs": "Guidance patterns only",
+        "key_patterns": [
+          "Table-driven tests (struct array with test cases)",
+          "Bubbletea Model testing (direct state transitions)",
+          "Teatest integration tests (tm.Send, tm.WaitFinished, tm.FinalModel)",
+          "Golden file testing (compare output against saved files)",
+          "Cursor navigation testing",
+          "Screen transitions testing",
+          "Exercise validation testing (trainer-specific)",
+          "System info mocking"
+        ],
+        "test_file_organization": "model_test.go, update_test.go, view_test.go alongside source files, testdata/ for golden files",
+        "commands": [
+          "go test ./...",
+          "go test -v ./internal/tui/...",
+          "go test -run TestNavigation",
+          "go test -cover ./...",
+          "go test -update ./... (update golden files)",
+          "go test -short ./... (skip integration)"
+        ],
+        "file_references": [
+          "installer/internal/tui/*_test.go (TUI tests)",
+          "installer/internal/tui/trainer/*_test.go (Trainer tests)",
+          "installer/internal/system/*_test.go (System tests)",
+          "installer/internal/tui/testdata/ (Golden files)"
+        ],
+        "resource_links": ["https://github.com/charmbracelet/bubbletea/tree/master/teatest"]
+      },
+      {
+        "id": 11,
+        "name": "skill-creator",
+        "phase": "Meta - Skill Creation",
+        "version": "1.0",
+        "license": "Apache-2.0",
+        "purpose": "Creates new AI agent skills following the Agent Skills spec",
+        "trigger": "When user asks to create a new skill, add agent instructions, or document patterns for AI",
+        "inputs": "N/A - this is a reference skill, not invoked by orchestrator",
+        "outputs": "Guidance for creating new skills",
+        "when_to_create_skill": [
+          "A pattern is used repeatedly and AI needs guidance",
+          "Project-specific conventions differ from generic best practices",
+          "Complex workflows need step-by-step instructions",
+          "Decision trees help AI choose the right approach"
+        ],
+        "skill_structure": {
+          "required": "SKILL.md",
+          "optional": ["assets/ (templates, schemas, examples)", "references/ (links to local docs)"]
+        },
+        "naming_conventions": {
+          "generic": "{technology} (pytest, playwright, typescript)",
+          "project_specific": "{project}-{component} (myapp-api, myapp-ui)",
+          "testing": "{project}-test-{component}",
+          "workflow": "{action}-{target} (skill-creator, jira-task)"
+        },
+        "frontmatter_fields": {
+          "name": "Required - skill identifier (lowercase, hyphens)",
+          "description": "Required - What + Trigger in one block",
+          "license": "Required - Always Apache-2.0",
+          "metadata.author": "Required - gentleman-programming",
+          "metadata.version": "Required - Semantic version as string"
+        },
+        "content_guidelines": [
+          "Start with critical patterns",
+          "Use tables for decision trees",
+          "Keep code examples minimal and focused",
+          "Include Commands section with copy-paste commands",
+          "Do NOT add Keywords section",
+          "Do NOT duplicate existing docs",
+          "Do NOT include lengthy explanations",
+          "Do NOT use web URLs in references (local paths only)"
+        ]
+      },
+      {
+        "id": 12,
+        "name": "_shared (Infrastructure)",
+        "phase": "Shared Infrastructure",
+        "version": "N/A",
+        "license": "MIT",
+        "purpose": "Shared conventions and contracts across all SDD skills",
+        "type": "Infrastructure - not a skill itself",
+        "components": [
+          {
+            "file": "persistence-contract.md",
+            "purpose": "Defines mode resolution (engram|openspec|none) and behavior per mode",
+            "content": [
+              "Mode resolution algorithm",
+              "Default fallback rules",
+              "Per-mode behavior table",
+              "Common rules for all modes"
+            ]
+          },
+          {
+            "file": "engram-convention.md",
+            "purpose": "Deterministic naming and recovery protocol for Engram persistence",
+            "content": [
+              "Artifact type definitions (explore, proposal, spec, design, tasks, apply-progress, verify-report, archive-report)",
+              "Naming rules: title, topic_key, type, project, scope",
+              "Recovery protocol: 2-step process (mem_search → mem_get_observation)",
+              "Write patterns: mem_save (new), mem_update (existing)"
+            ]
+          },
+          {
+            "file": "openspec-convention.md",
+            "purpose": "File structure and conventions for OpenSpec persistence",
+            "content": [
+              "Directory structure: openspec/, specs/, changes/, archive/",
+              "Artifact file paths per skill",
+              "Reading/writing rules",
+              "Config file reference (config.yaml structure)",
+              "Archive structure with date prefixes"
+            ]
+          }
+        ],
+        "critical_contracts": {
+          "persistence_modes": ["engram - Engram observations (no project files)", "openspec - Filesystem (project files)", "none - Ephemeral (inline only)"],
+          "artifact_types": ["explore (sdd-explore)", "proposal (sdd-propose)", "spec (sdd-spec)", "design (sdd-design)", "tasks (sdd-tasks)", "apply-progress (sdd-apply)", "verify-report (sdd-verify)", "archive-report (sdd-archive)"],
+          "naming_determinism": "Artifacts named by: sdd/{change-name}/{artifact-type} - enables exact recovery and deduplication"
+        }
+      }
+    ],
+    "dependency_graph": {
+      "description": "How skills depend on each other and their artifacts",
+      "stages": [
+        {
+          "stage": 1,
+          "phase": "Initialization",
+          "skill": "sdd-init",
+          "produces": ["Project context (Engram or inline)"],
+          "consumed_by": ["All other skills (implicit)"]
+        },
+        {
+          "stage": 2,
+          "phase": "Discovery",
+          "skill": "sdd-explore",
+          "produces": ["exploration.md (optional)"],
+          "consumed_by": ["sdd-propose"]
+        },
+        {
+          "stage": 3,
+          "phase": "Proposal",
+          "skill": "sdd-propose",
+          "produces": ["proposal.md"],
+          "consumed_by": ["sdd-spec", "sdd-design", "sdd-tasks"]
+        },
+        {
+          "stage": 4,
+          "phase": "Specification & Design (parallel)",
+          "skills": ["sdd-spec", "sdd-design"],
+          "dependencies": {
+            "sdd-spec": "requires: proposal",
+            "sdd-design": "requires: proposal; optional: spec"
+          },
+          "produces": ["spec.md (delta or full)", "design.md"],
+          "consumed_by": ["sdd-tasks"]
+        },
+        {
+          "stage": 5,
+          "phase": "Task Breakdown",
+          "skill": "sdd-tasks",
+          "produces": ["tasks.md (with [ ] checkboxes)"],
+          "dependencies": "requires: proposal, spec, design (all three)",
+          "consumed_by": ["sdd-apply"]
+        },
+        {
+          "stage": 6,
+          "phase": "Implementation",
+          "skill": "sdd-apply",
+          "produces": ["Code files (actual implementation)", "Updated tasks.md with [x] marks"],
+          "dependencies": "requires: proposal, spec, design, tasks",
+          "consumed_by": ["sdd-verify"]
+        },
+        {
+          "stage": 7,
+          "phase": "Verification",
+          "skill": "sdd-verify",
+          "produces": ["verify-report.md (Spec Compliance Matrix)"],
+          "dependencies": "requires: proposal, spec, design, tasks, implementation",
+          "gates": ["CRITICAL issues block archive", "WARNINGS noted for next work"],
+          "consumed_by": ["sdd-archive"]
+        },
+        {
+          "stage": 8,
+          "phase": "Finalization",
+          "skill": "sdd-archive",
+          "produces": ["Archived change folder (YYYY-MM-DD-{change-name})", "Updated main specs"],
+          "dependencies": "requires: verify-report (to check for CRITICAL issues)",
+          "final_action": "Moves change folder to archive, merges delta specs into main specs, completes SDD cycle"
+        }
+      ],
+      "dag": "proposal → (specs ⟷ design) → tasks → apply → verify → archive",
+      "parallel_execution": "sdd-spec and sdd-design can run in parallel (both depend on proposal only)",
+      "blocking_conditions": {
+        "sdd-tasks": "Requires ALL of proposal, spec, AND design",
+        "sdd-apply": "Requires ALL of proposal, spec, design, AND tasks",
+        "sdd-verify": "Requires implementation to be complete (sdd-apply done)",
+        "sdd-archive": "BLOCKED if verify-report has CRITICAL issues"
+      }
+    },
+    "configuration_system": {
+      "description": "How skills read and respect project-specific configuration",
+      "config_file": "openspec/config.yaml",
+      "location": "openspec/config.yaml (created by sdd-init)",
+      "schema": {
+        "schema": "spec-driven (fixed)",
+        "context": "Project context string (tech stack, architecture, testing, style)",
+        "rules": {
+          "proposal": "List of proposal-specific rules (e.g., 'Include rollback plan for risky changes')",
+          "specs": "List of spec rules (e.g., 'Use Given/When/Then format')",
+          "design": "List of design rules (e.g., 'Include sequence diagrams')",
+          "tasks": "List of task rules (e.g., 'Group by phase')",
+          "apply": {
+            "tdd": "Boolean - enable RED-GREEN-REFACTOR workflow",
+            "test_command": "String - command to run tests (e.g., 'npm test', 'pytest')"
+          },
+          "verify": {
+            "test_command": "String - override test command for verification",
+            "build_command": "String - override build command",
+            "coverage_threshold": "Number - minimum coverage % (0 = disabled)"
+          },
+          "archive": "List of archive rules (e.g., 'Warn before merging destructive deltas')"
+        }
+      },
+      "how_skills_use_config": {
+        "sdd-init": "Detects stack and creates rules based on conventions",
+        "sdd-apply": "Reads rules.apply.tdd and rules.apply.test_command to determine workflow",
+        "sdd-verify": "Reads rules.verify.test_command, rules.verify.build_command, rules.verify.coverage_threshold"
+      }
+    },
+    "integration_points": {
+      "orchestrator_control": "The Orchestrator (LEAD AGENT) controls SDD workflow by launching sub-agents",
+      "sdd_commands": {
+        "sdd init": "Launches sdd-init sub-agent",
+        "sdd explore <topic>": "Launches sdd-explore sub-agent",
+        "sdd new <change-name>": "Launches sdd-propose sub-agent (orchestrator may first call sdd-explore)",
+        "sdd ff <change-name>": "Fast-forward: launches sdd-propose → sdd-spec → sdd-design → sdd-tasks in sequence",
+        "sdd continue [change-name]": "Orchestrator determines which phase to continue (e.g., sdd-apply next)",
+        "sdd apply [change-name]": "Launches sdd-apply sub-agent with task batch",
+        "sdd verify [change-name]": "Launches sdd-verify sub-agent",
+        "sdd archive [change-name]": "Launches sdd-archive sub-agent"
+      },
+      "orchestrator_responsibilities": {
+        "decision_making": "Orchestrator decides which skill to launch and when",
+        "state_tracking": "Orchestrator tracks which artifacts exist (proposal, spec, design, tasks, apply-progress, verify-report, archive-report)",
+        "dependency_enforcement": "Orchestrator ensures dependencies are met before launching skills",
+        "user_communication": "Orchestrator shows user summaries between skill executions and asks for approval",
+        "error_handling": "Orchestrator receives issues from skills and decides: fix in-place, re-launch skill, or escalate to user"
+      },
+      "memory_integration": {
+        "engram_mode": "Skills use Engram (mem_save, mem_search, mem_get_observation, mem_update) for persistence",
+        "openspec_mode": "Skills use filesystem (Read, Write, Edit) for persistence",
+        "none_mode": "Skills return results inline, orchestrator may save to memory if needed"
+      }
+    },
+    "error_states_and_issues": {
+      "current_issues": [
+        {
+          "status": "OK",
+          "skill": "All SDD skills",
+          "issue": "No broken skills detected - all are well-documented",
+          "evidence": "Each SKILL.md is complete with Purpose, Execution Contract, What to Do steps"
+        }
+      ],
+      "potential_issues": [
+        {
+          "category": "Integration",
+          "risk": "sdd-spec and sdd-design can run in parallel - orchestrator must handle race conditions",
+          "mitigation": "Orchestrator serializes or ensures both complete before sdd-tasks"
+        },
+        {
+          "category": "Configuration",
+          "risk": "If openspec/config.yaml doesn't exist, skills may use wrong test commands",
+          "mitigation": "sdd-init creates config.yaml; skills have fallback detection (package.json, Makefile, etc)"
+        },
+        {
+          "category": "Persistence",
+          "risk": "If mode resolution fails (no Engram, no openspec/), skills fall back to 'none'",
+          "mitigation": "Skills explicitly document fallback behavior; recommend user enable Engram or openspec"
+        },
+        {
+          "category": "Testing",
+          "risk": "sdd-verify executes actual tests - if project has slow or flaky tests, verify phase will be slow",
+          "mitigation": "Skills recommend using -short flag or test sharding"
+        }
+      ],
+      "blocked_skills": "None - all skills are ready for use"
+    },
+    "testing_strategy": {
+      "unit_testing": "N/A - these are documentation skills, not code",
+      "integration_testing": {
+        "test_full_sdd_cycle": "Initialize project → Explore → Propose → Spec/Design → Tasks → Apply → Verify → Archive",
+        "test_persistence_modes": "Test each skill with engram, openspec, and none modes",
+        "test_dependency_chain": "Verify artifacts from one skill feed correctly to next"
+      },
+      "end_to_end_testing": {
+        "real_project": "Run SDD on a sample project (Go, Python, TypeScript) from start to finish",
+        "verify_outputs": "Check that each artifact has correct format and content",
+        "verify_state": "Check that task checklist is accurate, implementation is complete, tests pass, specs are synced"
+      },
+      "regression_testing": {
+        "test_mode_combinations": "engram-only, openspec-only, none-only, engram→openspec transition",
+        "test_incomplete_flows": "What if sdd-apply is interrupted mid-way? (answer: orchestrator can call sdd-apply again)"
+      }
+    }
+  }
+}

@@ -1,33 +1,73 @@
----@desc Testing and debugging keymaps
+---@desc Testing (Neotest) keymaps
 
--- DAP (Debug Adapter Protocol) keymaps
-local dap_ok, dap = pcall(require, "dap")
-if dap_ok then
-  vim.keymap.set("n", "<leader>db", dap.toggle_breakpoint, { desc = "Toggle breakpoint" })
-  vim.keymap.set("n", "<leader>dc", dap.continue, { desc = "Continue" })
-  vim.keymap.set("n", "<leader>do", dap.step_over, { desc = "Step over" })
-  vim.keymap.set("n", "<leader>di", dap.step_into, { desc = "Step into" })
-  vim.keymap.set("n", "<leader>dO", dap.step_out, { desc = "Step out" })
-  vim.keymap.set("n", "<leader>dr", dap.repl.open, { desc = "Open REPL" })
-  vim.keymap.set("n", "<leader>dl", dap.run_last, { desc = "Run last" })
-end
+-- Run tests
+vim.keymap.set("n", "<leader>tt", function()
+  require("neotest").run.run()
+end, { desc = "Run nearest test" })
+vim.keymap.set("n", "<leader>tT", function()
+  require("neotest").run.run(vim.fn.expand("%"))
+end, { desc = "Run file tests" })
+vim.keymap.set("n", "<leader>td", function()
+  require("neotest").run.run({ strategy = "dap" })
+end, { desc = "Debug nearest test" })
+vim.keymap.set("n", "<leader>tD", function()
+  require("neotest").run.run({ vim.fn.expand("%"), strategy = "dap" })
+end, { desc = "Debug file tests" })
+vim.keymap.set("n", "<leader>tf", function()
+  require("neotest").run.run(vim.fn.getcwd())
+end, { desc = "Run all tests" })
+vim.keymap.set("n", "<leader>tl", function()
+  require("neotest").run.run_last()
+end, { desc = "Run last test" })
+vim.keymap.set("n", "<leader>tL", function()
+  require("neotest").run.run_last({ strategy = "dap" })
+end, { desc = "Debug last test" })
 
--- Neotest keymaps for running tests
-local neotest_ok, neotest = pcall(require, "neotest")
-if neotest_ok then
-  vim.keymap.set("n", "<leader>tt", function()
-    neotest.run.run(vim.fn.expand("%"))
-  end, { desc = "Run file tests" })
+-- Test navigation
+vim.keymap.set("n", "[t", function()
+  require("neotest").jump.prev({ status = "failed" })
+end, { desc = "Prev failed test" })
+vim.keymap.set("n", "]t", function()
+  require("neotest").jump.next({ status = "failed" })
+end, { desc = "Next failed test" })
+vim.keymap.set("n", "[T", function()
+  require("neotest").jump.prev()
+end, { desc = "Prev test" })
+vim.keymap.set("n", "]T", function()
+  require("neotest").jump.next()
+end, { desc = "Next test" })
 
-  vim.keymap.set("n", "<leader>tn", function()
-    neotest.run.run()
-  end, { desc = "Run nearest test" })
+-- Test output
+vim.keymap.set("n", "<leader>to", function()
+  require("neotest").output.open({ enter = true })
+end, { desc = "Test output" })
+vim.keymap.set("n", "<leader>tO", function()
+  require("neotest").output_panel.toggle()
+end, { desc = "Test output panel" })
+vim.keymap.set("n", "<leader>ts", function()
+  require("neotest").summary.toggle()
+end, { desc = "Test summary" })
 
-  vim.keymap.set("n", "<leader>ts", function()
-    neotest.summary.toggle()
-  end, { desc = "Toggle test summary" })
+-- Test controls
+vim.keymap.set("n", "<leader>tx", function()
+  require("neotest").run.stop()
+end, { desc = "Stop test" })
+vim.keymap.set("n", "<leader>ta", function()
+  require("neotest").run.attach()
+end, { desc = "Attach to test" })
 
-  vim.keymap.set("n", "<leader>to", function()
-    neotest.output.open({ enter = true })
-  end, { desc = "Show test output" })
-end
+-- Test marks
+vim.keymap.set("n", "<leader>tm", function()
+  require("neotest").run.run({ mark = vim.fn.input("Mark: ") })
+end, { desc = "Run marked tests" })
+vim.keymap.set("n", "<leader>tM", function()
+  require("neotest").run.run({ suite = true, mark = vim.fn.input("Mark: ") })
+end, { desc = "Run marked suite" })
+
+-- Watch mode
+vim.keymap.set("n", "<leader>tw", function()
+  require("neotest").watch.toggle(vim.fn.expand("%"))
+end, { desc = "Toggle watch" })
+vim.keymap.set("n", "<leader>tW", function()
+  require("neotest").watch.stop()
+end, { desc = "Stop all watches" })
