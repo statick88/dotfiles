@@ -16,10 +16,21 @@ def main():
         )
         data = json.loads(result.stdout)
         app = data.get("app", "")
-    except Exception:
-        app = ""
+        title = data.get("title", "")
 
-    subprocess.run(["sketchybar", "--set", name, f"label={app}"])
+        # If title is very long (>50 chars), show only app name
+        # Otherwise show "AppName: Window Title"
+        if title:
+            if len(title) > 50:
+                label = app
+            else:
+                label = f"{app}: {title}"
+        else:
+            label = app
+    except Exception:
+        label = ""
+
+    subprocess.run(["sketchybar", "--set", name, f"label={label}"])
 
 
 if __name__ == "__main__":

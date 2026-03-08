@@ -89,14 +89,14 @@ sketchybar --add item front_app left \
   --set front_app \
     icon.drawing=off \
     label.drawing=on \
-    padding_left=8 \
-    padding_right=8 \
+    padding_left=6 \
+    padding_right=6 \
     background.color=$ISLAND_BG \
     background.border_color=$ISLAND_BORDER \
     background.border_width=1 \
     background.corner_radius=4 \
     background.height=24 \
-    script="$PLUGIN_DIR/front_app.sh" \
+    script="$PLUGIN_DIR/front_app.py" \
   --subscribe front_app front_app_switched
 
 # ─────────────────────────────────────────────────────────────────────────────────
@@ -118,38 +118,25 @@ sketchybar --add item music left \
     background.corner_radius=4 \
     background.height=24 \
     update_freq=3 \
-    script="$PLUGIN_DIR/music.sh" \
+    script="$PLUGIN_DIR/music_spotify.sh" \
     click_script="open -a Spotify"
 
 # ═══════════════════════════════════════════════════════════════════════════════
 #                                RIGHT SIDE
 # ═══════════════════════════════════════════════════════════════════════════════
-# Order (right to left): Battery | DateTime | Volume | Mic | RAM
-# LEFT sidebar: Front App | Music
+# BLOQUES (left-to-right visual):
+# Bloque 1: [battery] [datetime]
+# Bloque 2: [wifi] [bluetooth] [volume]
+# Bloque 3: [ram] [cpu] [gpu]
+# Bloque 4: [pomodoro]
+#
+# Addition order (right-to-left, LIFO):
+# 1. battery  2. datetime  3. wifi  4. bluetooth  5. volume  6. ram  7. cpu  8. gpu  9. pomodoro
 
 # ─────────────────────────────────────────────────────────────────────────────────
-# DATETIME
+# BLOQUE 1: BATTERY & DATETIME
 # ─────────────────────────────────────────────────────────────────────────────────
-sketchybar --add item datetime right \
-  --set datetime \
-    icon="CAL" \
-    icon.font="IosevkaTerm NF:Bold:10.0" \
-    icon.color=$YELLOW \
-    icon.padding_left=10 \
-    icon.padding_right=4 \
-    label.padding_right=10 \
-    background.color=$ISLAND_BG \
-    background.border_color=$ISLAND_BORDER \
-    background.border_width=1 \
-    background.corner_radius=4 \
-    background.height=24 \
-    update_freq=10 \
-    script="$PLUGIN_DIR/datetime.sh" \
-    click_script="open -a Calendar"
 
-# ─────────────────────────────────────────────────────────────────────────────────
-# BATTERY (rightmost)
-# ─────────────────────────────────────────────────────────────────────────────────
 sketchybar --add item battery right \
   --set battery \
     icon.font="IosevkaTerm NF:Bold:14.0" \
@@ -169,18 +156,35 @@ sketchybar --add item battery right \
     click_script="open -a 'System Preferences' /System/Library/PreferencePanes/Battery.prefPane" \
   --subscribe battery system_woke power_source_change
 
+sketchybar --add item datetime right \
+  --set datetime \
+    icon="CAL" \
+    icon.font="IosevkaTerm NF:Bold:10.0" \
+    icon.color=$YELLOW \
+    icon.padding_left=10 \
+    icon.padding_right=4 \
+    label.padding_right=10 \
+    background.color=$ISLAND_BG \
+    background.border_color=$ISLAND_BORDER \
+    background.border_width=1 \
+    background.corner_radius=4 \
+    background.height=24 \
+    update_freq=10 \
+    script="$PLUGIN_DIR/datetime.sh" \
+    click_script="open -a Calendar"
+
 # ─────────────────────────────────────────────────────────────────────────────────
-# WIFI (connection status)
+# BLOQUE 2: WIFI, BLUETOOTH, VOLUME
 # ─────────────────────────────────────────────────────────────────────────────────
+
 sketchybar --add item wifi right \
   --set wifi \
     icon="◈" \
     icon.font="IosevkaTerm NF:Bold:12.0" \
     icon.color=$BLUE \
-    icon.padding_left=8 \
-    icon.padding_right=2 \
-    label.padding_left=0 \
-    label.padding_right=8 \
+    icon.padding_left=10 \
+    icon.padding_right=4 \
+    label.padding_right=10 \
     label.max_chars=15 \
     background.color=$ISLAND_BG \
     background.border_color=$ISLAND_BORDER \
@@ -192,18 +196,14 @@ sketchybar --add item wifi right \
     click_script="open -a 'System Preferences' /System/Library/PreferencePanes/Network.prefPane" \
   --subscribe wifi wifi_change
 
-# ─────────────────────────────────────────────────────────────────────────────────
-# BLUETOOTH (connection status)
-# ─────────────────────────────────────────────────────────────────────────────────
 sketchybar --add item bluetooth right \
   --set bluetooth \
     icon="BT" \
     icon.font="IosevkaTerm NF:Bold:14.0" \
     icon.color=$MAGENTA \
-    icon.padding_left=8 \
-    icon.padding_right=2 \
-    label.padding_left=0 \
-    label.padding_right=8 \
+    icon.padding_left=10 \
+    icon.padding_right=4 \
+    label.padding_right=10 \
     label.max_chars=12 \
     background.color=$ISLAND_BG \
     background.border_color=$ISLAND_BORDER \
@@ -215,7 +215,91 @@ sketchybar --add item bluetooth right \
     click_script="open -a 'System Preferences' /System/Library/PreferencePanes/Bluetooth.prefPane" \
   --subscribe bluetooth system_woke
 
-# Pomodoro Timer Item
+sketchybar --add item volume right \
+  --set volume \
+    icon.font="IosevkaTerm NF:Bold:14.0" \
+    icon.color=$CYAN \
+    icon.padding_left=10 \
+    icon.padding_right=4 \
+    label.padding_right=10 \
+    label.width=35 \
+    label.align=right \
+    background.color=$ISLAND_BG \
+    background.border_color=$ISLAND_BORDER \
+    background.border_width=1 \
+    background.corner_radius=4 \
+    background.height=24 \
+    update_freq=1 \
+    script="$PLUGIN_DIR/volume.py" \
+    click_script="osascript -e 'set volume output muted to not (output muted of (get volume settings))'" \
+  --subscribe volume volume_change
+
+# ─────────────────────────────────────────────────────────────────────────────────
+# BLOQUE 3: RAM, CPU, GPU (METRICS)
+# ─────────────────────────────────────────────────────────────────────────────────
+
+sketchybar --add item ram right \
+  --set ram \
+    icon="📊 RAM" \
+    icon.font="IosevkaTerm NF:Bold:10.0" \
+    icon.color=$CYAN \
+    icon.padding_left=10 \
+    icon.padding_right=4 \
+    label.padding_right=10 \
+    label.width=40 \
+    label.align=right \
+    background.color=$ISLAND_BG \
+    background.border_color=$ISLAND_BORDER \
+    background.border_width=1 \
+    background.corner_radius=4 \
+    background.height=24 \
+    update_freq=5 \
+    script="$PLUGIN_DIR/system-stats.py" \
+    click_script="open -a 'Activity Monitor'"
+
+sketchybar --add item cpu right \
+  --set cpu \
+    icon="🖥️ CPU" \
+    icon.font="IosevkaTerm NF:Bold:10.0" \
+    icon.color=$YELLOW \
+    icon.padding_left=10 \
+    icon.padding_right=4 \
+    label.padding_right=10 \
+    label.width=40 \
+    label.align=right \
+    background.color=$ISLAND_BG \
+    background.border_color=$ISLAND_BORDER \
+    background.border_width=1 \
+    background.corner_radius=4 \
+    background.height=24 \
+    update_freq=5 \
+    script="$PLUGIN_DIR/system-stats.py" \
+    click_script="open -a 'Activity Monitor'"
+
+sketchybar --add item gpu right \
+  --set gpu \
+    icon="🎮 GPU" \
+    icon.font="IosevkaTerm NF:Bold:12.0" \
+    icon.color=$GREEN \
+    icon.padding_left=10 \
+    icon.padding_right=4 \
+    label.color=$YELLOW \
+    label.padding_right=10 \
+    label.width=40 \
+    label.align=right \
+    background.color=$ISLAND_BG \
+    background.border_color=$ISLAND_BORDER \
+    background.border_width=1 \
+    background.corner_radius=4 \
+    background.height=24 \
+    update_freq=2 \
+    script="$PLUGIN_DIR/system-stats.py" \
+  --subscribe gpu system_woke
+
+# ─────────────────────────────────────────────────────────────────────────────────
+# BLOQUE 4: POMODORO
+# ─────────────────────────────────────────────────────────────────────────────────
+
 sketchybar --add item pomodoro right \
   --set pomodoro \
     icon="" \
@@ -231,97 +315,8 @@ sketchybar --add item pomodoro right \
     background.height=24 \
     update_freq=1 \
     script="$CONFIG_DIR/plugins/pomodoro.py" \
+    click_script="$CONFIG_DIR/plugins/pomodoro.py" \
   --subscribe pomodoro system_woke
-
-# ─────────────────────────────────────────────────────────────────────────────────
-# VOLUME
-# ─────────────────────────────────────────────────────────────────────────────────
-sketchybar --add item volume right \
-  --set volume \
-    icon="VOL" \
-    icon.font="IosevkaTerm NF:Bold:10.0" \
-    icon.color=$BLUE \
-    icon.padding_left=8 \
-    icon.padding_right=2 \
-    label.padding_left=0 \
-    label.padding_right=8 \
-    label.width=30 \
-    label.align=right \
-    background.color=$ISLAND_BG \
-    background.border_color=$ISLAND_BORDER \
-    background.border_width=1 \
-    background.corner_radius=4 \
-    background.height=24 \
-    script="$PLUGIN_DIR/volume.sh" \
-    click_script="open -a 'System Preferences' /System/Library/PreferencePanes/Sound.prefPane" \
-  --subscribe volume volume_change
-
-# ─────────────────────────────────────────────────────────────────────────────────
-# MIC (microphone status) - click to toggle mute
-# ─────────────────────────────────────────────────────────────────────────────────
-
-# ─────────────────────────────────────────────────────────────────────────────────
-# GITHUB NOTIFICATIONS
-# ─────────────────────────────────────────────────────────────────────────────────
-
-# ─────────────────────────────────────────────────────────────────────────────────
-# CPU
-# ─────────────────────────────────────────────────────────────────────────────────
-
-
-# ─────────────────────────────────────────────────────────────────────────────────
-# RAM
-# ─────────────────────────────────────────────────────────────────────────────────
-sketchybar --add item ram right \
-  --set ram \
-    icon="RAM" \
-    icon.font="IosevkaTerm NF:Bold:10.0" \
-    icon.color=$MAGENTA \
-    icon.padding_left=10 \
-    icon.padding_right=4 \
-    label.padding_right=10 \
-    label.width=40 \
-    label.align=right \
-    background.color=$ISLAND_BG \
-    background.border_color=$ISLAND_BORDER \
-    background.border_width=1 \
-    background.corner_radius=4 \
-    background.height=24 \
-    update_freq=5 \
-    script="$PLUGIN_DIR/system-stats.py" \
-  click_script="open -a 'Activity Monitor'" \
-
-# ─────────────────────────────────────────────────────────────────────────────────
-# CPU (processor usage)
-# ─────────────────────────────────────────────────────────────────────────────────
-sketchybar --add item cpu right \
-  --set cpu \
-    icon="CPU" \
-    icon.font="IosevkaTerm NF:Bold:10.0" \
-    icon.color=$RED \
-    icon.padding_left=10 \
-    icon.padding_right=4 \
-    label.padding_right=10 \
-    label.width=40 \
-    label.align=right \
-    background.color=$ISLAND_BG \
-    background.border_color=$ISLAND_BORDER \
-    background.border_width=1 \
-    background.corner_radius=4 \
-    background.height=24 \
-    update_freq=5 \
-    script="$PLUGIN_DIR/system-stats.py" \
-    click_script="open -a 'Activity Monitor'"
-
-# GPU Display Item
-sketchybar --add item gpu right \
-  --set gpu \
-    icon=󰨸 \
-    icon.color=0xff00aa00 \
-    label.color=0xffffff00 \
-    update_freq=2 \
-    script="$PLUGIN_DIR/system-stats.py" \
-  --subscribe gpu system_woke
 
 # ─────────────────────────────────────────────────────────────────────────────────
 # MAIL
