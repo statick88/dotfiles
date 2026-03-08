@@ -283,7 +283,7 @@ sketchybar --add item cpu left \
     background.corner_radius=4 \
     background.height=24 \
     update_freq=3 \
-    script="$PLUGIN_DIR/cpu.sh" \
+    script="$PLUGIN_DIR/cpu.py" \
     click_script="open -a 'Activity Monitor'"
 
 sketchybar --add item gpu left \
@@ -302,7 +302,7 @@ sketchybar --add item gpu left \
     background.corner_radius=4 \
     background.height=24 \
     update_freq=5 \
-    script="$PLUGIN_DIR/gpu.sh" \
+    script="$PLUGIN_DIR/gpu.py" \
     click_script="open -a 'Activity Monitor'"
 
 # ─────────────────────────────────────────────────────────────────────────────────
@@ -324,8 +324,65 @@ sketchybar --add item ram right \
     background.corner_radius=4 \
     background.height=24 \
     update_freq=5 \
-    script="$PLUGIN_DIR/ram.sh" \
+    script="$PLUGIN_DIR/ram.py" \
   click_script="open -a 'Activity Monitor'" \
+
+# ─────────────────────────────────────────────────────────────────────────────────
+# MAIL (Gmail account switcher with Chrome profiles)
+# ─────────────────────────────────────────────────────────────────────────────────
+sketchybar --add item mail left \
+  --set mail \
+    icon.drawing=off \
+    label.padding_right=10 \
+    background.color=$ISLAND_BG \
+    background.border_color=$ISLAND_BORDER \
+    background.border_width=1 \
+    background.corner_radius=4 \
+    background.height=24 \
+    update_freq=3600 \
+    script="$PLUGIN_DIR/mail.py" \
+    click_script="sketchybar --set mail popup.drawing=toggle"
+
+# Mail popup items (Chrome profile switcher)
+sketchybar --add item mail.personal popup.mail \
+  --set mail.personal \
+    label="personal" \
+    icon.drawing=off \
+    background.color=$ISLAND_BG \
+    background.border_color=$ISLAND_BORDER \
+    background.border_width=1 \
+    background.corner_radius=4 \
+    click_script="open -a 'Google Chrome' --args --profile-directory='Default' https://mail.google.com/mail"
+
+sketchybar --add item mail.ucm popup.mail \
+  --set mail.ucm \
+    label="ucm" \
+    icon.drawing=off \
+    background.color=$ISLAND_BG \
+    background.border_color=$ISLAND_BORDER \
+    background.border_width=1 \
+    background.corner_radius=4 \
+    click_script="open -a 'Google Chrome' --args --profile-directory='Profile 1' https://mail.google.com/mail"
+
+sketchybar --add item mail.utpl popup.mail \
+  --set mail.utpl \
+    label="utpl" \
+    icon.drawing=off \
+    background.color=$ISLAND_BG \
+    background.border_color=$ISLAND_BORDER \
+    background.border_width=1 \
+    background.corner_radius=4 \
+    click_script="open -a 'Google Chrome' --args --profile-directory='Profile 2' https://mail.google.com/mail"
+
+sketchybar --add item mail.fullstack popup.mail \
+  --set mail.fullstack \
+    label="fullstack" \
+    icon.drawing=off \
+    background.color=$ISLAND_BG \
+    background.border_color=$ISLAND_BORDER \
+    background.border_width=1 \
+    background.corner_radius=4 \
+    click_script="open -a 'Google Chrome' --args --profile-directory='Profile 3' https://mail.google.com/mail"
 
 # ─────────────────────────────────────────────────────────────────────────────────
 # HAPPY HACKING
