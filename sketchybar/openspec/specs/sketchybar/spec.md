@@ -2,8 +2,53 @@
 
 **Domain**: sketchybar  
 **Status**: ACTIVE  
-**Last Updated**: 2026-03-08  
-**Version**: 1.0.0
+**Last Updated**: 2026-03-09  
+**Version**: 1.1.0 (v3.1 internal)
+
+---
+
+## Revision History
+- **v1.0.0**: Initial modular configuration (2026-03-08).
+- **v1.1.0**: Deep cleanup of legacy shell scripts and unused python plugins. Restored battery, datetime, and volume as core modules (2026-03-09).
+
+### Requirement: RIGHT Sidebar Content (Updated 2026-03-09)
+
+**Category**: Structure  
+**Status**: OPTIMIZED  
+**Version**: 1.1.4
+
+The RIGHT sidebar items MUST follow these specific UI/UX constraints for the "System" island:
+1. **datetime (calendar.py)**:
+   - Format: `%a %d %b | %H:%M` (24h with separator).
+   - Dimensions: `label.width=155`, `label.padding_left=15` (to prevent text clipping).
+   - Junction: `label.padding_right=0` (compact connection with battery).
+2. **battery (battery.py)**:
+   - Status: **VERIFIED (v3.2.1)**
+   - Logic: Multi-level health alerts with debouncing.
+   - Alerts: ⚠️ 20% (Low), 🚨 10% (Critical), ✅ 100% (Full).
+
+3. **volume (volume.py)**:
+   - Status: **VERIFIED (v3.4.1)**
+   - Master Pause: Left-click toggles Mute AND pauses Spotify + stops Radio.
+   - UI: `label.padding_right=0` (compacted with Bluetooth).
+   - Icons: Dynamic mapping (󰝟, 󰕿, 󰖀, 󰕾) with Red alert for Mute/0%.
+   - Validation: Passed `tests/test_volume.py`.
+
+4. **radio (radio.py)**:
+   - Status: **PENDING INTEGRAL REVISION**
+
+---
+
+## SDD Workflow & Validation Mandate
+
+Every plugin modification MUST follow this lifecycle:
+1. **Delta Spec**: Create a specific requirement file in `openspec/changes/`.
+2. **Implementation**: Surgical update of the `.py` or `.sh` file.
+3. **Automated Testing**: 
+   - A test script MUST be created in `tests/test_[plugin_name].py`.
+   - The test MUST simulate edge cases (thresholds, missing tools, connectivity drops).
+4. **Manual Verification**: Reload sketchybar and verify visual integrity.
+5. **Archiving**: Merge specs and delete temporary test scripts if appropriate.
 
 ---
 

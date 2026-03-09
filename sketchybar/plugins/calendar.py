@@ -5,19 +5,20 @@ from datetime import datetime
 from utils import COLORS, sbar_set
 
 def main():
+    # Use environment NAME if available, otherwise default to datetime
+    name = os.environ.get("NAME", "datetime")
     sender = os.environ.get("SENDER", "")
     
     if sender == "mouse.clicked":
-        # Abrir Google Calendar en Google Chrome
+        # Opens Google Calendar in default browser (Chrome as preferred in your config)
         url = "https://calendar.google.com/calendar/u/0/r"
-        subprocess.run(["open", "-a", "Google Chrome", url])
+        subprocess.run(["open", "-a", "Google Chrome", url], capture_output=True)
     else:
-        # Actualización normal del reloj/fecha
+        # Update clock/date: "Mon 09 Mar | 14:30" (24h format with separator)
         now = datetime.now()
-        # Formato elegante: "Dom 08 Mar 20:30"
-        date_str = now.strftime("%a %d %b %H:%M")
+        date_str = now.strftime("%a %d %b | %H:%M")
         
-        sbar_set("datetime", {
+        sbar_set(name, {
             "label": date_str,
             "label.color": COLORS["WHITE"],
             "icon.drawing": "off"

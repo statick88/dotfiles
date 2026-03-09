@@ -102,39 +102,46 @@ sketchybar --add item radio left \
 sketchybar --add item battery right \
   --set battery \
     update_freq=60 \
+    icon.padding_left=0 \
+    label.padding_right=4 \
     script="$PLUGIN_DIR/battery.py" \
     click_script="open -a 'System Preferences' /System/Library/PreferencePanes/Battery.prefPane" \
   --subscribe battery system_woke power_source_change
+
 sketchybar --add item datetime right \
   --set datetime \
     icon.drawing=off \
-    label.width=135 \
+    label.width=155 \
     label.align=right \
+    label.padding_left=15 \
+    label.padding_right=0 \
     update_freq=60 \
     script="$PLUGIN_DIR/calendar.py" \
     click_script="SENDER=mouse.clicked $PLUGIN_DIR/calendar.py" \
   --subscribe datetime system_woke mouse.clicked routine
 
-
 sketchybar --add item wifi right \
   --set wifi \
     icon.color=$BLUE \
+    label.drawing=off \
     update_freq=5 \
     script="$PLUGIN_DIR/connectivity.py" \
-    click_script="open -a 'System Preferences' /System/Library/PreferencePanes/Network.prefPane" \
+    click_script="SENDER=mouse.clicked NAME=wifi $PLUGIN_DIR/connectivity.py" \
   --subscribe wifi wifi_change
 
 sketchybar --add item bluetooth right \
   --set bluetooth \
     icon.color=$MAGENTA \
+    label.drawing=off \
     update_freq=3 \
     script="$PLUGIN_DIR/connectivity.py" \
-    click_script="open -a 'System Preferences' /System/Library/PreferencePanes/Bluetooth.prefPane" \
+    click_script="SENDER=mouse.clicked NAME=bluetooth $PLUGIN_DIR/connectivity.py" \
   --subscribe bluetooth system_woke
 
 sketchybar --add item volume right \
   --set volume \
     icon.color=$CYAN \
+    label.padding_right=0 \
     update_freq=1 \
     script="$PLUGIN_DIR/volume.py" \
     click_script="open 'x-apple.systempreferences:com.apple.preference.sound'" \
@@ -227,5 +234,7 @@ sketchybar --set stats mouse.entered_action="sketchybar --set stats background.b
 
 sketchybar --set pomo mouse.entered_action="sketchybar --set pomo background.border_color=$ACCENT_COLOR" \
            --set pomo mouse.exited_action="sketchybar --set pomo background.border_color=$ISLAND_BORDER"
+
+
 
 sketchybar --update
