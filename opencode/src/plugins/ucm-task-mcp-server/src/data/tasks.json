@@ -1,0 +1,50 @@
+[
+  {
+    "id": "ucm-2026-tfm-1",
+    "title": "Propuesta TFM: Detección de Desinformación Generada por IA en Guerra Híbrida",
+    "module": "Guerra Híbrida & Psyops",
+    "difficulty": 5,
+    "type": "tfm_proposal",
+    "description": "Desarrollar un framework de detección proactiva contra campañas de desinformación automatizadas mediante LLMs, utilizando análisis de grafos y detección de patrones sintéticos.",
+    "anti_ai_level": 5,
+    "research_line": "Adversarial AI & Disinformation"
+  },
+  {
+    "id": "ucm-2026-crypto-1",
+    "title": "Implementación de Protocolos Post-Cuánticos (Kyber/Dilithium)",
+    "module": "Criptografía Aplicada",
+    "difficulty": 4,
+    "type": "coding",
+    "description": "Laboratorio de implementación de algoritmos resistentes a computación cuántica para asegurar comunicaciones VPN en infraestructuras críticas.",
+    "anti_ai_level": 4,
+    "research_line": "Post-Quantum Cryptography Readiness"
+  },
+  {
+    "id": "ucm-2026-purple-1",
+    "title": "Simulación de Adversarios con Caldera y MITRE ATT&CK",
+    "module": "Purple Team & Threat Hunting",
+    "difficulty": 4,
+    "type": "lab",
+    "description": "Orquestación de emulación de adversarios para validar controles de detección Blue Team mediante el uso de perfiles de APT específicos.",
+    "anti_ai_level": 3
+  },
+  {
+    "id": "ucm-2026-rpa-1",
+    "title": "Automatización SOC con RPA y Python",
+    "module": "IA & RPA Ciberseguridad",
+    "difficulty": 3,
+    "type": "coding",
+    "description": "Desarrollo de un bot RPA para la clasificación automática de alertas SIEM y enriquecimiento de IOCs mediante APIs de inteligencia de amenazas.",
+    "anti_ai_level": 4,
+    "research_line": "Zero-Trust Automation (RPA)"
+  },
+  {
+    "id": "ucm-2026-forensics-1",
+    "title": "Análisis Forense de Memoria en Entornos Nube (Azure/AWS)",
+    "module": "DFIR",
+    "difficulty": 4,
+    "type": "lab",
+    "description": "Recolección y análisis de volcados de memoria volátil en instancias EC2/Azure VM tras un incidente de compromiso de credenciales.",
+    "anti_ai_level": 4
+  }
+]

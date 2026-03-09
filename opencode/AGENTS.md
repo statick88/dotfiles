@@ -235,8 +235,10 @@ IMPORTANT: When you detect any of these contexts, IMMEDIATELY load the correspon
 | Go tests, Bubbletea TUI testing      | go-testing              |
 | Creating new AI skills               | skill-creator           |
 | E2E tests with Playwright            | playwright              |
+| Cyber Intelligence (CVE, MITRE)      | cyber-intelligence      |
 | Python tests                         | pytest                  |
 | Security implementation              | security                |
+| Scientific papers & rankings         | scientific-research     |
 | Encryption, hashing                  | encryption              |
 | Supabase integration                 | supabase                |
 | Spring Boot applications             | spring-boot-3           |

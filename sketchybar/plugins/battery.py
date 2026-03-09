@@ -1,55 +1,46 @@
 #!/usr/bin/env python3
-
-import os
-import re
 import subprocess
-
-ICON_FULL = "󰁹"
-ICON_HIGH = "󰂀"
-ICON_MEDIUM = "󰁾"
-ICON_LOW = "󰁻"
-ICON_CRITICAL = "󰁺"
-ICON_CHARGING = "󰂄"
-
-
-def get_battery_info() -> tuple[int, bool]:
-    result = subprocess.run(
-        ["pmset", "-g", "batt"],
-        capture_output=True,
-        text=True,
-    )
-    output = result.stdout
-
-    match = re.search(r"(\d+)%", output)
-    percentage = int(match.group(1)) if match else 0
-
-    charging = "AC Power" in output
-
-    return percentage, charging
-
-
-def get_icon(percentage: int, charging: bool) -> str:
-    if charging:
-        return ICON_CHARGING
-    if percentage >= 90:
-        return ICON_FULL
-    elif percentage >= 60:
-        return ICON_HIGH
-    elif percentage >= 30:
-        return ICON_MEDIUM
-    elif percentage >= 10:
-        return ICON_LOW
-    return ICON_CRITICAL
-
+import os
+from utils import COLORS, sbar_set
 
 def main():
     name = os.environ.get("NAME", "battery")
-    percentage, charging = get_battery_info()
-    icon = get_icon(percentage, charging)
-    subprocess.run(
-        ["sketchybar", "--set", name, f"icon={icon}", f"label={percentage}%"]
-    )
+    
+    # Get battery data
+    res = subprocess.run(["pmset", "-g", "batt"], capture_output=True, text=True)
+    out = res.stdout
+    
+    try:
+        # Parsing percentage
+        percentage = int(out.split("%")[0].split()[-1])
+        # Detect charging status more reliably
+        charging = "charging" in out or "AC Power" in out or "attached" in out
+    except:
+        percentage = 0
+        charging = False
 
+    # Icons based on percentage
+    if charging:
+        icon = "󱐋" # Charging bolt
+        color = COLORS["YELLOW"]
+    else:
+        color = COLORS["GREEN"]
+        if percentage <= 10: icon, color = "󰂃", COLORS["RED"]
+        elif percentage <= 20: icon, color = "󰁺", COLORS["RED"]
+        elif percentage <= 30: icon = "󰁻"
+        elif percentage <= 40: icon = "󰁼"
+        elif percentage <= 50: icon = "󰁽"
+        elif percentage <= 60: icon = "󰁾"
+        elif percentage <= 70: icon = "󰁿"
+        elif percentage <= 80: icon = "󰂀"
+        elif percentage <= 90: icon = "󰂁"
+        else: icon = "󰁹" # Full
+        
+    sbar_set(name, {
+        "label": f"{percentage}%",
+        "icon": icon,
+        "icon.color": color
+    })
 
 if __name__ == "__main__":
     main()

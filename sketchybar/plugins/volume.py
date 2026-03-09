@@ -1,56 +1,28 @@
 #!/usr/bin/env python3
-
-import os
 import subprocess
-
-ICON_HIGH = "󰕾"
-ICON_MEDIUM = "󰖀"
-ICON_LOW = "󰕿"
-ICON_MUTE = "󰖁"
-
-
-def get_current_volume() -> int:
-    result = subprocess.run(
-        ["osascript", "-e", "output volume of (get volume settings)"],
-        capture_output=True,
-        text=True,
-    )
-    try:
-        return int(result.stdout.strip())
-    except ValueError:
-        return 0
-
-
-def get_icon(volume: int) -> str:
-    if volume >= 60:
-        return ICON_HIGH
-    elif volume >= 30:
-        return ICON_MEDIUM
-    elif volume >= 1:
-        return ICON_LOW
-    return ICON_MUTE
-
-
-def update_volume(name: str, volume: int) -> None:
-    icon = get_icon(volume)
-    subprocess.run(["sketchybar", "--set", name, f"icon={icon}", f"label={volume}%"])
-
+import os
+from utils import COLORS, sbar_set
 
 def main():
     name = os.environ.get("NAME", "volume")
-    sender = os.environ.get("SENDER", "")
+    
+    res = subprocess.run(["osascript", "-e", "get volume settings"], capture_output=True, text=True)
+    out = res.stdout
+    
+    try:
+        # out example: output volume:50, input volume:50, alert volume:50, output muted:false
+        vol = int(out.split("output volume:")[1].split(",")[0])
+        muted = "true" in out.split("output muted:")[1]
+    except:
+        vol, muted = 0, False
 
-    if sender == "volume_change":
-        volume_str = os.environ.get("INFO", "0")
-        try:
-            volume = int(volume_str)
-        except ValueError:
-            volume = 0
-    else:
-        volume = get_current_volume()
-
-    update_volume(name, volume)
-
+    icon = "󰕿"
+    if muted or vol == 0: icon, color = "󰝟", COLORS["RED"]
+    elif vol < 33: icon, color = "󰕿", COLORS["CYAN"]
+    elif vol < 66: icon, color = "󰖀", COLORS["CYAN"]
+    else: icon, color = "󰕾", COLORS["CYAN"]
+    
+    sbar_set(name, {"label": f"{vol}%", "icon": icon, "icon.color": color})
 
 if __name__ == "__main__":
     main()
