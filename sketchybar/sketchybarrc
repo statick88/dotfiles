@@ -73,27 +73,18 @@ sketchybar --add item front_app left \
     script="$PLUGIN_DIR/front_app.py" \
   --subscribe front_app front_app_switched window_focus
 
-# MUSIC
-sketchybar --add item music left \
-  --set music \
-    icon="🎧" \
-    icon.color=$GREEN \
-    label.max_chars=25 \
-    scroll_texts=on \
-    update_freq=5 \
-    script="$PLUGIN_DIR/music.py" \
-    click_script="sketchybar --set music popup.drawing=toggle" \
-  --subscribe music mouse.clicked
+# AUDIO
+sketchybar --add item audio left \
+  --set audio \
+    icon="󰝚" \
+    icon.color=$DIM \
+    label.drawing=off \
+    script="$PLUGIN_DIR/audio.py" \
+    click_script="SENDER=mouse.clicked $PLUGIN_DIR/audio.py" \
+  --subscribe audio mouse.entered mouse.exited mouse.clicked
 
-# RADIO
-sketchybar --add item radio left \
-  --set radio \
-    icon="📻" \
-    icon.color=$ORANGE \
-    label.max_chars=20 \
-    script="$PLUGIN_DIR/radio.py" \
-    click_script="SENDER=mouse.clicked $PLUGIN_DIR/radio.py" \
-  --subscribe radio mouse.entered mouse.exited mouse.clicked
+# Audio popup
+sketchybar --add popup audio
 
 # ═══════════════════════════════════════════════════════════════════════════════
 #                                RIGHT SIDE
@@ -127,7 +118,7 @@ sketchybar --add item wifi right \
     update_freq=5 \
     script="$PLUGIN_DIR/connectivity.py" \
     click_script="SENDER=mouse.clicked NAME=wifi $PLUGIN_DIR/connectivity.py" \
-  --subscribe wifi wifi_change
+  --subscribe wifi wifi_change wifi_update
 
 sketchybar --add item bluetooth right \
   --set bluetooth \
@@ -179,7 +170,7 @@ sketchybar --add item pomodoro right \
 # ─────────────────────────────────────────────────────────────────────────────────
 # BRACKETS (Floating Islands - Enhanced Visuals)
 # ─────────────────────────────────────────────────────────────────────────────────
-sketchybar --add bracket media music radio \
+sketchybar --add bracket media audio \
   --set media \
     background.color=$ISLAND_BG \
     background.border_color=$ISLAND_BORDER \

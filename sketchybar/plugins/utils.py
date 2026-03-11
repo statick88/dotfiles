@@ -18,10 +18,11 @@ COLORS = {
     "ISLAND_BG": "0xff121620",
     "ISLAND_BORDER": "0xff263356",
     "ACCENT": "0xffe0c15a",
-    "DIM": "0xff565f89"
+    "DIM": "0xff565f89",
 }
 
 STATE_DIR = os.path.expanduser("~/.config/sketchybar/state")
+
 
 def sbar_set(name, properties):
     args = ["sketchybar", "--set", name]
@@ -29,21 +30,44 @@ def sbar_set(name, properties):
         args.append(f"{prop}={value}")
     subprocess.run(args, capture_output=True)
 
+
 def notify(title, message):
-    subprocess.Popen(["osascript", "-e", f'display notification "{message}" with title "{title}"'])
+    try:
+        subprocess.Popen(
+            [
+                "osascript",
+                "-e",
+                f'display notification "{message}" with title "{title}"',
+            ]
+        )
+    except Exception as e:
+        pass  # Ignore errors
+
 
 def play_sound(file="/System/Library/Sounds/Glass.aiff"):
-    subprocess.Popen(["afplay", file], stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
+    try:
+        subprocess.Popen(
+            ["afplay", file], stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL
+        )
+    except Exception as e:
+        pass  # Ignore errors
+
 
 def get_state(plugin_name, default):
     path = os.path.join(STATE_DIR, f"{plugin_name}.json")
-    if not os.path.exists(path): return default
+    if not os.path.exists(path):
+        return default
     try:
-        with open(path, "r") as f: return json.load(f)
-    except: return default
+        with open(path, "r") as f:
+            return json.load(f)
+    except:
+        return default
+
 
 def save_state(plugin_name, state):
     path = os.path.join(STATE_DIR, f"{plugin_name}.json")
     try:
-        with open(path, "w") as f: json.dump(state, f)
-    except: pass
+        with open(path, "w") as f:
+            json.dump(state, f)
+    except:
+        pass
