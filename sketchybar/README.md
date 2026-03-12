@@ -21,6 +21,8 @@ Modernización completa de la barra de estado de macOS basada en el estándar **
 ### 3. Inteligencia y Telemetría
 - **Front App**: Mapeo dinámico de iconos y monitor de actividad en tiempo real (CPU/RAM) por proceso.
 - **Conectividad**: Barra minimalista con telemetría de tráfico dinámica (↓/↑) y protección de datos sensibles en modo Hacking.
+- **DevOps (Docker & K8s)**: Monitoreo de contenedores activos y salud de nodos Kubernetes directamente en la barra.
+- **Intel (CVE & UCM)**: Ticker de vulnerabilidades críticas y seguimiento de hitos académicos de la Maestría.
 - **Batería**: Salud detallada vía `ioreg` y notificaciones nativas de carga.
 - **Audio**: Controlador unificado para Radio (Exa, Boquerón, Aire Latino, Caravana) con toggle de Play/Pause.
 

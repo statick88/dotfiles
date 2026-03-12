@@ -56,8 +56,8 @@ def apply_mode_effects(mode_key, silent=False):
     color = config["color"]
     is_normal = (mode_key == "normal")
     
-    brackets = ["env", "media", "system", "connectivity", "stats", "pomo"]
-    items = ["modes", "front_app", "radio", "battery", "datetime", "volume", "bluetooth", "wifi", "cpu", "ram", "gpu", "disk", "pomodoro"]
+    brackets = ["env", "media", "system", "vpn", "connectivity", "stats", "pomo", "devops", "intel"]
+    items = ["modes", "front_app", "radio", "battery", "datetime", "volume", "bluetooth", "wifi", "cpu", "ram", "gpu", "disk", "pomodoro", "tailscale", "docker", "k8s", "cve", "ucm"]
     
     batch = ["sketchybar"]
     
