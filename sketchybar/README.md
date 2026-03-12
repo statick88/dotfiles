@@ -42,11 +42,10 @@ Modernización completa de la barra de estado de macOS basada en el estándar **
 sketchybar/
 ├── sketchybarrc           # ⚙️ Punto de entrada y estructura base
 ├── plugins/               # 🐍 Lógica de inteligencia en Python
+│   ├── modes.py           # El cerebro de la barra
 │   ├── audio.py           # Gestión de radio y audio
-│   ├── modes.py           # Orquestador de modos
-│   ├── datetime_plugin.py # Reloj y Calendario GMT-5
-│   ├── connectivity.py    # Red y OPSEC
-│   ├── system_stats.py    # Telemetría de hardware
+│   ├── docker.py          # Monitor de contenedores
+│   ├── tailscale.py       # Toggle de VPN
 │   └── ...                # Ver plugins/README.md
 ├── tests/                 # 🧪 Pruebas unitarias y de integración
 └── state/                 # 💾 Persistencia de estado (Zero Trust Gitignored)
