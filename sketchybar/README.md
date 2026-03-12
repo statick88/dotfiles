@@ -19,10 +19,26 @@ sketchybar/
 │   ├── modes.py           # El cerebro de la barra
 │   ├── datetime_plugin.py # Reloj y Calendario (GMT-5)
 │   ├── connectivity.py    # Wi-Fi y Bluetooth (OPSEC ready)
-│   └── ...                # Ver plugins/README.md para más detalle
+│   ├── audio.py           # Controlador de Radio unificado
+│   ├── music.py           # Integración inteligente con Spotify
+│   ├── system_stats.py    # CPU, RAM, GPU y Disco optimizados
+│   ├── pomodoro.py        # Temporizador con barra de progreso
+│   ├── volume.py          # Control por scroll y mute
+│   └── front_app.py       # Telemetría de app frontal
 ├── tests/                 # 🧪 Suite de pruebas TDD completa
 └── state/                 # 💾 Persistencia de estado local
 ```
+
+## 📅 Log de Cambios (Modernización v4.0)
+
+Hoy hemos transformado toditito el sistema siguiendo el ciclo de desarrollo agil y proactivo:
+
+1.  **Refactorización Python**: Migración de todititos los scripts de shell a Python para permitir lógica compleja, caching y mejor manejo de errores.
+2.  **Cerebro de Modos**: Implementación de un selector de modos proactivo que sincroniza colores, sonidos y perfiles de productividad (Pomodoro) según tu rol (Estudiante UCM, Facilitador, Hacking, etc.).
+3.  **Calendario de Alta Disponibilidad**: Sistema de caché asíncrono que refresca la agenda cada 15 min en segundo plano, permitiendo que el popup aparezca al milisegundo sin lag.
+4.  **Seguridad OPSEC**: El modo Hacking ahora limpia automáticamente la barra de información sensible de red.
+5.  **Audio Proactivo**: Radio unificada con 4 estaciones validadas (Exa, Boquerón, Aire Latino, Caravana) y control de Play/Pause desde el icono.
+6.  **Validación TDD**: Creación de una suite de tests en `tests/` que asegura la integridad de toditita la lógica implementada.
 
 ## 🚀 Instalación Rápida
 
@@ -30,7 +46,7 @@ sketchybar/
 2. Clona este directorio en `~/.config/sketchybar`.
 3. Instala las dependencias necesarias:
    ```bash
-   brew install sketchybar jq gh gcalcli
+   brew install sketchybar jq gh gcalcli ffmpeg
    # Asegúrate de tener python3 disponible
    ```
 4. Recarga la configuración:
