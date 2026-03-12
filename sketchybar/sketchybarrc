@@ -243,7 +243,53 @@ sketchybar --add item pomo.info.type popup.pomodoro --set pomo.info.type label.c
            --add item pomo.info.reset popup.pomodoro --set pomo.info.reset icon="󰦛" icon.color=$YELLOW label="Reiniciar" click_script="NAME=pomodoro ACTION=reset python3 $PLUGIN_DIR/pomodoro.py" \
            --add item pomo.info.skip popup.pomodoro --set pomo.info.skip icon="󰒭" icon.color=$CYAN label="Siguiente" click_script="NAME=pomodoro ACTION=skip python3 $PLUGIN_DIR/pomodoro.py"
 
+# 5. DEVOPS (Docker & K8s)
+sketchybar --add item docker right \
+  --set docker icon="󰡨" update_freq=30 script="$PLUGIN_DIR/docker.py" popup.align=right \
+  --subscribe docker mouse.entered mouse.exited mouse.clicked
+
+sketchybar --add item docker.header popup.docker --set docker.header label.font="FiraCode Nerd Font:Bold:12.0" label.color=$WHITE \
+           --add item docker.c1 popup.docker --set docker.c1 icon.drawing=off label.color=$WHITE \
+           --add item docker.c2 popup.docker --set docker.c2 icon.drawing=off label.color=$WHITE \
+           --add item docker.c3 popup.docker --set docker.c3 icon.drawing=off label.color=$WHITE \
+           --add item docker.c4 popup.docker --set docker.c4 icon.drawing=off label.color=$WHITE \
+           --add item docker.c5 popup.docker --set docker.c5 icon.drawing=off label.color=$WHITE
+
+sketchybar --add item k8s right \
+  --set k8s icon="󱃾" update_freq=60 script="$PLUGIN_DIR/k8s.py" popup.align=right \
+  --subscribe k8s mouse.entered mouse.exited
+
+sketchybar --add item k8s.header popup.k8s --set k8s.header label.font="FiraCode Nerd Font:Bold:12.0" label.color=$WHITE \
+           --add item k8s.n1 popup.k8s --set k8s.n1 icon="󱃾" icon.color=$BLUE label.color=$WHITE \
+           --add item k8s.n2 popup.k8s --set k8s.n2 icon="󱃾" icon.color=$BLUE label.color=$WHITE \
+           --add item k8s.n3 popup.k8s --set k8s.n3 icon="󱃾" icon.color=$BLUE label.color=$WHITE
+
+# 6. INTELLIGENCE (CVE & UCM)
+sketchybar --add item cve right \
+  --set cve icon="󰒃" update_freq=300 script="$PLUGIN_DIR/cve_intel.py" popup.align=right \
+  --subscribe cve mouse.entered mouse.exited
+
+sketchybar --add item cve.header popup.cve --set cve.header label.font="FiraCode Nerd Font:Bold:12.0" label.color=$WHITE \
+           --add item cve.v1 popup.cve --set cve.v1 icon="󰒃" icon.color=$RED label.color=$WHITE \
+           --add item cve.v2 popup.cve --set cve.v2 icon="󰒃" icon.color=$RED label.color=$WHITE \
+           --add item cve.v3 popup.cve --set cve.v3 icon="󰒃" icon.color=$RED label.color=$WHITE
+
+sketchybar --add item ucm right \
+  --set ucm icon="🎓" update_freq=3600 script="$PLUGIN_DIR/ucm.py" popup.align=right \
+  --subscribe ucm mouse.entered mouse.exited mouse.clicked
+
+sketchybar --add item ucm.header popup.ucm --set ucm.header label.font="FiraCode Nerd Font:Bold:12.0" label.color=$WHITE \
+           --add item ucm.m1 popup.ucm --set ucm.m1 icon="📅" icon.color=$RED label.color=$WHITE \
+           --add item ucm.m2 popup.ucm --set ucm.m2 icon="📅" icon.color=$RED label.color=$WHITE \
+           --add item ucm.m3 popup.ucm --set ucm.m3 icon="📅" icon.color=$RED label.color=$WHITE
+
 # BRACKETS
+sketchybar --add bracket devops docker k8s \
+  --set devops background.color=$ISLAND_BG background.border_color=$ISLAND_BORDER background.border_width=1 background.corner_radius=10 background.height=28
+
+sketchybar --add bracket intel cve ucm \
+  --set intel background.color=$ISLAND_BG background.border_color=$ISLAND_BORDER background.border_width=1 background.corner_radius=10 background.height=28
+
 sketchybar --add bracket env modes front_app \
   --set env background.color=$ISLAND_BG background.border_color=$ISLAND_BORDER background.border_width=1 background.corner_radius=10 background.height=28
 
@@ -266,7 +312,7 @@ sketchybar --add bracket pomo pomodoro \
   --set pomo background.color=$ISLAND_BG background.border_color=$ISLAND_BORDER background.border_width=1 background.corner_radius=10 background.height=28 background.drawing=on
 
 # INTERACTIVE EFFECTS
-for island in env media system vpn connectivity stats pomo; do
+for island in env media system vpn connectivity stats pomo devops intel; do
   sketchybar --set $island mouse.entered_action="sketchybar --set $island background.border_color=$ACCENT_COLOR background.shadow.drawing=on y_offset=1" \
              --set $island mouse.exited_action="sketchybar --set $island background.border_color=$ISLAND_BORDER background.shadow.drawing=off y_offset=0"
 done

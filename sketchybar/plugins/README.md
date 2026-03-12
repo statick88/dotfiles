@@ -9,14 +9,18 @@ Todititos los plugins han sido modernizados a Python para mayor potencia y proac
 - **`audio.py`** — Controlador unificado de Radio (Exa, Boquerón, Aire Latino, Caravana). Click = Play/Pause.
 - **`music.py`** — Integración con Spotify. Se oculta al pausar. Popup con barra de progreso y controles ⏮ ⏯ ⏭.
 
-### RIGHT Side (System & Tools)
-- **`datetime_plugin.py`** — Reloj y Calendario. Inmune a VPN (GMT-5 forzado). Caché asíncrono para zero-lag. Filtro de integridad (13:00).
+### RIGHT Side (System, Tools & Intel)
+- **`datetime_plugin.py`** — Reloj y Calendario (GMT-5).
 - **`battery.py`** — Salud real vía `ioreg`. Notificaciones nativas de cargador.
-- **`connectivity.py`** — Wi-Fi/BT minimalista. Modo **Hacking** (OPSEC) oculta datos sensibles. Tráfico dinámico en popup.
-- **`system_stats.py`** — CPU, RAM, GPU y Disco optimizados (`vm_stat`). Semáforo visual (Verde/Amarillo/Rojo).
-- **`pomodoro.py`** — Gestión de fases (Trabajo/Descanso) con barra de progreso visual. Sincronizado con Modos.
-- **`volume.py`** — Control por scroll (+/- 5%) y toggle de Mute en popup.
-- **`modes.py`** — **El Cerebro**. 5 perfiles profesionales (Statick, Estudiante, Facilitador, Hacking, Coding). Cambia colores, sonidos y perfiles de productividad.
+- **`connectivity.py`** — Wi-Fi/BT minimalista. OPSEC ready.
+- **`docker.py`** — Monitor de contenedores activos.
+- **`k8s.py`** — Estado de salud de nodos Kubernetes.
+- **`cve_intel.py`** — Ticker de inteligencia de vulnerabilidades (CVEs críticos).
+- **`ucm.py`** — Gestión de hitos académicos de la Maestría UCM.
+- **`system_stats.py`** — CPU, RAM, GPU y Disco optimizados (`vm_stat`).
+- **`pomodoro.py`** — Temporizador con barra de progreso.
+- **`volume.py`** — Control por scroll y mute.
+- **`modes.py`** — El Cerebro de la barra.
 
 ## Utilities
 - **`utils.py`** — Paleta de colores Gentleman, notificaciones, sonidos y gestión de estado.
