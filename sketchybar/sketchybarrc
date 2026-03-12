@@ -175,6 +175,13 @@ for i in {0..4}; do
              --set datetime.loc.$i icon="󰉬" icon.color=$GREEN label.color=$DIM label.font="FiraCode Nerd Font:SemiBold:10.0" drawing=off
 done
 
+sketchybar --add item tailscale right \
+  --set tailscale update_freq=5 script="$PLUGIN_DIR/tailscale.py" click_script="NAME=tailscale python3 $PLUGIN_DIR/tailscale.py" popup.align=right \
+  --subscribe tailscale mouse.entered mouse.exited mouse.clicked
+
+sketchybar --add item tailscale.status popup.tailscale --set tailscale.status label.color=$WHITE \
+           --add item tailscale.ip popup.tailscale --set tailscale.ip label.color=$WHITE
+
 sketchybar --add item volume right \
   --set volume icon.color=$CYAN update_freq=1 script="$PLUGIN_DIR/volume.py" click_script="open 'x-apple.systempreferences:com.apple.preference.sound'" popup.align=right \
   --subscribe volume volume_change mouse.entered mouse.exited
@@ -246,6 +253,9 @@ sketchybar --add bracket media spotify.prev spotify spotify.next radio.prev radi
 sketchybar --add bracket system battery datetime \
   --set system background.color=$ISLAND_BG background.border_color=$ISLAND_BORDER background.border_width=1 background.corner_radius=10 background.height=28
 
+sketchybar --add bracket vpn tailscale \
+  --set vpn background.color=$ISLAND_BG background.border_color=$ISLAND_BORDER background.border_width=1 background.corner_radius=10 background.height=28
+
 sketchybar --add bracket connectivity wifi bluetooth volume \
   --set connectivity background.color=$ISLAND_BG background.border_color=$ISLAND_BORDER background.border_width=1 background.corner_radius=10 background.height=28
 
@@ -256,7 +266,7 @@ sketchybar --add bracket pomo pomodoro \
   --set pomo background.color=$ISLAND_BG background.border_color=$ISLAND_BORDER background.border_width=1 background.corner_radius=10 background.height=28 background.drawing=on
 
 # INTERACTIVE EFFECTS
-for island in env media system connectivity stats pomo; do
+for island in env media system vpn connectivity stats pomo; do
   sketchybar --set $island mouse.entered_action="sketchybar --set $island background.border_color=$ACCENT_COLOR background.shadow.drawing=on y_offset=1" \
              --set $island mouse.exited_action="sketchybar --set $island background.border_color=$ISLAND_BORDER background.shadow.drawing=off y_offset=0"
 done
