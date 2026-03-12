@@ -1,40 +1,31 @@
 # Sketchybar Plugins
 
-## Active Plugins (Used in sketchybarrc)
+## Active Plugins (Python-based v4.0)
 
-These 11 plugins are actively loaded by sketchybar. See `../sketchybarrc` for configuration.
+Todititos los plugins han sido modernizados a Python para mayor potencia y proactividad. Siguen el estándar **Premium Island**.
 
-### LEFT Side (2)
-- **`front_app.py`** — Display current active application
-- **`music.sh`** — Show now playing music info
+### LEFT Side (Multimedia & Context)
+- **`front_app.py`** — Iconos dinámicos y telemetría de CPU/RAM por proceso (Activity Monitor style).
+- **`audio.py`** — Controlador unificado de Radio (Exa, Boquerón, Aire Latino, Caravana). Click = Play/Pause.
+- **`music.py`** — Integración con Spotify. Se oculta al pausar. Popup con barra de progreso y controles ⏮ ⏯ ⏭.
 
-### RIGHT Side (9)
-- **`datetime.sh`** — Date and time display
-- **`battery.py`** — Battery percentage and status
-- **`wifi.py`** — WiFi connection status
-- **`bluetooth.py`** — Bluetooth device status
-- **`volume.py`** — Volume level
-- **`ram.py`** — RAM usage percentage
-- **`cpu.py`** — CPU usage percentage
-- **`gpu.py`** — GPU usage percentage
-- **`pomodoro.py`** — Pomodoro timer (25min work, 5min break, 4 cycles → 15min long break)
+### RIGHT Side (System & Tools)
+- **`datetime_plugin.py`** — Reloj y Calendario. Inmune a VPN (GMT-5 forzado). Caché asíncrono para zero-lag. Filtro de integridad (13:00).
+- **`battery.py`** — Salud real vía `ioreg`. Notificaciones nativas de cargador.
+- **`connectivity.py`** — Wi-Fi/BT minimalista. Modo **Hacking** (OPSEC) oculta datos sensibles. Tráfico dinámico en popup.
+- **`system_stats.py`** — CPU, RAM, GPU y Disco optimizados (`vm_stat`). Semáforo visual (Verde/Amarillo/Rojo).
+- **`pomodoro.py`** — Gestión de fases (Trabajo/Descanso) con barra de progreso visual. Sincronizado con Modos.
+- **`volume.py`** — Control por scroll (+/- 5%) y toggle de Mute en popup.
+- **`modes.py`** — **El Cerebro**. 5 perfiles profesionales (Statick, Estudiante, Facilitador, Hacking, Coding). Cambia colores, sonidos y perfiles de productividad.
 
 ## Utilities
-- **`colors.py`** — Color constants and utilities (imported by plugins)
-- **`__pycache__/`** — Python bytecode cache
+- **`utils.py`** — Paleta de colores Gentleman, notificaciones, sonidos y gestión de estado.
+- **`colors.py`** — Constantes de color compartidas.
 
-## Archived Plugins
-
-All inactive, experimental, or duplicate plugins have been moved to `archive/` directory:
-- Duplicate implementations (e.g., `battery.sh`, `cpu.sh` → Python versions preferred)
-- Experimental features (mail, weather, news, system_stats)
-- Unused scripts (github, meeting, media, happy_hacking)
-
-To restore any archived plugin:
-```bash
-mv archive/plugin_name.{py,sh} .
-```
+## Quality & Security (Zero Trust)
+- **Tests:** Suite completa en `tests/test_*.py`. TDD verificado.
+- **No Hardcoding:** Rutas dinámicas y detección de interfaces.
+- **Privacidad:** Datos sensibles protegidos en modos de auditoría.
 
 ---
-
-**Last updated**: March 8, 2026 (SDD: modularize-sketchybar-plugins)
+**Last updated**: March 11, 2026 (v4.0 Premium Island Modernization)

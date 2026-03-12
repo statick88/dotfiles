@@ -32,16 +32,13 @@ def sbar_set(name, properties):
 
 
 def notify(title, message):
+    """Sends a lean native notification without interactive buttons if possible."""
     try:
-        subprocess.Popen(
-            [
-                "osascript",
-                "-e",
-                f'display notification "{message}" with title "{title}"',
-            ]
-        )
-    except Exception as e:
-        pass  # Ignore errors
+        # Using sound name inside can sometimes help macOS treat it as a simple alert
+        script = f'display notification "{message}" with title "{title}"'
+        subprocess.Popen(["osascript", "-e", script])
+    except:
+        pass
 
 
 def play_sound(file="/System/Library/Sounds/Glass.aiff"):
@@ -49,8 +46,8 @@ def play_sound(file="/System/Library/Sounds/Glass.aiff"):
         subprocess.Popen(
             ["afplay", file], stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL
         )
-    except Exception as e:
-        pass  # Ignore errors
+    except:
+        pass
 
 
 def get_state(plugin_name, default):

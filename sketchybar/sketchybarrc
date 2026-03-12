@@ -3,13 +3,13 @@
 # ╔══════════════════════════════════════════════════════════════════════════════╗
 # ║                          GENTLEMAN SKETCHYBAR                                 ║
 # ║                    Premium Islands - Floating Style                           ║
-# ╚══════════════════════════════════════════════════════════════════════════════╝
+# ╚═══════════════════════════════════════════════════════════════════════════════╝
 
 CONFIG_DIR="$HOME/.config/sketchybar"
 PLUGIN_DIR="$CONFIG_DIR/plugins"
 
 # ─────────────────────────────────────────────────────────────────────────────────
-# GENTLEMAN COLOR PALETTE
+# COLOR PALETTE
 # ─────────────────────────────────────────────────────────────────────────────────
 export BLACK=0xff06080f
 export WHITE=0xfff3f6f9
@@ -42,190 +42,223 @@ sketchybar --bar \
   color=$TRANSPARENT \
   y_offset=4 \
   margin=0 \
-  corner_radius=0
+  corner_radius=0 \
+  scroll_texts=on
 
 # ─────────────────────────────────────────────────────────────────────────────────
-# DEFAULT VALUES (Premium Spacing)
+# DEFAULT VALUES
 # ─────────────────────────────────────────────────────────────────────────────────
 sketchybar --default \
-  icon.font="FiraCode Nerd Font:Bold:15.0" \
+  icon.font="FiraCode Nerd Font:Bold:14.0" \
   icon.color=$WHITE \
-  label.font="FiraCode Nerd Font:SemiBold:13.0" \
+  label.font="FiraCode Nerd Font:SemiBold:12.0" \
   label.color=$WHITE \
   background.color=$TRANSPARENT \
-  background.height=28 \
-  padding_left=4 \
-  padding_right=4 \
-  label.padding_left=4 \
-  label.padding_right=8 \
-  icon.padding_left=8 \
-  icon.padding_right=4
+  background.height=26 \
+  background.corner_radius=8 \
+  padding_left=2 \
+  padding_right=2 \
+  label.padding_left=2 \
+  label.padding_right=4 \
+  icon.padding_left=4 \
+  icon.padding_right=2 \
+  popup.background.border_width=2 \
+  popup.background.corner_radius=12 \
+  popup.background.color=$ISLAND_BG \
+  popup.background.border_color=$ISLAND_BORDER \
+  popup.background.shadow.drawing=on
 
 # ═══════════════════════════════════════════════════════════════════════════════
 #                                LEFT SIDE
 # ═══════════════════════════════════════════════════════════════════════════════
 
-# FRONT APP
+# 1. MODES
+sketchybar --add item modes left \
+  --set modes label.font="FiraCode Nerd Font:Bold:11.0" icon="󱐋" background.drawing=off popup.align=left script="$PLUGIN_DIR/modes.py" click_script="sketchybar --set modes popup.drawing=toggle" \
+  --subscribe modes mouse.clicked
+
+sketchybar --add item mode.norm popup.modes --set mode.norm icon="󰄉" label="Statick" click_script="NAME=modes ACTION=set_mode MODE_KEY=normal python3 $PLUGIN_DIR/modes.py" \
+           --add item mode.stud popup.modes --set mode.stud icon="🎓" label="Estudiante" click_script="NAME=modes ACTION=set_mode MODE_KEY=student python3 $PLUGIN_DIR/modes.py" \
+           --add item mode.faci popup.modes --set mode.faci icon="🤝" label="Facilitador" click_script="NAME=modes ACTION=set_mode MODE_KEY=facilitator python3 $PLUGIN_DIR/modes.py" \
+           --add item mode.hack popup.modes --set mode.hack icon="👨‍💻" label="Hacking" click_script="NAME=modes ACTION=set_mode MODE_KEY=hacking python3 $PLUGIN_DIR/modes.py" \
+           --add item mode.code popup.modes --set mode.code icon="💻" label="Coding" click_script="NAME=modes ACTION=set_mode MODE_KEY=coding python3 $PLUGIN_DIR/modes.py"
+
+# 2. FRONT APP
 sketchybar --add item front_app left \
-  --set front_app \
-    icon.drawing=off \
-    label.color=$WHITE \
-    script="$PLUGIN_DIR/front_app.py" \
-  --subscribe front_app front_app_switched window_focus
+  --set front_app icon.drawing=on label.padding_left=10 label.font="FiraCode Nerd Font:Bold:13.0" script="$PLUGIN_DIR/front_app.py" popup.align=left \
+  --subscribe front_app front_app_switched window_focus mouse.entered mouse.exited
 
-# AUDIO
-sketchybar --add item audio left \
-  --set audio \
+sketchybar --add item front_app.details popup.front_app --set front_app.details icon="󰈙" label.color=$WHITE \
+           --add item front_app.monitor popup.front_app --set front_app.monitor icon="󰢮" icon.color=$RED label="Monitor de Actividad" click_script="open -a 'Activity Monitor'"
+
+# 3. SPOTIFY
+sketchybar --add event spotify_change "com.spotify.client.PlaybackStateChanged"
+
+sketchybar --add item spotify.prev left \
+  --set spotify.prev icon="󰒮" icon.color=$GREEN background.drawing=off click_script="osascript -e 'tell application \"Spotify\" to previous track'"
+
+sketchybar --add item spotify left \
+  --set spotify icon="" icon.color=$GREEN label.drawing=on label.max_chars=20 label.scroll_duration=200 scroll_texts=on background.drawing=off script="$PLUGIN_DIR/music.py" click_script="osascript -e 'tell application \"Spotify\" to playpause'" popup.align=left \
+  --subscribe spotify mouse.entered mouse.exited mouse.exited.global spotify_change
+
+sketchybar --add item spotify.next left \
+  --set spotify.next icon="󰒭" icon.color=$GREEN background.drawing=off click_script="osascript -e 'tell application \"Spotify\" to next track'"
+
+# Spotify Popup Details
+sketchybar --add item spotify.info.artist popup.spotify --set spotify.info.artist icon="󰠃" label.color=$WHITE \
+           --add item spotify.info.track popup.spotify --set spotify.info.track icon="󰎆" label.color=$WHITE \
+           --add item spotify.info.album popup.spotify --set spotify.info.album icon="󰓃" label.color=$WHITE \
+           --add item spotify.info.progress popup.spotify --set spotify.info.progress icon.drawing=off label.color=$WHITE label.font="FiraCode Nerd Font:Mono:12.0" \
+           --add item spotify.info.prev popup.spotify --set spotify.info.prev icon="󰒮" label="Anterior" click_script="osascript -e 'tell application \"Spotify\" to previous track'" \
+           --add item spotify.info.toggle popup.spotify --set spotify.info.toggle icon="󰏤" label="Play/Pausa" click_script="osascript -e 'tell application \"Spotify\" to playpause'" \
+           --add item spotify.info.next popup.spotify --set spotify.info.next icon="󰒭" label="Siguiente" click_script="osascript -e 'tell application \"Spotify\" to next track'"
+
+# 4. RADIO (Multimedia Control Island)
+sketchybar --add item radio.prev left \
+  --set radio.prev icon="󰒮" icon.color=$ORANGE background.drawing=off click_script="NAME=radio ACTION=prev_station python3 $PLUGIN_DIR/audio.py"
+
+sketchybar --add item radio left \
+  --set radio \
     icon="󰝚" \
-    icon.color=$DIM \
-    label.drawing=off \
+    icon.color=$ORANGE \
+    label.drawing=on \
+    label.max_chars=15 \
+    label.width=100 \
+    label.scroll_duration=200 \
+    scroll_texts=on \
+    background.drawing=off \
     script="$PLUGIN_DIR/audio.py" \
-    click_script="SENDER=mouse.clicked $PLUGIN_DIR/audio.py" \
-  --subscribe audio mouse.entered mouse.exited mouse.clicked
+    click_script="sketchybar --set radio popup.drawing=toggle" \
+    popup.align=left \
+  --subscribe radio mouse.entered mouse.exited mouse.clicked
 
-# Audio popup
-sketchybar --add popup audio
+sketchybar --add item radio.next left \
+  --set radio.next icon="󰒭" icon.color=$ORANGE background.drawing=off click_script="NAME=radio ACTION=next_station python3 $PLUGIN_DIR/audio.py"
+
+# Radio Popup Items (Fixed for stability)
+RADIOS=("Radio Exa" "Radio Boqueron" "Aire Latino" "Radio Caravana")
+IDS=("exa" "boqueron" "airelatino" "caravana")
+for i in "${!RADIOS[@]}"; do
+  sketchybar --add item radio.list.$i popup.radio \
+             --set radio.list.$i icon.drawing=off \
+                                 label="${RADIOS[$i]}" \
+                                 click_script="NAME=radio ACTION=play_id STATION_ID=${IDS[$i]} python3 $PLUGIN_DIR/audio.py"
+done
+sketchybar --add item radio.list.off popup.radio \
+           --set radio.list.off icon="󰓛" icon.color=$RED \
+                               label="Detener Radio" label.color=$RED \
+                               click_script="NAME=radio ACTION=stop_all python3 $PLUGIN_DIR/audio.py"
 
 # ═══════════════════════════════════════════════════════════════════════════════
 #                                RIGHT SIDE
 # ═══════════════════════════════════════════════════════════════════════════════
 
 sketchybar --add item battery right \
-  --set battery \
-    update_freq=60 \
-    icon.padding_left=0 \
-    label.padding_right=4 \
-    script="$PLUGIN_DIR/battery.py" \
-    click_script="open -a 'System Preferences' /System/Library/PreferencePanes/Battery.prefPane" \
-  --subscribe battery system_woke power_source_change
+  --set battery update_freq=60 script="$PLUGIN_DIR/battery.py" click_script="open 'x-apple.systempreferences:com.apple.Battery-Settings.extension'" popup.align=right \
+  --subscribe battery system_woke power_source_change mouse.entered mouse.exited
+
+sketchybar --add item battery.state popup.battery --set battery.state label.color=$WHITE icon.drawing=off \
+           --add item battery.health popup.battery --set battery.health label.color=$WHITE icon.drawing=off \
+           --add item battery.time popup.battery --set battery.time label.color=$WHITE icon.drawing=off
 
 sketchybar --add item datetime right \
-  --set datetime \
-    icon.drawing=off \
-    label.width=155 \
-    label.align=right \
-    label.padding_left=15 \
-    label.padding_right=0 \
-    update_freq=60 \
-    script="$PLUGIN_DIR/calendar.py" \
-    click_script="SENDER=mouse.clicked $PLUGIN_DIR/calendar.py" \
-  --subscribe datetime system_woke mouse.clicked routine
+  --set datetime icon.drawing=off label.width=140 label.align=right label.padding_left=10 label.padding_right=4 update_freq=60 script="$PLUGIN_DIR/datetime_plugin.py" click_script="SENDER=mouse.clicked $PLUGIN_DIR/datetime_plugin.py" popup.align=right \
+  --subscribe datetime system_woke mouse.clicked routine mouse.entered mouse.exited
 
-sketchybar --add item wifi right \
-  --set wifi \
-    icon.color=$BLUE \
-    label.drawing=off \
-    update_freq=5 \
-    script="$PLUGIN_DIR/connectivity.py" \
-    click_script="SENDER=mouse.clicked NAME=wifi $PLUGIN_DIR/connectivity.py" \
-  --subscribe wifi wifi_change wifi_update
+# Calendar Multi-Event Detail View
+sketchybar --add item datetime.header popup.datetime --set datetime.header label.font="FiraCode Nerd Font:Bold:12.0" label.color=$WHITE
 
-sketchybar --add item bluetooth right \
-  --set bluetooth \
-    icon.color=$MAGENTA \
-    label.drawing=off \
-    update_freq=3 \
-    script="$PLUGIN_DIR/connectivity.py" \
-    click_script="SENDER=mouse.clicked NAME=bluetooth $PLUGIN_DIR/connectivity.py" \
-  --subscribe bluetooth system_woke
+for i in {0..4}; do
+  sketchybar --add item datetime.event.$i popup.datetime \
+             --set datetime.event.$i icon="󰃭" icon.color=$CYAN label.color=$WHITE drawing=off \
+             --add item datetime.loc.$i popup.datetime \
+             --set datetime.loc.$i icon="󰉬" icon.color=$GREEN label.color=$DIM label.font="FiraCode Nerd Font:SemiBold:10.0" drawing=off
+done
 
 sketchybar --add item volume right \
-  --set volume \
-    icon.color=$CYAN \
-    label.padding_right=0 \
-    update_freq=1 \
-    script="$PLUGIN_DIR/volume.py" \
-    click_script="open 'x-apple.systempreferences:com.apple.preference.sound'" \
-  --subscribe volume volume_change
+  --set volume icon.color=$CYAN update_freq=1 script="$PLUGIN_DIR/volume.py" click_script="open 'x-apple.systempreferences:com.apple.preference.sound'" popup.align=right \
+  --subscribe volume volume_change mouse.entered mouse.exited
 
-sketchybar --add item ram right \
-  --set ram \
-    icon="󰘚" \
-    icon.color=$CYAN \
-    update_freq=5 \
-    script="$PLUGIN_DIR/system-stats.py" \
-    click_script="open -a 'Activity Monitor'"
+sketchybar --add item volume.display popup.volume --set volume.display icon.drawing=on label.color=$WHITE \
+           --add item volume.mute popup.volume --set volume.mute icon.drawing=on label.color=$WHITE
 
-sketchybar --add item cpu right \
-  --set cpu \
-    icon="󰍛" \
-    icon.color=$YELLOW \
-    update_freq=5 \
-    script="$PLUGIN_DIR/system-stats.py"
+sketchybar --add item bluetooth right \
+  --set bluetooth icon.color=$MAGENTA label.drawing=off update_freq=1 script="$PLUGIN_DIR/connectivity.py" click_script="open 'x-apple.systempreferences:com.apple.Bluetooth-Settings.extension'" popup.align=right \
+  --subscribe bluetooth system_woke mouse.entered mouse.exited mouse.clicked
+
+sketchybar --add item bluetooth.info.status popup.bluetooth --set bluetooth.info.status icon="󰂯" icon.color=$MAGENTA label.color=$WHITE \
+           --add item bluetooth.info.devices popup.bluetooth --set bluetooth.info.devices icon="󰂱" icon.color=$MAGENTA label.color=$WHITE
+
+sketchybar --add item wifi right \
+  --set wifi icon.color=$BLUE label.drawing=off update_freq=1 script="$PLUGIN_DIR/connectivity.py" click_script="open 'x-apple.systempreferences:com.apple.preference.network'" popup.align=right \
+  --subscribe wifi wifi_change mouse.entered mouse.exited mouse.clicked
+
+sketchybar --add item wifi.info.ip popup.wifi --set wifi.info.ip icon="󰩟" icon.color=$BLUE label.color=$WHITE \
+           --add item wifi.info.mask popup.wifi --set wifi.info.mask icon="󰛳" icon.color=$BLUE label.color=$WHITE \
+           --add item wifi.info.router popup.wifi --set wifi.info.router icon="󱂇" icon.color=$BLUE label.color=$WHITE \
+           --add item wifi.info.speed popup.wifi --set wifi.info.speed icon="󰓅" icon.color=$BLUE label.color=$WHITE
+
+sketchybar --add item disk right \
+  --set disk icon="󰋊" icon.color=$ORANGE update_freq=60 script="$PLUGIN_DIR/system_stats.py" popup.align=right \
+  --subscribe disk mouse.entered mouse.exited
+
+sketchybar --add item disk.info.used popup.disk --set disk.info.used icon="󰋊" icon.color=$ORANGE label.color=$WHITE \
+           --add item disk.info.free popup.disk --set disk.info.free icon="󰋊" icon.color=$ORANGE label.color=$WHITE
 
 sketchybar --add item gpu right \
-  --set gpu \
-    icon="󰢮" \
-    icon.color=$GREEN \
-    update_freq=5 \
-    script="$PLUGIN_DIR/system-stats.py"
+  --set gpu icon="󰢮" icon.color=$GREEN update_freq=5 script="$PLUGIN_DIR/system_stats.py" popup.align=right \
+  --subscribe gpu mouse.entered mouse.exited
+
+sketchybar --add item gpu.info.used popup.gpu --set gpu.info.used icon="󰢮" icon.color=$GREEN label.color=$WHITE \
+           --add item gpu.info.model popup.gpu --set gpu.info.model icon="󰢮" icon.color=$GREEN label.color=$WHITE
+
+sketchybar --add item cpu right \
+  --set cpu icon="󰍛" icon.color=$YELLOW update_freq=5 script="$PLUGIN_DIR/system_stats.py" popup.align=right \
+  --subscribe cpu mouse.entered mouse.exited
+
+sketchybar --add item cpu.info.used popup.cpu --set cpu.info.used icon="󰍛" icon.color=$YELLOW label.color=$WHITE \
+           --add item cpu.info.load popup.cpu --set cpu.info.load icon="󰍛" icon.color=$YELLOW label.color=$WHITE
+
+sketchybar --add item ram right \
+  --set ram icon="󰘚" icon.color=$CYAN update_freq=5 script="$PLUGIN_DIR/system_stats.py" click_script="open -a 'Activity Monitor'" popup.align=right \
+  --subscribe ram mouse.entered mouse.exited
+
+sketchybar --add item ram.info.used popup.ram --set ram.info.used icon="󰘚" icon.color=$CYAN label.color=$WHITE \
+           --add item ram.info.free popup.ram --set ram.info.free icon="󰘚" icon.color=$CYAN label.color=$WHITE
 
 sketchybar --add item pomodoro right \
-  --set pomodoro \
-    update_freq=1 \
-    script="$PLUGIN_DIR/pomodoro.py" \
-    click_script="$PLUGIN_DIR/pomodoro.py" \
-  --subscribe pomodoro system_woke mouse.clicked
+  --set pomodoro update_freq=1 background.drawing=off padding_left=2 padding_right=4 script="$PLUGIN_DIR/pomodoro.py" click_script="sketchybar --set pomodoro popup.drawing=toggle" popup.align=right \
+  --subscribe pomodoro system_woke mouse.clicked mouse.entered mouse.exited
 
-# ─────────────────────────────────────────────────────────────────────────────────
-# BRACKETS (Floating Islands - Enhanced Visuals)
-# ─────────────────────────────────────────────────────────────────────────────────
-sketchybar --add bracket media audio \
-  --set media \
-    background.color=$ISLAND_BG \
-    background.border_color=$ISLAND_BORDER \
-    background.border_width=1 \
-    background.corner_radius=10 \
-    background.height=30
+sketchybar --add item pomo.info.type popup.pomodoro --set pomo.info.type label.color=$WHITE \
+           --add item pomo.info.progress popup.pomodoro --set pomo.info.progress label.color=$WHITE label.font="FiraCode Nerd Font:Mono:12.0" \
+           --add item pomo.info.cycle popup.pomodoro --set pomo.info.cycle label.color=$WHITE \
+           --add item pomo.info.reset popup.pomodoro --set pomo.info.reset icon="󰦛" icon.color=$YELLOW label="Reiniciar" click_script="NAME=pomodoro ACTION=reset python3 $PLUGIN_DIR/pomodoro.py" \
+           --add item pomo.info.skip popup.pomodoro --set pomo.info.skip icon="󰒭" icon.color=$CYAN label="Siguiente" click_script="NAME=pomodoro ACTION=skip python3 $PLUGIN_DIR/pomodoro.py"
+
+# BRACKETS
+sketchybar --add bracket env modes front_app \
+  --set env background.color=$ISLAND_BG background.border_color=$ISLAND_BORDER background.border_width=1 background.corner_radius=10 background.height=28
+
+sketchybar --add bracket media spotify.prev spotify spotify.next radio.prev radio radio.next \
+  --set media background.color=$ISLAND_BG background.border_color=$ISLAND_BORDER background.border_width=1 background.corner_radius=10 background.height=28
 
 sketchybar --add bracket system battery datetime \
-  --set system \
-    background.color=$ISLAND_BG \
-    background.border_color=$ISLAND_BORDER \
-    background.border_width=1 \
-    background.corner_radius=10 \
-    background.height=30
+  --set system background.color=$ISLAND_BG background.border_color=$ISLAND_BORDER background.border_width=1 background.corner_radius=10 background.height=28
 
 sketchybar --add bracket connectivity wifi bluetooth volume \
-  --set connectivity \
-    background.color=$ISLAND_BG \
-    background.border_color=$ISLAND_BORDER \
-    background.border_width=1 \
-    background.corner_radius=10 \
-    background.height=30
+  --set connectivity background.color=$ISLAND_BG background.border_color=$ISLAND_BORDER background.border_width=1 background.corner_radius=10 background.height=28
 
-sketchybar --add bracket stats ram cpu gpu \
-  --set stats \
-    background.color=$ISLAND_BG \
-    background.border_color=$ISLAND_BORDER \
-    background.border_width=1 \
-    background.corner_radius=10 \
-    background.height=30
+sketchybar --add bracket stats ram cpu gpu disk \
+  --set stats background.color=$ISLAND_BG background.border_color=$ISLAND_BORDER background.border_width=1 background.corner_radius=10 background.height=28
 
 sketchybar --add bracket pomo pomodoro \
-  --set pomo \
-    background.color=$ISLAND_BG \
-    background.border_color=$ISLAND_BORDER \
-    background.border_width=1 \
-    background.corner_radius=10 \
-    background.height=30
+  --set pomo background.color=$ISLAND_BG background.border_color=$ISLAND_BORDER background.border_width=1 background.corner_radius=10 background.height=28 background.drawing=on
 
-# Mouse effects for islands
-sketchybar --set media mouse.entered_action="sketchybar --set media background.border_color=$ACCENT_COLOR" \
-           --set media mouse.exited_action="sketchybar --set media background.border_color=$ISLAND_BORDER"
-
-sketchybar --set system mouse.entered_action="sketchybar --set system background.border_color=$ACCENT_COLOR" \
-           --set system mouse.exited_action="sketchybar --set system background.border_color=$ISLAND_BORDER"
-
-sketchybar --set connectivity mouse.entered_action="sketchybar --set connectivity background.border_color=$ACCENT_COLOR" \
-           --set connectivity mouse.exited_action="sketchybar --set connectivity background.border_color=$ISLAND_BORDER"
-
-sketchybar --set stats mouse.entered_action="sketchybar --set stats background.border_color=$ACCENT_COLOR" \
-           --set stats mouse.exited_action="sketchybar --set stats background.border_color=$ISLAND_BORDER"
-
-sketchybar --set pomo mouse.entered_action="sketchybar --set pomo background.border_color=$ACCENT_COLOR" \
-           --set pomo mouse.exited_action="sketchybar --set pomo background.border_color=$ISLAND_BORDER"
-
-
+# INTERACTIVE EFFECTS
+for island in env media system connectivity stats pomo; do
+  sketchybar --set $island mouse.entered_action="sketchybar --set $island background.border_color=$ACCENT_COLOR background.shadow.drawing=on y_offset=1" \
+             --set $island mouse.exited_action="sketchybar --set $island background.border_color=$ISLAND_BORDER background.shadow.drawing=off y_offset=0"
+done
 
 sketchybar --update

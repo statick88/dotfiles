@@ -2,14 +2,15 @@
 
 **Domain**: sketchybar  
 **Status**: ACTIVE  
-**Last Updated**: 2026-03-09  
-**Version**: 1.1.0 (v3.1 internal)
+**Last Updated**: 2026-03-11  
+**Version**: 4.0.0
 
 ---
 
 ## Revision History
 - **v1.0.0**: Initial modular configuration (2026-03-08).
-- **v1.1.0**: Deep cleanup of legacy shell scripts and unused python plugins. Restored battery, datetime, and volume as core modules (2026-03-09).
+- **v1.1.0**: Deep cleanup of legacy shell scripts and unused python plugins (2026-03-09).
+- **v4.0.0**: Premium Island Modernization. Full Python migration, dynamic modes (Hacking, UCM), zero-lag async caching, and OPSEC integration (2026-03-11).
 
 ### Requirement: RIGHT Sidebar Content (Updated 2026-03-09)
 
@@ -58,7 +59,18 @@ Configuration and behavior specification for the sketchybar status bar. Defines 
 
 ---
 
-## Requirements
+## UI Patterns
+
+### Pattern: Vertical Popup for Detailed Info
+All interactive plugins MUST implement a detail view using a vertical stack of items within a Sketchybar popup.
+- **Trigger**: `mouse.entered` (show popup), `mouse.exited` (hide popup).
+- **Layout**: Multiple child items (e.g., `plugin.state`, `plugin.details`) to form a vertical list.
+- **Aesthetics**: 
+    - `popup.background.color=$ISLAND_BG`
+    - `popup.background.border_color=$ISLAND_BORDER`
+    - `popup.background.border_width=1`
+    - `popup.background.corner_radius=10`
+- **Rationale**: Keeps the bar clean while providing rich data on demand without replacing the primary metric.
 
 ### Requirement: LEFT Sidebar Content
 
@@ -162,7 +174,7 @@ The front_app item MUST display the currently active application label and updat
 **Rationale**: Provides context for the current space by showing which app is in focus.
 
 **Implementation**:
-- Source: `/Users/statick/.config/sketchybar/plugins/front_app.sh` (~21 lines, already exists)
+- Source: `./plugins/front_app.sh` (~21 lines, already exists)
 - Event: triggered by `front_app_switched` from Windowserver
 - Position in LEFT: after SPACES loop (line 110)
 
@@ -185,7 +197,7 @@ The sketchybarrc file MUST NOT exceed 350 lines after changes.
 
 **Implementation**: Final size after all deletions and insertions: ~320 lines
 
-**Validation**: `wc -l /Users/statick/.config/sketchybar/sketchybarrc` expects: ≤350
+**Validation**: `wc -l ./sketchybarrc` expects: ≤350
 
 ---
 
@@ -199,9 +211,9 @@ The sketchybarrc configuration file MUST pass Bash syntax validation with zero e
 
 **Rationale**: Prevents broken config from preventing sketchybar from loading.
 
-**Implementation**: Check `bash -n /Users/statick/.config/sketchybar/sketchybarrc` returns exit code 0
+**Implementation**: Check `bash -n ./sketchybarrc` returns exit code 0
 
-**Validation**: `bash -n /Users/statick/.config/sketchybar/sketchybarrc && echo "Syntax OK"`
+**Validation**: `bash -n ./sketchybarrc && echo "Syntax OK"`
 
 ---
 
@@ -353,7 +365,7 @@ If system tools required by a plugin are unavailable, the plugin MUST gracefully
 - **Proposal**: Change proposal with user intent and scope
 - **Design**: Technical design with line-by-line mapping and code blocks
 - **Tasks**: 12 actionable tasks across 4 phases (deletions, insertions, validation, testing)
-- **Implementation**: `/Users/statick/.config/sketchybar/sketchybarrc`
+- **Implementation**: `./sketchybarrc`
 
 ---
 

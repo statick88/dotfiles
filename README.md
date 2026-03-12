@@ -11,6 +11,7 @@ Configuración personalizada de entorno de desarrollo optimizada para macOS con 
 - ✅ Tema: Catppuccin (moderno y suave)
 - ✅ Arquitectura: Migrada a LazyVim nativo
 - ✅ Versión: v4.0 - Configuración 100% estable
+- ✅ Sketchybar: v4.0 Premium Island - Proactivo y dinámico
 
 ---
 
@@ -59,6 +60,7 @@ Este repositorio contiene configuraciones optimizadas específicamente para macO
 ├── kitty/                        # 🐱 Configuración del terminal Kitty
 ├── htop/                         # 📊 Configuración del monitor de recursos
 ├── karabiner/                    # ⌨️ Configuración de teclado personalizado
+├── sketchybar/                  # 🚀 Barra de estado Premium Island v4.0
 └── tmux/                         # 🪟 Configuración del multiplexor de terminal
 ```
 
@@ -164,6 +166,7 @@ Configuración avanzada basada en principios de Clean Architecture y filosofía 
 | **Publicación** | Quarto | Latest | Documentos científicos y notebooks |
 | **Shell** | Zsh + Oh My Zsh | Latest | Entorno de línea de comandos |
 | **Monitor** | htop | Latest | Monitor de recursos del sistema |
+| **Barra de Estado** | Sketchybar v4.0 | Latest | Centro de comando Premium Island |
 
 ---
 

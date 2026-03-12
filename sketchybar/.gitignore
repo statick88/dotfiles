@@ -1,0 +1,16 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.pytest_cache/
+.ruff_cache/
+
+# State (Sensitive/Local data)
+state/*.json
+calendar_cache.json
+
+# Logs/Temp
+*.log
+/tmp/
+.DS_Store

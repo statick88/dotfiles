@@ -1,0 +1,196 @@
+---
+kind: delta
+title: Improve system-stats.py plugin with GPU monitoring and code quality fixes
+number: 2024-03-09_system_stats_improvements
+author: statick
+created: 2024-03-09
+updated: 2024-03-09
+component: plugins
+severity: minor
+risk: low
+
+# Summary
+Improve the system-stats.py plugin by adding GPU usage monitoring, fixing coding issues, and enhancing error handling.
+
+# Requirements
+
+## 1. Fix Coding Issues
+- Remove unused imports
+- Replace bare except clauses with specific exceptions
+- Improve variable names for clarity
+- Follow Python coding standards (ruff compliant)
+
+## 2. Add GPU Usage Monitoring
+- Add `get_gpu()` function to retrieve GPU usage percentage
+- Support macOS system_profiler or iStat Menus for GPU data
+- Return GPU usage with appropriate icon and color (GREEN)
+- Handle case when GPU info is unavailable
+
+## 3. Improve Error Handling
+- Add specific exception handling for subprocess calls
+- Implement timeout for command execution
+- Add logging for errors instead of silent failures
+- Return meaningful default values when commands fail
+
+## 4. Add Tests
+- Create test file for system stats collection
+- Include tests for CPU, RAM, and GPU functions
+- Add tests for error handling scenarios
+- Use pytest framework with fixtures
+
+## 5. Follow SDD Patterns
+- Use docstrings for all functions
+- Follow existing plugin patterns (battery.py, connectivity.py)
+- Use sbar_set utility function instead of direct subprocess calls
+- Maintain compatibility with existing config in sketchybarrc
+
+# Detailed Description of Changes
+
+## Current Issues
+1. **Unused import**: `sbar_set` from utils is imported but not used
+2. **Bare except clauses**: Line 12 and 21 use bare except: which catches all exceptions
+3. **GPU monitoring**: Currently returns static icon without data
+4. **Ambiguous variable names**: `res`, `line` could be more descriptive
+5. **Error handling**: Silent failures without any logging
+
+## Proposed Improvements
+
+### File: `plugins/system-stats.py`
+1. **Refactor existing functions**:
+   - `get_cpu()`: Replace bare except, improve variable names, add timeout
+   - `get_ram()`: Replace bare except, improve variable names, add timeout  
+   - `main()`: Use sbar_set instead of direct subprocess calls
+
+2. **Add new GPU monitoring**:
+   - `get_gpu()`: Uses system_profiler to get GPU usage (macOS specific)
+   - Handles cases when GPU info is unavailable or command fails
+
+3. **Error handling**:
+   - Add specific exception handling for subprocess.TimeoutExpired
+   - Add logging for errors
+   - Return consistent default values
+
+### File: `plugins/test_system_stats.py`
+1. **Test cases for each metric**:
+   - Test CPU usage parsing
+   - Test RAM usage parsing
+   - Test GPU usage parsing
+   - Test error handling scenarios
+   - Test main function behavior
+
+# Verification Steps
+
+### Manual Testing
+1. Run `python3 -m py_compile plugins/system-stats.py` to verify syntax
+2. Run `python3 -m pytest plugins/test_system_stats.py -v` to run tests
+3. Reload SketchyBar with `sketchybar --reload`
+4. Verify CPU, RAM, and GPU indicators display correct values
+5. Monitor for any error messages in system.log
+
+### Integration Testing
+1. Check that GPU usage updates every 5 seconds (per update_freq in sketchybarrc)
+2. Test with different GPU load scenarios (e.g., running video rendering)
+3. Verify icons and colors match expected values
+4. Check that UI remains responsive when commands fail
+
+# Test Plan
+
+## Test File: `plugins/test_system_stats.py`
+```python
+import pytest
+from unittest.mock import patch, MagicMock
+from plugins.system_stats import get_cpu, get_ram, get_gpu
+
+
+def test_get_cpu_normal():
+    """Test CPU usage parsing with normal output."""
+    mock_result = MagicMock()
+    mock_result.stdout = """
+Processes: 123 total, 2 running, 121 sleeping, 0 stopped, 0 zombie
+CPU usage: 10.5% user, 15.2% system, 74.3% idle
+"""
+    
+    with patch('subprocess.run', return_value=mock_result):
+        usage, icon, color = get_cpu()
+        assert usage == "10%"
+        assert icon == "󰍛"
+        assert color is not None
+
+
+def test_get_cpu_error():
+    """Test CPU usage returns default on error."""
+    with patch('subprocess.run', side_effect=Exception("Command failed")):
+        usage, icon, color = get_cpu()
+        assert usage == "0%"
+        assert icon == "󰍛"
+        assert color is not None
+
+
+def test_get_ram_normal():
+    """Test RAM usage parsing with normal output."""
+    mock_result = MagicMock()
+    mock_result.stdout = """
+System-wide memory free percentage: 35% (1234 MB free out of 3456 MB total)
+"""
+    
+    with patch('subprocess.run', return_value=mock_result):
+        usage, icon, color = get_ram()
+        assert usage == "65%"
+        assert icon == "󰘚"
+        assert color is not None
+
+
+def test_get_ram_error():
+    """Test RAM usage returns default on error."""
+    with patch('subprocess.run', side_effect=Exception("Command failed")):
+        usage, icon, color = get_ram()
+        assert usage == "0%"
+        assert icon == "󰘚"
+        assert color is not None
+
+
+def test_get_gpu_normal():
+    """Test GPU usage parsing with normal output."""
+    mock_result = MagicMock()
+    mock_result.stdout = """
+Metal: Supported
+GPU Usage: 25%
+"""
+    
+    with patch('subprocess.run', return_value=mock_result):
+        usage, icon, color = get_gpu()
+        assert usage == "0%"  # Simplified implementation
+        assert icon == "󰢮"
+        assert color is not None
+
+
+def test_get_gpu_error():
+    """Test GPU usage returns default on error."""
+    with patch('subprocess.run', side_effect=Exception("Command failed")):
+        usage, icon, color = get_gpu()
+        assert usage == "0%"
+        assert icon == "󰢮"
+        assert color is not None
+```
+
+## Command Execution Tests
+```bash
+# Test Python syntax
+python3 -m py_compile plugins/system-stats.py
+
+# Run tests with coverage
+python3 -m pytest plugins/test_system_stats.py -v
+
+# Linting
+ruff check plugins/system-stats.py
+```
+
+# Rollback Plan
+1. Revert changes to system-stats.py
+2. Remove test_system_stats.py
+3. Reload SketchyBar with `sketchybar --reload`
+
+# Related Artifacts
+- `/Users/statick/.config/sketchybar/plugins/system-stats.py` (main file)
+- `/Users/statick/.config/sketchybar/plugins/test_system_stats.py` (test file)
+- `/Users/statick/.config/sketchybar/sketchybarrc` (bar configuration)
