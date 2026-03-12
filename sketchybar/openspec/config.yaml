@@ -1,0 +1,42 @@
+schema: spec-driven
+
+context: |
+  Project: sketchybar configuration (Gentleman Sketchybar - Minimal Islands)
+  Tech stack: Bash (sketchybarrc), Python plugins, Shell scripts
+  Architecture: Modular plugin system with state management
+  Style: Bash formatting (existing), Python with ruff linting
+  Testing: Shell script validation, Python imports check
+
+rules:
+  proposal:
+    - Identify affected components (bar config, plugins, state)
+    - Include rollback plan for configuration changes
+  specs:
+    - Use Given/When/Then format for bar behavior scenarios
+    - Document plugin interface contracts (input/output)
+    - Use RFC 2119 keywords (MUST, SHALL, SHOULD, MAY)
+  design:
+    - Document plugin lifecycle and interaction model
+    - Include color palette and styling decisions
+    - Specify state file locations and format
+  tasks:
+    - Group by component: bar config, plugins, state management
+    - Keep tasks small (single plugin or config section per task)
+    - Validate bash syntax, Python imports
+  apply:
+    - Follow existing Bash conventions in sketchybarrc
+    - Follow Python patterns in plugins/ directory
+    - Update plugins/colors.py when color changes needed
+  verify:
+    - Validate bash syntax: `bash -n sketchybarrc`
+    - Test Python syntax: `python3 -m py_compile plugins/*.py`
+    - Manual testing in macOS sketchybar UI
+  archive:
+    - Before merging, verify bar renders without errors
+    - Test all modified plugins with `sketchybar --debug`
+
+conventions:
+  bash: "Existing shebang #!/bin/bash, 4-space indents, quotes for variables"
+  python: "Python 3, ruff linting, simple scripts for quick updates"
+  plugins: "Read from CONFIG_DIR/plugins, write state to CONFIG_DIR/state/, JSON format"
+  colors: "Defined as 0xffRRGGBB in sketchybarrc, reusable exports"

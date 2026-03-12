@@ -1,18 +1,228 @@
 {
   "$schema": "https://opencode.ai/config.json",
-  "theme": "catppuccin-macchiato",
-  "model": "opencode/big-pickle",
-  "enabled_providers": ["opencode", "ollama"],
-  "disabled_providers": ["github-copilot", "google", "ollama-cloud"],
-  "provider": {
-    "opencode": {
-      "options": {}
+  "agent": {
+    "gentleman": {
+      "description": "Diego's technical co-pilot — FullStack mentor, security-conscious architect, Ecuadorian straight talk",
+      "mode": "primary",
+      "prompt": "{file:./AGENTS.md}",
+      "tools": {
+        "edit": true,
+        "write": true
+      }
     },
-    "ollama": {
-      "options": {
-        "baseURL": "http://localhost:11434"
+    "sdd-orchestrator": {
+      "description": "SDD workflow coordinator — delegates heavy lifting, tracks state, keeps Diego's mentoring voice",
+      "mode": "all",
+      "prompt": "{file:./AGENTS.md}",
+      "tools": {
+        "bash": true,
+        "edit": true,
+        "read": true,
+        "write": true
       }
     }
   },
-  "autoupdate": true
+  "autoupdate": true,
+  "instructions": [
+    "~/.config/opencode/mcp-security-resources.md"
+  ],
+  "mcp": {
+    "chrome-devtools": {
+      "command": [
+        "npx",
+        "-y",
+        "chrome-devtools-mcp@latest"
+      ],
+      "type": "local"
+    },
+    "cve-intelligence": {
+      "command": [
+        "node",
+        "mcp-servers/cve-intelligence/dist/index.js"
+      ],
+      "enabled": true,
+      "type": "local"
+    },
+    "mitre": {
+      "command": [
+        "mcp-servers/mitre-mcp/.venv/bin/python3",
+        "-m",
+        "mitre_mcp.server"
+      ],
+      "enabled": true,
+      "type": "local"
+    },
+    "cloudflare": {
+      "command": [
+        "npx",
+        "-y",
+        "mcp-remote",
+        "https://mcp.cloudflare.com/mcp"
+      ],
+      "enabled": true,
+      "type": "local"
+    },
+    "context7": {
+      "enabled": true,
+      "type": "remote",
+      "url": "https://mcp.context7.com/mcp"
+    },
+    "engram": {
+      "command": [
+        "engram",
+        "mcp"
+      ],
+      "enabled": true,
+      "type": "local"
+    },
+    "google-workspace": {
+      "command": [
+        "npx",
+        "-y",
+        "@chieflatif/google-mcp"
+      ],
+      "enabled": true,
+      "environment": {
+        "GOOGLE_CLIENT_ID": "${GOOGLE_CLIENT_ID}",
+        "GOOGLE_CLIENT_SECRET": "${GOOGLE_CLIENT_SECRET}",
+        "MCP_CORE_TOOLS": "1"
+      },
+      "type": "local"
+    },
+    "hostingerapi": {
+      "command": [
+        "npx",
+        "hostinger-api-mcp@latest"
+      ],
+      "enabled": true,
+      "environment": {
+        "API_TOKEN": "${HOSTINGER_API_TOKEN}"
+      },
+      "type": "local"
+    },
+    "notebooklm": {
+      "command": [
+        "npx",
+        "-y",
+        "notebooklm-mcp@latest"
+      ],
+      "enabled": true,
+      "type": "local"
+    },
+    "paypal": {
+      "command": [
+        "npx",
+        "-y",
+        "@paypal/mcp",
+        "--tools=all"
+      ],
+      "enabled": true,
+      "environment": {
+        "PAYPAL_ACCESS_TOKEN": "${PAYPAL_ACCESS_TOKEN}",
+        "PAYPAL_ENVIRONMENT": "${PAYPAL_ENVIRONMENT}"
+      },
+      "type": "local"
+    },
+    "scihub": {
+      "command": [
+        "mcp-servers/sci-hub-mcp-server/.venv/bin/python3",
+        "mcp-servers/sci-hub-mcp-server/sci_hub_server.py"
+      ],
+      "enabled": true,
+      "type": "local"
+    },
+    "skillsmp": {
+      "command": [
+        "npx",
+        "-y",
+        "skillsmp-mcp-server"
+      ],
+      "enabled": true,
+      "environment": {
+        "SKILLSMP_API_KEY": "${SKILLSMP_API_KEY}"
+      },
+      "type": "local"
+    },
+    "ucm-task": {
+      "command": [
+        "bun",
+        "src/index.ts"
+      ],
+      "enabled": true,
+      "type": "local"
+    }
+  },
+  "permission": {
+    "bash": {
+      "*": "allow",
+      "git commit *": "ask",
+      "git push": "ask",
+      "git push *": "ask",
+      "git push --force *": "ask",
+      "git rebase *": "ask",
+      "git reset --hard *": "ask"
+    },
+    "read": {
+      "*": "allow",
+      "**/.env": "deny",
+      "**/.env.*": "deny",
+      "**/credentials.json": "deny",
+      "**/secrets/**": "deny",
+      "*.env": "deny",
+      "*.env.*": "deny"
+    }
+  },
+  "plugin": [],
+  "provider": {
+    "anthropic": {
+      "models": {
+        "claude-haiku-4-5-20251001": {
+          "name": "Claude Haiku 4.5"
+        },
+        "claude-opus-4-6": {
+          "name": "Claude Opus 4.6"
+        },
+        "claude-sonnet-4-6": {
+          "name": "Claude Sonnet 4.6"
+        }
+      },
+      "name": "Anthropic (Claude)"
+    },
+    "ollama": {
+      "models": {
+        "devstral:latest": {
+          "name": "Devstral (coding)"
+        },
+        "gemma3:27b": {
+          "name": "Gemma 3 27B"
+        },
+        "gemma3:27b-tc": {
+          "name": "Gemma 3 27B TC"
+        },
+        "llama3.1:latest": {
+          "name": "Llama 3.1"
+        },
+        "qwen2.5-coder:14b": {
+          "name": "Qwen 2.5 Coder 14B"
+        },
+        "qwen2.5-coder:7b": {
+          "name": "Qwen 2.5 Coder 7B"
+        },
+        "qwen2.5:32b": {
+          "name": "Qwen 2.5 32B"
+        },
+        "qwen2.5:32b-tc": {
+          "name": "Qwen 2.5 32B TC"
+        },
+        "qwen2.5:7b": {
+          "name": "Qwen 2.5 7B"
+        }
+      },
+      "name": "Ollama (local)",
+      "npm": "@ai-sdk/openai-compatible",
+      "options": {
+        "baseURL": "http://localhost:11434/v1"
+      }
+    }
+  }
 }

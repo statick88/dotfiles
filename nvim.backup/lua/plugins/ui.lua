@@ -1,0 +1,50 @@
+return {
+  -- snacks.nvim: Dashboard, picker, notifier
+  {
+    "folke/snacks.nvim",
+    event = "VimEnter",
+    priority = 1000,
+    config = function()
+      require("snacks").setup({
+        dashboard = {
+          enable = true,
+          preset = {
+            header = [[
+██████╗ ███████╗██╗   ██╗██╗███╗   ███╗ █████╗ ██╗     ██╗██╗███╗   ███╗
+██╔══██╗██╔════╝╚██╗ ██╔╝██║████╗ ████║██╔══██╗██║     ██║██║████╗ ████║
+██████╔╝█████╗   ╚████╔╝ ██║██╔████╔██║███████║██║     ██║██║██╔████╔██║
+██╔══██╗██╔══╝    ╚██╔╝  ██║██║╚██╔╝██║██╔══██║██║     ██║██║██║╚██╔╝██║
+██║  ██║███████╗   ██║   ██║██║ ╚═╝ ██║██║  ██║███████╗██║██║██║ ╚═╝ ██║
+╚═╝  ╚═╝╚══════╝   ╚═╝   ╚═╝╚═╝     ╚═╝╚═╝  ╚═╝╚══════╝╚═╝╚═╝╚═╝     ╚═╝
+            ]],
+            keys = {
+              { icon = " ", key = "ff", desc = "Find Files", action = ":FzfLua files<CR>" },
+              { icon = " ", key = "fg", desc = "Live Grep", action = ":FzfLua grep<CR>" },
+              { icon = " ", key = "fb", desc = "Buffers", action = ":FzfLua buffers<CR>" },
+              { icon = " ", key = "gg", desc = "LazyGit", action = ":LazyGit<CR>" },
+              { icon = " ", key = "o", desc = "Oil", action = ":Oil<CR>" },
+            },
+          },
+          sections = {
+            { section = "header" },
+            { section = "keys", gap = 1, padding = 1 },
+            { section = "recent_files", cwd = true, limit = 6 },
+            { section = "projects", limit = 4 },
+            { section = "session", pivot = "bottom" },
+          },
+        },
+        notifier = {
+          enabled = true,
+          timeout = 3000,
+          top_down = false,
+        },
+        words = {
+          enabled = true,
+          hl = {
+            { "hl", 0, "SnacksWords" },
+          },
+        },
+      })
+    end,
+  },
+}

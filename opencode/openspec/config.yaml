@@ -1,0 +1,43 @@
+schema: spec-driven
+version: "1.0"
+project: ucm-task-automation
+
+context: |
+  MCP-based task automation platform for Master en Ciberseguridad Defensiva y Ofensiva (UCM).
+  Wraps tareas-ucm framework to expose task generation, querying, and anti-AI validation via MCP.
+  Primary use: Claude + OpenCode MCP clients querying UCM cybersecurity tasks dynamically.
+  Stack: Node.js/Bun, TypeScript, MCP SDK, Anthropic Claude API.
+  Reference style: 41-page informe-criptografia.pdf (maestría-level academic rigor).
+
+rules:
+  proposal:
+    - Map to MCP protocol layer + task generation + anti-AI validation
+    - Include rollback plan for failed task generation or MCP connection
+    - Document why MCP vs gRPC, why stdio vs network
+
+  specs:
+    - Use Given/When/Then format for each MCP tool (list_tasks, generate_task, validate_task_complexity)
+    - RFC 2119 keywords (MUST, SHALL, SHOULD, MAY) for tool contracts
+    - Acceptance criteria tied to success criteria in proposal
+
+  design:
+    - Sequence diagrams: Claude → OpenCode → MCP Server → tareas-ucm config
+    - Error handling: MCP connection failures, task template parsing, anti-AI heuristic failures
+    - Security posture: input validation, taint tracking, semgrep/codeql compliance
+
+  tasks:
+    - Phase 1: MCP Server bootstrap + 4 core tools implementation
+    - Phase 2: Anti-AI validation + task complexity scoring
+    - Phase 3: Integration tests (Claude ↔ MCP) + documentation
+    - Each task max 2-3 hours (TDD: RED → GREEN → REFACTOR)
+
+  apply:
+    - Load typescript + security skills (semgrep, codeql)
+    - TDD-first: write failing test before implementation
+    - No framework assumptions—pure MCP SDK + tareas-ucm integration
+
+  verify:
+    - Test against proposal success criteria (all 6 checkboxes)
+    - Validate MCP tools discoverable from Claude Desktop
+    - Run semgrep/codeql security scans (zero warnings)
+    - Integration test: list_tasks → generate_task → validate_task_complexity

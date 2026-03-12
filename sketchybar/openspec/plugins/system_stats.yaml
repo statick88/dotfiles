@@ -1,0 +1,16 @@
+name: system-stats
+description: System statistics plugin for SketchyBar
+version: 1.0.0
+main: plugins/system_stats.py
+author: statick88
+dependencies: []
+
+provides:
+  - cpu
+  - ram
+  - gpu
+
+subscriptions:
+  - cpu_update
+  - ram_update
+  - gpu_update

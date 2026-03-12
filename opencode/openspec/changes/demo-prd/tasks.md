@@ -1,0 +1,3 @@
+- [x] Add PRD gate rule in orchestrator prompt
+- [x] Add PRD gate rule in sdd-spec skill
+- [x] Add PRD gate rule in sdd-verify skill

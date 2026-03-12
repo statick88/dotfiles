@@ -1,0 +1,1 @@
+/Users/statick/.gentleman/AGENTS.md

@@ -1,0 +1,269 @@
+---
+kind: delta
+title: Improve connectivity.py plugin with test coverage, bug fixes, and enhanced functionality
+number: 2026-03-09_connectivity_improvements
+author: statick
+created: 2026-03-09
+updated: 2026-03-09
+component: plugins
+severity: medium
+risk: medium
+
+# Summary
+Improve the connectivity.py plugin by adding comprehensive test coverage, fixing major issues with Bluetooth device control and hardcoded network interface, enhancing functionality with WiFi power toggle and signal strength display, improving code quality, standardizing error handling, and separating WiFi and Bluetooth concerns.
+
+# Requirements
+
+## 1. Adding Test Coverage
+- Create comprehensive tests for all functionality using pytest
+- Test WiFi status detection (power on/off, connected, disconnected)
+- Test Bluetooth status detection (power on/off, connected, disconnected)
+- Test menu population for WiFi networks and Bluetooth devices
+- Test error handling scenarios
+- Test edge cases (no networks found, command failures)
+
+## 2. Fixing Major Issues
+- **Bluetooth device control**: Add support for connecting/disconnecting Bluetooth devices
+- **Hardcoded en0 interface**: Detect and use the correct WiFi interface dynamically
+- **Bluetooth menu items**: Make Bluetooth devices clickable with connect/disconnect functionality
+
+## 3. Improving Code Quality
+- Add type hints to all functions
+- Improve docstrings with detailed descriptions
+- Remove redundant code and improve efficiency
+- Follow Python coding standards (ruff compliant)
+- Use consistent variable and function names
+
+## 4. Enhancing Functionality
+- **WiFi power toggle**: Add option to turn WiFi on/off from the menu
+- **Signal strength display**: Show WiFi signal strength with appropriate icons
+- **WiFi details**: Display additional WiFi information (IP address, security type)
+- **Bluetooth device status**: Show connection status of Bluetooth devices in menu
+
+## 5. Standardizing Error Handling
+- Create consistent error reporting using SketchyBar notifications
+- Improve error messages and logging
+- Add timeout to all subprocess calls
+- Handle command failures gracefully
+
+## 6. Improving Architecture
+- Separate WiFi and Bluetooth concerns into distinct classes or modules
+- Create reusable utility functions
+- Improve code organization and readability
+- Reduce coupling between components
+
+# Detailed Description of Changes
+
+## Current Issues
+1. **Bluetooth device control**: Bluetooth menu items are not clickable - no connect/disconnect functionality
+2. **Hardcoded interface**: WiFi functions use hardcoded "en0" interface, which may not exist on all Mac models
+3. **Limited test coverage**: No existing tests for connectivity.py
+4. **Code quality**: Missing type hints, inconsistent docstrings, redundant code
+5. **Functionality gaps**: No WiFi power toggle, no signal strength display
+6. **Error handling**: Inconsistent error reporting, no notifications for failures
+
+## Proposed Improvements
+
+### File: `plugins/connectivity.py`
+1. **Architecture refactor**:
+   - Create `WiFiManager` class to handle all WiFi-related functionality
+   - Create `BluetoothManager` class to handle all Bluetooth-related functionality
+   - Separate concerns for cleaner code organization
+
+2. **Dynamic interface detection**:
+   - Add function to detect the correct WiFi interface using `networksetup`
+   - Replace hardcoded "en0" with dynamically detected interface
+
+3. **Bluetooth device control**:
+   - Add `connect_device()` and `disconnect_device()` methods to `BluetoothManager`
+   - Make Bluetooth menu items clickable with connect/disconnect functionality
+   - Show connection status indicators for Bluetooth devices
+
+4. **WiFi enhancements**:
+   - Add `toggle_power()` method to `WiFiManager`
+   - Add WiFi power toggle menu item
+   - Add signal strength detection and display
+   - Show IP address and security type in WiFi menu
+
+5. **Code quality improvements**:
+   - Add type hints to all functions and methods
+   - Improve docstrings with detailed parameter and return type information
+   - Remove redundant code and optimize efficiency
+   - Follow Python coding standards
+
+6. **Error handling**:
+   - Standardize error reporting using SketchyBar notifications
+   - Add consistent error messages
+   - Improve exception handling for subprocess calls
+   - Add timeout to all command executions
+
+### File: `plugins/test_connectivity.py`
+1. **Test WiFi functionality**:
+   - Test WiFi status detection (power on/off, connected, disconnected)
+   - Test WiFi power toggle
+   - Test WiFi interface detection
+   - Test signal strength parsing
+   - Test error handling for WiFi commands
+
+2. **Test Bluetooth functionality**:
+   - Test Bluetooth status detection (power on/off, connected, disconnected)
+   - Test Bluetooth device control (connect/disconnect)
+   - Test paired devices parsing
+   - Test error handling for Bluetooth commands
+
+3. **Test menu population**:
+   - Test WiFi menu population with available networks
+   - Test Bluetooth menu population with paired devices
+   - Test error handling for menu creation
+
+# Verification Steps
+
+### Manual Testing
+1. Run `python3 -m py_compile plugins/connectivity.py` to verify syntax
+2. Run `python3 -m pytest plugins/test_connectivity.py -v` to run tests
+3. Reload SketchyBar with `sketchybar --reload`
+4. Verify WiFi status indicator (power on/off, connected, disconnected)
+5. Test WiFi power toggle from the menu
+6. Verify WiFi signal strength display
+7. Test Bluetooth status indicator (power on/off, connected, disconnected)
+8. Test Bluetooth device connection/disconnection from the menu
+9. Verify that menus populate correctly with available networks and devices
+10. Test error scenarios (e.g., WiFi adapter disabled, no Bluetooth devices)
+
+### Integration Testing
+1. Check that WiFi status updates when connecting/disconnecting
+2. Verify that Bluetooth status updates when devices connect/disconnect
+3. Test with different WiFi networks and Bluetooth devices
+4. Check that the correct network interface is detected
+5. Verify that notifications are shown for errors
+6. Monitor for any performance issues
+
+# Test Plan
+
+## Test File: `plugins/test_connectivity.py`
+```python
+import pytest
+from unittest.mock import patch, MagicMock
+from plugins.connectivity import WiFiManager, BluetoothManager
+
+
+class TestWiFiManager:
+    """Tests for WiFiManager class."""
+
+    def test_get_status_power_off(self):
+        """Test WiFi status when power is off."""
+        manager = WiFiManager()
+        with patch.object(manager, '_run_command', return_value="Off"):
+            icon, color, ssid = manager.get_status()
+            assert icon == "󰤮"
+            assert color == "RED"
+            assert ssid is None
+
+    def test_get_status_connected(self):
+        """Test WiFi status when connected."""
+        manager = WiFiManager()
+        with patch.object(manager, '_run_command', side_effect=["On", "inet 192.168.1.100", "Current Wi-Fi Network: TestNetwork"]):
+            icon, color, ssid = manager.get_status()
+            assert icon == "󰤨"
+            assert color == "BLUE"
+            assert ssid == "TestNetwork"
+
+    def test_toggle_power_off_to_on(self):
+        """Test toggling WiFi power from off to on."""
+        manager = WiFiManager()
+        with patch.object(manager, '_run_command', side_effect=["Off", ""]):
+            manager.toggle_power()
+            assert manager._run_command.called
+
+    def test_toggle_power_on_to_off(self):
+        """Test toggling WiFi power from on to off."""
+        manager = WiFiManager()
+        with patch.object(manager, '_run_command', side_effect=["On", ""]):
+            manager.toggle_power()
+            assert manager._run_command.called
+
+    def test_get_signal_strength(self):
+        """Test WiFi signal strength detection."""
+        manager = WiFiManager()
+        with patch.object(manager, '_run_command', return_value="Signal / Noise: -50 dBm / -90 dBm"):
+            strength = manager.get_signal_strength()
+            assert isinstance(strength, int)
+            assert 0 <= strength <= 100
+
+
+class TestBluetoothManager:
+    """Tests for BluetoothManager class."""
+
+    def test_get_status_power_off(self):
+        """Test Bluetooth status when power is off."""
+        manager = BluetoothManager()
+        with patch.object(manager, '_run_command', return_value="0"):
+            icon, color = manager.get_status()
+            assert icon == "󰂲"
+            assert color == "DIM"
+
+    def test_get_status_connected(self):
+        """Test Bluetooth status when connected."""
+        manager = BluetoothManager()
+        with patch.object(manager, '_run_command', side_effect=["1", "name: \"TestDevice\""]):
+            icon, color = manager.get_status()
+            assert icon == "󰂱"
+            assert color == "MAGENTA"
+
+    def test_get_paired_devices(self):
+        """Test getting paired Bluetooth devices."""
+        manager = BluetoothManager()
+        with patch.object(manager, '_run_command', return_value='name: "Device1"\nname: "Device2"'):
+            devices = manager.get_paired_devices()
+            assert len(devices) == 2
+            assert "Device1" in devices
+            assert "Device2" in devices
+
+    def test_connect_device(self):
+        """Test connecting to a Bluetooth device."""
+        manager = BluetoothManager()
+        with patch.object(manager, '_run_command', return_value=""):
+            manager.connect_device("TestDevice")
+            assert manager._run_command.called
+
+    def test_disconnect_device(self):
+        """Test disconnecting from a Bluetooth device."""
+        manager = BluetoothManager()
+        with patch.object(manager, '_run_command', return_value=""):
+            manager.disconnect_device("TestDevice")
+            assert manager._run_command.called
+
+
+def test_error_handling():
+    """Test error handling for command failures."""
+    manager = WiFiManager()
+    with patch.object(manager, '_run_command', side_effect=Exception("Command failed")):
+        icon, color, ssid = manager.get_status()
+        assert icon is not None
+        assert color is not None
+```
+
+## Command Execution Tests
+```bash
+# Test Python syntax
+python3 -m py_compile plugins/connectivity.py
+
+# Run tests with coverage
+python3 -m pytest plugins/test_connectivity.py -v
+
+# Linting
+ruff check plugins/connectivity.py
+
+# Type checking (if type hints are added)
+mypy plugins/connectivity.py
+```
+
+# Rollback Plan
+1. Revert changes to connectivity.py
+2. Remove test_connectivity.py
+3. Reload SketchyBar with `sketchybar --reload`
+
+# Related Artifacts
+- `/Users/statick/.config/sketchybar/plugins/connectivity.py` (main file)
+- `/Users/statick/.config/sketchybar/plugins/test_connectivity.py` (test file)
+- `/Users/statick/.config/sketchybar/sketchybarrc` (bar configuration)

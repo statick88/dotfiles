@@ -1,0 +1,19 @@
+ai:
+    enabled: true
+    provider: ollama
+    ollama:
+        url: http://localhost:11434
+        model: qwen2.5:7b
+    autoenhance: false
+display:
+    dateformat: 02/01/2006
+    showcompletedcount: true
+notifications:
+    enabled: true
+    duereminder: 1h0m0s
+storage:
+    database: /Users/statick/.local/share/taskflow/tasks.db
+    backupinterval: 24h0m0s
+tray:
+    showpendingcount: true
+    maxtasksshown: 5
